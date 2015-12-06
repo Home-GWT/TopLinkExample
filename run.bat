@@ -1,0 +1,1 @@
+java -cp .;lib\derby.jar;lib\toplink-essentials.jar;bin com.voituk.jpaexample.JPAExample

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    
+    <persistence-unit name="TestStore" transaction-type="RESOURCE_LOCAL"> <!-- transaction-type="JTA" -->
+        <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+        <class>com.voituk.jpaexample.BlogPost</class>
+        
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:derby:myteststore;create=true" />
+            <property name="toplink.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+            <property name="toplink.jdbc.user" value="app" />
+            <property name="toplink.jdbc.password" value="app" />
+            <property name="toplink.ddl-generation" value="create-tables" />
+            <property name="toplink.application-location" value="./db-schema"/>
+            <property name="toplink.logging.level" value="OFF" /> <!-- OFF, FINE -->
+            <property name="toplink.target-database" value="Derby" /> <!-- Derby, Oracle -->
+        </properties>
+    </persistence-unit>
+</persistence>
