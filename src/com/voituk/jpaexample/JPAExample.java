@@ -62,6 +62,32 @@ import javax.persistence.Query;
  *    Указывает что другие транзакции НЕмогут читать строки-данные которые были изменены этой-текущей транзакцией (инструкцией) но еще не были зафиксированы.
  *    И другие транзакции НЕмогут изменять строки-данные читаемые этой-текущей транзакцией до ее завершения.
  *    И другие транзакции НЕмогут вставлять новые строки-данные со значениями ключа которые входят в диапазон ключей ДЛЯ считываемых инструкциями этой-текущей транзакции до ее завершения.
+ *    
+ * +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *                                                             (Spring Roo in Under Nine Minutes) https://www.youtube.com/watch?v=K78vL72XDqw
+ * (По следам Spring Pet Clinic. Maven/ Spring Context/ Spring Test/ Spring ORM/ Spring Data JPA) http://habrahabr.ru/post/232381/
+ * 
+ *                   (java persistence api что это)
+ *           (Introduction to Java Persistence API) http://voituk.kiev.ua/2008/01/30/introduction-to-java-persistence-api/
+ *             (Java Persistence API (JPA): Основы) http://berkut.homelinux.com/download/pdf/jpa_basic_rus.pdf
+ * (SET TRANSACTION ISOLATION LEVEL (Transact-SQL)) https://msdn.microsoft.com/ru-ru/library/ms173763%28v=sql.120%29.aspx
+ * 
+ *                                                            (jpa persistence стратегии)
+ **                 (Шпаргалка Java программиста 1: JPA и Hibernate в вопросах и ответах) http://habrahabr.ru/post/265061/
+ * (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
+ *       (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Joined стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-joined-strategija.html
+ * 
+ * (Persistence.createEntityManagerFactory)
+ *   (Начало работы с Java Persistence API) http://www.tune-it.ru/web/vnik/home/-/blogs/начало-работы-с-java-persistence-api
+ * 
+ *                               (уровни изоляции как работают)
+ ** (Технологии баз данных: SQL, T-SQL, PL/SQL, реляционные БД) http://datasql.ru/basesql/16.htm
+ *                          (MySQL: уровни изоляции транзакций) http://habrahabr.ru/post/135217/
+ *                (Уровни изоляции транзакций в SQL. Шпаргалка) http://www.arbinada.com/main/ru/node/619
+ * 
+ *                                  (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
+ * (PowerMock (+Mockito): новый взгляд на unit-тестирование) http://habrahabr.ru/post/172239/
+ *                      (Тестирование GWT с помощью Mockito) http://dmitrynikol.blogspot.com/2011/10/gwt-mockito.html
  */
 
 public class JPAExample {
