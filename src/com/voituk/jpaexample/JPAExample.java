@@ -89,6 +89,18 @@ import javax.persistence.Query;
  * (PowerMock (+Mockito): новый взгляд на unit-тестирование) http://habrahabr.ru/post/172239/
  *                      (Тестирование GWT с помощью Mockito) http://dmitrynikol.blogspot.com/2011/10/gwt-mockito.html
  * + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+ *                                             (Уровни изоляции) http://professorweb.ru/my/sql-server/2012/level3/3_16.php | https://books.google.com.ua/books?id=yqW0D1U0Q9IC&pg=PA343&lpg=PA343&dq=грязное+чтение+неповторяемое+чтение+чтение+фантомов&source=bl&ots=Hc3e5tQSpr&sig=c49sASAVEk_sh5xH1o2DoEaXusc&hl=ru&sa=X&ved=0ahUKEwj3nKO3r8zJAhXBFiwKHeh8CH8Q6AEIMjAE#v=onepage&q=грязное чтение неповторяемое чтение чтение фантомов&f=false
+ *                                  (Уровни изоляции транзакции) https://www.youtube.com/watch?v=ovG4QXNpu7U
+ *                (Уровень изоляции READ COMMITED SNAPSHOT в 1С) https://www.youtube.com/watch?v=D8PHwf5RHB4
+ * (Уровень изоляции неповторяемое чтение, Неповторяемое чтение) https://www.youtube.com/watch?v=TWTDFWxSRYs
+ *                          (Уровень изоляции Serializable в 1С) https://www.youtube.com/watch?v=TAGNnvCghlY
+ *   (Технологии баз данных: SQL, T-SQL, PL/SQL, реляционные БД) http://datasql.ru/basesql/16.htm
+ * 
+ * Транзакции - защищают данные с которыми работает пользователь чтобы другой пользователь их неиспортил.
+ * Но существуют ситуации когда данные ненужно защищать (потому-что они неявляются важными)...
+ * Поэтому одни данные являются очень важными и их нужно защищать, а другие данные неявляются важными или имеют среднюю важность их можно выборочно защищать.
+ * Уровень изоляции транзакции - это набор правил которые определяют насколько сильно нужно защищать данные (в транзакциях).
+ * 
  * > В ходе выполнения транзакции результат выполнения может быть либо применен-зафиксирован либо отменен-откат.
  * Так вот, пока транзакция еще небыла зафиксирована - нет никакой гарантии что может быть откат - и все незафиксированные данные пропадут - это "Грязное чтение"
  * 
@@ -99,6 +111,21 @@ import javax.persistence.Query;
  * > В ходе выполнения транзакции также читаем строки (если их много) с какой-то последовательностью...
  * И в этот момент другая транзакция вставляет новые строки между читаемыми строками уже после их прочтения (здесь нет блокировок на еще отсутствующие строки).
  * То есть нет никаких гарантий что после прочтения всех строк до момента фиксированием транзакции не будет добавления новых строк - это "Чтение фантомов".
+ * 
+ * 1. READ UNCOMMITTED (нет защиты, существуют все 3-проблемы: "Грязное чтение","Неповторяемое чтение","Чтение фантомов")
+ * 2. READ COMMTITED (решается проблема "Грязного чтения")
+ * 3. REPEATABLE READ (решается проблема "Неповторяемого чтения")
+ * 4. SERIALIZABLE (решается проблема "Чтения фантомов")
+ * 
+ * (Базы данных. Вводный курс) http://citforum.ck.ua/database/advanced_intro/80.shtml
+ * (Уровни изоляции транзакций в SQL) http://www.osp.ru/pcworld/2009/07/9708191/
+ * (Блокировки и уровни изоляции транзакций InnoDB в MySQL) http://habrahabr.ru/post/238513/
+ * http://shurshun.ru/tranzaktsii-blokirovki-urovni-izoliovannosti-tranzaktsiy-v-mysql/
+ * http://kek.ksu.ru/EOS/BD/SQL_transaction.html
+ * http://www.sql.ru/forum/699859/izuchau-urovni-izolyacii-tranzakciy-v-sql-neponyatnoe-povedenie-read-committed
+ * http://habrahabr.ru/post/135217/
+ * http://www.arbinada.com/main/ru/node/619
+ * (уровни изоляции транзакций hibernate)
  */
 
 public class JPAExample {
