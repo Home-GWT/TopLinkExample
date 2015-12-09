@@ -216,6 +216,11 @@ import javax.persistence.Query;
  * уровень 3 – запрещение фантомов.
  * 
  * Блокировки в среде MS SQL Server, Управление блокировками
+ * 
+ * https://www.youtube.com/watch?v=daA8jAMyo_c
+ * http://sqlcom.ru/
+ * https://www.youtube.com/watch?v=iGsbXLgZMlo
+ * https://www.youtube.com/watch?v=I6WKOVYdgWU
  */
 
 public class JPAExample {
