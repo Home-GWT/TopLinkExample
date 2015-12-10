@@ -221,6 +221,47 @@ import javax.persistence.Query;
  * http://sqlcom.ru/
  * https://www.youtube.com/watch?v=iGsbXLgZMlo
  * https://www.youtube.com/watch?v=I6WKOVYdgWU
+ * 
+ * *******************************************************
+ *                 (Урок 2. Понятия базы данных, отношения, ключи и др) http://www.realcoding.net/article/view/127
+ * (14 вопросов об индексах в SQL Server, которые вы стеснялись задать) http://habrahabr.ru/post/247373/
+ * 
+ * (InnoDB | Внешние ключи и транзакции ** FOREIGN KEY >> REFERENCES: CASCADE|RESTRICT) http://asmodeus.com.ua/library/soft/mysql/innodbpk.html
+ * (Створення або змінення таблиць та індексів за допомогою запиту на визначення даних) https://support.office.com/uk-ua/article/Створення-або-змінення-таблиць-та-індексів-за-допомогою-запиту-на-визначення-даних-d935e129-229b-48d8-9f2d-1d4ee87f418e
+ *                                                          (Использование Constraints) http://www.askdev.ru/question/5235/Использование-Constraints/
+ * 
+ * Ключи и  индексы в базе
+ * -----------------------
+ * В таблице есть колонки которые содержат полезные данные (необходимые для работы). И таких строк (с полезными данными) в таблице очень много...
+ * Поэтому существует проблема поиска данных - при условии что таких колонок много...процесс поиска становиться сложным и трудоемким.
+ * Ключ - это колонка с (легковестными) простыми-уникальными значениями, которые являются как-бы ссылками на строки содержащие полезные объемные-данные
+ * Недостатки "ключа" в том что требуется еще делать дополнительные запросы чтобы вытащить полезные данные со строки...
+ * 
+ * Индекс - это улучшение "ключа" (но это не замена "ключа").
+ * Идея в том что "индекс" применяет сортировку для организации более эффективного поиска-доступа к полезным данным.
+ * А также "индекс" может непосредственно работать с полезными данными (то есть, отпадает необходимость в делать дополнительные запросы...) - это еще более ускоряет работу поиска-доступа
+ * 
+ * (Стратегии работы с транзакциями: Распространенные ошибки) https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2560000002287754030 >> http://www.ibm.com/developerworks/ru/library/j-ts1/
+ * (...) https://github.com/JobTest/vitrinaPredmainTask/blob/jpa_demo/src/main/java/com/jpa/dao/Person2Dao.java
+ * (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
+ *                          http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-map.html
+ *                          http://info.javarush.ru/translation/2014/02/11/9-главных-вопросов-о-Map-в-Java.html
+ *                          http://evilcoderr.blogspot.com/2013/01/hash-table-c.html
+ *                          http://www.cyberguru.ru/dotnet/net-framework/dotnet-structures-analysis2-page7.html
+ * (Шпаргалка Java программиста 1: JPA и Hibernate в вопросах и ответах) http://habrahabr.ru/post/265061/
+ * (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
+ *       (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Joined стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-joined-strategija.html 
+ * 
+ * 
+ * 
+ * (CONSTRAINT используется для создания и удаления ограничений...) https://support.office.com/ru-ru/article/Предложение-CONSTRAINT-e5241593-139a-4eb7-ad30-61026873191e
+ * 
+ * (какие бывают CONSTRAINT)
+ * http://www.flenov.info/books.php?contentid=5
+ * http://www.flenov.info/books.php?contentid=6
+ * http://www.sql.ru/docs/sql/u_sql/ch19.shtml
+ * http://www.sql.ru/docs/mssql/tsql_ref/
+ * https://msdn.microsoft.com/ru-ru/library/bb964742%28v=sql.120%29.aspx
  */
 
 public class JPAExample {
