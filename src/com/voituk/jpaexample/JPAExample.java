@@ -292,11 +292,65 @@ import javax.persistence.Query;
  * (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
  *       (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Joined стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-joined-strategija.html 
  * 
- * 
- * 
  * (какие бывают CONSTRAINT)
  * http://www.sql.ru/docs/mssql/tsql_ref/
  * https://msdn.microsoft.com/ru-ru/library/bb964742%28v=sql.120%29.aspx
+ * 
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ *                               (Стратегии работы с транзакциями: Распространенные ошибки) http://www.ibm.com/developerworks/ru/library/j-ts1/
+ * (Стратегии работы с транзакциями: Oбзор моделей транзакций и стратегий их использования) http://www.ibm.com/developerworks/ru/library/j-ts2/
+ *                                                               (Транзакционные стратегии) http://www.k-press.ru/cs/2009/3/ts/ts.asp
+ *                                                               
+ *                                                     (Alex Tretyakov Blog ** Основы JPA) http://alextretyakov.blogspot.com/2013/06/osnovy-jpa-i-hibernate.html
+ *                              (Alex Tretyakov Blog ** JPA-маппинг сущности и ее свойств) http://alextretyakov.blogspot.com/2013/06/jpa-mapping-suschnosti-i-ee-svojstv.html
+ *             (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
+ *                   (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Joined стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-joined-strategija.html
+ * (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Table-per-concrete-class стратегии) http://alextretyakov.blogspot.com/2014/04/jpa-table-per-concrete-class-strategija.html
+ * 
+ ** (Шпаргалка Java программиста 1: JPA и Hibernate в вопросах и ответах) http://habrahabr.ru/post/265061/
+ * 
+ * Транзакционные стратегии:
+ * 1) стратегия слоя API ................ подходящую для бизнес-приложений с грубо гранулированным слоем API;
+ * 2) стратегия Client Orchestration .... пригодную для бизнес-приложений с более тонко гранулированным слоем API;
+ * 3) стратегия высокого параллелизма ... подходящую для приложений с большим числом одновременно работающих пользователей;
+ * 
+ * Модели транзакций:
+ * – локальная модель ....... управление транзакциями осуществляется менеджером базы данных (а не приложением, то есть, управляем только соединениями но не транзакциями).
+ *                            Эту модель можно использовать для доступа через JDBC к данным и хранимым процедурам.
+ *                            Нельзя использовать локальную модель для выполнения изменений в базе данных через ОРМ (например: Hibernate, TopLink, Java Persistence API (JPA))
+ *                           
+ * – программная модель ..... ответственность за управление транзакциями возлагается на разработчика (мы сами управляем транзакциями которые оказываются изолированными от низкоуровневых соединений с базой данных);
+ *                            Разработчик должен самостоятельно получить ссылку на транзакцию от менеджера транзакций, начать ее, затем подтвердить ее, а если возникло исключение – то откатить ее.
+ *                          
+ * – декларативная модель ... при работе с этой моделью контейнер самостоятельно начинает, подтверждает и откатывает транзакции.
+ *                            Задачей разработчика является только описание поведения транзакций.
+ *                            (это наиболее часто применяемая модель, которая известная как модель транзакций управляемых контейнером "Container Managed Transactions" (CMT)); 
+ * 
+ * (JPA-маппинг сущности и ее свойств)
+ *  JPA-маппинг отношений типов: "один-к-одному","один-ко-многим","многие-к-одному","многие-ко-многим";
+ *  JPA-маппинг иерархии классов с помощью: "Single-table стратегии","Joined стратегии","Table-per-concrete-class стратегии";
+ * 
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ *                               https://github.com/JobTest/vitrinaPredmainTask/blob/jpa_demo/src/main/java/com/jpa/dao/Person2Dao.java
+ *                               https://github.com/JobTest/vitrinaPredmainTask/blob/jpa_demo/src/main/java/com/jpa/dao/Person2Dao2.java
+ *                               https://github.com/JobTest/AddressBookDB/blob/master/src/main/java/com/dao/UserRolesDao.java
+ * (Java Persistence/Persisting) https://en.wikibooks.org/wiki/Java_Persistence/Persisting
+ *   (Java Persistence/Criteria) https://en.wikibooks.org/wiki/Java_Persistence/Criteria
+ *
+ * Для JPA:
+ * *****************
+ *    find (SELECT)
+ * persist (INSERT)
+ *  remove (DELETE)
+ *   merge (UPDATE)
+ * 
+ * Для Hibernate
+ * *****************
+ * get|list (SELECT)
+ *     save (INSERT)
+ *   delete (DELETE)
+ *   update (UPDATE)
+ * 
  */
 
 public class JPAExample {
