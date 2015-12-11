@@ -229,6 +229,10 @@ import javax.persistence.Query;
  * (InnoDB | Внешние ключи и транзакции ** FOREIGN KEY >> REFERENCES: CASCADE|RESTRICT) http://asmodeus.com.ua/library/soft/mysql/innodbpk.html
  * (Створення або змінення таблиць та індексів за допомогою запиту на визначення даних) https://support.office.com/uk-ua/article/Створення-або-змінення-таблиць-та-індексів-за-допомогою-запиту-на-визначення-даних-d935e129-229b-48d8-9f2d-1d4ee87f418e
  *                                                          (Использование Constraints) http://www.askdev.ru/question/5235/Использование-Constraints/
+ *                     (CONSTRAINT используется для создания и удаления ограничений...) https://support.office.com/ru-ru/article/Предложение-CONSTRAINT-e5241593-139a-4eb7-ad30-61026873191e
+ * (19. ПОДДЕРЖКА ЦЕЛОСТНОСТИ ВАШИХ ДАННЫХ) http://www.sql.ru/docs/sql/u_sql/ch19.shtml
+ *                                          http://www.flenov.info/books.php?contentid=5
+ *                                          http://www.flenov.info/books.php?contentid=6
  * 
  * Строки в таблицах базы являются объемными (объектами) элементами и несут в себе информацию и многих полях... поэтому операция сравнения-перебор-поиск нужного элемента-строки являеться очень (трудозатратным) трудоемким действием.
  * Если говорить о маленьких таблицах, такое (трудозатратное) трудоемкое действие сравнения-перебор-поиск нужного элемента-строки, мало влияет на производительность...
@@ -290,12 +294,7 @@ import javax.persistence.Query;
  * 
  * 
  * 
- * (CONSTRAINT используется для создания и удаления ограничений...) https://support.office.com/ru-ru/article/Предложение-CONSTRAINT-e5241593-139a-4eb7-ad30-61026873191e
- * 
  * (какие бывают CONSTRAINT)
- * http://www.flenov.info/books.php?contentid=5
- * http://www.flenov.info/books.php?contentid=6
- * http://www.sql.ru/docs/sql/u_sql/ch19.shtml
  * http://www.sql.ru/docs/mssql/tsql_ref/
  * https://msdn.microsoft.com/ru-ru/library/bb964742%28v=sql.120%29.aspx
  */
