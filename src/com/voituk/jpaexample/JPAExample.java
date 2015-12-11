@@ -351,6 +351,10 @@ import javax.persistence.Query;
  *   delete (DELETE)
  *   update (UPDATE)
  * 
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
+ * 1) Хеширование с цепочками (открытое хеширование);
+ * 2) Хеширование с открытой адресацией (закрытое хеширование);
  */
 
 public class JPAExample {
