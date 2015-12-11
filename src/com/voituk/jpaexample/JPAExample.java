@@ -352,7 +352,7 @@ import javax.persistence.Query;
  *   update (UPDATE)
  * 
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
- * (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
+ ** (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
  * 
  * 1) Хеширование с цепочками (открытое хеширование)
  *    > это список обвернутый в массив.
