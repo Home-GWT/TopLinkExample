@@ -384,6 +384,8 @@ import javax.persistence.Query;
  * 
  * (spring технологии)
  *                                                        (...) http://javabegin.ru/products/spring/
+ *                                                        (...) http://devcolibri.com/3732
+ *                                                        (...) http://mai.pmoproject.ru/pages/viewpage.action?pageId=4424007
  * (Учимся готовить: Spring 3 MVC + Spring Security + Hibernat) http://habrahabr.ru/post/111102/
  * - Добавление класса сущности в модель домена.
  * - Слой доступа к данным.
@@ -392,6 +394,7 @@ import javax.persistence.Query;
  * - Контроллер.
  * - Вид.
  * - Безопасность.
+ * (Spring DATA, Spring REST, Spring MVC, Spring Security)
  */
 
 public class JPAExample {
