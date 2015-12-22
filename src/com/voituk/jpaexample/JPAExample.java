@@ -577,7 +577,17 @@ import javax.persistence.Query;
  *       5. производительность: ленивая инициализация, выборка outer join;
  *       
  *       
- *       
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * (Вопрос из теста ООП в Java) http://www.quizful.net/question/J36mdSfp83wM
+ * 
+ * Исключения - это наследники класса 'Throwable':
+ *              Error (системные ошибки при работе виртуальной Java-машины... - StackOverFlowError, OutOfMemoryError) - такие ошибкиm безсмысленно обрабатывать
+ *              Exception >> 'Checked' (проверяемые исключения - FileNotFoundException, IOException, ModificationException, InterrupdetException) - такие исключения/ошибки НЕвозможно ранее предугадать в программе, поэтому их обизательно нужно обрабатывать
+ *              RuntimeException >> 'Unchecked' (НЕпроверяемые исключения - NullPointerException, IndexOutOfBundlesException, ClassNotFoundException, IllegalTypeException, ClassCastException, ArithmeticException) - такие исключения/ошибки можно и нужно предугадать в программе (их нет нужды обрабатывать)
+ * Обработка исключений выполняется уже в момент вызова И такие методы описываются внутри блока try/catch/finally. А к методам которые могут возбудить исключение применяется сигнатура этого исключенимя (throws...)
+ * Следует помнить что catch-блоков может быть много и при первом-же нахождении catch-блока программа больше НЕделает проверок для других catch-блоков... При построении catch-блоков важно соблюдать иерархию порядка наследования объектов-исключений...
+ * try/finally - если в точке вызова мы нехотим обрабатывать исключение, тогда можем просто передать его (при этом возбуждая внутри блока 'try' этот тип исключения >> new XXXException...)
+ * 
  *       
  *** (Spring / @SessionAttributes("myobject")) http://vmustafayev4en.blogspot.com/2012/10/power-of-springs-modelattribute-and.html
  ***                     (Spring / Controller) https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
