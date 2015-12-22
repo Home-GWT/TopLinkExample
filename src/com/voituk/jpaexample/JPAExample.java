@@ -575,6 +575,15 @@ import javax.persistence.Query;
  *       3. автоматическая генерация primary key;
  *       4. кэш: Session Leve, Query и Second level;
  *       5. производительность: ленивая инициализация, выборка outer join;
+ *       
+ *       
+ *       
+ *       
+ *** (Spring / @SessionAttributes("myobject")) http://vmustafayev4en.blogspot.com/2012/10/power-of-springs-modelattribute-and.html
+ ***                     (Spring / Controller) https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
+ ***                 (Spring / @Transactional) https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task
+ **                                            https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2560000001901539095
+ *   https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2370000006060497655/r=%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA&pos=91&reqid=3487605fa0b4b225ee74c7fa6abe398d&filter=folder:,attaches:no,dates=-
  */
 
 public class JPAExample {
