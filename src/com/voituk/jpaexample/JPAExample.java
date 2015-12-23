@@ -602,13 +602,81 @@ import javax.persistence.Query;
  * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
  * https://github.com/Home-SignUp/Jenkins-SignUp/blob/release-3.0/frontend/src/main/java/com/addrbook/frontend/controller/UserController.java
  * 
- * https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
- * https://spring.io/guides/gs/rest-service/
- * http://spring.io/blog/2009/03/08/rest-in-spring-3-mvc/
- * https://netbeans.org/kb/docs/web/quickstart-webapps-spring_ru.html
- * http://spring-projects.ru/guides/serving-web-content/
- * http://spring-projects.ru/guides/
- * https://spring.io/guides/gs/serving-web-content/
+ ** https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
+ *  https://spring.io/guides/gs/rest-service/
+ *  http://spring.io/blog/2009/03/08/rest-in-spring-3-mvc/
+ ** https://netbeans.org/kb/docs/web/quickstart-webapps-spring_ru.html
+ *  http://spring-projects.ru/guides/lessons/lesson-2/
+ *  http://spring-projects.ru/guides/serving-web-content/
+ *  http://spring-projects.ru/guides/
+ *  https://spring.io/guides/gs/serving-web-content/
+ ** https://www.ibm.com/developerworks/ru/library/wa-restful/
+ ** http://javastudy.ru/spring-mvc/hello-world-example/
+ *  http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
+ *  
+ * 
+ * 
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * > 'Представления' управляются 'контроллером' (контроллером получает запросы к приложению и принимает решение какие представления вернуть)
+ * > 'Контроллер' передает в 'представления' информацию для отображения - такая информация называется 'модель'
+ * > 'Служба' - это бизнес-логика веб-приложения которая размещается вне 'контроллера'
+ * > JSP-страницу называются 'представлениям'
+ *   Сервлет (в котором определены GET/POST-методы) называют 'контролером'
+ *   webapp/WEB-INF/web.xml - дескриптор развертывания, это карта веб-приложения для сервера приложений (чтобы веб-приложение могло работать внутри сервера приложения (веб-контейнера))
+ * > REST (RESTful) - это web-сервис структурированной формы HTTP-запроса
+ * 
+ * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
+ * 
+ * >> Dependency injection (DI) или Inversion of Control (IoC) - описывает ситуацию когда один объект реализует свой функционал через другой объект.
+ * >> Существует два типа DI:
+ *   1. через сэттер;
+ *   2. через конструктор;
+ * >> IoC предоставляет возможность объекту получать ссылки на свои зависимости, это реализуется через lookup-метод. Преимущество IoC в том что эта модель позволяет отделить объекты от реализации механизмов которые он использует.
+ * >> BeanFactory - это реализация паттерна Фабрика для создание бинов.
+ * >> ApplicationContext - (из-за большей функциональности рекомендуется использование вместо BeanFactory) может быть использован для загрузки и связывания бинов.
+ *                        Существует 3 основных реализации:
+ *                        1. ClassPathXmlApplicationContext (получает информацию из xml-файла, находящегося в classpath)
+ *                        2. FileSystemXmlApplicationContext (получает информацию из xml-файла)
+ *                        3. XmlWebApplicationContext (получает информацию из xml-файла за пределами web-приложения)
+ * >> Области видимости (scopes) бинов:
+ *   1. singleton - (по умолчанию) IoC контейнер создает единственный экземпляр бина без сохранения состояния (stateless);
+ *   2. prototype - Spring IoC контейнер создает любое количество экземпляров бина с сохранением состояния (stateful);
+ *   3. request - жизненный цикл экземпляра ограничен единственным HTTP-запросом;
+ *   4. session - жизненный цикл экземпляра ограничен в пределах одной (HTTP) сессией;
+ *   5. global session - жизненный цикл экземпляра ограничен в пределах глобальной (HTTP) сессией;
+ *   6. application - жизненный цикл экземпляра ограничен в пределах ServletContext;
+ * >> Чтобы добавить поддержку Spring в web-приложение нужно указать 'ContextLoaderListener' в web.xml файле.
+ * 
+ * >>> @Controller - в Spring HTTP-запросы обрабатываются 'контроллером'
+ *                   @Controller по умолчанию поддерживает web-сервис RESTful-формат запроса (другая форма аннотации @RestController)
+ * >>> @RequestMapping - слушает/ловит клиентские HTTP-запросы и привязывает к методу-обработчику (@RequestMapping соответствует всем HTTP операциям по умолчанию)
+ *                       @RequestMapping(value="/page/{id}") public ModelAndView main() {...}
+ * >>> method=RequestMethod.GET - определяет/уточняет тип метода для HTTP-запроса (GET,PUT,POST..)
+ *                                @RequestMapping(value="/page/{id}", method=RequestMethod.GET) public ModelAndView main() {...}
+ * >>> produces="application/json" - определяет/уточняет формат данных веб-страницы
+ *                                   @RequestMapping(value="/page/{id}", method=RequestMethod.GET, produces="application/json") public ModelAndView main() {...}
+ *                                   По умолчанию это является гипер-текст
+ * >>> @RequestParam - связывает значение строкового параметра HTTP-запроса с параметром передаваемый в метотод
+ *                     public ModelAndView main(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {...}
+ *                     Значение параметра name добавлено в объект Model и делает его доступным в шаблоне представления
+ * >>> @PathVariable - позволяет вводить из URL переменную пути в качестве параметра
+ *                     @RequestMapping(value="/page/{id}", method=RequestMethod.GET, produces="application/json") public ModelAndView main(@PathVariable String id) {...}
+ * >>> Другие полезные аннотации:
+ *     Обычно внутри метода-обработчика @RequestMapping для модели добавляем содержимое HTTP-ответа И возвращаем ссылку на веб-страницу
+ *     ...Model model){
+ *        model.addAttribute("name", name);
+ *        return "page";
+ *     }
+ *     @RequestHeader - чтобы HTTP-заголовок передать как параметр в метод
+ *     @ResponseBody - чтобы передать объект как содержимое тела HTTP-ответа на веб-страницу
+ *                     public @ResponseBody Employee getEmployeeBy(@RequestParam("name") String name, @RequestHeader("Accept") String accept, @RequestBody String body) {...}
+ *     @Valid - служит для валидации требуемых параметров объекта-модели из содержимого HTTP-ответа 
+ *     @ResponseStatus - чтобы передать статус результата операции в заголовке HTTP-ответа на веб-страницу
+ *     @ExceptionHandler - в случае исключения на @RequestMapping метод-обработчик будет перенаправлен...
+ *                         @ResponseStatus(value = HttpStatus.OK) public @ResponseBody ProductActive getUserUpdateId(@PathVariable("name") String name, @RequestBody @Valid TomcatUsers user) {...}
+ *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
+ * 
+ * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...
  */
 
 public class JPAExample {
