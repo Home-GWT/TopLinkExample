@@ -623,9 +623,22 @@ import javax.persistence.Query;
  * > JSP-страницу называются 'представлениям'
  *   Сервлет (в котором определены GET/POST-методы) называют 'контролером'
  *   webapp/WEB-INF/web.xml - дескриптор развертывания, это карта веб-приложения для сервера приложений (чтобы веб-приложение могло работать внутри сервера приложения (веб-контейнера))
- * > REST (RESTful) - это web-сервис структурированной формы HTTP-запроса
+ * > REST (RESTful) - это web-сервис для построения структурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
  * 
  * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
+ * 
+ * 
+ * 
+ * 
+ * В любом приложении Spring MVC существует (как минимум) 2-контекста Spring:
+ * 1. корневой контекст - для описания бинов приложения (относится к бизнес-логике)
+ * 2. контекст сервлета-диспетчера Spring MVC - используется для бинов (относится только к Web MVC-части приложения, в котором при этом наследуются и могут быть переопределены все бины корневого контекста)
+ * >> Чтобы добавить поддержку Spring в web-приложение нужно указать 'ContextLoaderListener' в web.xml файле.
+ * 
+ * - Model (Модель) - объекты домена которые обрабатываются слоем бизес-логики
+ * - View (Представление) - отображения данных
+ * - Controller (Контроллер) - взаимодействие сослужбами бизнес-логики и передает в 'представления' информацию Model для отображения
+ * 
  * 
  * >> Dependency injection (DI) или Inversion of Control (IoC) - описывает ситуацию когда один объект реализует свой функционал через другой объект.
  * >> Существует два типа DI:
@@ -645,7 +658,6 @@ import javax.persistence.Query;
  *   4. session - жизненный цикл экземпляра ограничен в пределах одной (HTTP) сессией;
  *   5. global session - жизненный цикл экземпляра ограничен в пределах глобальной (HTTP) сессией;
  *   6. application - жизненный цикл экземпляра ограничен в пределах ServletContext;
- * >> Чтобы добавить поддержку Spring в web-приложение нужно указать 'ContextLoaderListener' в web.xml файле.
  * 
  * >>> @Controller - в Spring HTTP-запросы обрабатываются 'контроллером'
  *                   @Controller по умолчанию поддерживает web-сервис RESTful-формат запроса (другая форма аннотации @RestController)
@@ -677,6 +689,12 @@ import javax.persistence.Query;
  *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
  * 
  * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...
+ *
+ * 
+ **                                       (REST на примере Spring MVC) http://devcolibri.com/3732
+ **                                          (Spring MVC шаг за шагом) http://mai.pmoproject.ru/pages/viewpage.action?pageId=4424007#SpringMVCшагзашагом-Шаг3:ДобавлениедиспетчераSpringMVC
+ ** (Конфигурация приложения Spring MVC (почти) без использования XML) http://www.shafranov.net/blog/2013/05/16/konfighuratsiia-prilozhieniia-spring-mvc-pochti-biez-ispolzovaniia-xml
+ **                                   (Spring MVC hello world example) http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/
  */
 
 public class JPAExample {
