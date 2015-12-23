@@ -627,30 +627,70 @@ import javax.persistence.Query;
  * 
  * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
  * 
- * 
- * 
- * 
- * В любом приложении Spring MVC существует (как минимум) 2-контекста Spring:
- * 1. корневой контекст - для описания бинов приложения (относится к бизнес-логике)
- * 2. контекст сервлета-диспетчера Spring MVC - используется для бинов (относится только к Web MVC-части приложения, в котором при этом наследуются и могут быть переопределены все бины корневого контекста)
- * >> Чтобы добавить поддержку Spring в web-приложение нужно указать 'ContextLoaderListener' в web.xml файле.
- * 
- * - Model (Модель) - объекты домена которые обрабатываются слоем бизес-логики
- * - View (Представление) - отображения данных
- * - Controller (Контроллер) - взаимодействие сослужбами бизнес-логики и передает в 'представления' информацию Model для отображения
- * 
- * 
- * >> Dependency injection (DI) или Inversion of Control (IoC) - описывает ситуацию когда один объект реализует свой функционал через другой объект.
- * >> Существует два типа DI:
+ * - Dependency injection (DI) или Inversion of Control (IoC) - описывает ситуацию когда один объект реализует свой функционал через другой объект.
+ * - Существует два типа DI:
  *   1. через сэттер;
  *   2. через конструктор;
- * >> IoC предоставляет возможность объекту получать ссылки на свои зависимости, это реализуется через lookup-метод. Преимущество IoC в том что эта модель позволяет отделить объекты от реализации механизмов которые он использует.
- * >> BeanFactory - это реализация паттерна Фабрика для создание бинов.
- * >> ApplicationContext - (из-за большей функциональности рекомендуется использование вместо BeanFactory) может быть использован для загрузки и связывания бинов.
- *                        Существует 3 основных реализации:
- *                        1. ClassPathXmlApplicationContext (получает информацию из xml-файла, находящегося в classpath)
- *                        2. FileSystemXmlApplicationContext (получает информацию из xml-файла)
- *                        3. XmlWebApplicationContext (получает информацию из xml-файла за пределами web-приложения)
+ * - IoC предоставляет возможность объекту получать ссылки на свои зависимости, это реализуется через lookup-метод. Преимущество IoC в том что эта модель позволяет отделить объекты от реализации механизмов которые он использует.
+ * 
+ * **********************************************************************[ Spring MVC ]**********************************************************************
+ * 
+ * ***********[ Сервис-слой приложения(Содержит интерфейсы, в которых описано ЧТО ДЕЛАТЬ С ДАННЫМИ или, другими словами, бизнес логика приложения ]**********
+ * ********************[ Доменный слой (Здесь находятся POJO-классы, такие как User - это то, ЧЕМ приложение оперирует в бизнес логике) ]********************
+ * 
+ * В приложении Spring-MVC существует два контекста Spring:
+ * 1. корневой контекст - для описания бинов приложения (имеющих по большей части отношение к бизнес-логике)
+ * 2. контекст сервлета-диспетчера Spring MVC - для бинов относящихся только к Web MVC-части приложения (но в котором могут быть переопределены бины корневого контекста)
+ * 
+ * Есть два способа загрузки и регистрации бинов в Spring:
+ * > Используя конфигурацию в XML-стиле (через дескриптор развертывания web.xml)
+ *   ----------------------------------
+ *   Как и раньше, при конфигурировании при помощи дескриптора развертывания приложения 'web.xml':
+ *   - мы сообщаем приложению о существовании корневого контекста через объявление листенера типа 'ContextLoaderListener'
+ *   - Контекст Spring-MVC передается в качестве параметра при объявлении сервлета-диспетчера 'DispatcherServlet'
+ *   <web-app ...>
+ *       <context-param>
+ *           <param-name>contextConfigLocation</param-name>
+ *           <param-value>/WEB-INF/applicationContext.xml</param-value>
+ *       </context-param>
+ *       <listener>
+ *           <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ *       </listener>
+ *       <servlet>
+ *           <servlet-name>dispatcher</servlet-name>
+ *           <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ *           <load-on-startup>2</load-on-startup>
+ *       </servlet>
+ *   </web-app>
+ * 
+ *   'applicationContext.xml' - туда можно будет добавлять настройки для Hibernate, JPA и т.д.
+ *   'dispatcher-servlet.xml' - содержит описания бинов (Java-файлов) которые будет использовать DispatcherServlet
+ *                              <context:component-scan base-package="org.app"/> - указывает Spring где нужно искать бины контроллеров и сервисов (@Controller и @Service).
+ * 
+ * > Используя конфигурацию в JAVA-стиле
+ *   -----------------------------------
+ *   Конфигурирование Spring:
+ *   @Configuration - говорим что это конфигурация
+ *   @EnableWebMvc - включаем MVC
+ *   @ComponentScan("com...") - указываем где искать контроллеры и остальные компоненты
+ *   @Bean
+ *   public UrlBasedViewResolver setupViewResolver(){
+ *       UrlBasedViewResolver resolver
+ *                            resolver.setPrefix("/pages/") - указываем где будут лежать наши веб-страницы
+ *                            resolver.setSuffix(".jsp") - формат представления который мы будем использовать
+ *   }
+ * 
+ *   Добавления бинов в контекст Spring с помощью метода:
+ *   AnnotationConfigWebApplicationContext ctx - зарегистрировать эту конфигурацию в Spring Context
+ *                                         ctx.register(...class) - регистрируем конфигурацию созданую высше
+ *   servletContext.addListener(new ContextLoaderListener(ctx)) - добавляем в контекст слушателя с нашей конфигурацией
+ *   ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx)) - настраиваем маппинг Dispatcher Servlet-а:
+ *                               servlet.addMapping("/page");
+ *                               servlet.setLoadOnStartup(1);
+ * 
+ * **********************************************************************[ Spring REST ]**********************************************************************
+ * *****************[ Веб-слой приложения - классы-контроллеры описывающие КАК и КОГДА приложение взаимодействует с пользователем через веб ]*****************
+ * 
  * >> Области видимости (scopes) бинов:
  *   1. singleton - (по умолчанию) IoC контейнер создает единственный экземпляр бина без сохранения состояния (stateless);
  *   2. prototype - Spring IoC контейнер создает любое количество экземпляров бина с сохранением состояния (stateful);
@@ -689,8 +729,27 @@ import javax.persistence.Query;
  *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
  * 
  * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...
+ * >>>> @Scope("singleton") -
+ * >>>> @PostConstruct - 
+ * >>>> @PreDestroy -
  *
  * 
+ * >>>>> BeanFactory - это реализация паттерна Фабрика для создание бинов.
+ * >>>>> ApplicationContext - (из-за большей функциональности рекомендуется использование вместо BeanFactory) может быть использован для загрузки и связывания бинов.
+ *                            Существует 3 основных реализации:
+ *                            1. ClassPathXmlApplicationContext (получает информацию из xml-файла, находящегося в classpath)
+ *                            2. FileSystemXmlApplicationContext (получает информацию из xml-файла)
+ *                            3. XmlWebApplicationContext (получает информацию из xml-файла за пределами web-приложения)
+ *                        
+ * >>>>> Для проверки работы приложения можно в 'public static void main(String[] args) {...}
+ *       ApplicationContext context = new FileSystemXmlApplicationContext(new String[] {"/web/WEB-INF/dispatcher-servlet.xml"});
+ * 
+ * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
+ *
+ * 
+ *** (Конфигурация приложения Spring MVC (почти) без использования XML) http://www.shafranov.net/blog/2013/05/16/konfighuratsiia-prilozhieniia-spring-mvc-pochti-biez-ispolzovaniia-xml
+ ***                                       (REST на примере Spring MVC) http://devcolibri.com/3732
+ ***                                                 (Spring Framework) https://ru.wikibooks.org/wiki/Spring_Framework
  **                                       (REST на примере Spring MVC) http://devcolibri.com/3732
  **                                          (Spring MVC шаг за шагом) http://mai.pmoproject.ru/pages/viewpage.action?pageId=4424007#SpringMVCшагзашагом-Шаг3:ДобавлениедиспетчераSpringMVC
  ** (Конфигурация приложения Spring MVC (почти) без использования XML) http://www.shafranov.net/blog/2013/05/16/konfighuratsiia-prilozhieniia-spring-mvc-pochti-biez-ispolzovaniia-xml
