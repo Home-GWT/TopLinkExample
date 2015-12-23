@@ -635,6 +635,7 @@ import javax.persistence.Query;
  * 
  * **********************************************************************[ Spring MVC ]**********************************************************************
  * 
+ * **************************[ dao Слой доступа к данным - в нём будем размещать Data Access Objects – объекты доступа к данным ]****************************
  * ***********[ Сервис-слой приложения(Содержит интерфейсы, в которых описано ЧТО ДЕЛАТЬ С ДАННЫМИ или, другими словами, бизнес логика приложения ]**********
  * ********************[ Доменный слой (Здесь находятся POJO-классы, такие как User - это то, ЧЕМ приложение оперирует в бизнес логике) ]********************
  * 
@@ -699,7 +700,7 @@ import javax.persistence.Query;
  *   5. global session - жизненный цикл экземпляра ограничен в пределах глобальной (HTTP) сессией;
  *   6. application - жизненный цикл экземпляра ограничен в пределах ServletContext;
  * 
- * >>> @Controller - в Spring HTTP-запросы обрабатываются 'контроллером'
+ * >>> @Controller - в Spring HTTP-запросы обрабатываются 'контроллером' = говорит component-scan что нужно создать спринг-бин из этого класса (поэтому рекомендуется оставлять в нем конструктор по-умолчанию без параметров)
  *                   @Controller по умолчанию поддерживает web-сервис RESTful-формат запроса (другая форма аннотации @RestController)
  * >>> @RequestMapping - слушает/ловит клиентские HTTP-запросы и привязывает к методу-обработчику (@RequestMapping соответствует всем HTTP операциям по умолчанию)
  *                       @RequestMapping(value="/page/{id}") public ModelAndView main() {...}
@@ -728,12 +729,21 @@ import javax.persistence.Query;
  *                         @ResponseStatus(value = HttpStatus.OK) public @ResponseBody ProductActive getUserUpdateId(@PathVariable("name") String name, @RequestBody @Valid TomcatUsers user) {...}
  *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
  * 
- * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...
+ * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
  * >>>> @Scope("singleton") -
  * >>>> @PostConstruct - 
  * >>>> @PreDestroy -
- *
- * 
+ * >>>> @Configuration — собственно эта аннотация и говорит о том, что данный класс является Java Configuration;
+ * >>>> @EnableWebMvc — эта аннотация разрешает нашему проекту использовать MVC;
+ * >>>> @ComponentScan(«com.devcolibri.common») — аналогично тому component-scan который был в mvc-dispatcher-servlet.xml, говорит, где искать компоненты проекта.
+ * >>>> @Bean — указывает на то что это инициализация бина, и он будет создан с помощью DI.
+ * >>>> Конфигурация:
+ *           WebMvcConfigurerAdapter — унаследовавшись от этого класса мы получим возможность сконфигурировать ResourceLocations.
+ *           addResourceHandlers(ResourceHandlerRegistry registry) — переопределив данный метод мы сможем указать где будут лежать ресурсы нашего проекта, такие как css, image, js и другие.
+ *           InternalResourceViewResolver — аналогичная конфигурация с mvc-dispatcher-servlet.xml.
+ * >>>> @Repository - аннотация показывает, что класс функционирует как репозиторий и требует наличия прозрачной трансляции исключений. Преимуществом трансляции исключений является то, что слой сервиса будет иметь дело с общей иерархией исключений от Спринга (DataAccessException) вне зависимости от используемых технологий доступа к данным в DAO слое.
+ * >>>> @Transactional - Перед исполнением метода помеченного данной аннотацией начинается транзакция, после выполнения метода транзакция коммитится, при выбрасывании RuntimeException откатывается.
+ * >>>> @Service - используем данную аннотацию, чтобы объявить, что этот класс представляет сервис – компонент сервис-слоя. Сервис является подтипом класса @Component. Использование данной аннотации позволит искать бины-сервисы автоматически (смотрите далее в root-context.xml)
  * >>>>> BeanFactory - это реализация паттерна Фабрика для создание бинов.
  * >>>>> ApplicationContext - (из-за большей функциональности рекомендуется использование вместо BeanFactory) может быть использован для загрузки и связывания бинов.
  *                            Существует 3 основных реализации:
@@ -754,6 +764,30 @@ import javax.persistence.Query;
  **                                          (Spring MVC шаг за шагом) http://mai.pmoproject.ru/pages/viewpage.action?pageId=4424007#SpringMVCшагзашагом-Шаг3:ДобавлениедиспетчераSpringMVC
  ** (Конфигурация приложения Spring MVC (почти) без использования XML) http://www.shafranov.net/blog/2013/05/16/konfighuratsiia-prilozhieniia-spring-mvc-pochti-biez-ispolzovaniia-xml
  **                                   (Spring MVC hello world example) http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/
+ * https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
+ * https://spring.io/guides/gs/rest-service/
+ * http://spring.io/blog/2009/03/08/rest-in-spring-3-mvc/
+ * http://habrahabr.ru/post/86433/
+ ** (Spring MVC — JavaConfig либо конфигурация проекта без XML файлов) http://habrahabr.ru/post/226663/
+ * http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/
+ * http://www.tutorialspoint.com/spring/spring_mvc_hello_world_example.htm
+ * http://mai.pmoproject.ru/pages/viewpage.action?pageId=4424007#SpringMVCшагзашагом-Шаг3:ДобавлениедиспетчераSpringMVC
+ * https://netbeans.org/kb/docs/web/quickstart-webapps-spring_ru.html
+ * http://www.spring-source.ru/articles.php?type=manual&theme=articles&docs=article_06
+ ** (Spring + Web MVC: dispatcher-servlet.xml vs. applicationContext.xml (plus shared security)) http://stackoverflow.com/questions/16458754/spring-web-mvc-dispatcher-servlet-xml-vs-applicationcontext-xml-plus-shared
+ ** (Учимся готовить: Spring 3 MVC + Spring Security + Hibernate) http://habrahabr.ru/post/111102/
+ *
+ * (Spring Security)
+ * http://devcolibri.com/3810
+ * http://devcolibri.com/120
+ ** (Краткий обзор Spring Security) http://habrahabr.ru/post/203318/
+ * (Spring Security: Защити свое приложение) http://www.springbyexample.com.ua/2012/10/spring-security.html
+ * https://www.ibm.com/developerworks/ru/library/j-acegi1/
+ * http://xpinjection.com/trainings/spring-3/
+ * http://javatalks.ru/topics/31659
+ * (Spring Security/Ключевые сервисы Spring Security) https://ru.wikibooks.org/wiki/Spring_Security/Ключевые_сервисы_Spring_Security
+ * (Spring Security/Технический обзор Spring Security) https://ru.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
+ *** (Обзор способов и протоколов аутентификации в веб-приложениях) http://habrahabr.ru/company/dataart/blog/262817/
  */
 
 public class JPAExample {
