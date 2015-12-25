@@ -303,7 +303,8 @@ import javax.persistence.Query;
  *                                                               
  *                                                     (Alex Tretyakov Blog ** Основы JPA) http://alextretyakov.blogspot.com/2013/06/osnovy-jpa-i-hibernate.html
  *                              (Alex Tretyakov Blog ** JPA-маппинг сущности и ее свойств) http://alextretyakov.blogspot.com/2013/06/jpa-mapping-suschnosti-i-ee-svojstv.html
- *             (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
+ *             (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помо                       
+ *щью Single-table стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-mapping-ierarhii-klassov-s-pomoshju.html
  *                   (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Joined стратегии) http://alextretyakov.blogspot.com/2013/11/jpa-joined-strategija.html
  * (Alex Tretyakov Blog ** JPA-маппинг иерархии классов с помощью Table-per-concrete-class стратегии) http://alextretyakov.blogspot.com/2014/04/jpa-table-per-concrete-class-strategija.html
  * 
@@ -340,6 +341,7 @@ import javax.persistence.Query;
  *                               https://github.com/JobTest/AddressBookDB/blob/master/src/main/java/com/dao/UserRolesDao.java
  * (Java Persistence/Persisting) https://en.wikibooks.org/wiki/Java_Persistence/Persisting
  *   (Java Persistence/Criteria) https://en.wikibooks.org/wiki/Java_Persistence/Criteria
+ *                       
  *
  * Для JPA:
  * *****************
@@ -393,13 +395,13 @@ import javax.persistence.Query;
  *                            может занимать лишний размер рессурса (если ранее непредвиден размер списка) что является неэффективным к применению
  *                            в случае превышения исходного размера списка тратиться большое время на реорганизацию списка...
  *                            добавление нового элемента в середину списка выполняется за большое время
- *    Отличие HashMap <> Hashtable:
+ *    Отличие HashMap <> HashTable:
  *    - 'Hashtable' является синхронизированным
  *    - 'HashMap' может иметь 'NULL'-ключи
  *    ThreeMap - можна использовать сортировку.
  *               Для этого нужно переопределить интерфейс Comparable|Comparator (через метод compareTo)
  *    
- *    
+ *     join fetch c.hobbies h where c.id = :id
  *    HashMap
  *            Достоинства: хранит ключи в хеш-таблице, из-за чего имеет наиболее высокую производительность
  *                         может содержать как null-ключи, так и null-значения
@@ -415,6 +417,11 @@ import javax.persistence.Query;
  *                  Достоинства: отличается от HashMap тем, что хранит ключи в порядке их вставки в Map
  *                               немного медленнее HashMap
  *                               может содержать как null-ключи, так и null-значения
+ *    
+ *    HashTable - синхронизированный
+ *    HashMap - может работать с NULL
+ *    TreeMap - сортирует порядок элементов (через Comparable)
+ *    LinkedHashMap - сохраняет элементов (историю добавления) 
  *    
  *    (Время против памяти на примере хеш-таблиц на Java) http://habrahabr.ru/post/230283/
  *    (Коллекции (Collections) в Java. Map) http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-map.html
@@ -475,7 +482,7 @@ import javax.persistence.Query;
 *   (Hibernate 3: введение и написания Hello world приложения) http://www.quizful.net/post/Hibernate-3-introduction-and-writing-hello-world-application
 *   (Hibernate Tutorial) https://javatalks.ru/topics/11004
 *
- * ***************************************************************************************************
+ * ********************************************************** join fetch c.hobbies h where c.id = :id*****************************************
  * >     (Загрузка загрузка файла-конфигурации и настройка среды) объекты сессии могут находиться в трёх состояниях: Transient,Persistent,Detached
  * >>    (Entity, Embeddable, Mapped Superclass) четыре статуса жизненного цикла Entity: new,managed,detached,removed
  * >>>   (JPA-маппинг сущности и ее свойств) типы связей между Entity, fetch-стратегии загрузки объектов, стратегии наследования мапинга в JPA: Single-table, Joined, Table per concrete, Transactional
@@ -629,15 +636,18 @@ import javax.persistence.Query;
  *       1. MERGE - включает определение представления в использующийся оператор SELECT (заменяет имя представления на имя таблицы);
  *       2. TEMPTABLE - заносит содержимое представления во временную таблицу, над которой затем выполняется оператор обращенный к представлению;
  *       
+ *       Схема (Shema) - это есть структура данных (таблицы базы данных, базы данных) которая может быть наследоваться и на которую можно выдавать ролевые права для пользования клиентам
+ *                       к примеру клиент создал какую-нибудь таблицу, добавл в нее данные и отдал ее в работу. А потом этот клиент уйдет и захочет удалить все свои базы над которыми он работал... - так можно потерять данные
+ *       
  *       Mapping - сопоставление-проецирование Java-классов с таблицами Базы Данных, возможность по организации отношения между классами «один-ко-многим» и «многие-ко-многим»...
  *       Диалект SQL - поддерживает базовые запросы которые поддерживаются всеми типами баз:
  *                     CREATE,ALTER,DROP  GRANT  SELECT,INSERT,UPDATE,DELETE  COMMIT,ROLLBACK,SAVEPOINT
  *                     Преимущества: Независимость от конкретной СУБД, Наличие стандартов, Декларативность
  *                     Недостатки: Сложность, Отступления от стандартов
  *       Диалект JPQL - вместо декларативных команд испоьзуются классы, здесь используются именованные параметры, и полиморфизм
- *                      Query query = entitymanager.createQuery("SELECT a FROM Author a ORDER BY a.firstName, a.lastName")
+ *                      Query query = entitymanager.createQuery("SELECT DISTINCT a FROM Author a ORDER BY a.firstName, a.lastName")
  *                      Query query = entitymanager.createQuery("SELECT DISTINCT a FROM Author a INNER JOIN a.books b WHERE b.publisher.name = 'XYZ Press'")
- *                      Query query = entitymanager.createQuery("SELECT a FROM Author a WHERE LOWER(a.lastName) = :lastName")
+ *                      Query query = entitymanager.createQuery("SELECT DISTINCT a FROM Author a WHERE LOWER(a.lastName) = :lastName")
  *       JPA Criteria API:
  *                         CriteriaQuery<Object> select = criteriaQuery.select(from);
  *                                               select.orderBy(criteriaBuilder.asc(from.get("ename")));
@@ -651,7 +661,12 @@ import javax.persistence.Query;
  *       3. OPTIMISTIC_FORCE_INCREMENT (или синоним WRITE, оставшийся от JPA 1) - оптимистическая блокировка с принудительным увеличением поля версионности,
  *       4. PESSIMISTIC_READ - пессимистичная блокировка на чтение,
  *       5. PESSIMISTIC_WRITE - пессимистичная блокировка на запись (и чтение),
- *       6. PESSIMISTIC_FORCE_INCREMENT - пессимистичная блокировка на запись (и чтение) с принудительным увеличением поля версионности,
+ *       6. PESSIMISTIC_FORCE_INCREMENT - пессимистичная блокировка на запись (и чтение) с принудительным увеличением поля версионности
+ *
+ *       Небазовые аннотации Entity:
+ *       @NamedQueries({..,..,..,..})
+ *       @NamedQuery
+ *       @NamedQuery(name = "ContactEntity.findById", query = "select distinct c from ContactEntity c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id")
  * 
  *       (jpql примеры) https://ru.wikipedia.org/wiki/Java_Persistence_Query_Language
  *                      https://ru.wikipedia.org/wiki/Hibernate_(библиотека)
@@ -664,6 +679,11 @@ import javax.persistence.Query;
  *       (Вопрос 39. Какие шесть видов блокировок (lock) описаны в спецификации JPA) http://habrahabr.ru/post/265061/
  *       (Hibernate 3: введение и написания Hello world приложения) http://www.quizful.net/post/Hibernate-3-introduction-and-writing-hello-world-application
  *       (Вопрос 39. Какие шесть видов блокировок (lock) описаны в спецификации JPA (или какие есть значения у enum LockModeType в JPA)?) http://habrahabr.ru/post/265061/
+ *       (jpa jpql примеры)
+ **                         http://javastudy.ru/spring-data-jpa/jpa-insert-update-delete/
+ **                         http://javastudy.ru/spring-data-jpa/jpa-hello-world-2/
+ *                          http://forum.codenet.ru/q48397/Java+Persistence+Query+Language(JPQL)+%26%26+NetBeans+Database+Application
+ **                         http://docs.oracle.com/javaee/5/tutorial/doc/bnbtl.html
  *       ?????????????????????????????????????????????????????????
  *       
  *       
