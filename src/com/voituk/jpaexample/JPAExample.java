@@ -398,6 +398,27 @@ import javax.persistence.Query;
  *    - 'HashMap' может иметь 'NULL'-ключи
  *    ThreeMap - можна использовать сортировку.
  *               Для этого нужно переопределить интерфейс Comparable|Comparator (через метод compareTo)
+ *    
+ *    
+ *    HashMap
+ *            Достоинства: хранит ключи в хеш-таблице, из-за чего имеет наиболее высокую производительность
+ *                         может содержать как null-ключи, так и null-значения
+ *            Недостатки: не гарантирует порядок элементов
+ *            
+ *    TreeMap - сортироваться элементы будут либо в зависимости от реализации интерфейса Comparable, либо используя объект Comparator
+ *            Достоинства: хранит ключи в отсортированном порядке
+ *                         может содержать null-значения
+ *            Недостатки: работает медленнее чем HashMap
+ *                        не может содержать null-ключи
+ *    
+ *    LinkedHashMap
+ *                  Достоинства: отличается от HashMap тем, что хранит ключи в порядке их вставки в Map
+ *                               немного медленнее HashMap
+ *                               может содержать как null-ключи, так и null-значения
+ *    
+ *    (Время против памяти на примере хеш-таблиц на Java) http://habrahabr.ru/post/230283/
+ *    (Коллекции (Collections) в Java. Map) http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-map.html
+ *    (9 главных вопросов о Map в Java) http://info.javarush.ru/translation/2014/02/11/9-главных-вопросов-о-Map-в-Java.html
  *    ?????????????????????????????????????????????????????????
  * 2) Хеширование с открытой адресацией (ЗАКРЫТОЕ ХЕШИРОВАНИЕ)
  *    > здесь имеем просто массив.
@@ -515,7 +536,7 @@ import javax.persistence.Query;
  *    5. entity классы; 
  *    6. embeddable классы
  *    7. коллекции;
- * >> Можно использовать типы данных входящих в первичный ключ Entity:
+ * >> Можно использовать типы данных входящих в первичный ключ Entity:Comparable
  *    1. примитивные типы и их обертки Java;
  *    2. строки;
  *    3. BigDecimal и BigInteger;
@@ -598,6 +619,52 @@ import javax.persistence.Query;
  *       3. автоматическая генерация primary key;
  *       4. кэш: Session Leve, Query и Second level;
  *       5. производительность: ленивая инициализация, выборка outer join;
+ *       ?????????????????????????????????????????????????????????
+ *       Представление (VIEW) - это объект базы данных являющийся результатом выполнения запроса к базе данных с помощью оператора SELECT
+ *                              Преимущества использования представлений:
+ *                              - дает возможность гибкой настройки прав доступа к данным за счет того, что права даются на представление (а не на таблицу);
+ *                              - позволяет разделить логику хранения данных и программного обеспечения (можно менять структуру данных не затрагивая программный код, нужно лишь создать представления аналогичные таблицам);
+ *                              - удобство в использовании за счет автоматического выполнения действий (доступ к определенной части строк, столбцов, получение данных из нескольких таблиц и их преобразование с помощью различных функций);
+ *       Существует два алгоритма в MySQL при обращении к представлению:
+ *       1. MERGE - включает определение представления в использующийся оператор SELECT (заменяет имя представления на имя таблицы);
+ *       2. TEMPTABLE - заносит содержимое представления во временную таблицу, над которой затем выполняется оператор обращенный к представлению;
+ *       
+ *       Mapping - сопоставление-проецирование Java-классов с таблицами Базы Данных, возможность по организации отношения между классами «один-ко-многим» и «многие-ко-многим»...
+ *       Диалект SQL - поддерживает базовые запросы которые поддерживаются всеми типами баз:
+ *                     CREATE,ALTER,DROP  GRANT  SELECT,INSERT,UPDATE,DELETE  COMMIT,ROLLBACK,SAVEPOINT
+ *                     Преимущества: Независимость от конкретной СУБД, Наличие стандартов, Декларативность
+ *                     Недостатки: Сложность, Отступления от стандартов
+ *       Диалект JPQL - вместо декларативных команд испоьзуются классы, здесь используются именованные параметры, и полиморфизм
+ *                      Query query = entitymanager.createQuery("SELECT a FROM Author a ORDER BY a.firstName, a.lastName")
+ *                      Query query = entitymanager.createQuery("SELECT DISTINCT a FROM Author a INNER JOIN a.books b WHERE b.publisher.name = 'XYZ Press'")
+ *                      Query query = entitymanager.createQuery("SELECT a FROM Author a WHERE LOWER(a.lastName) = :lastName")
+ *       JPA Criteria API:
+ *                         CriteriaQuery<Object> select = criteriaQuery.select(from);
+ *                                               select.orderBy(criteriaBuilder.asc(from.get("ename")));
+ *                         TypedQuery<Object> typedQuery = entitymanager.createQuery(select);
+ *                         List<Object>       resultlist = typedQuery1.getResultList();
+ *       
+ *       шесть видов блокировок (lock) описаны в спецификации JPA:
+ *       @org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL)
+ *       1. NONE - без блокировки
+ *       2. OPTIMISTIC (или синоним READ, оставшийся от JPA 1) - оптимистическая блокировка,
+ *       3. OPTIMISTIC_FORCE_INCREMENT (или синоним WRITE, оставшийся от JPA 1) - оптимистическая блокировка с принудительным увеличением поля версионности,
+ *       4. PESSIMISTIC_READ - пессимистичная блокировка на чтение,
+ *       5. PESSIMISTIC_WRITE - пессимистичная блокировка на запись (и чтение),
+ *       6. PESSIMISTIC_FORCE_INCREMENT - пессимистичная блокировка на запись (и чтение) с принудительным увеличением поля версионности,
+ * 
+ *       (jpql примеры) https://ru.wikipedia.org/wiki/Java_Persistence_Query_Language
+ *                      https://ru.wikipedia.org/wiki/Hibernate_(библиотека)
+ *                      https://ru.wikipedia.org/wiki/SQL
+ *                      https://ru.wikipedia.org/wiki/Java_Persistence_Query_Language
+ *                      http://www.tutorialspoint.com/ru/jpa/jpa_jpql.htm
+ *                      http://javatalks.ru/topics/37094
+ *       (JPA - Критерии API) http://www.tutorialspoint.com/ru/jpa/jpa_criteria_api.htm
+ *       (Представления (VIEW) в MySQL) http://habrahabr.ru/post/47031/
+ *       (Вопрос 39. Какие шесть видов блокировок (lock) описаны в спецификации JPA) http://habrahabr.ru/post/265061/
+ *       (Hibernate 3: введение и написания Hello world приложения) http://www.quizful.net/post/Hibernate-3-introduction-and-writing-hello-world-application
+ *       (Вопрос 39. Какие шесть видов блокировок (lock) описаны в спецификации JPA (или какие есть значения у enum LockModeType в JPA)?) http://habrahabr.ru/post/265061/
+ *       ?????????????????????????????????????????????????????????
  *       
  *       
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -621,7 +688,7 @@ import javax.persistence.Query;
  ***                 (Spring / @Transactional) https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task
  **                                            https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2560000001901539095
  *   https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2370000006060497655/r=%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA&pos=91&reqid=3487605fa0b4b225ee74c7fa6abe398d&filter=folder:,attaches:no,dates=-
- * ***************************************************************************************************************************************************************************
+ * ********************************************************?????????????????????????????????????????????????????????*******************************************************************************************************************
  * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
  * https://github.com/Home-SignUp/Jenkins-SignUp/blob/release-3.0/frontend/src/main/java/com/addrbook/frontend/controller/UserController.java
  * 
@@ -646,7 +713,7 @@ import javax.persistence.Query;
  * > JSP-страницу называются 'представлениям'
  *   Сервлет (в котором определены GET/POST-методы) называют 'контролером'
  *   webapp/WEB-INF/web.xml - дескриптор развертывания, это карта веб-приложения для сервера приложений (чтобы веб-приложение могло работать внутри сервера приложения (веб-контейнера))
- * > REST (RESTful) - это web-сервис для построения структурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
+ * > REST (RESTful) - это web-сервис для построения стру?????????????????????????????????????????????????????????ктурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
  * 
  * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
  * 
@@ -779,6 +846,10 @@ import javax.persistence.Query;
  * 
  * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
  *
+ * ?????????????????????????????????????????????????????????
+ * (Использование Spring для работы с базой данных через JPA) https://github.com/wizardjedi/my-spring-learning/wiki/Работа-с-базами-данных-на-основе-jpa
+ * ?????????????????????????????????????????????????????????
+ *
  * 
  *** (Конфигурация приложения Spring MVC (почти) без использования XML) http://www.shafranov.net/blog/2013/05/16/konfighuratsiia-prilozhieniia-spring-mvc-pochti-biez-ispolzovaniia-xml
  ***                                       (REST на примере Spring MVC) http://devcolibri.com/3732
@@ -811,6 +882,11 @@ import javax.persistence.Query;
  * (Spring Security/Ключевые сервисы Spring Security) https://ru.wikibooks.org/wiki/Spring_Security/Ключевые_сервисы_Spring_Security
  * (Spring Security/Технический обзор Spring Security) https://ru.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
  *** (Обзор способов и протоколов аутентификации в веб-приложениях) http://habrahabr.ru/company/dataart/blog/262817/
+ * https://github.com/Home-SignUp/Jenkins-SignUp/blob/release-3.0/gui/src/main/webapp/WEB-INF/web.xml
+ * https://github.com/JobTest/vitrinaPredmainTask/blob/miratex-master/Task/src/main/java/com/vitrina/controller/MainApp.java
+ * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/main/resources
+ * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
+ * https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java
  */
 
 public class JPAExample {
