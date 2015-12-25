@@ -417,12 +417,12 @@ import javax.persistence.Query;
  *                  Достоинства: отличается от HashMap тем, что хранит ключи в порядке их вставки в Map
  *                               немного медленнее HashMap
  *                               может содержать как null-ключи, так и null-значения
- *    
+ *    ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *    HashTable - синхронизированный
  *    HashMap - может работать с NULL
  *    TreeMap - сортирует порядок элементов (через Comparable)
  *    LinkedHashMap - сохраняет элементов (историю добавления) 
- *    
+ *    ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *    (Время против памяти на примере хеш-таблиц на Java) http://habrahabr.ru/post/230283/
  *    (Коллекции (Collections) в Java. Map) http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-map.html
  *    (9 главных вопросов о Map в Java) http://info.javarush.ru/translation/2014/02/11/9-главных-вопросов-о-Map-в-Java.html
@@ -708,7 +708,7 @@ import javax.persistence.Query;
  ***                 (Spring / @Transactional) https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task
  **                                            https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2560000001901539095
  *   https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/2370000006060497655/r=%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA&pos=91&reqid=3487605fa0b4b225ee74c7fa6abe398d&filter=folder:,attaches:no,dates=-
- * ********************************************************?????????????????????????????????????????????????????????*******************************************************************************************************************
+ * ***************************************************************************************************************************************************************************
  * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
  * https://github.com/Home-SignUp/Jenkins-SignUp/blob/release-3.0/frontend/src/main/java/com/addrbook/frontend/controller/UserController.java
  * 
@@ -733,7 +733,7 @@ import javax.persistence.Query;
  * > JSP-страницу называются 'представлениям'
  *   Сервлет (в котором определены GET/POST-методы) называют 'контролером'
  *   webapp/WEB-INF/web.xml - дескриптор развертывания, это карта веб-приложения для сервера приложений (чтобы веб-приложение могло работать внутри сервера приложения (веб-контейнера))
- * > REST (RESTful) - это web-сервис для построения стру?????????????????????????????????????????????????????????ктурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
+ * > REST (RESTful) - это web-сервис для построения структурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
  * 
  * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
  * 
