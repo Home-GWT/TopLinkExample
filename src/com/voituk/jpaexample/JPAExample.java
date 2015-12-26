@@ -748,6 +748,14 @@ SELECT COUNT(tur.user_name) AS roles, COUNT(tu.user_name) AS users FROM tomcat_u
 SELECT COUNT(tur.user_name) AS roles, COUNT(tu.user_name) AS users FROM tomcat_users_roles tur, tomcat_users tu WHERE tur.role_name='admin';
 
 SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu WHERE tu.group_name IN (SELECT tr.role_name FROM tomcat_roles tr WHERE tr.role_name='admin');
+ *       . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users_group tug RIGHT OUTER JOIN tomcat_users tu ON tug.group_name=tu.group_name LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin' AND (tug.group_name='Biplane-Cashier' OR tug.group_name='Biplane-Admin');
+
+SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin';
+
+SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin';
+
+SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT JOIN FETCH tu.user_fio fio LEFT JOIN FETCH tu.group_name g;
  *       .........................................................
  *       ?????????????????????????????????????????????????????????
  *       
