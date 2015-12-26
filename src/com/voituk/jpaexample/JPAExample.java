@@ -418,10 +418,12 @@ import javax.persistence.Query;
  *                               немного медленнее HashMap
  *                               может содержать как null-ключи, так и null-значения
  *    ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *    ArrayList - быстрый поиск И быстрая вставка в конец списка (за константное время)
+ *    LinkedList - быстрая вставка в конец списка (за константное время) И экономит размер списка
+ *    HashMap - быстрый поиск И быстрая вставка в список И может работать с NULL
  *    HashTable - синхронизированный
- *    HashMap - может работать с NULL
- *    TreeMap - сортирует порядок элементов (через Comparable)
- *    LinkedHashMap - сохраняет элементов (историю добавления) 
+ *    TreeMap - сортирует кастомерский-порядок элементов (через Comparable)
+ *    LinkedHashMap - сортирует элементы по истории их добавления И работает быстрее за 'TreeMap'
  *    ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *    (Время против памяти на примере хеш-таблиц на Java) http://habrahabr.ru/post/230283/
  *    (Коллекции (Collections) в Java. Map) http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-map.html
@@ -667,7 +669,36 @@ import javax.persistence.Query;
  *       @NamedQueries({..,..,..,..})
  *       @NamedQuery
  *       @NamedQuery(name = "ContactEntity.findById", query = "select distinct c from ContactEntity c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id")
- * 
+ *       
+ *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *       // (это простой запрос, но обычно в приложении простые запросы НЕиспользуются...)
+ *       // В месте объявления таблицы создаем асоциативную ссылку и работаем уже только с этой ассоциативной ссылкой
+ *       // Ограничиваем размер страницы запроса чтобы присутствовал лимит на случай тяжеловестных таблиц
+ *       // Сортирируем список полей на стороне сервера для удобства представления
+ *       >  SELECT tu.user_name,tu.user_fio FROM tomcat_users tu ORDER BY tu.user_fio ASC LIMIT 1, 30;
+ *       // Список полей можно сортировать как по имени так и по номеру колонки
+ *       >  SELECT tu.user_name,tu.user_fio FROM tomcat_users tu ORDER BY 2 ASC LIMIT 1, 30;
+ *       
+ *       // (обычно в приложении используются условия-поиска для выполнения запроса)
+ *       // Критерий запроса - это условие-поиска по которому запрос должен выполняться
+ *       >  SELECT tu.user_name,tu.user_fio FROM tomcat_users tu WHERE status='Inactive' ORDER BY 2 ASC LIMIT 1, 30;
+ *       
+ *       // (бывают нештатные случаи для выполнения специальных агрегатных запросов - которые выполняют подсчет... - такие запросы используются в ПОДзапросах)
+ *       >  SELECT COUNT(tu.user_name) AS finds FROM tomcat_users tu WHERE status='Inactive';
+ *       
+ *       >  SELECT tur.user_name FROM tomcat_users_roles tur WHERE tur.role_name='admin';
+ *       // (Простая задача: выполнить выборку из двух таблиц и по условию из одной таблицы отобразить информацию из другой таблицы)
+ *       // Обычно информация сортируется по типам и расскладывается по разным таблицам...
+ *       // А чтобы вытащить информацию нужно выполнить обратное - сгруппировать-объеденить таблицы
+ *       // Проблема в том, что при объединении таблиц оператор 'SELECT' работает подобно вложенным циклам - умножает строки из таблиц...
+ *       // Эта проблема решается с помощью оператора 'JOIN' - позволяет объеденить две и больше таблиц (например: есть школа и ученики, нужно вывести список всех учеников которые учаться в N-классе)
+ *       >  SELECT tu.user_name,tu.user_fio FROM tomcat_users tu LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin';
+ *       >  SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users_group tug RIGHT OUTER JOIN tomcat_users tu ON tug.group_name=tu.group_name LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin' AND (tug.group_name='Biplane-Cashier' OR tug.group_name='Biplane-Admin');
+ *       // Бывают случаи когда нужно выполнить специальные арифметические запросы (через агрегатные функции) - такие запросы обычно возращают результат одного поля И поэтому по типу результатов бывают несовместимыми
+ *       // Поэтому делают ПОДзапросы для специальных агрегатных функций
+ *       >  SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu WHERE tu.group_name IN (SELECT tr.role_name FROM tomcat_roles tr WHERE tr.role_name='admin');
+ *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *       
  *       (jpql примеры) https://ru.wikipedia.org/wiki/Java_Persistence_Query_Language
  *                      https://ru.wikipedia.org/wiki/Hibernate_(библиотека)
  *                      https://ru.wikipedia.org/wiki/SQL
@@ -684,6 +715,40 @@ import javax.persistence.Query;
  **                         http://javastudy.ru/spring-data-jpa/jpa-hello-world-2/
  *                          http://forum.codenet.ru/q48397/Java+Persistence+Query+Language(JPQL)+%26%26+NetBeans+Database+Application
  **                         http://docs.oracle.com/javaee/5/tutorial/doc/bnbtl.html
+ *       .........................................................
+SELECT tu.* FROM tomcat_users tu;
+SELECT tu.* FROM tomcat_users tu LIMIT 10;
+SELECT tu.user_name,tu.user_fio FROM tomcat_users tu LIMIT 30;
+SELECT tu.user_name,tu.user_fio FROM tomcat_users tu ORDER BY tu.user_fio ASC LIMIT 1, 30;
+SELECT tu.user_name,tu.user_fio FROM tomcat_users tu ORDER BY 2 ASC LIMIT 1, 30;
+
+SELECT tu.user_name,tu.user_fio FROM tomcat_users tu WHERE status='Inactive' ORDER BY 2 ASC LIMIT 1, 30;
+
+SELECT COUNT(tu.user_name) AS finds FROM tomcat_users tu WHERE status='Inactive';
+
+SELECT tur.* FROM tomcat_users_roles tur;
+SELECT tur.user_name FROM tomcat_users_roles tur WHERE tur.role_name='admin';
+SELECT tu.user_name,tu.user_fio FROM tomcat_users_roles tur, tomcat_users tu WHERE tur.role_name='admin';
+SELECT tu.user_name,tu.user_fio FROM tomcat_users tu LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin';
+SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin';
+SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users_group tug RIGHT OUTER JOIN tomcat_users tu ON tug.group_name=tu.group_name LEFT OUTER JOIN tomcat_users_roles tur ON tu.user_name=tur.user_name WHERE tur.role_name='admin' AND (tug.group_name='Biplane-Cashier' OR tug.group_name='Biplane-Admin');
+
+SELECT COUNT(tur.user_name) AS contains FROM tomcat_users_roles tur WHERE tur.role_name='admin';
+SELECT COUNT(tu.user_name) AS finds FROM tomcat_users tu;
+SELECT COUNT(tu.user_name) AS users, COUNT(tur.user_name) AS roles FROM tomcat_users tu, tomcat_users_roles tur WHERE tur.role_name='admin';
+SELECT tu.user_name AS users, tur.user_name AS roles FROM tomcat_users tu, tomcat_users_roles tur WHERE tur.role_name='admin';
+SELECT tur.user_name AS roles FROM tomcat_users_roles tur;
+SELECT tu.user_name AS users FROM tomcat_users tu;
+SELECT tur.user_name AS roles, tu.user_name AS users FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT tu.user_name AS users FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT tur.user_name AS roles FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT COUNT(tur.user_name) AS roles FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT COUNT(tu.user_name) AS users FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT COUNT(tur.user_name) AS roles, COUNT(tu.user_name) AS users FROM tomcat_users_roles tur, tomcat_users tu;
+SELECT COUNT(tur.user_name) AS roles, COUNT(tu.user_name) AS users FROM tomcat_users_roles tur, tomcat_users tu WHERE tur.role_name='admin';
+
+SELECT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu WHERE tu.group_name IN (SELECT tr.role_name FROM tomcat_roles tr WHERE tr.role_name='admin');
+ *       .........................................................
  *       ?????????????????????????????????????????????????????????
  *       
  *       
