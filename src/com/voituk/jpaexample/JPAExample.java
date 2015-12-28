@@ -757,6 +757,45 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 
 SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT JOIN FETCH tu.user_fio fio LEFT JOIN FETCH tu.group_name g;
  *       .........................................................
+ *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *       JOIN - пересечение двух множеств
+ *       для выполнения внктренней сортировки на стороне сервера
+ *       
+ **      (Разработка приложений баз данных с использованием средств объектно-реляционного отображения) http://ivt.corp7.uniyar.ac.ru/moodle/pluginfile.php/65/mod_page/content/4/edu/ormbook.pdf
+ **      (Объяснение SQL объединений JOIN: LEFT/RIGHT/INNER/OUTER) http://www.skillz.ru/dev/php/article-Obyasnenie_SQL_obedinenii_JOIN_INNER_OUTER.html
+ **                                                                http://sqlfiddle.com/#!2/659f69/43
+ **      (SQL и оператор JOIN) http://www.k-press.ru/cs/2009/3/join/join.asp
+ **      (Ленивая инициализация коллекций в JPA) http://javacore.ru/topic/31-jpa.htm
+ ***     (20 советов по оптимальному использованию MySQL) http://ruseller.com/lessons.php?id=692
+ ***     (Конспект "Hibernate reference manual") http://j4sq.blogspot.com/2011/09/hibernate-reference-manual.html
+ *       (Сортировка внутренней коллекции при LEFT JOIN FETCH) http://www.sql.ru/forum/820769/sortirovka-vnutrenney-kollekcii-pri-left-join-fetch
+ **      (Десять распространенных ошибок SQL-программирования) http://www.k-press.ru/cs/2009/3/10sql/10sql.asp
+ **                                                            http://habrahabr.ru/post/208264/
+ *       (Выбор технологий для корпоративного приложения) http://2014.javapoint.ru/presentations/Krivopustov-apps.pdf
+ **      (hibernate) http://www.liveinternet.ru/users/atum/post319823966/
+ *       (Удаление любовно составленных join fetch улучшило среднюю производительность в 5 раз) http://www.sql.ru/forum/1049242/hibernate-neskolko-hql-dlya-zapolneniya-sushhnosti
+ **      (Команда Left Join SQL - смысл использования) http://it-student.com.ua/verkhnee-menju/programmirovanie/left-join-sql-primer-select-zaprosa-s-objjasneniem.html
+ *       (Jpa jpql запрос, сортировать..... (перейти)) http://www.programru.com/blog/McDO0ADMwIT5.html
+ *       (How to use the LEFT JOIN vs. RIGHT OUTER JOIN in SQL) http://searchsqlserver.techtarget.com/feature/How-to-use-the-LEFT-vs-RIGHT-OUTER-JOIN-in-SQL
+ *       http://www.objectdb.com/java/jpa/query/jpql/structure
+ **      (20 советов по оптимальному использованию MySQL) http://ruseller.com/lessons.php?id=692
+ *
+ **      (Стратегии работы с транзакциями: Распространенные ошибки ** @Transactional в Spring Framework) http://www.ibm.com/developerworks/ru/library/j-ts1/
+ *
+ *       http://www.firststeps.ru/sql/oracle/r.php?54
+ *       http://www.sql.ru/forum/913549/hibernate-n-1-best-practice
+ *       http://www.sql.ru/forum/883435/eclipselink-fetching
+ *       http://www.sql.ru/forum/787241/hibernate-hql-filtraciya-v-zavisimoy-kollekcii
+ *       http://javatalks.ru/topics/28747
+ *       (Лекция №6) http://www.lib.mdpu.org.ua/e-book/web/lec7.htm
+ *       http://forundex.ru/sql/JOIN-s-boljshim-peresecheniem-65599
+ *       http://axforum.info/forums/showthread.php?t=21270
+ *       http://www.sql.ru/forum/996526/jpa-fetch-i-join-fetch
+ *       http://devcolibri.com/2046
+ *       (JPA SQL и выбор настройки (EclipseLink)) http://www.rootfront.com/article/4346811/2012-11-21/jpa-sql-i-vybor-nastrojki-_eclipselink_
+ *       http://jexp.ru/index.php/Java/Hibernate/HQL_JOIN
+ *       http://javatalks.ru/topics/29267
+ *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       ?????????????????????????????????????????????????????????
  *       
  *       
