@@ -755,14 +755,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT JOIN FETCH tu.user_fio fio LEFT JOIN FETCH tu.group_name g;
  *       .........................................................
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
- *       JOIN - пересечение двух множеств
- *       для выполнения внутренней сортировки на стороне сервера
- *       Случай когда запросы выполняются к двум и более таблицам паралельно.
- *       К примеру в первой таблице находиться 10-записей, а во второй таблице 1.000.000-записей.
- *       И таблицы связаны между собой отношением один-ко-многим.
- *       В этом случае проблема в том, что время затрачиваемое на поиск-выборку данных из первой таблицы (которая маленькая) будет мизерным, а на поиск-выборку данных из второй таблицы (которая большая) будет огромным...
- *       И как результат будет большая задержка...
+ *       JOIN - пересечение двух множеств для выполнения внутренней сортировки на стороне сервера
  *       'JOIN' позволяет находить-сравнивать одинаковые данные в полях И тем самым уже НЕнужно перебирать всю таблицу, а только связанные данные - это намного экономит количество перебираемых строк при поиске-выборке и затрачиваемое время...
+ *       (JOINом может называться не только запрос объединяющий результаты из нескольких таблиц, но и запрос к одной таблице, например, SELECT по одной таблице — это тоже джоин)
  *       
  *       > В реляционной базе данных сущность является определенным типом. И хранит разные типы данных в отдельных таблицах.
  *         (а в нереляционных базах данных все данные лежат в одной таблице - логируются...)
@@ -811,8 +806,15 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       (How to use the LEFT JOIN vs. RIGHT OUTER JOIN in SQL) http://searchsqlserver.techtarget.com/feature/How-to-use-the-LEFT-vs-RIGHT-OUTER-JOIN-in-SQL
  *       http://www.objectdb.com/java/jpa/query/jpql/structure
  **      (20 советов по оптимальному использованию MySQL) http://ruseller.com/lessons.php?id=692
- *
+ **      (индексы в основном лежат на диске) http://www.sql.ru/forum/906263/hranenie-indeksov-innodb-na-diske-i-obem-ram
+ ***     (Кучи и Индексы) http://www.sql.ru/articles/mssql/03013101indexes.shtml
+ *       (MySQL и JOINы) http://habrahabr.ru/post/44807/
+ *                       http://softtime.ru/forum/read.php?id_forum=3&id_theme=91694
+ *       (Тайны оператора JOIN) http://www.slideshare.net/itweekend/join-22008919
+ *       
  **      (Стратегии работы с транзакциями: Распространенные ошибки ** @Transactional в Spring Framework) http://www.ibm.com/developerworks/ru/library/j-ts1/
+ *       (Собеседование Java вопросы) http://www.quizful.net/interview/java?page=2
+ *                                    http://becomejavasenior.com/blog/2015/07/01/327-interview-questions-java-developer/
  *
  *       http://www.firststeps.ru/sql/oracle/r.php?54
  *       http://www.sql.ru/forum/913549/hibernate-n-1-best-practice
@@ -827,6 +829,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       (JPA SQL и выбор настройки (EclipseLink)) http://www.rootfront.com/article/4346811/2012-11-21/jpa-sql-i-vybor-nastrojki-_eclipselink_
  *       http://jexp.ru/index.php/Java/Hibernate/HQL_JOIN
  *       http://javatalks.ru/topics/29267
+ *       https://msdn.microsoft.com/ru-ru/library/ms191183%28v=sql.120%29.aspx
+ *       https://msdn.microsoft.com/ru-ru/library/ms188783%28v=sql.120%29.aspx
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       ?????????????????????????????????????????????????????????
  *       
