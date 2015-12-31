@@ -1097,6 +1097,100 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/main/resources
  * https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task/src/test/java/com/miratex
  * https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java
+ * 
+ * 
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * Spring Security
+ * X SecurityContextHolder: храним информацию о доверителе, взаимодействующим в настоящее время с приложением
+ * X Authentication: для представления этой информации
+ *                   >> Сервис 'UserDetails': пользователь это просто Object, может быть приведен к объекту 'UserDetails'
+ *                   >> GrantedAuthority: это полномочия (роли) которые предоставляются пользователю
+ * X SecurityContext:
+ * 
+ * 
+ * > SecurityContextHolder ... чтобы обеспечить доступ к 'SecurityContext'
+ * > SecurityContext ......... содержит объект 'Authentication' и в случае необходимости информацию системы безопасности связанную с запросом
+ * > Authentication .......... представляет принципала (пользователя авторизованной сессии) с точки зрения Spring Security
+ * > GrantedAuthority ........ отражает разрешения выданные доверителю в масштабе всего приложения
+ * > UserDetails ............. предоставляет необходимую информацию для построения объекта 'Authentication' из DAO объектов приложения или других источника данных системы безопасности
+ * > UserDetailsService ...... чтобы создать UserDetails, когда передано имя пользователя в виде String (или идентификатор сертификата или что-то подобное)
+ * 
+ * >> Аутентификация - сравнивает ваше имя пользователя с пользователем хранящимся в базе данных И проверяет что ваш пароль совпадает с записью
+ * >> Авторизация - включает в себя два отдельных подхода:
+ *                  1. связывание аутентифицированного пользователя с ролями
+ *                  2. проверка полномочий на защищенные ресурсы системы
+ *                  
+ * >>> Защита вашего приложения за три простых шага:
+ *     1. создание конфигурационного XML-файла представляющим все компоненты Spring Security для покрытия web-запросов ( WEB-INF/dogstore-security.xml )
+ *        (это единственный Spring Security конфигурационый файл для получения защищенного web-приложения с минимальной стандартной конфигурацией - такой Spring Security-диалект известный как - 'стиль пространства имен security')
+			<http auto-config="true">
+			  <intercept-url pattern="/*" access="ROLE_USER" />
+			</http>
+ *			<authentication-manager alias="authenticationManager">
+ *			  <authentication-provider>
+ *			    <user-service>
+ *			      <user authorities="ROLE_USER" name="guest" password="guest" />
+ *			    </user-service>
+ *			  </authentication-provider>
+ *			</authentication-manager>
+ *     2. добавление Spring DelegatingFilterProxy в 'web.xml'
+ *        (DelegatingFilterProxy - это ServletRequest-фильтр позволяет SpringSecurity окружить все запросы и гарантировать что они защищены) 
+ *			<filter>
+ *			  <filter-name>springSecurityFilterChain</filter-name>
+ *			  <filterclass>
+ *			    org.springframework.web.filter.DelegatingFilterProxy
+ *			  </filter-class>
+ *			</filter>
+ *			<filter-mapping>
+ *			  <filter-name>springSecurityFilterChain</filter-name>
+ *			  <url-pattern>/*</url-pattern>
+ *			</filter-mapping>
+ *     3. добавляем ссылки Spring Security XML в 'web.xml'
+ *        (по умолчанию 'ContrextLoaderListener' ищет XML конфигурационный файл с тем же именем что и Spring Web сервлет)
+ *        - имя сервлета - 'dogstore' ('Spring Convention over Configuration' будет искать конфигурационный XML-файл под названием 'WEB-INF/dogstore-servlet.xml')
+ *        - расположение XML-файлов для конфигурации 'ContextLoaderListener' перечисляется в 'web.xml' элементе <context-param>
+ *			<servlet>
+ *			  <servlet-name>dogstore</servlet-name>
+ *			  <servletclass>
+ *			    org.springframework.web.servlet.DispatcherServlet
+ *			  </servlet-class>
+ *			  <load-on-startup>1</load-on-startup>
+ *			</servlet>
+ *        - в 'dogstore-base.xml' хранится информация касательно: источников данных, сервисных бинов, ...
+ *			<context-param>
+ *			  <param-name>contextConfigLocation</param-name>
+ *			  <param-value>
+ *			    /WEB-INF/dogstore-security.xml
+ *			    /WEB-INF/dogstore-base.xml
+ *			</param-value>
+ *			</context-param>
+ *
+ *
+ *** (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
+ ***                                                     http://www.spring-source.ru/docs_intermedia.php?type=manual&theme=docs_intermedia&docs_intermedia=chap01_p01
+ *
+ *
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ *                    (hibernate пул соединений провайдер)
+ ***                            (Hibernate + MySQL + c3p0) http://smecsia.me/2008/02/26/hibernate-mysql-c3po/
+ *** (Настройка пула соединений к базе данных за firewall) http://www.javaspecialist.ru/2011/04/firewall.html
+ *                                                         https://books.google.com.ua/books?id=0OlhCgAAQBAJ&pg=PT24&lpg=PT24&dq=hibernate+%D0%BF%D1%83%D0%BB+%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9+%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80&source=bl&ots=hrp13hgp7z&sig=EAKdtENNmiLV4s3e2r3lOd9atVA&hl=ru&sa=X&ved=0ahUKEwjPw7Hh3oXKAhVomHIKHYXbD9AQ6AEIGjAA#v=onepage&q=hibernate%20%D0%BF%D1%83%D0%BB%20%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80&f=false
+ *   http://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-connection-pool-configuration-with-c3p0-example/
+ *   http://www.mkyong.com/hibernate/how-to-configure-the-c3p0-connection-pool-in-hibernate/
+ *   http://samsonych.com/lib/hibernate/quickstart.html
+ **  (Пулы соединений к БД — зачем и почему) http://habrahabr.ru/post/194142/
+ * 
+ * (Глава 3. Конфигурация SessionFactory) http://www.dil.univ-mrs.fr/~massat/docs/hibernate-2/reference/ru/html/session-configuration.html
+ *                                        http://habrahabr.ru/sandbox/24224/
+ * http://www.sql.ru/forum/1107163/jdbc-hibernate-i-pul-soedineniy-k-oracle
+ * Есть так называемые "блокировки уровня приложения", они бы подошли тут
+максимально. Это, в общем, блокировки сущностей уровня приложения,
+которые выполняются тоже на уровне приложения. Т.е. ты их реализуешь
+сам. У тебя есть сессии, пользователи, и объекты (документы), так вот,
+ты в каке-то место записываешь, что пользователь такой-то в такой-то
+сессии заблокировал такой-то документ(ы). Соответственно, при каждом
+изменении проверяешь, что этот пользователь в этой сессии имеет блокировку.
+ * 
  */
 
 public class JPAExample {
