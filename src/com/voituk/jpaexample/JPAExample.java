@@ -1100,7 +1100,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * 
  * 
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
- * Spring Security
+ * Spring Security (есть сикюрность по методу и секюрность через фильтр...)
  * X SecurityContextHolder: храним информацию о доверителе, взаимодействующим в настоящее время с приложением
  * X Authentication: для представления этой информации
  *                   >> Сервис 'UserDetails': пользователь это просто Object, может быть приведен к объекту 'UserDetails'
