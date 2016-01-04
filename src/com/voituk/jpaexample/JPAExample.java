@@ -1138,6 +1138,16 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       
  *       -------------------[ Модель-представление-контроллер ]-------------------
  *       >  В Spring-е 'контроллер' помечаеться аннотацией - @Controller (сообщет Spring-у что класс является bean-ом и его необходимо подгрузить при старте приложения)
+
+	     > Аналогично работают:
+	       - @PathVariable - использует параметры из строки URL-адресса
+	       - @RequestParam - использует параметры строковых переменных из тела клиентского запроса
+           - @RequestHeader - использует параметры из HAED-блока клиентского запроса
+
+         > @ResponseBody - отдает ответ непосредственно браузеру (минуя слой представлений)
+                           то есть, если говорить об Spring-MVC архитектуре (использование @ResponseBody предусматривает отсутствие 'слоя представления')
+         
+ *       
  *       >  Данные от контроллера к представлению могут передаться двумя способами:
  *       (1)> это-же можно сделать классом 'Model'
  *       >  @RequestMapping(value = "/myurl") - сообщаем что 'контроллер' будет обрабатывать запрос URL которого "/myurl"
@@ -1175,6 +1185,23 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *				modelView.addObject("path", "/url-1");
  *				return modelView;
  *			}
+ *
+ *       > Чтобы метод requestMapped получил управления, необходимо выполнить запрос вида "/rmc/test"
+			@Controller
+			@RequestMapping("/rmc")
+			public class RequestMappedClassController {
+				@RequestMapping(value = "/test")
+				public String requestMapped() {
+					return "my";
+				}
+			}
+		 >  @PathVariable
+		    @PathVariable("product") String productName - в аннотации @PathVariable можно как указывать название переменной
+		    @PathVariable String category - и не делать этого, будет использоваться название, совпадающее с названием переменной
+			@RequestMapping(value = "/pathvariable/{category}/{product}")
+			public String my(@PathVariable int category, @PathVariable("product") String productName, Model model) {
+			    // ...
+			}
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       ?????????????????????????????????????????????????????????
  * >>> Защита вашего приложения за три простых шага:
