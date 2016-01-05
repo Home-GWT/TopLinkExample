@@ -1041,7 +1041,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * 
  * >>> @Controller - в Spring HTTP-запросы обрабатываются 'контроллером' = говорит component-scan что нужно создать спринг-бин из этого класса (поэтому рекомендуется оставлять в нем конструктор по-умолчанию без параметров)
  *                   @Controller по умолчанию поддерживает web-сервис RESTful-формат запроса (другая форма аннотации @RestController)
- * >>> @RequestMapping - слушает/ловит клиентские HTTP-запросы и привязывает к методу-обработчику (@RequestMapping соответствует всем HTTP операциям по умолчанию)
+ * >>> @RestController - появился в 4-ой версии Spring-а использует автоматическое преобразование данных из JAVA-формата в JSON
+ * >>> @RequestMapping - слушает/ловит клиентские HTTP-запросы и привязывает адресс к методу-обработчику (@RequestMapping соответствует всем HTTP операциям по умолчанию)
  *                       @RequestMapping(value="/page/{id}") public ModelAndView main() {...}
  * >>> method=RequestMethod.GET - определяет/уточняет тип метода для HTTP-запроса (GET,PUT,POST..)
  *                                @RequestMapping(value="/page/{id}", method=RequestMethod.GET) public ModelAndView main() {...}
@@ -1262,6 +1263,15 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       > Чтобы метод requestMapped получил управления, необходимо выполнить запрос вида "/url/my"
 			@Controller
 			@RequestMapping("/url")
+			public class MyController {
+				@RequestMapping(value = "/my")
+				public String my() {
+					return "my";
+				}
+			}
+			или
+			@Controller
+			@RequestMapping("/")
 			public class MyController {
 				@RequestMapping(value = "/my")
 				public String my() {
