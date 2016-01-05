@@ -1291,6 +1291,23 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 	     (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
 	                         (Краткий обзор Spring Security) http://habrahabr.ru/post/203318/
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *       (spring mvc asynchronous controller)
+ *       ** http://shengwangi.blogspot.com/2015/09/asynchronous-spring-mvc-hello-world.html
+ *       ** http://nikcode.blogspot.com/2013/03/spring-mvc-32-servlet.html
+ *       http://spring-projects.ru/guides/messaging-stomp-websocket/
+ *       http://www.askdev.ru/java/8565/Многопоточность-WEB-приложения-на-Spring/
+ *       https://www.flickr.com/photos/60896767@N00/89101625/sizes/l/
+ *       
+ *       https://spring.io/blog/2012/05/10/spring-mvc-3-2-preview-making-a-controller-method-asynchronous/
+ *       https://dev.by/lenta/main/est-li-buduschee-u-mvc-shablona
+ *       http://www.slideshare.net/springbyexample/spring-mvc-13512755
+ *       https://www.youtube.com/watch?v=nh7eAt5RvZE
+ *       * http://www.sql.ru/forum/916079/spring-mvc-ajax-upload-ne-mogu-normalno-poluchit-json-otvet-ot-kontrollera
+ *       ** http://nikcode.blogspot.com/2013/03/spring-mvc-32-servlet.html
+ *       http://devcolibri.com/2890
+ *       http://www.seostella.com/ru/article/2012/04/27/interceptor-perehvat-zaprosov-v-spring-mvc.html
+ *       http://habrahabr.ru/post/150034/
+ *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       ?????????????????????????????????????????????????????????
  * >>> Защита вашего приложения за три простых шага:
  * 
