@@ -1126,8 +1126,34 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                  2. проверка полномочий на защищенные ресурсы системы
  *                  (после аутентификации пользователя процесс авторизации определяет что этому пользователю разрешено делать в системе)
  *       ?????????????????????????????????????????????????????????
- *       (относительно Spring-а) 'сервлет' - это 'контроллер'
+ *       >    'Authentication' -  хранит (объединяет) имя пользователя и пароль в объект (и передается экземпляру 'AuthenticationManager' для проверки)
+ *                                пользователю будет предложено войти в систему предоставив имя (логин или email) и пароль
+ *                                представляет пользователя (Principal):
+ *                                # 'UserDetails' - предоставляет информацию для построения объекта 'Authentication' из DAO-объектов;
+ *                                # 'UserDetailsService' - создает 'UserDetails';
+ *            'GrantedAuthority' - представляет роли выданные пользователю в масштабе всего приложения
+ *       (1)> Если аутентификация прошла успешно возвращает полностью заполненный объект 'Authentication'
+ *            Инначе будет выброшено исключение 'BadCredentialsException' (с сообщением "Bad Credentials")
+ *       (2)> 'SecurityContext' - для пользователя устанавливается контекст безопасности
+ *                                в контексте безопасности храниться вся информация об аутентификации (логин/пароль пользователя) и авторизации (правила авторизации)
+ *                                (содержит объект 'Authentication' И информацию системы безопасности 'GrantedAuthority' связанную с запросом от пользователя)
+ *       (3)> 'SecurityContextHolder' - содержит полную информацию о текущем контексте безопасности приложения
+ *                                      и устанавливает стратегии для хранения информации-'SecurityContext':
+ *                                      #1 'MODE_THREADLOCAL' локальный поток (по умолчанию);
+ *                                      #2 'MODE_GLOBAL' глобальный поток;
+ *                                      #3 'MODE_INHERITABLETHREADLOCAL' порожденные от одного защищенного потока;
+ *                                      Например: в веб-приложении сервер кэширует информацию пользователя (принципала) в течение сессии и хранит 'SecurityContext' как атрибут 'HttpSession' между HTTP-запросами
+ *                                                (объект 'SecurityContext' извлекается из 'HttpSession' и восстанавливает контекст в 'SecurityContextHolder' для каждого запроса И очищает 'SecurityContextHolder' после завершения запроса)
+ *                                                Другие типы приложений, например: 'RESTful веб-сервисы' без сохранения состояния НЕиспользуют HTTP-сессии и будут требовать аутентификации при каждом запросе
+ *       >    Авторизированный доступ можно прикручивать на:
+ *            - URL-адресса ... <intercept-url pattern="/add*" access="ROLE_USER"/>
+ *            - методы ........ <global-method-security secured-annotations="enabled" /> | @Secured("ROLE_ADMIN")
+ *       >    Форма (способ) аутентификации может быть:
+ *            - базовый
+ *            - на форму
+ *            - ...
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+ *             относительно Spring-а 'сервлет' - это 'контроллер' И на такой сервлет (с тем же именем) можно повесить кофигурационные файлы Spring-а
  *          > : база данных
  *       (1)> 'доменный слой':
  *       (2)> 'DAO слой':
@@ -1140,16 +1166,20 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       >  В Spring-е 'контроллер' помечаеться аннотацией - @Controller (сообщет Spring-у что класс является bean-ом и его необходимо подгрузить при старте приложения)
 
 	     > Аналогично работают:
-	       - @PathVariable - использует параметры из строки URL-адресса
-	       - @RequestParam - использует параметры строковых переменных из тела клиентского запроса
-           - @RequestHeader - использует параметры из HAED-блока клиентского запроса
+	       - @PathVariable .... использует параметры из строки URL-адресса
+	       - @RequestParam .... использует параметры строковых переменных из тела клиентского запроса
+           - @RequestHeader ... использует параметры из HAED-блока клиентского запроса
+         > Аналогично работают:
+           - 'Model' .......... 'модель' передается методу-обработчику в качестве параметра, а метод-обработчик возвращает название 'представления'
+           - 'ModelAndView' ... метод-обработчик создает, определяет и возвращает 'модель' (а внутри этой 'модели' определено 'представление')
+           - @ResponseBody .... возвращет строковое значение прямо на веб-браузер (минуя 'слой представления')
 
          > @ResponseBody - отдает ответ непосредственно браузеру (минуя слой представлений)
                            то есть, если говорить об Spring-MVC архитектуре (использование @ResponseBody предусматривает отсутствие 'слоя представления')
          
  *       
  *       >  Данные от контроллера к представлению могут передаться двумя способами:
- *       (1)> это-же можно сделать классом 'Model'
+ *       (1)> это можно сделать классом 'Model'
  *       >  @RequestMapping(value = "/myurl") - сообщаем что 'контроллер' будет обрабатывать запрос URL которого "/myurl"
  *			@Controller
  *			public class MyController {
@@ -1165,7 +1195,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *				model.addAttribute("path", "/url-1");
  *				return "my";
  *			}
- *       (2)> это-же можно сделать классом 'ModelAndView' (агрегирует параметры модели и имя отображения)
+ *       (2)> это можно сделать классом 'ModelAndView' (агрегирует параметры модели и имя отображения)
  *       >  сообщаем 'контроллеру' что имя 'представления' - "my" (по умолчанию это файл /WEB-INF/views/my.jsp)
  *			@Controller
  *			public class MyController {
@@ -1186,72 +1216,79 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *				return modelView;
  *			}
  *
- *       > Чтобы метод requestMapped получил управления, необходимо выполнить запрос вида "/rmc/test"
+ *       > Чтобы метод requestMapped получил управления, необходимо выполнить запрос вида "/url/my"
 			@Controller
-			@RequestMapping("/rmc")
-			public class RequestMappedClassController {
-				@RequestMapping(value = "/test")
-				public String requestMapped() {
+			@RequestMapping("/url")
+			public class MyController {
+				@RequestMapping(value = "/my")
+				public String my() {
 					return "my";
 				}
 			}
 		 >  @PathVariable
 		    @PathVariable("product") String productName - в аннотации @PathVariable можно как указывать название переменной
-		    @PathVariable String category - и не делать этого, будет использоваться название, совпадающее с названием переменной
-			@RequestMapping(value = "/pathvariable/{category}/{product}")
-			public String my(@PathVariable int category, @PathVariable("product") String productName, Model model) {
-			    // ...
-			}
+		    @PathVariable String category - если НЕделать этого будет использоваться название которое совпадает с названием переменной
+			@RequestMapping(value = "/myurl/{category}/{product}")
+			public String my(@PathVariable int category, @PathVariable("product") String productName, Model model) {}
 			
 	     (spring mvc контроллер)
 	     (Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
 	                                       http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
-	     (REST на примере Spring MVC) http://devcolibri.com/3732
+	          (REST на примере Spring MVC) http://devcolibri.com/3732
+	     (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
+	                         (Краткий обзор Spring Security) http://habrahabr.ru/post/203318/
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       ?????????????????????????????????????????????????????????
  * >>> Защита вашего приложения за три простых шага:
- *     1. создание конфигурационного XML-файла представляющим все компоненты Spring Security для покрытия web-запросов ( WEB-INF/dogstore-security.xml )
- *        (это единственный Spring Security конфигурационый файл для получения защищенного web-приложения с минимальной стандартной конфигурацией - такой Spring Security-диалект известный как - 'стиль пространства имен security')
-			<http auto-config="true">
-			  <intercept-url pattern="/*" access="ROLE_USER" />
-			</http>
+ * 
+ *     1. создание конфигурационного XML-файла с настройками Spring Security ( WEB-INF/XXX-security.xml ) для получения защищенного web-приложения
+ *        (такой Spring Security-диалект известный как - 'стиль пространства имен security')
+ *			<http access-denied-page="/error403.jsp"> 
+ *			   <intercept-url pattern="/index*" access="ROLE_USER,ROLE_ANONYMOUS"/> 
+ *			   <intercept-url pattern="/add*" access="ROLE_USER"/> 
+ *			   <intercept-url pattern="/delete/*" access="ROLE_ADMIN"/> 
+ *			   <form-login login-page="/login.jsp" default-target-url="/index" authentication-failure-url="/login.jsp?error=true"/> 
+ *			   <logout logout-url="/logout" logout-success-url="/index"/> 
+ *			   <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/> 
+ *			   <remember-me/> 
+ *			</http> 
  *			<authentication-manager alias="authenticationManager">
- *			  <authentication-provider>
- *			    <user-service>
- *			      <user authorities="ROLE_USER" name="guest" password="guest" />
- *			    </user-service>
- *			  </authentication-provider>
+ *			   <authentication-provider> 
+ *			      <user-service> 
+ *			         <user name="admin" password="pass" authorities="ROLE_ADMIN,ROLE_USER"/> 
+ *			         <user name="user1" password="1111" authorities="ROLE_USER"/> 
+ *			         <user name="user2" password="2222" disabled="true" authorities="ROLE_USER"/>    
+ *			      </user-service> 
+ *			   </authentication-provider>
  *			</authentication-manager>
- *     2. добавление Spring DelegatingFilterProxy в 'web.xml'
+ *
+ *    2.1 добавление Spring DelegatingFilterProxy в 'web.xml'
  *        (DelegatingFilterProxy - это ServletRequest-фильтр позволяет SpringSecurity окружить все запросы и гарантировать что они защищены) 
  *			<filter>
- *			  <filter-name>springSecurityFilterChain</filter-name>
+ *			  <filter-name>XXX</filter-name>
  *			  <filterclass>
  *			    org.springframework.web.filter.DelegatingFilterProxy
  *			  </filter-class>
  *			</filter>
  *			<filter-mapping>
- *			  <filter-name>springSecurityFilterChain</filter-name>
+ *			  <filter-name>XXX</filter-name>
  *			  <url-pattern>/*</url-pattern>
  *			</filter-mapping>
- *     3. добавляем ссылки Spring Security XML в 'web.xml'
- *        (по умолчанию 'ContrextLoaderListener' ищет XML конфигурационный файл с тем же именем что и Spring Web сервлет)
- *        - имя сервлета - 'dogstore' ('Spring Convention over Configuration' будет искать конфигурационный XML-файл под названием 'WEB-INF/dogstore-servlet.xml')
- *        - расположение XML-файлов для конфигурации 'ContextLoaderListener' перечисляется в 'web.xml' элементе <context-param>
+ *    2.2 добавляем ссылки Spring Security XML (dogstore-security.xml) в 'web.xml'
+ *        (по умолчанию 'ContrextLoaderListener' ищет XML конфигурационный файл с тем же именем что и Spring Web сервлет 'XXX' - будет искать конфигурационный XML-файл под названием 'WEB-INF/XXX-servlet.xml')
+ *        расположение XML-файлов для конфигурации 'ContextLoaderListener' перечисляется в 'web.xml' элементе <context-param>
  *			<servlet>
- *			  <servlet-name>dogstore</servlet-name>
- *			  <servletclass>
+ *			  <servlet-name>XXX</servlet-name>
+ *			  <servlet-class>
  *			    org.springframework.web.servlet.DispatcherServlet
  *			  </servlet-class>
  *			  <load-on-startup>1</load-on-startup>
  *			</servlet>
- *        - в 'dogstore-base.xml' хранится информация касательно: источников данных, сервисных бинов, ...
  *			<context-param>
  *			  <param-name>contextConfigLocation</param-name>
  *			  <param-value>
- *			    /WEB-INF/dogstore-security.xml
- *			    /WEB-INF/dogstore-base.xml
- *			</param-value>
+ *			    /WEB-INF/XXX-security.xml
+ *			  </param-value>
  *			</context-param>
  *
  *
