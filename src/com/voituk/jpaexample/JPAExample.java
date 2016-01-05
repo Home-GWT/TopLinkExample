@@ -961,6 +961,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *   Сервлет (в котором определены GET/POST-методы) называют 'контролером'
  *   webapp/WEB-INF/web.xml - дескриптор развертывания, это карта веб-приложения для сервера приложений (чтобы веб-приложение могло работать внутри сервера приложения (веб-контейнера))
  * > REST (RESTful) - это web-сервис для построения структурированной формы HTTP-запроса доступа к общественным/внешним данным (не имеет стандартов, а только набор общепринятых правил)
+ *                    используется для передачи информации с 'клиента на сервер' и с 'сервера на клиент'
  * 
  * 'Spring' и технологии ('Spring Core','Spring DATA','Spring MVC','Spring Security','Spring REST')
  * 
@@ -1189,6 +1190,10 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *            - базовый
  *            - на форму
  *            - ...
+ *       >    Декларация Spring Security через xml-конфигурацию:
+ *            - окружаем HTTP-запросы фильтром чтобы гарантировать их защищенность (включаем в web.xml делегирование 'DelegatingFilterProxy' И описываем в '<filter>','<filter-mapping>')
+ *            - определяем xml-файл с настройками Spring Security ( security.xml ) для получения защищенного web-приложения
+ *            - добавляем ссылки расположение на Spring Security xml-конфигурации (security.xml) в web.xml и перечисляем их: '<context-param>','<param-value>'
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *             относительно Spring-а 'сервлет' - это 'контроллер' И на такой сервлет (с тем же именем) можно повесить кофигурационные файлы Spring-а
  *          > : база данных
@@ -1311,16 +1316,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *			  <filter-name>XXX</filter-name>
  *			  <url-pattern>/*</url-pattern>
  *			</filter-mapping>
- *    2.2 добавляем ссылки Spring Security XML (dogstore-security.xml) в 'web.xml'
+ *    2.2 добавляем ссылки Spring Security XML (XXX-security.xml) в 'web.xml'
  *        (по умолчанию 'ContrextLoaderListener' ищет XML конфигурационный файл с тем же именем что и Spring Web сервлет 'XXX' - будет искать конфигурационный XML-файл под названием 'WEB-INF/XXX-servlet.xml')
  *        расположение XML-файлов для конфигурации 'ContextLoaderListener' перечисляется в 'web.xml' элементе <context-param>
- *			<servlet>
- *			  <servlet-name>XXX</servlet-name>
- *			  <servlet-class>
- *			    org.springframework.web.servlet.DispatcherServlet
- *			  </servlet-class>
- *			  <load-on-startup>1</load-on-startup>
- *			</servlet>
  *			<context-param>
  *			  <param-name>contextConfigLocation</param-name>
  *			  <param-value>
