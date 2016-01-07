@@ -1288,7 +1288,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 	     (Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
 	                                       http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
 	          (REST на примере Spring MVC) http://devcolibri.com/3732
-	     (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
+ ***     (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
 	                         (Краткий обзор Spring Security) http://habrahabr.ru/post/203318/
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       (spring mvc asynchronous controller)
@@ -1361,6 +1361,68 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                                                       http://www.ibm.com/developerworks/ru/library/j-saas/
  *
  *
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * Таймаут... и асинхронные приложения
+ * 
+ * Существуют базовые понятия об распределенной архитектуре веб-приложения. Веб-приложение имеет:
+ * - клиентскую часть
+ * - серверную часть
+ * - и хранилище данных (базу данных)
+ * 
+ * 1. Клиентская часть
+ *    может существовать неограниченное количество клиентов
+ *    - клиентские запросы которые выполняются из (базовой) формы на страничке веб-браузера (такие запросы зависимые друг от друга))
+ *    - клиентские запросы которые выполняются через AJAX (JavaScript) - такие запросы являются асинхронными (НЕзависимыми друг от друга) 
+ * 2. На серверной стороне, прежде всего, все запросы в начале попадают на "сервер приложений"
+ *    - сервер приложений имеет свой 'пул потоков', 'таймаут для потока' и еще... это настраивается в контексте сервера приложения
+ *      то есть, сервер приложений может полностью управлять клиентскими запросами, выстраивая их в очередь и накладывает на каждый запрос лимит по времени...
+ *      Такое поведение 'сервера приложений' гарантирует что серверное приложение будет нормально обрабатывать каждый клиентский запрос (без потери данных в побочных потоках)
+ * 3. критерии соединения к базе могут настраиватся отдельно в контексте драйвера... И на стороне сервера базы данных
+ *    - контекст драйвера держит свой 'пул соединений', 'время жизни сессии', 'таймаут запроса' и еще...
+ *    - сервер базы данных (тоже) держит свой 'пул соединений', 'время жизни сессии', 'таймаут запроса' и еще...
+ *      эти настройки гарантируют серверному приложению что запросы не будут бесконечно долго выполняться.
+ *      То есть, всегда будет установлен какой-то лимит на выполнение...
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close"
+          p:driverClassName="${jdbc.driver.class}" p:url="${jdbc.url}"
+          p:username="${jdbc.username}" p:password="${jdbc.password}"
+          p:initialSize="${jdbc.initial.size}" 
+          p:minIdle="${jdbc.min.idle}" p:maxIdle="${jdbc.max.idle}" 
+          p:maxActive="${jdbc.max.active}"
+          p:timeBetweenEvictionRunsMillis="${jdbc.time.between.eviction}" 
+          p:minEvictableIdleTimeMillis="${jdbc.min.evictable.idle}" 
+          p:testOnBorrow="true" 
+          p:validationQueryTimeout="${jdbc.validation.query.timeout}"
+          p:validationQuery="${jdbc.validation.query}" />
+ * 
+ * JDBC - является базовым интерфейсом, который предоставляет функции-методы для работы с базой данных.
+ *        Но соединением к базе данных управляет драйвер базы данных (mesql, mssql, postgresql, hsqldb, oracle, ...)
+ *        динамическим способом 'Class.forName(...)' - загружается реализация драйвера в jvm
+ *        используя 'фабричный метод' - по строке выбираем и возвращаем нужный драйвер для соединения и работы с базой данных
+ *        -- в результате получаем класс 'Statement' ('PreparedStatement','CollableStatement') - который предоставляет функции-методы для выполнения запросов к базе данных 
+ * Любая реализация ORM-фреймворка (JPA/Persist, Hibernate, TopEclipse, ...) - представляет только функции-методы для работы с базой данных.
+ *        Но провайдер, который обеспечивает драйверами для базы данных, реализуется отдельно:
+ *        - Spring - 'datasource' (DriverManagerDataSource);
+ *        - Apache - 'dbcp' (BasicDataSource);
+ *        - MChange - 'c3p0' (ComboPooledDataSource);
+ *        -- в результате получаем класс 'DataSource' - который предоставляет функции-методы для выполнения запросов к базе данных
+ * 
+ * @Repository - аннотация показывает, что класс функционирует как репозиторий и требует наличия прозрачной трансляции исключений.
+ *               Преимуществом трансляции исключений является то, что слой сервиса будет иметь дело с общей иерархией исключений от Спринга (DataAccessException) вне зависимости от используемых технологий доступа к данным в DAO слое.
+ * @Transactional - Перед исполнением метода помеченного данной аннотацией начинается транзакция, после выполнения метода транзакция коммитится, при выбрасывании RuntimeException откатывается.
+ * Spring поддерживает DAO (работа с шаблонами JDBC):
+ * - JdbcTemplate - основной шаблон JDBC в Spring предоставляет простой доступ к базе данных
+ * - NamedParameterJdbcTemplate - JDBC шаблон позволяет выполнять запросы где значения параметров должны быть связаны с именоваными параметрами в SQL
+ * - SimpleJdbcTemplate - шаблон JDBC использует такие новые возможности Java 5 (autoboxing, generics и varargs)
+ * - JPATemplate - 
+ * - HibernateTemplate - 
+ * 
+ * 
+ ** (18. Data access with JDBC) http://docs.spring.io/spring/docs/current/spring-framework-reference/html/jdbc.html
+ **         (spring-by-example) https://github.com/spring-by-example/spring-by-example/blob/master/app/contact-app/contact-dao/src/main/resources/META-INF/spring/db/dao-datasource-context.xml
+ *      (Spring + JDBC example) http://www.mkyong.com/spring/maven-spring-jdbc-example/
+ ***                            https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  *                    (hibernate пул соединений провайдер)
  ***                            (Hibernate + MySQL + c3p0) http://smecsia.me/2008/02/26/hibernate-mysql-c3po/
