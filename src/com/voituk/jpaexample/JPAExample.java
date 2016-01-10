@@ -1529,21 +1529,22 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * 
  * 
  * 1. HibernateSession (EntityManagerFactory) + Session: list|get,save,update,delete  (EntityManager: find,persist,merge,remote)
- *    состояния объектов в сессии: transiend, persist, detach
+ *    состояния объектов в сессии: transiend,persist,detach
  * 2. (Entity-сущность это легковесный класс бизнес-логики)
  *    Жизненные циклы Entity: new,manager,detach,remote
  *    требования к Entity что необходимо, поддерживаемые типы для Entity, поддерживаемые типы для первичного ключа наследование
  *    'Embedable','Superclass Entity'
  * 3. Отношения между Entity, стратегии наследования, fetch-стратегии для JPA|Hibernate (@EntityGraph)
- * 4. Уровни кеширование в Hibernate, стратегии кеширования, провайдеры кеширования, методы: clean,evil,flush,contains
+ * 4. Уровни кеширование в Hibernate, стратегии кеширования, провайдеры кеширования, методы: clear,evict,flush,constains
  *    @Cacheble, управление в JPA: ALL,NONE, ENABLE|DISABLE SELECTIVE, SPECIFIED
  * 5. Базовая аннотация + @Convert, акцес анотация (2-стратегии)
  * 6. Spring @Repository, Spring @Transaction, Spring шаблоны: JdbcTemplate,NameQueryJdbcTemplate,SingleJdbcTemplate,HibernateTemplate,JPATemplate
  *    JPA блокировки: NONE,OPTIMISTIC,OPTIMISTIC_FORCE_INCREMENT,PESSIMISTIC_READ,PESSIMISTIC_WRITE,PESSIMISTIC_FORCE_INCREMENT
- * 7. Диалект: SQL,JPQL+TYPE,Criteria
+ * 7. Диалект: SQL,JPQL+TYPE,Criteria (.createCriteria >> .add|.addOrder|.list|.iterate|.scroll >> Expression.like|between,Order.asc|desc)
  *    уровни изоляции + решает пролемы, состояния транзакции: COMMIT,ROLLBACK,CHECKPOINT, способы управления: явный,подразумеваемый,программируемый
  *    блокировки по ресурсам|по типу
  *    ключи, индексы
+ *    SELECT-FROM-JOIN|WHERE|HAVING-COUNT-GROUPBY
  *
  * 
  */
