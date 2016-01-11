@@ -663,7 +663,9 @@ import javax.persistence.Query;
  * >>>>> JPQL (Java Persistence query language) - (диалект) это язык HQL-запросов такой же как SQL только (вместо имен и колонок таблиц базы данных) он использует имена классов Entity и их атрибуты;
  * >>>>> В отличии от SQL в запросах JPQL есть автоматический полиморфизм, то есть каждый запрос к Entity возвращает не только объекты этого Entity, но так же объекты всех его классов-потомков.
  *       Чтобы исключить такое поведение используется функция TYPE в where условии.
+ *       ('JPQL' удобно использовать в именнованных запросах на уровне 'доменного слоя' в классе определения Entity-сущности - потому-что здесь ожидаются стандартные запросы к базе...)
  * >>>>> Criteria - это тоже язык запросов аналогичным JPQL, только запросы основаны на методах и объектах;
+ *       ('Criteria' удобно использовать на уровне 'DAO-слоя' - потому-что здесь требуются специфические требования к запросу от 'сервисного слоя'...)
  * >>>>> преимущства от использования Hibernate:
  *       1. прозрачный механизм связи БД и POJO;
  *       2. HQL;
@@ -1528,7 +1530,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * > Отличие PowerMockiti от Mockito в том что PowerMockito может работать со статическими обектами
  * 
  * 
- * 1. HibernateSession (EntityManagerFactory) + Session: list|get,save,update,delete  (EntityManager: find,persist,merge,remote)
+ * 1. SessionFactory (EntityManagerFactory) + Session: list|get,save,update,delete  (EntityManager: find,persist,merge,remote)
  *    состояния объектов в сессии: transiend,persist,detach
  * 2. (Entity-сущность это легковесный класс бизнес-логики)
  *    Жизненные циклы Entity: new,manager,detach,remote
