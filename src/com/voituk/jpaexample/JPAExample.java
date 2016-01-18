@@ -1570,6 +1570,11 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *    блокировки по ресурсам|по типу
  *    ключи, индексы
  *    SELECT-FROM-JOIN|WHERE|HAVING-COUNT-GROUPBY
+ * 
+ * >> SELECT <field1>,<field2>,<field3> FROM <tab> WHERE <field1>=<1>
+ * >> INSERT INTO <tab> (<field1>,<field2>,<field3>) VALUE (<1>,<2>,<3>)
+ * >> UPDATE <tab> SET <field2>=<2>,<field3>=<3> WHERE <field1>=<1>
+ * >> DELETE FROM <tab> WHERE <field1>=<1>
  *
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  * Как работает рекурсивная функция (функция вызывает саму-себя):
@@ -1624,6 +1629,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * > Сортировка для интерфейса 'Map' (например: 'TreeMap') выполняется классом - 'Comparator' или 'Comparable'
  * >> Самосортирующие структуры (например: (Set) 'TreeSet') также выполняется классом - 'Comparator' или 'Comparable'
  * >> Чтобы преобразовать (конвертировать) 'массив элементов' в 'список элементов' нужно применяется функция - 'Arrays.asList()'
+ * 
+ * 
+ * 
  */
 
 public class JPAExample {
