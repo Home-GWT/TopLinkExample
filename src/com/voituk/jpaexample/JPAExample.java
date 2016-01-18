@@ -1553,7 +1553,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *   + имея любой дамп боевой базы данных, можно накатить скрипты обновления на тестовую базу (HSQLDB) и провести интеграционное тестирование - это есть 'автотесты' (такие автотесты позволяют при минимальных ресурсо-затратах выполнять те-же тесты что и при интеграционном тестировании)
  * 
  * 
- * 1. SessionFactory (EntityManagerFactory) + Session: list|get,save,update,delete  (EntityManager: find,persist,merge,remote)
+ * 1. SessionFactory (EntityManagerFactory) + Session: list|get,save,update,delete + (EntityManager: find,persist,merge,remote) ++ (<persistence-unit>|<properties>) (<hibernate-configuration>|<session-factory>)
  *    состояния объектов в сессии: transiend,persist,detach
  * 2. (Entity-сущность это легковесный класс бизнес-логики)
  *    Жизненные циклы Entity: new,manager,detach,remote
@@ -1571,11 +1571,22 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *    ключи, индексы
  *    SELECT-FROM-JOIN|WHERE|HAVING-COUNT-GROUPBY
  * 
+ *    (для выборки и удаления строк из базы - выполняется предварительный поиск строки через выборку, то есть, здесь применяется - 'FROM')
  * >> SELECT <field1>,<field2>,<field3> FROM <tab> WHERE <field1>=<1>
  * >> DELETE                            FROM <tab> WHERE <field1>=<1>
  * >> UPDATE                                 <tab> SET   <field2>=<2>,<field3>=<3> WHERE <field1>=<1>
  * >> INSERT INTO                            <tab>       (<field1>,<field2>,<field3>) VALUE (<1>,<2>,<3>)
+ *    (для вставки и обновления строк в базе происходит установка значения либо для одного поля - 'SET' либо для множества полей / все строки - 'VALUE')
+ * 
+ * 
+ * > Базовые типы в Java (их 8):
+ *   - boolean
+ *   - (цыферки) byte=8, char=16, short=16, int=32, long=64
+ *   - (нецелые цыферки) float=32, double=64
  *
+ *** (Анализ коэффициента заполнения Java-коллекций в Memory Analyzer) http://www.ibm.com/developerworks/ru/library/j-codetoheap/
+ ***                                     (Memory Analyzer Version 1.4) http://www.ibm.com/developerworks/java/jdk/tools/memoryanalyzer/ >> http://www.eclipse.org/mat/
+ *   (Базовые типы данных) http://frolov-lib.ru/programming/javasamples/vol1/vol1_1/index.html
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  * Как работает рекурсивная функция (функция вызывает саму-себя):
  * 1. (первое) в 'стеке' выстраивается свяазанная цепочка вызовов (рекурсивной) функции...
