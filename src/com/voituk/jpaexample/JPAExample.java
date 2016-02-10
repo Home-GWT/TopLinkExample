@@ -352,10 +352,10 @@ import javax.persistence.Query;
  * 
  * Для Hibernate
  * *****************
- * get|list (SELECT)
- *     save (INSERT)
- *   delete (DELETE)
- *   update (UPDATE)
+ * get|list|load (SELECT)
+ *          save (INSERT)
+ *        delete (DELETE)
+ *        update (UPDATE)
  * 
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  **                            (Введение в хеш-таблицы) https://bitsofmind.wordpress.com/2008/07/28/introduction_in_hash_tables/
@@ -551,7 +551,7 @@ import javax.persistence.Query;
  *                    Configuration - загрузка файла-конфигурации 'hibernate.cfg.xml' и настройка среды Hibernate (для коннекта к базе)
  * > Session - (Hibernate сессия) это главный интерфейс взаимодействия Java-приложения и Hibernate.
  *             Задача сессии обеспечить механизмы создания/чтения/удаления для объектов:
- *             - Для Hibernate: get|list (SELECT)
+ *             - Для Hibernate: get|list|load (SELECT)
  *                              save (INSERT)
  *                              delete (DELETE)
  *                              update (UPDATE)
@@ -811,7 +811,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                  Если таблиц много - тогда цыклов тоже много И такие цыклы являются вложенными И выполняются такие вложенные цыклы многократно раз. Например:
  *                  если три таблицы имеют по 10-строк тогда запрос вернет[10*10*10=] 1000-строк (вместо 30-строк)
  *       >> 'JOIN' - тоже делает выборку таблиц из файла на диске и загружает данные из нее в рабочую память-ОЗУ сервера базы данных
- *                   НО еще JOIN выполняет проверку и пропускает или сортирует записи дублирующие записи...
+ *                   НО еще JOIN выполняет проверку и пропускает или сортирует дублирующие записи...
  *                   Такое дополнительное действие-проверки заставляет больше/дольше отрабатывать серверу базы данных
  *                   И в этом случае запрос вернет [10+-10+-10=] 10-30 строк
  *                   (такое действие называется - внутренней сортировкой)
@@ -999,6 +999,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *   1. через сэттер;
  *   2. через конструктор;
  * - IoC предоставляет возможность объекту получать ссылки на свои зависимости, это реализуется через lookup-метод. Преимущество IoC в том что эта модель позволяет отделить объекты от реализации механизмов которые он использует.
+ *   @Autowired
  * 
  * **************************************[ Spring MVC: DAO-cлой,Сервис-слой,Доменный-слой,Веб-слой,Слой-представления ]**************************************
  * 
@@ -1122,6 +1123,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                        
  * >>>>> Для проверки работы приложения можно в 'public static void main(String[] args) {...}
  *       ApplicationContext context = new FileSystemXmlApplicationContext(new String[] {"/web/WEB-INF/dispatcher-servlet.xml"});
+ * 
  * 
  * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
  *
@@ -1251,7 +1253,6 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 
          > @ResponseBody - отдает ответ непосредственно браузеру (минуя слой представлений)
                            то есть, если говорить об Spring-MVC архитектуре (использование @ResponseBody предусматривает отсутствие 'слоя представления')
-         
  *       
  *       >  Данные от контроллера к представлению могут передаться двумя способами:
  *       (1)> это можно сделать классом 'Model'
@@ -1315,12 +1316,45 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 			@RequestMapping(value = "/myurl/{category}/{product}")
 			public String my(@PathVariable int category, @PathVariable("product") String productName, Model model) {}
 			
+ * ********************************************************************************************************************************************
+ * 
+ * @ModelAttribute - является специфической аннотации Spring-MVC и используется для подготовки данных модели
+ * 
+    @ModelAttribute("myobject")
+    public MyObject getInitializeMyObject() {
+        return serviceRegistry.myService.getInitializedObject();
+    }
+    
+    @RequestMapping(value="/handle.htm", method=RequestMethod.GET)
+    public ModelAndView handleRequest(@ModelAttribute("myobject") MyObject myObject) {
+        myObject.setValue("test");
+        return new ModelAndView("myView");
+    }
+    
+ * Жизненный цикл @SessionAttributes : 
+ * 1. @SessionAttributes - инициализируется, когда вы положили соответствующий атрибут в модели (явно или с помощью @ModelAttribute-аннотированных методов).
+ * 2. @SessionAttributes - обновляется данными из параметров HTTP, когда метод контроллера с соответствующим атрибутом модели в своей подписи вызывается.
+ * 3. @SessionAttributes - очищаются при вызове SetComplete () на SessionStatus объекта, переданного в метод контроллера в качестве аргумента.
+ * 
+		@Controller
+		@SessionAttributes("myobject")
+		public class MyController {
+		
+		    @RequestMapping(value="/handle.htm", method=RequestMethod.GET)
+		    public ModelAndView handleRequest(@ModelAttribute("myobject") MyObject myObject) {
+		        myObject.setValue("test");
+		        return new ModelAndView("myView");
+		    }
+		
+		}
+			
 	     (spring mvc контроллер)
 	     (Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
 	                                       http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
 	          (REST на примере Spring MVC) http://devcolibri.com/3732
  ***     (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
 	                         (Краткий обзор Spring Security) http://habrahabr.ru/post/203318/
+	     (Power of Spring's @ModelAttribute and @SessionAttributes) http://vmustafayev4en.blogspot.com/2012/10/power-of-springs-modelattribute-and.html
  *       ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
  *       (spring mvc asynchronous controller)
  *       ** http://shengwangi.blogspot.com/2015/09/asynchronous-spring-mvc-hello-world.html
@@ -1506,7 +1540,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *   Но если нужно изменять писать в XML-документ тогда нужно использовать DOM.
  *   
  * > XStream - является примером легковесной и простой в использовании Java-библиотеки для сериализации объектов в XML и обратно.
- * > Если нужно построить объектное представление XML данных, а также обойти ограничения памяти DOM, то следует использовать JAXB.
+ * > JAXB - если нужно построить объектное представление XML данных, а также обойти ограничения памяти DOM, то следует использовать JAXB.
  *   Классы созданные с помощью JAXB не обладают возможностью управления деревьями, а это приводит к тому, что дерево объектов JAXB занимает небольшой объем памяти.
  * 
  * (java xstream and jaxb) https://www.ibm.com/developerworks/ru/library/x-xjavaforum5/
@@ -1582,7 +1616,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * Бит [Кбит] - может принимать значение 0 или 1
  *              (это минимальная единица измерения количества информации) в двоичной системе счисления бит равен одному разряду
  *              то есть в общем представлении 'бит' это единица физического элемента (тригер - состояние логического устройства)
- * Байт [Кб] – может принимать значение от 0 до 256
+ * Байт [Кб] – может принимать значение от 0 до 256 (-128...127)
  *             единица хранения цифровой информации (представляющая собой совокупность битов, в одном байте – 8 бит) которые система может обрабатывать одновременно
  *             то есть в общем представлении 'байт' это единица логического элемента (символ - машинное слово)
  * -- вычислительная техника бывает 8,16,32,64 разрядной И в зависимости от разрядности размера хранения информации (в битах) которая будет обрабатываться одновременно тоже будет разная...
@@ -1700,6 +1734,318 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * >> Самосортирующие структуры (например: (Set) 'TreeSet') также выполняется классом - 'Comparator' или 'Comparable'
  * >> Чтобы преобразовать (конвертировать) 'массив элементов' в 'список элементов' нужно применяется функция - 'Arrays.asList()'
  * 
+ * 
+ * **********************************************************************[ JSP ]**********************************************************************
+ * 
+ * Как обрабатываются JSP страницы начиная от запроса к серверу заканчивая ответом пользователю:
+ * 1. Запрос от пользователя
+ * 2. Чтение .jsp страницы сервером
+ * 3. Генерация java-класса на основе этой .jsp страницы
+ * 4. Компиляция в class-файл
+ * 5. Выполнения class-файла
+ * 6. Отправка ответа пользователю в виде html-страницы
+ * 
+ * Какие скоупы переменных существуют в JSP?
+ * Это переменные определенного скоупа которые доступны через выражения ${...}
+ * В JSP предусмотрены следующие области действия переменных (объектов):
+ * > page - область действия страницы (объект доступен только на той странице, где он определен);
+ * > request - область действия запроса (объект будет доступен на текущей JSP странице 'jsp:forward', странице пересылки или на включаемой странице 'jsp:include');
+ * > session - область действия сессии (объект будет помещен в сеанс пользователя - Бин будет доступен на всех JSP страницах и будет существовать пока существует сессия пользователя, или принудительно удален);
+ * > application - область действия приложения (доступен для всех пользователей на всех JSP страницах и существует на протяжении всей работы приложения или пока не будет удален принудительно и контекста приложения);
+ * > response
+ * > out
+ * > config
+ * 
+ * >> для JSP-старнички скоуп по-умолчанию - 'page'
+ * 
+ * Из каких груп тегов состоит библиотека JSTL:
+ * 1. core - основные теги
+ * 2. formatting - теги форматироавния
+ * 3. sql - теги для работы с SQL
+ * 4. xml - теги для работы с XML
+ * 5. functions - функции-теги для обработки строк
+ *
+ * Фильтры - перехватывает запрос (несоздает запрос или ответ, а только) и модифицирует заголовок и содержимое запроса клиента
+ * 
+ * Интерфейсы:
+ * 1. HttpServletResponse - для отправки данных клиенту
+ * 2. HttpServletRequest - для получения параметров HTTP-запроса
+ * 3. HttpServletContext - чтобы связать его с контейнером сервлета
+ * 4. HttpServletConfig - параметры иннициализации сервлета
+ * 
+ * Методы сервлета (HttpServlet): GET, HEAD, POST, PUT, DELETE, OPTIONS, TRACE
+ * >>doService()
+ * > doGet()
+ * > doPost()
+ * > doPut()
+ * > doDelete()
+ * ...
+ * 
+ * 
+		protected void doGet(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
+		    
+		 HttpSession session = arg0.getSession();
+		 session.setAttribute("resultString", "Hello, JSP!");
+		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/result.jsp");
+		 dispatcher.forward(arg0, arg1);
+		}
+ *
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<BODY>
+			<%= session.getValue("resultString") %>
+			<% ${hello} %>
+			<c:forEach items="${lala}" var="myvar">
+			    ....
+			</c:forEach>
+		</BODY>
+
+ *
+ * (Вопросы на собеседование Junior Java Developer) http://jsehelper.blogspot.com/2016/01/jsp-servlets-jstl.html
+ *                                                  http://jsehelper.blogspot.com/2016/01/blog-post_13.html
+ * (Области видимости JSP переменных) http://javacore.ru/topic/79-jsp.htm
+ * (coreer ** Category Archives: JSP) https://coreer.wordpress.com/category/jsp/
+ * (coreer ** Category Archives: EL(jsp Expression Language)) https://coreer.wordpress.com/category/eljsp-expression-language/
+ * (передача параметров в jsp) http://forum.vingrad.ru/forum/topic-126745.html
+ * 
+ *
+ * **********************************************************************[ Spring ]**********************************************************************
+ * 
+ * Скоупы в Spring:
+ * > singleton (default) — гарантирует единственный экземпляр бина в пределах одного класс-лоадера
+ * > prototype — при каждом получении бина (через связывание или getBean), будет создан новый экземпляр класса
+ * > request — привязка бина к HTTP запросу
+ * > session — бин существует на время жизни сессии
+ * > global-session — бин существет в рамках глобальной HTTP сессии (применяется в рамках механизма портлетов).
+ * 
+ * >> для bean-компонента @Scope по умолчанию (область действия) - 'singleton'
+ * 
+ * @Service
+ * @Scope("prototype")
+ * 
+		@Service
+		@Scope("prototype")
+		public class ServiceA {
+		    private Customer customer;
+		    private ReloadType reloadType;
+		
+		    private ServiceB serviceB;
+		
+		    @Autowired
+		    private ApplicationContext context;
+		
+		    public ServiceA(final Customer customer, final ReloadType reloadType) {
+		        this.customer = customer;
+		        this.reloadType = reloadType;
+		    }
+		
+		    @PostConstruct
+		    public void init(){
+		        serviceB = (ServiceB) context.getBean("serviceB",customer, reloadType);
+		    }
+		
+		    public void doSomethingInteresting(){
+		        doSomthingWithCustomer(customer,reloadType);
+		        serviceB.doSomethingBoring();
+		    }
+		
+		    private void doSomthingWithCustomer(final Customer customer, final ReloadType reloadType) {
+		
+		    }
+		}
+ * 
+		@Configuration
+		public class AppContext {
+			@Bean(initMethod = "setup", destroyMethod = "cleanup")
+			@Scope("prototype")
+			public Course course() {
+				Course course = new Course();
+				course.setModule(module());
+				return course;
+			}
+			...
+		}
+ * 
+ * (Spring bean custom scope) https://habrahabr.ru/post/225397/
+ * (Управление bean-компонентами Spring при конфигурировании на основе Java) http://www.ibm.com/developerworks/ru/library/ws-springjava/
+ * 
+ * **********************************************************************[ Web Service с помощью JAX-WS ]**********************************************************************
+ * 
+ * 1. Создать интерфейс, описывающий будущий сервис. Аннотациями отметить методы и аргументы как на примере ниже:
+				@WebService(name="EntityPortMyType", targetNamespace = "http://my.domain.com/ws/definitions")
+				public interface EntityManager{
+				    @WebMethod
+				    long addEntity();
+				
+				    @WebMethod
+				    long findEntity( @WebParam(name = "type")IdentityType i_type, @WebParam(name = "identity")String identity );
+				
+				    @WebMethod
+				    void removeEntity( @WebParam(name = "id")long id );
+				}
+ * 2. Создать класс-реализацию интерфейса. Несколько тонких моментов (обратить внимание на аннотации класса, реализующего интерфейс):
+ *      portName        - должен указывать на порт того типа, что прописан в интерфейсе
+ *      targetNamespace - должен быть такой же, как и у интерфейса
+ *      endpointInterface - точно указывать на полное имя реализуемого интерфейса
+ *      wsdlLocation - (cамое главное) должен непременно указывать на папку wsdl в каталоге WEB-INF
+				@WebService(serviceName = "EntityManager",
+				            portName="EntityPortMyType",
+				            endpointInterface = "com.mydomain.webapp.domain.EntityManager",
+				            targetNamespace = "http://my.domain.com/ws/definitions",
+				            wsdlLocation = "WEB-INF/wsdl/EntityManager.wsdl")
+				
+				public class EntityManagerImpl implements EntityManager{
+				    public long addEntity(){
+				        // method body
+				        return 0;
+				    }
+				
+				    public long findEntity(IdentityType i_type, String identity){
+				        // method body
+				        return 0;
+				    }
+				
+				    public void removeEntity(long id){
+				       // method body
+				    }
+				}
+ * 3. В pom файле проекта необходимо совершить: 
+ *    - вставить код для jaxws-maven плагина, 
+ *    - обязательно прописав параметр resourceDestDir (иначе сгенерированные wsdl и xsd файлы окажутся где-то еще, но не там, где им необходимо быть)
+				<plugin>
+				        <groupId>org.codehaus.mojo</groupId>
+				        <artifactId>jaxws-maven-plugin</artifactId>
+				        <executions>
+				            <execution>
+				                <goals>
+				                    <goal>wsgen</goal>
+				                </goals>
+				            </execution>
+				        </executions>
+				        <configuration>
+				            <resourceDestDir>${basedir}/src/main/webapp/WEB-INF/wsdl</resourceDestDir>
+				            <sei>com.my.domain.webapp.domain.EntityManagerImpl</sei>
+				            <genWsdl>true</genWsdl>
+				            <keep>true</keep>
+				            <packageName>com.my.domain.webapp.domain</packageName>
+				        </configuration>
+				</plugin>
+				<dependency>
+				     <groupId>com.sun.xml.ws</groupId>
+				     <artifactId>jaxws-rt</artifactId>
+				     <version>2.1.3</version>
+				</dependency>
+ * 4. Для работы в Tomcat необходимо как обычно в web.xml файле прописать путь и прицепить сервлет для обработки URL:
+ *    - Сервлет (com.sun.xml.ws.transport.http.servlet.WSServlet)
+ *    - Обработчик (com.sun.xml.ws.transport.http.servlet.WSServletContextListener)
+				 <listener>
+				    <listener-class>
+				        com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+				    </listener-class>
+				</listener>
+				
+				<servlet id="ws-entities-servlet">
+				    <servlet-name>EntityService</servlet-name>
+				    <servlet-class>
+				        com.sun.xml.ws.transport.http.servlet.WSServlet
+				    </servlet-class>
+				    <load-on-startup>1</load-on-startup>
+				</servlet>
+				<servlet-mapping id="ws-entities-servlet-mapping">
+				    <servlet-name>EntityService</servlet-name>
+				    <url-pattern>/app/entities</url-pattern>
+				</servlet-mapping>
+ * 5. Создать файл sun-jaxws.xml 
+ *      Но что же сервлет будет делать с запросом, пришедшим на url-pattern?
+ *      В данный момент ему его деть некуда и он вернет ошибку 404. Чтобы исправить эту ситуацию, надо создать файл sun-jaxws.xml в директории WEB-INF проекта и вписать туда следующие строчки:
+				<?xml version="1.0" encoding="UTF-8"?>
+				<endpoints
+				        xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+				        version="2.0">
+				    <endpoint name="EntityManager"
+				            implementation="com.my.domain.webapp.domain.EntityManagerImpl"
+				            url-pattern="/app/entities"/>
+				</endpoints>
+ * 6. Собрав проект и запустив Tomcat, можно обратиться по следующему URL и посмотреть на WSDL файл веб сервиса
+				http://localhost:8080/my-webapp/app/entities?wsdl
+ * 
+ * 
+ ** (Как написать Web Service с помощью JAX-WS) http://anton.troshin.name/?p=1352
+ * 
+ * **********************************************************************[ Низкоуровневые/Высокоуровневые AJAX запросы ]**********************************************************************
+ * 
+		$("селектор").load(url,данные,функция)
+ * 
+		$(document).ready(function(){
+		 
+		   $("#but1").click(function(){
+		      $("#par1").load("testfile.txt");
+		   })
+		
+		});
+ *  
+ * Что нужно для AJAX-запроса:
+ * - Указать url-адрес
+ * - Указать метод-тип-запроса
+ * - Указать данные для передачи на обработку
+ * - Определить функцию для успешного получения данных
+ * - Определить функцию которая будет вызвана в случае ошибки
+ * - Можно указать функцию в случае любого завершения запроса А также функцию для выполнения синхронного запроса (обычно это асинхронные запросы)
+ * 
+ * Параметр dataType:
+ * > "xml" — полученный xml-документ будет доступен в текстовом виде. С ним можно работать стандартными средствами jQuery (также как и с документом html).
+ * > "html" — полученный html будет доступен в текстовом виде. Если он содержит скрипты в тегах <script>, то они будут автоматически выполнены, только когда html-текст будет помещен в DOM.
+ * > "script" — полученные данные будут исполнены как javascript. Переменные, которые обычно содержат ответ от сервера будут содержать объект jqXHR.
+ * > "json", "jsonp" — полученные данные будут предварительно преобразованы в javascript-объект. Если разбор окажется неудачным (что может случиться, если json содержит ошибки), то будет вызвано исключение ошибки разбора файла. Если сервер, к которому вы обращаетесь, находится на другом домене, то вместо json следует использовать jsonp. Узнать о json и jsonp можно на википедии.
+ * > "text" — полученные данные окажутся доступными в виде обычного текста, без предварительной обработки.
+ * 
+ * > Если для совершения запроса к серверу необходимы данные аутентификации (логин/пароль), то их можно указать в настройках username и password ajax-запроса.
+ * > На выполнение запроса к серверу отводится определенное время. Если в течении этого времени сервер не присылает ответ, то запрос завершается с ошибкой (статус "timeout")
+ * > В большинстве случаев, ajax-запрос происходит асинхронно, однако в некоторых случаях может понадобиться последовательное выполнение запроса (когда дальнейшее выполнение скрипта невозможно, без получения ответа от сервера). Сделать запрос синхронным можно если отключить настройку 'async'
+ * > Может так случиться, что кодировка хоста отличается от кодировки запрашиваемого в ajax-запросе javascript файла. В таких случаях необходимо указать кодировку последнего в настройке 'scriptCharset'
+ * 
+		$.ajax(); // на сервер будет отправлен GET-запрос на url-адрес текущей страницы и без указания каких-либо параметров
+ * 
+		$.ajax({
+		  url: "some.php",
+		  type: "GET",
+		  data: "name=John&location=Boston",
+		  success: function(msg){
+		    $("#results").append(msg);
+		  }
+		});
+ * или
+ * 
+		$.ajax({
+		  url: "some.php",
+		  type: "GET",
+		  dataType: json,
+		  data: {name: 'John', location: 'Boston'},
+		  scriptCharset: ...
+		  timeout: миллисекундах
+		  beforeSend: {
+		    // происходит непосредственно перед отправкой запроса на сервер
+		  },
+		  success: function(msg){
+		    // происходит в случае удачного завершения запроса
+		    $("#results").append(msg);
+		  },
+		  error: function(jqXHR, textStatus, errorThrown){
+		    // происходит в случае неудачного выполнения запроса
+		  },
+		  complet: function(jqXHR, textStatus){
+		    // происходит в случае любого завершения запроса
+		  }
+		});
+ * или
+		$.ajax({
+		  type: "GET",
+		  url: "test.js",
+		  dataType: "script"
+		});
+ * 
+ * 
+ ** (Ajax-запрос | jQuery.ajax()) http://jquery.page2page.ru/index.php5/Ajax-запрос
+ *                                http://www.wisdomweb.ru/AJAX/jquery.php
  * 
  * 
  */
