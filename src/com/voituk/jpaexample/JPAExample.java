@@ -186,6 +186,13 @@ import javax.persistence.Query;
  * (Блокировка (СУБД)) https://ru.wikipedia.org/wiki/Блокировка_(СУБД)
  * (Блокировки и уровни изоляции транзакций InnoDB в MySQL) https://habrahabr.ru/post/238513/
  * (блокировки при записи в регистр сведений) http://www.forum.mista.ru/topic.php?id=659368
+ * (InnoDB: транзакции и блокировки) http://articles.javatalks.ru/articles/28
+ * (Блокировки в SQL Server) http://www.sql.ru/articles/mssql/2004/04110303advancedlocking.shtml
+ * (Режимы блокировки) https://technet.microsoft.com/ru-ru/library/ms175519%28v=sql.105%29.aspx
+ * (Справочное руководство по MySQL) http://www.mysql.ru/docs/man/InnoDB_Deadlock_detection.html
+ * (Что такое deadlock и как с ним бороться) http://www.sql.ru/docs/interbase/deadlocks.shtml
+ * (Взаимная блокировка) https://ru.wikipedia.org/wiki/Взаимная_блокировка
+ * (Типичные взаимные блокировки в MS SQL и способы борьбы с ними) https://habrahabr.ru/company/mindbox/blog/261661/
  * --------------------------------------------------------------------------------------------------------------------------------------------------------------
  * + 'коллективная блокировка' (Shared) - блокировка в режиме чтения позволяет транзакции: читать строку. Используются для операций считывания (SELECT);
  *                                      - позволяет другим транзакциям читать строку и ставить такую-же Shared-блокировку;
