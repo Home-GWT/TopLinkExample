@@ -1132,6 +1132,12 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  ** (как работает notify) http://javatalks.ru/topics/35261
  *** (Как ведет себя static метод в многопоточном приложении) http://ru.stackoverflow.com/questions/19452/Как-ведет-себя-static-метод-в-многопоточном-приложении
  *** (Синхронизация потоков) http://www.skipy.ru/technics/synchronization.html
+ *
+ *                                       (java synchronized примеры)
+ *                                                                   http://www.javenue.info/post/87
+ *                                                                   http://www.quizful.net/interview/java/volatile-vs-synchronized
+ *** (Синхронизация потоков, блокировка объекта и блокировка класса) http://info.javarush.ru/translation/2014/10/27/Синхронизация-потоков-блокировка-объекта-и-блокировка-класса.html
+ *                                                                   http://sandro-omsk.livejournal.com/6622.html
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  * 
  * 
@@ -1642,6 +1648,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  **         (spring-by-example) https://github.com/spring-by-example/spring-by-example/blob/master/app/contact-app/contact-dao/src/main/resources/META-INF/spring/db/dao-datasource-context.xml
  *      (Spring + JDBC example) http://www.mkyong.com/spring/maven-spring-jdbc-example/
  ***                            https://github.com/JobTest/vitrinaPredmainTask/tree/miratex-master/Task
+ * 
+ *** (Spring IoC @Autowired NullPointerException) https://habrahabr.ru/post/48606/
+ *                                                http://www.sql.ru/forum/898652/ispolovanie-autowired-ne-v-kontrollere
  * :::::::::::::::::::::::::::::::::::::::::::::::::::::::
  *                    (hibernate пул соединений провайдер)
  ***                            (Hibernate + MySQL + c3p0) http://smecsia.me/2008/02/26/hibernate-mysql-c3po/
