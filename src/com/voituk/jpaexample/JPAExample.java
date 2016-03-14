@@ -713,7 +713,7 @@ import javax.persistence.Query;
  *    7. класс должен содержать первичный ключ;
  * >> типы данных допустимы в Entity:
  *    1. примитивные типы и их обертки Java;
- *    2. строки;
+ *    2. строки (String) И BigDecimal, BigInteger;
  *    3. любые сериализуемые типы Java (реализующие Serializable интерфейс);
  *    4. enums;
  *    5. entity классы; 
@@ -1037,6 +1037,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * *********************************
  * Множество 'catch' блоков - это такой себе список кейсов - из которого (по типу исключения) будет выбран только один (остальные НЕбуду выполнены)!
  * Дальше будет выполнен блок 'finally' (если тактой есть)
+ * * * * * * * * * * * * * * * * * *
+ * try/catch/finally >>> иерархия вызова..............................
  *  
  *       
  *** (Spring / @SessionAttributes("myobject")) http://vmustafayev4en.blogspot.com/2012/10/power-of-springs-modelattribute-and.html
