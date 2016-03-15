@@ -1287,6 +1287,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       ApplicationContext context = new FileSystemXmlApplicationContext(new String[] {"/web/WEB-INF/dispatcher-servlet.xml"});
  * 
  * 
+ * 
  * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
  *
  * ?????????????????????????????????????????????????????????
@@ -1403,16 +1404,29 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *       
  *       -------------------[ Модель-представление-контроллер ]-------------------
  *       >  В Spring-е 'контроллер' помечаеться аннотацией - @Controller (сообщет Spring-у что класс является bean-ом и его необходимо подгрузить при старте приложения)
-
-	     > Аналогично работают:
-	       - @PathVariable .... использует параметры из строки URL-адресса
-	       - @RequestParam .... использует параметры строковых переменных из тела клиентского запроса
-           - @RequestHeader ... использует параметры из HAED-блока клиентского запроса
-         > Аналогично работают:
-           - 'Model' .......... 'модель' передается методу-обработчику в качестве параметра, а метод-обработчик возвращает название 'представления'
-           - 'ModelAndView' ... метод-обработчик создает, определяет и возвращает 'модель' (а внутри этой 'модели' определено 'представление')
-           - @ResponseBody .... возвращет строковое значение прямо на веб-браузер (минуя 'слой представления')
-
+ *
+ *	     > Аналогично работают:
+ *	       - @PathVariable .... использует параметры из строки URL-адресса
+ *	       - @RequestParam .... использует параметры строковых переменных из тела клиентского запроса
+ *         - @RequestHeader ... использует параметры из HAED-блока клиентского запроса
+ *       > Аналогично работают:
+ *         - 'Model' .......... 'модель' передается методу-обработчику в качестве параметра, а метод-обработчик возвращает название 'представления'
+ *                              класс-Model передается в качестве параметра методу-обработчику
+ *                              а сам же метод-обработчик возвращает строку, которая является адрессом на страницу представления
+ *         - 'ModelAndView' ... метод-обработчик создает, определяет и возвращает 'модель' (а внутри этой 'модели' определено 'представление')
+ *                              класс-ModelAndView определяется как объект внутри метода-обработчика И в нем-же определяется (в конструкторе) адресс-ссылки на страницу представления
+ *                              а сам же метод-обработчик возвращает этот объект типа-ModelAndView
+ *
+ *			@RequestMapping(value = "/opers/{filialId}", method=RequestMethod.GET)
+ *			public ModelAndView getOpers(@PathVariable("filialId") int filialId) {
+ *			    ModelAndView model = new ModelAndView("opers");
+ *			    model.addObject("opers", operService.getOperByFilialId(filialId));
+ *			    return model;
+ *			}
+ *
+ *
+ *         - @ResponseBody .... возвращет строковое значение прямо на веб-браузер (минуя 'слой представления')
+ * 
          > @ResponseBody - отдает ответ непосредственно браузеру (минуя слой представлений)
                            то есть, если говорить об Spring-MVC архитектуре (использование @ResponseBody предусматривает отсутствие 'слоя представления')
  *       
@@ -1509,7 +1523,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
 		    }
 		
 		}
-			
+ * 
+ * 
 	     (spring mvc контроллер)
 	     (Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
 	                                       http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
@@ -1581,7 +1596,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *			  </param-value>
  *			</context-param>
  *
- *
+ *   (ModelAndView что делает) http://ru.stackoverflow.com/questions/484116/Внешний-ключ-в-hibernate
+ *                             http://java-course.ru/old/students/students.php?name=part20
+ *                             http://www.sql.ru/forum/1192351/spring-mvc-neskolko-sessionattributes-i-modelattribute
  *** (Spring Security/Технический обзор Spring Security) https://ru.m.wikibooks.org/wiki/Spring_Security/Технический_обзор_Spring_Security
  ***                                                     http://www.spring-source.ru/docs_intermedia.php?type=manual&theme=docs_intermedia&docs_intermedia=chap01_p01
  *                                                       http://habrahabr.ru/post/111102/
