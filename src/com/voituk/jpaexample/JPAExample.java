@@ -2331,5 +2331,118 @@ public class JPAExample {
 		
 		
 	}
+	
+	
 
+	
+	
+	
+	///////////////////////////////////////////////////////////////
+	class DemoClass1 {
+		public void myMethod11(){
+			// @TODO 
+		}
+	}
+
+	class DemoClass2 {
+		public synchronized void myMethod21(){
+			// @TODO
+		}
+		
+		public void myMethod22(){
+			synchronized(this){
+				// @TODO
+			}
+		}
+	}
+
+//	class DemoClass3 {
+//		public synchronized static void myMethod31(){
+//			// @TODO
+//		}
+//		
+//		public void myMethod32(){
+//			synchronized(DemoClass3.class){
+//				// @TODO
+//			}
+//		}
+//		
+//		private static final Object LOCK = new Object();
+//		public void myMethod33(){
+//			synchronized(LOCK){
+//				// @TODO
+//			}
+//		}
+//	}
+	
+	static class DemoClass4 { // можно декларировать статические классы + можно декларировать локальные стетические поля и методы
+		public synchronized void myMethod41(){
+			// @TODO 
+		}
+		
+		public synchronized static void myMethod42(){
+			// @TODO
+		}
+		
+		static class DemoClass5 {
+			public synchronized void myMethod51(){
+				// @TODO
+			}
+			
+			public synchronized static void myMethod52(){
+				// @TODO
+			}
+//			public synchronized void myMethod52(){
+//				// @TODO
+//			}
+		}
+		
+		class DemoClass52 extends DemoClass5 {
+//			public synchronized void myMethod52(){
+//				// @TODO
+//			}
+		}
+	}
+	
+	public static void testMethod(){
+//		DemoClass4.myMethod41();
+		DemoClass4.myMethod42();
+	}
 }
+
+
+class DemoClass3 {
+	public synchronized static void myMethod31(){
+		// @TODO
+	}
+	
+	public void myMethod32(){
+		synchronized(DemoClass3.class){
+			// @TODO
+		}
+	}
+	
+	private static final Object LOCK = new Object();
+	public void myMethod33(){
+		synchronized(LOCK){
+			// @TODO
+		}
+	}
+}
+
+//static class DemoClass4 {
+//	
+//}
+
+class DemoClass11 {
+	public void startMethod(){
+		JPAExample.DemoClass4.myMethod42();
+		JPAExample.DemoClass4 demoClass4 = new JPAExample.DemoClass4();
+		demoClass4.myMethod41();
+		
+		JPAExample.DemoClass4.DemoClass5.myMethod52();
+		JPAExample.DemoClass4.DemoClass5 demoClass5 = new JPAExample.DemoClass4.DemoClass5();
+		demoClass5.myMethod51();
+	}
+}
+
