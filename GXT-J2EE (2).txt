@@ -139,6 +139,7 @@ http://api.mail.ru/docs/guides/restapi/
   https://www.ibm.com/developerworks/ru/library/os-dw-os-ag-j2eewsgeron-i/
   http://www.intuit.ru/studies/courses/64/64/lecture/1892
   https://netbeans.org/kb/docs/web/quickstart-webapps_ru.html
+  http://api.mail.ru/docs/guides/restapi/
   
 
 
