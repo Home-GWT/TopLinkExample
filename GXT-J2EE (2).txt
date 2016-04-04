@@ -1,0 +1,174 @@
+
+(пример как создавать сессионный бин в j2ee)
+* (JAVA EE JSP Теория Servlet EJB JPA) http://www.warenhaus.com.ua/?p=1088
+                                       https://github.com/TalismanFR/MyBlog/blob/article5/myblog/src/java/controller/web_controller.java
+                                       https://github.com/TalismanFR/MyBlog/blob/article5/myblog/src/java/session/ArticlesFacade.java
+@WebServlet(name = "web_controller", loadOnStartup=1, urlPatterns = {"/article", "/registration"})
+public class web_controller extends HttpServlet {
+
+    @EJB
+    ArticlesFacade articlesFacade;
+......
+@Stateless
+public class ArticlesFacade extends AbstractFacade<Articles> {
+......
+
+* (Oracle Containers for J2EE) http://www.interface.ru/oracle/EEOracleAS10g.htm
+классы Java, не сохраняющие информацию о состоянии (stateless);
+классы Java, сохраняющие информацию о состоянии (statefull);
+компоненты Session Enterprise Java Beans (EJB) без состояния; 
+
+* (Вопрос: ejb и аннотации postConstract ,PreDestroy) http://forundex.ru/yap/Inzhektiruemij-bin-ne-podhvativaetsya--veblodzhikom-153132
+
+* (Учебный курс по электронной коммерции NetBeans. Добавление классов сущностей и сеансных компонентов) https://netbeans.org/kb/docs/javaee/ecommerce/entity-session_ru.html?print=yes
+EJB предоставляет три вида сеансных компонентов: с поддержкой состояния, без поддержки состояния и одноэкземплярные. Следующие определения взяты из учебного курса Java EE 6.
+
+    С поддержкой состояния: состояние компонента сохраняется между вызовами методов. "Состояние" – это значения переменных экземпляра. Поскольку клиент взаимодействует с компонентом, это состояние часто называют диалоговым.
+    Без поддержки состояния: такие компоненты используется для операций, происходящих в течение одного вызова метода. При завершении выполнения метода состояние, зависящее от клиента, не сохраняется. Компонент без сохранения состояния не поддерживает диалоговое состояние с клиентом.
+    Одноэкземплярный: одноэкземплярный сеансный компонент создается в приложении в единственном числе и существует в течение всего жизненного цикла приложения. Одноэкземплярные сеансные компоненты созданы для ситуаций, в которых один экземпляр компонента уровня предприятия совместно и одновременно используется клиентами.
+
+* (Создание приложения J2EE с помощью EJB 3.1) https://netbeans.org/kb/docs/javaee/javaee-entapp-ejb_ru.html
+* (Simple Stateless Session Bean example) https://examples.javacodegeeks.com/enterprise-java/ejb3/stateless-session-bean/simple-stateless-session-bean-example/
+
+http://www.javable.com/columns/ooa_ood/workshop/05/ch4/
+http://javatalks.ru/topics/5299
+http://javatutor.net/articles/studying-j2ee-2_start-of-work
+http://javatutor.net/books/tiej/ejb_2
+http://ooad.asf.ru/standarts/RUP/ArchitectShablon/
+http://www.javaportal.ru/java/articles/transJ2EE.html
+http://orlova.rsue.ru/content/sst/j2ee5.htm
+http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81122&SecID=GURU_SECTION_80693
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+(j2ee controller rest Content-type: application/json application/xml)
+* (Integrating Swagger Into JAX-RS With Java EE 6 Specification) http://jmchung.github.io/blog/2013/12/14/integrating-swagger-into-jax-rs-with-java-ee-6-specification/
+                                                                 https://github.com/jmchung/swagger4javaee/blob/master/swagger4javaee-web/src/main/java/com/example/rest/service/HTML5CorsFilter.java
+* (The REST service: @Path, @Produces, @Consumes) http://tomee.apache.org/examples-trunk/rest-xml-json/README.html
+
+. http://crunchify.com/what-is-cross-origin-resource-sharing-cors-how-to-add-it-to-your-java-jersey-web-server/
+. http://crunchify.com/simple-way-to-get-http-response-header-in-java/
+http://www.slideshare.net/caroljmcdonald/rest-with-java-ee-6-security-backbonejs
+. http://coenraets.org/blog/2011/12/restful-services-with-jquery-and-java-using-jax-rs-and-jersey/
+http://stackoverflow.com/questions/16335591/spring-mvc-json-406-not-acceptable
+. https://www.ibm.com/developerworks/ru/library/wa-restful/
+http://stackoverflow.com/questions/30548822/spring-mvc-4-application-json-content-type-is-not-being-set-correctly
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+(rest передать json или xml)
+* (Web-сервисы RESTful: основы) http://www.ibm.com/developerworks/ru/library/ws-restfu/
+* (Зачем нужен этот ваш REST, а также о некоторых тонкостях реализации RESTful приложений) http://eax.me/rest/
+* (REST vs SOAP. Часть 1. Почувствуйте разницу) https://habrahabr.ru/post/131343/
+ SOAP – это целое семейство протоколов и стандартов
+* (Архитектура REST) https://habrahabr.ru/post/38730/
+REST (Representational state transfer) – это стиль архитектуры программного обеспечения для распределенных систем
+
+. http://anton.shevchuk.name/php/create-restful-api/
+https://yiiframework.com.ua/ru/doc/guide/2/rest-quick-start/
+. http://html-templates.info/blog/znakomtes-arhitektura-REST
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+(что такое rest протокол)
+http://api.mail.ru/docs/guides/restapi/
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81612&SecID=GURU_SECTION_80693
+  https://www.ibm.com/developerworks/ru/library/ac-iscssl1/
+  http://www.cyberforum.ru/java-j2ee/thread528888.html
+  http://www.avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-and-ssl-with-tomcat.html
+  
+. http://reka-neva.blogspot.com/2014/08/java-ee.html
+. http://javasource.ru:5050/articles.xhtml?artlink=general-information-about-ejb-jpa
+. http://umk3.utmn.ru/files/0000096543.pdf
+. http://www.des4web.ru/e-Shop/gl10.html
+. https://habrahabr.ru/post/188042/
+  
+  http://www.avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-and-ssl-with-tomcat.html
+  http://www.cyberforum.ru/java-j2ee/thread528888.html
+  https://www.ibm.com/developerworks/ru/library/ac-iscssl1/
+  http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81612&SecID=GURU_SECTION_80693
+  
+. https://netbeans.org/kb/docs/javaee/javaee-entapp-ejb_ru.html
+. https://habrahabr.ru/post/131343/
+. http://www.warenhaus.com.ua/?p=1088
+  
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+  http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81612&SecID=GURU_SECTION_80693
+  https://www.ibm.com/developerworks/ru/library/ac-iscssl1/
+  http://www.cyberforum.ru/java-j2ee/thread528888.html
+  http://www.avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-and-ssl-with-tomcat.html?page=1
+  
+  https://rsdn.ru/forum/java/959102.all
+  http://www.ibm.com/developerworks/ru/library/j-jws6/
+  http://j4sq.blogspot.com/2011/10/web.html
+  http://samolisov.blogspot.com/2014/08/under-hood-of-j2ee-clustering.html
+  http://onedeveloper.javadev.ru/article%3Fid=7.html
+  http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81114&SecID=GURU_SECTION_80693
+  http://j4sq.blogspot.com/2011/10/web.html
+  http://www.studfiles.ru/preview/1188508/page:64/
+  http://study.kvazar-micro.zp.ua/tutorials/servlets/servlets/servlets.html
+  http://java-course.ru/student/book1/simple-web/
+  http://java-course.ru/student/book1/jsp/
+  https://netbeans.org/kb/docs/web/security-webapps_ru.html
+  http://blog-tago.blogspot.com/2011/03/security-2.html
+  http://javac-dmx.blogspot.com/2015/07/ejb-stateless-wildfly.html
+  
+  http://masters.donntu.org/2007/fvti/beseda/library/article9_rus.htm
+  http://slidegur.com/doc/1638818/bezopasnost._-v-ejb
+  https://www.google.com.ua/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0ahUKEwjD8ImK1_TLAhVC_iwKHTXrBqEQFgg6MAQ&url=http%3A%2F%2Fcom-luxoft-edu-trainingcenter-courses.googlecode.com%2Fsvn%2Ftrunk%2FJVA-023%2520%25D0%25A0%25D0%25B0%25D0%25B7%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25BA%25D0%25B0%2520%25D0%25B1%25D0%25B8%25D0%25B7%25D0%25BD%25D0%25B5%25D1%2581-%25D0%25BF%25D1%2580%25D0%25B8%25D0%25BB%25D0%25BE%25D0%25B6%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B9%2520%25D0%25BD%25D0%25B0%2520%25D0%25B1%25D0%25B0%25D0%25B7%25D0%25B5%2520%25D1%2582%25D0%25B5%25D1%2585%25D0%25BD%25D0%25BE%25D0%25BB%25D0%25BE%25D0%25B3%25D0%25B8%25D0%25B8%2520EJB3%2Fsource%2F06-SEC.ppt&usg=AFQjCNEXf5qmK6tJx8TOkO-fBxbUxZ80Nw&sig2=Loy_iyEy_IgPCp__2H7PpQ&cad=rja
+  
+  ...
+  http://www.intuit.ru/studies/courses/571/427/lecture/9708?page=12
+  http://www.interface.ru/iservices/training.asp?iId=88253
+  http://jperm.wikia.com/wiki/%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B2_JavaEE
+  http://rsdn.ru/forum/java/3114044.hot
+  http://www.ibm.com/support/knowledgecenter/SSANHD_7.5.3/com.ibm.mif.doc/gp_intfrmwk/t_security_http_servlet.html?lang=ru
+  https://habrahabr.ru/company/dsec/blog/148480/
+  http://www.k-press.ru/cs/2004/2/webservJ2EE/webservJ2EE.asp
+  http://www.4stud.info/networking/work10.html
+  http://dit.isuct.ru/Publish_RUP/tech.j2ee/guidances/concepts/java_2_platform_enterprise_edition_j2ee_overview_9A95BA45.html
+  https://www.ibm.com/developerworks/ru/library/os-dw-os-ag-j2eewsgeron-i/
+  http://www.intuit.ru/studies/courses/64/64/lecture/1892
+  https://netbeans.org/kb/docs/web/quickstart-webapps_ru.html
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

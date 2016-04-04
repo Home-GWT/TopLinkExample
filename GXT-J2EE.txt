@@ -1,0 +1,61 @@
+
+http://127.0.0.1:8888/traccar.html
+
+/home/alexandr/TrekLab/treklab-frontend/src/main/resources/org/traccar/web/client/theme/icon
+
+(gxt RowExpander render)
+https://docs.sencha.com/gxt/3.x/ui/grid/GridRowExpander.html
+http://www.java2s.com/Code/Java/GWT/AddrowexpanderExtGWT.htm
+https://reminiscential.wordpress.com/2010/02/09/gxt-widget-expander-1-0-release/
+https://github.com/kevinjqiu/gxt-widget-expander
+https://reminiscential.files.wordpress.com/2010/02/2010-02-24_1654.png
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+http://www.u-sluno.com.ua/programator-java-pl-sql/
+
+(ssl сертификат java пример работы)
+http://onedeveloper.ru/article?id=11
+https://habrahabr.ru/company/tuthost/blog/150433/
+
+(hibernate java кластеризация)
+http://rsdn.ru/forum/java/2262409.hot
+http://dr-magic.blogspot.com/2010/01/hibernate-4.html
+*** http://jsehelper.blogspot.com/2016/01/object-relational-mapping-orm-hibernate.html
+
+(j2ee какие типы бинов)
+http://devcolibri.com/2044
+http://www.javable.com/columns/serv_side/workshop/09/
+
+(j2ee сессии как создаются)
+http://www.quizful.net/post/ejb-eclipse-example
+http://www.quizful.net/post/ejb3-application-eclipse-part2
+http://viralpatel.net/blogs/jsp-servlet-session-listener-tutorial-example-in-eclipse-tomcat/
+
+(настройка соединения к базе на сервере приложения java)
+http://www.javenue.info/post/10
+http://onedeveloper.ru/article?id=6
+https://habrahabr.ru/post/101342/
+https://netbeans.org/kb/docs/ide/oracle-db_ru.html
+
+(создание сессии java)
+http://www.sql.ru/forum/619701/sozdanie-novoy-sessii-pri-obrashhenii-k-web-serveru
+http://www.ibm.com/developerworks/ru/library/j-jtp09238/
+https://habrahabr.ru/post/28418/
+http://www.sql.ru/forum/1122088/vremya-zhizni-sessii
+
+(spring security управление ролями)
+https://habrahabr.ru/post/203318/
+https://habrahabr.ru/post/111102/
+https://ru.wikibooks.org/wiki/Spring_Security/Конфигурирование_с_помощью_пространства_имён
+
+http://olx.ua/detskiy-mir/igrushki/q-квадрокоптер/
+http://olx.ua/obyavlenie/kvadrokopter-jjrc-h8-mini-IDifarY.html#ccb4093943
+https://rc-like.ru/syma-x5sc
+
+
+
+
+
+
+
