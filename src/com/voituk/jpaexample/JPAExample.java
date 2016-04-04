@@ -1261,7 +1261,13 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                         @ResponseStatus(value = HttpStatus.OK) public @ResponseBody ProductActive getUserUpdateId(@PathVariable("name") String name, @RequestBody @Valid TomcatUsers user) {...}
  *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
  * 
- * >>>> @Autowired: аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
+ * Про аннотации Spring IoC:
+ * ------------------------
+ * >>>> @Autowired — аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
+ *                   Аннотация @Autowired может применяться к: полям бина, сеттерам, конструкторам и другим методам - чтобы заинъектить в них зависимости
+ *                   Еще у @Autowired есть необязательное свойство 'required', при «required=false» Spring не будет кидать исключение если не найдет в контексте необходимого бина.
+ * >>>> @Qualifier — аннотация позволяет несколько специфицировать бин, который необходим для @Autowired. Qualifier принимает один входной параметр имя бина.
+ * >>>> @Resource —  по действию аналогична @Autowired. В качестве параметра 'name' может принимать имя бина.
  * >>>> @Scope("singleton") -
  * >>>> @PostConstruct - 
  * >>>> @PreDestroy -
@@ -1286,7 +1292,213 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * >>>>> Для проверки работы приложения можно в 'public static void main(String[] args) {...}
  *       ApplicationContext context = new FileSystemXmlApplicationContext(new String[] {"/web/WEB-INF/dispatcher-servlet.xml"});
  * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 
+        // наш подопытный бин
+        @Service("testBean")
+        @Scope("singleton")
+        public class TestBean {
+            private String data = "I am a singleton!";
+            
+            public String getData() {
+                return data;
+            }
+            public void setData(String data) {
+                this.data = data;
+            }
+        }
+ * 
+ * 1. @Autowired примененный к полям бина
+        // бин в который будем инъектить
+        @Service("lab1Bean")
+        @Scope("session")
+        public class SimpleBean {
+            @Autowired(required=false)
+            private TestBean bean;
+
+            @PostConstruct
+            public void init() {
+                System.out.println(bean.getData());
+            }
+
+            public void setBean(TestBean bean) {
+                this.bean = bean;
+            }
+        }
+ * 
+ * 2. @Qualifier аннотация позволяет несколько специфицировать бин, который необходим для @Autowired. @Qualifier принимает один входной параметр имя бина:
+        // бин в который будем инъектить
+        @Service("lab1Bean")
+        @Scope("session")
+        public class SimpleBean {
+            @Autowired
+            @Qualifier("testBean")
+            private TestBean bean;
+
+            @PostConstruct
+            public void init() {
+                System.out.println(bean.getData());
+            }
+
+            public void setBean(TestBean bean) {
+                this.bean = bean;
+            }
+        }
+ *         
+ * 3. @Autowired примененный к сеттеру
+ *    в таком случае если мы поставим @Autowired перед сеттером setBean: он заинъектит в поле бина-синглтон-TestBean и в консоли мы увидим
+ *    «I am a singleton!»
+        // бин в который будем инъектить
+        @Service("lab1Bean")
+        @Scope("session")
+        public class SimpleBean {
+            private TestBean bean;
+
+            @PostConstruct
+            public void init() {
+                System.out.println(bean.getData());
+            }
+
+            @Autowired
+            public void setBean(TestBean bean) {
+                this.bean = bean;
+            }
+        }
+ * 
+ * 4. @Autowired примененный к конструктору
+ *    Ситуация аналогичная — если мы добавим вот такой конструктор: то в консоли увидим долгожданное
+ *    «I am a singleton!»
+        // бин в который будем инъектить
+        @Service("lab1Bean")
+        @Scope("session")
+        public class SimpleBean {
+            private TestBean bean;
+            
+            @Autowired
+            public SimpleBean (TestBean bean) {
+                this.bean = bean;
+            }
+
+            @PostConstruct
+            public void init() {
+                System.out.println(bean.getData());
+            }
+
+            public void setBean(TestBean bean) {
+                this.bean = bean;
+            }
+        }
+ * 
+ * 5. @Autowired примененный к методу
+ *    Самая интересная ситуация — добавляем вот такой метод (Spring автоматически вызовет 'myFunction' и передаст ему экземпляр 'TestBean' — первое напечатает 'myFunction', а второе напечатает 'init'), в консоли появится:
+ *    «I'm an autowired method and I am a singleton!»
+ *    «I am a singleton!»
+        // бин в который будем инъектить
+        @Service("lab1Bean")
+        @Scope("session")
+        public class SimpleBean {
+            private TestBean bean;
+            
+            public SimpleBean (TestBean bean) {
+                this.bean = bean;
+            }
+
+            @PostConstruct
+            public void init() {
+                System.out.println(bean.getData());
+            }
+
+            public void setBean(TestBean bean) {
+                this.bean = bean;
+            }
+            
+            @Autowired
+            public void myFunction(TestBean bean) {
+                this.bean = bean;
+                System.out.println("I'm an autowired method and " + bean.getData());
+            }
+        }
+ * 
+ * Обратите внимание, что необходимо устанавливать значение поля бина (Spring за вас этого не сделает).
+ * То есть если не писать «this.bean = bean;» то в методе init будет 'NullPointerException'.
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Ошибка банальная:
+ * 1. создаете бин-AuthorService вручную а не делаете @inject в @Controller(тут лучше поменять на @Component).
+ *    Т.е не пользуетесь средствами DI/IoC поэтому bean не был создан Spring-ом (значит и не получил нужные зависимости вин-AuthorDao).
+ *    Также в бине-AuthorService аннотация @Autowired излишняя т.к bean-ы прописывает и в xml-зависимости.
+ * 2. Оказывается нужно @inject-ить 'Service' через 'faces-config.xml' вот таким вот образом:
+        <managed-bean>
+            <managed-bean-name>authorBean</managed-bean-name>
+            <managed-bean-class>domain.pagebean.AuthorPageBean</managed-bean-class>
+            <managed-bean-scope>request</managed-bean-scope>
+            <managed-property>
+                <property-name>service</property-name>
+                <value>#{authorService}</value>
+            </managed-property>
+        </managed-bean>
+ * 
+ * 'application-context.xml'
+<context:annotation-config />
+	     <context:component-scan base-package="domain.pagebean" />
+	 
+	    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	        <property name="jndiName" value="jdbc/mainData"/>
+	    </bean>
+	 
+	    <bean class="domain.dao.jdbc.AuthorDAO" id="authorDAO">
+	        <property name="dataSource" ref="dataSource"/>
+	    </bean>
+	 
+	    <bean id="authorService" class="domain.service.AuthorService">
+	        <property name="dao" ref="authorDAO" />
+	    </bean>
+ * 
+ * 'web.xml'
+        <context-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:application-context.xml</param-value>
+        </context-param>
+        
+        <listener>
+            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        </listener>
+     
+        <servlet>
+            <servlet-name>main</servlet-name>
+            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+            <init-param>
+                <param-name>contextConfigLocation</param-name>
+                <param-value>classpath:servlet-context.xml</param-value>
+            </init-param>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+     
+        <servlet-mapping>
+            <servlet-name>main</servlet-name>
+            <url-pattern>*.do</url-pattern>
+        </servlet-mapping>
+     
+        <welcome-file-list>
+            <welcome-file>index.jsp</welcome-file>
+        </welcome-file-list>
+     
+     
+        <servlet>
+            <servlet-name>FacesServlet</servlet-name>
+            <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+     
+        <servlet-mapping>
+            <servlet-name>FacesServlet</servlet-name>
+            <url-pattern>*.faces</url-pattern>
+        </servlet-mapping>
+ * 
+ * 
+ * (Spring IoC Annotation-based configuration, часть 2) https://habrahabr.ru/post/48606/
+ *                             (Spring Autowired + JSF) http://javatalks.ru/topics/36508
+ *                                                      http://javatalks.ru/topics/36508?page=2
  * 
  * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
  *
@@ -2312,6 +2524,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * Почему кто-то должен намеренно забыть тип объекта?
  * А это происходит, когда, Вы производите приведение к базовому типу
  ** {@link http://java-course.ru/begin/polymorphism/}
+ *
  */
 
 public class JPAExample {
@@ -2353,7 +2566,13 @@ public class JPAExample {
 
 	
 	
-	
+	/**
+	 * (10 заметок о модификаторе Static в Java) http://info.javarush.ru/translation/2014/04/15/10-заметок-о-модификаторе-Static-в-Java.html
+	 *          (Малоизвестные особенности Java) https://habrahabr.ru/post/133237/
+	 * (Синхронизация потоков, блокировка объекта и блокировка класса) http://info.javarush.ru/translation/2014/10/27/Синхронизация-потоков-блокировка-объекта-и-блокировка-класса.html
+	 *                                                                 http://www.javenue.info/post/87
+	 * (Слово synchronized в Java "на пальцах") http://sandro-omsk.livejournal.com/6622.html 
+	 */
 	///////////////////////////////////////////////////////////////
 	class DemoClass1 {
 		public void myMethod11(){
