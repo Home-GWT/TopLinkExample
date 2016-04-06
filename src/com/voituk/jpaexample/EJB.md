@@ -130,7 +130,9 @@ Java EE компоненты выполняются в контейнерах с
 https://netbeans.org/kb/docs/javaee/javaee-gettingstarted_ru.html
 https://netbeans.org/features/java-on-server/java-ee_ru.html
 
-
+*** [Java для белок ** Основы EJB: часть 1](http://j4sq.blogspot.com/2011/10/ejb-1.html)
+** [EJB контейнер предоставляет следующие сервисы:](http://onedeveloper.ru/article?id=7)
+** [Контейнер, в частности, обеспечивает:](http://www.interface.ru/home.asp?artId=4223)
 
 
 
