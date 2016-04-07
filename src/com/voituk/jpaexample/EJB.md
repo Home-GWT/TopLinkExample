@@ -133,11 +133,12 @@ https://netbeans.org/features/java-on-server/java-ee_ru.html
 *** [Java для белок ** Основы EJB: часть 1](http://j4sq.blogspot.com/2011/10/ejb-1.html)
 ** [EJB контейнер предоставляет следующие сервисы:](http://onedeveloper.ru/article?id=7)
 ** [Контейнер, в частности, обеспечивает:](http://www.interface.ru/home.asp?artId=4223)
+*** (Методология построения корпоративных информационных систем на основе технологии EJB) http://www.javaportal.ru/java/articles/infsysejb23.html
 
 
 
-
-
+Lifecycle Management: ентерпрайс бины не нуждаются в явном управлении активации объектов или их разрушении. 
+   State Management: ентерпрайс бины не нуждаются в явном сохранении или восстановлении состояния объекта между вызовами методов.
 
 
 
