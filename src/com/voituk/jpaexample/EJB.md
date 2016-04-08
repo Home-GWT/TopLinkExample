@@ -136,9 +136,13 @@ https://netbeans.org/features/java-on-server/java-ee_ru.html
 *** [Методология построения корпоративных информационных систем на основе технологии EJB](http://www.javaportal.ru/java/articles/infsysejb23.html)
 
 
-
-Lifecycle Management: ентерпрайс бины не нуждаются в явном управлении активации объектов или их разрушении. 
-    State Management: ентерпрайс бины не нуждаются в явном сохранении или восстановлении состояния объекта между вызовами методов.
+----------[ http://javasource.ru:5050/articles.xhtml?artlink=general-information-about-ejb-jpa ]
+> EJB делает все компоненты ориентированными на многопоточное исполнение и высокопроизводительными.
+  Ссерверные компоненты можно писать так же, как и однопоточные настольные приложения. Многопоточное исполнение обеспечивается технологией EJB.
+> Для каждого компонента EJB платформа EJB создает пул совместно используемых клиентами экземпляров компонента.
+  В любой момент времени каждый экземпляр из пула может использоваться только одним клиентом.
+> EJB поддерживает управление объявленными транзакциями, которое позволяет добавить транзакционное поведение к компонентам путем настройки, а не программирования.
+> Безопасность: EJB поддерживает интеграцию с интерфейсом API службы проверки подлинности и авторизации Java (JAAS)
 ------------------------------------------------------------------------------------------------------------------
 1. Сессионые бины, управление жизненным циклом компонента EJB
    - Понимание того что каждый клиентский HTTP-запрос всегда является одиночным/одтельным.
@@ -224,8 +228,10 @@ X. Сеанс (сессия) в J2EE-приложении
      3) спрятанные поля HTML-страницы (в виде скрытых полей в форме) 
 ----------[ http://crypto.pp.ua/2010/06/seans-sessiya-v-java/ ]
      Чтобы открыть новый сеанс используется метод 'getSession()' - извлекает из переданного в сервлет запроса объект-сессии
-...HttpServletRequest request...
-HttpSession session = request.getSession(true);
+     Если входной параметр равен 'true' то сервлет-контейнер проверяет наличие активного сеанса установленного с данным клиентом. В случае успеха метод возвращает дескриптор этого сеанса. В противном случае метод устанавливает новый сеанс: 
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+    HttpSession session = request.getSession(true);
+}
      Чтобы сохранить значения переменной в текущем сеансе, используется метод 'setAttribute()'
 session.setAttribute()
      Чтобы прочесть – 'getAttribute()'
@@ -279,6 +285,207 @@ https://ru.wikipedia.org/wiki/Java_Database_Connectivity
 https://javatalks.ru/topics/7147
 http://www.javaportal.ru/java/tutorial/tutorialJDBC/intro.html
 http://www.javable.com/columns/jdbc/workshop/01/
+
+http://www.java2ee.ru/jsp/useBean.html
+http://www.intuit.ru/studies/courses/633/489/lecture/24847
+http://www.ibm.com/developerworks/ru/library/j-jtp07294/
+
+(@MessageDriven(mappedName = "jms/NewMessage", activationConfig) https://netbeans.org/kb/docs/javaee/javaee-entapp-ejb_ru.html
+
+
+
+
+
+
+
+(j2ee controller rest Content-type: application/json application/xml)
+* (Integrating Swagger Into JAX-RS With Java EE 6 Specification) http://jmchung.github.io/blog/2013/12/14/integrating-swagger-into-jax-rs-with-java-ee-6-specification/
+                                                                 https://github.com/jmchung/swagger4javaee/blob/master/swagger4javaee-web/src/main/java/com/example/rest/service/HTML5CorsFilter.java
+* (The REST service: @Path, @Produces, @Consumes) http://tomee.apache.org/examples-trunk/rest-xml-json/README.html
+
+. http://crunchify.com/what-is-cross-origin-resource-sharing-cors-how-to-add-it-to-your-java-jersey-web-server/
+. http://crunchify.com/simple-way-to-get-http-response-header-in-java/
+http://www.slideshare.net/caroljmcdonald/rest-with-java-ee-6-security-backbonejs
+. http://coenraets.org/blog/2011/12/restful-services-with-jquery-and-java-using-jax-rs-and-jersey/
+http://stackoverflow.com/questions/16335591/spring-mvc-json-406-not-acceptable
+. https://www.ibm.com/developerworks/ru/library/wa-restful/
+http://stackoverflow.com/questions/30548822/spring-mvc-4-application-json-content-type-is-not-being-set-correctly
+
+(rest передать json или xml)
+* (Web-сервисы RESTful: основы) http://www.ibm.com/developerworks/ru/library/ws-restfu/
+* (Зачем нужен этот ваш REST, а также о некоторых тонкостях реализации RESTful приложений) http://eax.me/rest/
+* (REST vs SOAP. Часть 1. Почувствуйте разницу) https://habrahabr.ru/post/131343/
+ SOAP – это целое семейство протоколов и стандартов
+* (Архитектура REST) https://habrahabr.ru/post/38730/
+REST (Representational state transfer) – это стиль архитектуры программного обеспечения для распределенных систем
+
+. http://anton.shevchuk.name/php/create-restful-api/
+https://yiiframework.com.ua/ru/doc/guide/2/rest-quick-start/
+. http://html-templates.info/blog/znakomtes-arhitektura-REST
+
+(что такое rest протокол)
+http://api.mail.ru/docs/guides/restapi/
+------------------------------------------------------------------------------------------------------------------
+
+------------------------------[ http://www.vogella.com/tutorials/REST/article.html ]
+@Path("/todo")
+public class TodoResource {
+  // This method is called if XMLis request
+  @GET
+  @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+  public Todo getXML() {
+    ...
+    return todo;
+  }
+  
+  @GET
+  @Produces({ MediaType.TEXT_XML })
+  public Todo getHTML() {
+    ...
+    return todo;
+  }
+
+} 
+
+------------------------------[ https://github.com/serega-sergei/test/blob/master/src/main/java/com/test/services/customers/rest/CustomersServiceJSON.java ]
+@POST
+@Consumes(MediaType.APPLICATION_JSON)
+public Response createCustomer(Customer customer) {
+	...
+	if (creCustomer != null) {
+		return ResponseCreator.success(getHeaderVersion(), creCustomer);
+	} else {
+		return ResponseCreator.error(500, Error.SERVER_ERROR.getCode(), getHeaderVersion());
+	}
+}
+
+@PUT
+@Consumes(MediaType.APPLICATION_JSON)
+public Response updateCustomer(Customer customer) {
+	...
+	if (updCustomer != null) {
+		return ResponseCreator.success(getHeaderVersion(), updCustomer);
+	} else {
+		return ResponseCreator.error(500, Error.SERVER_ERROR.getCode(), getHeaderVersion());
+	}
+}
+
+------------------------------[ http://www.ibm.com/developerworks/ru/library/ws-restfu/ ]
+GET /users/Robert HTTP/1.1
+Host: myserver
+Accept: application/xml
+------------------------------
+PUT /users/Robert HTTP/1.1
+Host: myserver
+Content-Type: application/xml
+<?xml version="1.0"?>
+<user>
+  <name>Bob</name>
+</user>
+------------------------------
+JSON .... application/json
+XML ..... application/xml
+XHTML ... application/xhtml+xml
+
+------------------------------[ https://habrahabr.ru/post/150034/ >> https://github.com/serega-sergei/test ]
+200 — Successful;
+401 — Not Authorized;
+404 — Not Found;
+500 — Server error during operation.
+
+------------------------------[ http://tomee.apache.org/examples-trunk/rest-xml-json/README.html ]
+//The REST service: @Path, @Produces, @Consumes
+//@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+//@Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+@Path("/greeting")
+@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+@Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+public class GreetingService {
+    @GET
+    public Response message() {
+        return new Response("Hi REST!");
+    }
+
+    @POST
+    public Response lowerCase(final Request message) {
+        return new Response(message.getValue().toLowerCase());
+    }
+}
+
+
+  - REST - это (не стандарт) прежде всего концепция
+    -- реализовать REST веб-сервис можно либо через 'Spring' фреймворк либо через 'JAX-RS' библиотеку
+    -- REST оддерживает такие форматы
+       JSON .... application/json
+       XML ..... application/xml
+       XHTML ... application/xhtml+xml
+    -- метод-обработчик REST веб-сервиса (через 'JAX-RS' библиотеку):
+       > одновременно может принимать несколько форматов. Для этого нужно:
+         >> аннотировать метод обработчик (аннотация '@Path' говорит о том что это является веб-сервис)
+            @Path("/hello/{id}")
+            @GET
+            @POST
+            @PUT
+            @DELETE
+         >> или класс (аннотация '@Path' говорит о том что это является веб-сервис)
+            @Path("/hello")
+            public static class Resource {
+                @Path("/{id}")
+                public Response removeCustomer(@PathParam("id") String id) { ... }
+         >> аннотацией метода указать
+            @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+            @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+         >> а также чтобы в хедере запроса был установлен параметр 'Content-Type'
+            Content-Type: application/json
+            Content-Type: application/xml
+            Content-Type: application/xhtml+xml
+         >> 
+            public Response removeCustomer(@PathParam("id") String id) { ... }
+         >> НО если это (НЕ просто веб-сервис) 'сервлет' - тогда он формирует уже полноценую клиентскую HTML-страницу.
+            У сервлета есть такие методы как: init(), destroy(), service(), doGet(..) | doPost(..) | ...
+            Тобиш, это уже есть что-то большое...полноценная клиентская веб-страница с гиппертекстом (в то время как веб-сервис возращает только текстовую информацию необходимую для вставки на клиентскую веб-страницу)...
+
+  - SOAP - это семейство протоколов
+
+
+
+
+
+(Changing content type in jax-rs REST service) http://stackoverflow.com/questions/5556897/changing-content-type-in-jax-rs-rest-service
+* (How to build RESTful Service with Java using JAX-RS and Jersey (Example)) http://crunchify.com/how-to-build-restful-service-with-java-using-jax-rs-and-jersey/
+(Создание Web-сервисов REST при помощи Java-технологий) https://www.ibm.com/developerworks/ru/library/wa-jaxrs/
+(Реализуем RESTful Web Service на java) https://habrahabr.ru/post/150034/
+* (REST with Java (JAX-RS) using Jersey - Tutorial) http://www.vogella.com/tutorials/REST/article.html
+* (REST-сервис на Java — это просто) https://habrahabr.ru/post/115718/
+* (Сервлет (Java)) https://ru.wikipedia.org/wiki/Сервлет_(Java)
+* (Первое слово о сервлетах) http://java-course.ru/student/book1/servlet/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
