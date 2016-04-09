@@ -1108,7 +1108,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * - sleep
  * - yield (заставляет процессор переключиться на обработку других потоков)
  * - currentThread
- * Другие методы:
+ * Объектные методы:
  * - interrupt (установить флаг прерывания), isInterrupted (возвращает состояние флага прерывания и оставляет этот флаг нетронутым)
  * - isAlive
  * - wait, notify, notifyAll
