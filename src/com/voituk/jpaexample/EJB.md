@@ -445,16 +445,28 @@ EJB делится на 3-типа компонентов:
     > в этом случае при загрузке апплета веб-броузер задаст вопрос: "доверяете ли вы данной подписи"
 9.2 И потом этот подписанный сертификат "vingrad.sf" сохраниться в веб-браузере
     > "Панель управления" > "Java Plug-In" > "Sertificates" > и там появился наш сертификат (vingrad.sf)
+++++++++++++++++++++++++++++++++++++[ шифрование канала ]
 
-
-++++++++++++++++++++++++++++++++++++
-подпись кода
-шифрование канала
 
 Полезные утилиты:
 - OpenSSL (самая распространенная утилита для генерации открытого ключа (запроса на сертификат) и закрытого ключа)
 - CSR Decoder (утилита для проверки CSR и данных, которые в нем содержаться, рекомендую использовать перед заказом сертификата)
 - DigiCert Certificate Tester (утилита для проверки корректно самого сертификата)
+
+
+(JAVA EE: Разработка web-приложения. JAAS. Session) http://onedeveloper.ru/article?id=10
+                                                    http://www.quizful.net/post/new-in-servlet-api-v25
+                                                    https://toster.ru/q/252252
+(Как реализовать Security в Java EE? Часть 1) http://devcolibri.com/4575
+(Создание безопасных компонентов EJB в Java EE) https://netbeans.org/kb/docs/javaee/secure-ejb_ru.html
+(Безопасность в J2EE) http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81114&SecID=GURU_SECTION_80693
+                      http://www.ibm.com/developerworks/ru/library/ws-securityspec4/
+(Учимся готовить: Spring 3 MVC + Spring Security + Hibernate) https://habrahabr.ru/post/111102/
+(Web-сервисы Java: Подпись и шифрование с помощью Axis2 WS-Security) http://www.ibm.com/developerworks/ru/library/j-jws5/
+
+++++++++++++++++++++++++++++++++++++[ Java Authentication and Authorization Service (JAAS) ]
+> Декларативная безопасность
+> Программная безопасность
 .......................................................................................................................................
 
 5. Паралельные процессы, управление пулом объектов (компонентов EJB) разбалансировка нагрузки
