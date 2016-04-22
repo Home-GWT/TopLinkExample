@@ -632,7 +632,7 @@ SOAP-сервис, в отличие от REST-сервиса, имеет спе
        </form>
    (3) DIGEST ........ цифровая аутентификация
    (4) CLIENT-CERT ... с помощью клиентского сертификата
-3. Настройка безопасности для веб-приложения (это в настройках веб-приложения делаем в WEB-INF/web.xml. 'security-constraint' - блок ограничений безопасности; 'web-resource-collection' - ресурсы, к которым стоит закрыть доступ; 'url-pattern' - запрос к которому будет применен фильтр безопасности; 'http-method' - метод к которому применим фильтр безопасности; 'security-role' - прописываем роль; 'role-name' - указываем роль; 'auth-constraint' - выставляем роли доступа;)
+3.1 Настройка безопасности для веб-приложения (это в настройках веб-приложения делаем в WEB-INF/web.xml. 'security-constraint' - блок ограничений безопасности; 'web-resource-collection' - ресурсы, к которым стоит закрыть доступ; 'url-pattern' - запрос к которому будет применен фильтр безопасности; 'http-method' - метод к которому применим фильтр безопасности; 'security-role' - прописываем роль; 'role-name' - указываем роль; 'auth-constraint' - выставляем роли доступа;)
        <web-app ...>
            <security-constraint>
                <web-resource-collection>
@@ -649,7 +649,7 @@ SOAP-сервис, в отличие от REST-сервиса, имеет спе
                <role-name>MANAGER</role-name>
            </security-role>
        </web-app>
-4. Дополнительно использование безопасности в сервлетах (это в настройках класса-сервлета. '@ServletSecurity' - определяет настройки безопасности; '@HttpMethodConstraint' - ограничения для каждого метода доступа; 'value' - http method (GET,POST..); 'rolesAllowed' - роль которая может получить доступ;)
+3.2 Дополнительно использование безопасности в сервлетах (это в настройках класса-сервлета. '@ServletSecurity' - определяет настройки безопасности; '@HttpMethodConstraint' - ограничения для каждого метода доступа; 'value' - http method (GET,POST..); 'rolesAllowed' - роль которая может получить доступ;)
        @WebServlet(urlPatterns = "/servlet2")
        @ServletSecurity(httpMethodConstraints = {
            @HttpMethodConstraint(value = "GET", rolesAllowed = "MANAGER"),
