@@ -379,6 +379,15 @@ EJB делится на 3-типа компонентов:
                        (Разработка веб приложений с поддержкой SSL на сервере приложений Sun Java) http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81612&SecID=GURU_SECTION_80693
                                                                                                    http://www.lissyara.su/doc/exim/4.62/encrypted_smtp_connections_using_tls_or_ssl/#38.13
 
+(Учебное пособие по J2EE. Глава 10. Технология сервлетов Java) http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81116&SecID=GURU_SECTION_80693
+                 (Уровень пользовательского интерфейса в J2EE) http://www.intuit.ru/studies/courses/64/64/lecture/1892?page=6&keyword_content=HTTP
+                               (Java2EE ** Сервлетные фильтры) http://www.java2ee.ru/servlets/filters.html
+                                                               http://www.labir.ru/j2ee/servletsFilters.html
+                                         (Фильтры в сервлетах) http://ru.stackoverflow.com/questions/3839/Фильтры-в-сервлетах
+    (Упражнение 7. Пример разработки и использования фильтров) http://orlova.rsue.ru/content/sst/j2ee3.htm
+                                                               http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81161&SecID=GURU_SECTION_80703
+                                                               https://habrahabr.ru/post/141866/
+
 (Кэш Hibernate) http://articles.javatalks.ru/articles/26
 
 
@@ -669,11 +678,73 @@ SOAP-сервис, в отличие от REST-сервиса, имеет спе
 <jboss-web>
     <security-domain>java:/jaas/other</security-domain>
 </jboss-web>
-.......................................................................................................................................
-.......................................................................................................................................
-(Учебное пособие по J2EE. Глава 10. Технология сервлетов Java) http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81116&SecID=GURU_SECTION_80693
-                 (Уровень пользовательского интерфейса в J2EE) http://www.intuit.ru/studies/courses/64/64/lecture/1892?page=6&keyword_content=HTTP
 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+++++++++++++++++++++++++++++++++++++[ Сервлетные фильтры ]
+- (Сервлетный) фильтр - это Java-код пригодный для повторного использования и позволяющий преобразовать содержание HTTP-запросов в HTTP-ответ и информацию содержащуюся в заголовках HTML.
+- (Сервлетный) фильтр занимается предварительной обработкой запроса прежде чем тот попадает в сервлет и/или последующей обработкой ответа исходящего из сервлета.
+- (Сервлетные) фильтры могут: 
+  -- перехватывать инициацию сервлета прежде, чем сервлет будет инициирован;
+  -- определить содержание запроса прежде, чем сервлет будет инициирован;
+  -- модифицировать заголовки и данные запроса, в которые упаковывается поступающий запрос;
+  -- модифицировать заголовки и данные ответа, в которые упаковывается получаемый ответ;
+  -- перехватывать инициацию сервлета после обращения к сервлету;
+
+(Сервлетный) фильтр может быть конфигурирован так что он будет работать с одним сервлетом или группой сервлетов.
+Основой для формирования фильтров служит интерфейс 'javax.servlet.Filter' который реализует три метода:
+- Метод ini вызывается прежде, чем фильтр начинает работать,и настраивает конфигурационный объект фильтра.
+  void init(FilterConfig config) throws ServletException;
+- Метод doFilter выполняет непосредственно работу фильтра.
+  void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException;
+- После того, как фильтр заканчивает свою работу, вызывается метод destroy.
+  void destroy();
+
+Таким образом, сервер вызывает init один раз, чтобы запустить фильтр в работу, а затем вызывает doFilter столько раз, сколько запросов будет сделано непосредственно к данному фильтру.
+После того, как фильтр заканчивает свою работу, вызывается метод destroy.
++ + + + + + + + + + + + + + + + + + [ Объявление фильтра ]
+    <filter> 
+        <filter-name>FilterName</filter-name>
+        <filter-class>FilterConnect</filter-class>
+        <init-param>
+            <param-name>active</param-name>
+            <param-value>true</param-true>
+        </init-param>
+    </filter>
++ + + + + + + + + + + + + + + + + + [ Подключение фильтра к сервлету ]
+    <filter-mapping>
+        <filter-name>FilterName</filter-name>
+        <servlet-name>ServletName</servlet-name>
+    </filter-mapping>
++ + + + + + + + + + + + + + + + + + [ Подключение фильтра к HTML-страницам ]
+    <filter-mapping>
+        <filter-name>FilterName</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
++ + + + + + + + + + + + + + + + + + [ . ]
+    public class FilterConnect implements Filter { 
+        private FilterConfig config = null; 
+        private boolean      active = false; 
+
+        public void init (FilterConfig config) throws ServletException { 
+            this.config = config; 
+            String act = config.getInitParameter("active"); 
+            if (act != null) 
+                active = (act.toUpperCase().equals("TRUE")); 
+        } 
+
+        public void doFilter (ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException { 
+            if (active){ 
+                // Здесь можно вставить код для обработки 
+            }
+            chain.doFilter(request, response); 
+        }
+
+        public void destroy() { 
+              config = null; 
+        }
+    }
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 ++++++++++++++++++++++++++++++++++++[ Что такое сервлет ]
 Сервлет представляет собой Java-класс используемый для расширения возможностей сервера приложений (на котором выполняются приложения) использующие для доступа программную модель запрос-ответ.
 Хотя сервлеты могут отвечать на любой тип запросов, они обычно используются для расширения приложений, работающих на Web-серверах. Для таких приложений технология сервлетов Java определяет HTTP-классы сервлетов.
