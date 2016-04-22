@@ -1122,8 +1122,14 @@ public class GreetingService {
      6. Собрав проект и запустив Tomcat, можно обратиться по следующему URL и посмотреть на WSDL файл веб сервиса
 				http://localhost:8080/my-webapp/app/entities?wsdl
 
+     .. (Нововведения в стандарте Servlet API 2.5) http://www.quizful.net/post/new-in-servlet-api-v25
 
-
+       @WebService(name="PingService", targetNamespace="http://acme.com/ping")
+       @SOAPBinding(style=SOAPBinding.Style.RPC, use=SOAPBinding.Use.LITERAL)
+       public class Ping {
+           @WebMethod(operationName = "Foo")
+           public void foo(){}
+       }
 
 
 
@@ -1309,4 +1315,4 @@ public class GreetingService {
 
 
 
-
+ 
