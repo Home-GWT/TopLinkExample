@@ -389,6 +389,7 @@ EJB делится на 3-типа компонентов:
                                                                https://habrahabr.ru/post/141866/
 
 (Кэш Hibernate) http://articles.javatalks.ru/articles/26
+(Нововведения в стандарте Servlet API 2.5) http://www.quizful.net/post/new-in-servlet-api-v25
 
 
 Существует много цифровых сертификатов которые служат для своих целей:
