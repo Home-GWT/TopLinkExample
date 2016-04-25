@@ -1126,6 +1126,7 @@ public class GreetingService {
 				http://localhost:8080/my-webapp/app/entities?wsdl
 
      .. (Нововведения в стандарте Servlet API 2.5) http://www.quizful.net/post/new-in-servlet-api-v25
+          (JAX-WS Hello World Example – RPC Style)  https://examples.javacodegeeks.com/enterprise-java/jws/jax-ws-hello-world-example-rpc-style/
 
        @WebService(name="PingService", targetNamespace="http://acme.com/ping")
        @SOAPBinding(style=SOAPBinding.Style.RPC, use=SOAPBinding.Use.LITERAL)
