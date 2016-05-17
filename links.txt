@@ -1,0 +1,65 @@
+
+http://www.skipy.ru/technics/synchronization.html
+http://www.finecosoft.ru/SpringDI
+** http://2014.javapoint.ru/presentations/Borisov_spring.pdf
+** http://jsehelper.blogspot.com/2016/03/spring-framework-2.html
+** http://www.sql.ru/forum/901344/kakie-priemushhestva-ispolzovaniya-ioc-konteynera
+*  https://mail.yandex.ua/?ncrnd=6606&uid=40270829&login=sashakmets#message/158470411888110426
+*  http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-cookievalue-i-requestheader.html
+*  http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
+*  http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
+
+https://habrahabr.ru/post/230239/
+https://docs.google.com/document/d/18rQSJVQ9vn5Ntza3MCXRxjDGWvzwa1gV1x3dRXrsKjg/edit
+http://www.ibm.com/developerworks/ru/library/j-rtm2/
+http://www.sql.ru/forum/1181659/kak-uznat-razmer-obekta-s-pomoshhu-funkcii-getobjectsize
+http://sleeplessinslc.blogspot.com/2008/09/java-instrumentation-with-jdk-16x-class.html
+* http://marxsoftware.blogspot.com/2011/12/estimating-java-object-sizes-with.html
+https://netbeans.org/kb/docs/java/profiler-intro.html
+* http://java-course.ru/articles/jmx/
+http://easy-code.ru/lesson/formatting-numeric-output-java
+study-java.ru/uroki-java/formatirovanie-chisel-i-texta-v-java/
+https://otvet.mail.ru/question/17848949
+http://www.javaworld.com/article/2077496/testing-debugging/java-tip-130--do-you-know-your-data-size-.html
+http://stackoverflow.com/questions/9368764/calculate-size-of-object-in-java
+
+http://oraclestart.blogspot.com/
+http://citforum.ru/database/oracle/java_oracle_web/
+http://citforum.ru/database/oracle/java_oracle/
+http://crunchify.com/simple-oracle-database-jdbc-connect-and-executequery-example-in-java/
+http://www.f-notes.info/oracle:oracledatapump10g
+http://www.oracloid.ru/index.php?t=56&a=do_print
+http://blog.vylgin.pro/blog/2014/02/03/oracle-database-i-khranimyie-protsiedury-na-iazykie-java/
+http://oracle-dba.ru/database/backup-and-restore/rman/rman-incarnations-sample/
+https://github.com/oracle/db-sample-schemas
+https://habrahabr.ru/post/260305/
+http://www.javatpoint.com/example-to-connect-to-the-oracle-database
+http://www.fors.ru/upload/magazine/07/http_text/w_adm_nanda_simulator.html
+ftp://bestzvit.com.ua/oracle/XE_install.pdf
+http://www.askit.ru/custom/oracle10sql/m2/02_01_select_basics.htm
+http://oracle-academy.org.ua/questions-for-java-programming/
+http://www.javenue.info/post/20
+https://ru.wikipedia.org/wiki/Триггер_(базы_данных)
+http://sql-language.ru/dropsql.html
+http://www.oszone.net/4747/
+http://kek.ksu.ru/IDB/rus/Ora1_rus.htm
+http://alldba.ru/index.php/zagruzki/fajly-i-dokumenty/3-oracle-database-sample-schemas?path=
+http://www.quizful.net/post/oracle-inline-functions
+http://www.codenet.ru/db/oracle/Oracle-Compress.php
+
+https://ru.wikipedia.org/wiki/JAX-WS
+http://ru.khroliz.com/2013/07/java-soap.html
+http://www.mkyong.com/webservices/jax-ws/jax-ws-soap-handler-in-client-side/
+http://www.javaportal.ru/java/examples/useXPFEJ2EE.html
+https://dev64.wordpress.com/2012/10/26/get-soap-body-java/
+http://automated-testing.info/t/testirovanie-veb-servisov-s-soapui/2509
+https://habrahabr.ru/post/267301/
+https://www.ibm.com/developerworks/ru/library/ws-soapvalid/
+https://netbeans.org/kb/docs/websvc/jax-ws_ru.html
+www.proghouse.ru/programming/20-soapui
+infostart.ru/public/120728/
+
+https://www.youtube.com/watch?v=GdEPiXjPnwM
+https://www.soapui.org/getting-started/functional-testing.html
+http://www.webservicex.net/CurrencyConvertor.asmx?wsdl
+http://software-testing.ru/forum/index.php?/topic/22900-nuzhen-gaid-dlja-soap-ui/

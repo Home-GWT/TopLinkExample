@@ -4,10 +4,10 @@ http://www.dataart.ua/blog/2014/05/spring-raskopali-do-yadra/
 http://ru.stackoverflow.com/questions/319438/spring-beans-scope-singleton-vs-prototype
 http://deadlock.org.ua/kit/habr/post/53111 >> http://www.dataart.ru/blog/2016/05/dagger-2-lechim-zavisimosti-po-metodike-google/
 
-http://www.slideshare.net/cansrht/introduction-to-spring-framework-52669031 >> http://www.slideshare.net/springbyexample/spring-by-example-one-day-workshop
+http://www.slideshare.net/cansrht/introduction-to-spring-framework-52669031 >> http://www.slideshare.net/springbyexample/spring-by-example-one-day-workshop >> http://www.slideshare.net/custisppt/dependency-injection-java
 
 http://www.sql.ru/forum/1002871/session-scope-dlya-controller
-http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-beginners-part-10/ >> http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-beginners-part-9/ >> http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-begginers-part-8/
+http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-beginners-part-10/ >> http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-beginners-part-9/ >> http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-begginers-part-8/ >> http://it.vaclav.kiev.ua/2011/10/09/spring-3-mvc-simple-example/
 http://stackoverflow.com/questions/16058365/what-is-difference-between-singleton-and-prototype-bean >> http://stackoverflow.com/questions/17599216/spring-bean-scopes
 https://blog.jyore.com/2015/01/spring-camel-route-bean-scoping/
 
@@ -16,7 +16,6 @@ http://ru.stackoverflow.com/questions/480986/spring-qualifier-vs-scope-prototype
 http://javatalks.ru/topics/43130
 
 http://www.logicbig.com/tutorials/spring-framework/spring-core/injecting-singleton-with-prototype-bean/
-http://www.sql.ru/forum/1181606-2/spring-inzhektit-biny-s-raznym-skoupom-drug-v-druga
 http://javatalks.ru/topics/44435
 http://albazh.blogspot.com/2015/09/3-spring-beans.html
 https://habrahabr.ru/post/225397/
@@ -24,6 +23,7 @@ https://habrahabr.ru/post/225397/
 *** http://jsehelper.blogspot.com/2016/02/spring-framework-1.html >> http://jsehelper.blogspot.com/2016/03/spring-framework-2.html >> http://jsehelper.blogspot.com/2016/03/spring-framework-3.html
 http://it.vaclav.kiev.ua/2010/12/25/spring-framework-to-begginers-part-6/
 http://it.vaclav.kiev.ua/2010/12/25/spring-framework-for-begginers-part-7/
+http://it.vaclav.kiev.ua/2011/10/09/spring-3-mvc-simple-example/
 http://proselyte.net/tutorials/spring-tutorial-full-version/bean-lifecycle/
 http://javabegin.ru/spring/
 
@@ -54,6 +54,8 @@ http://stackoverflow.com/questions/25000406/how-many-instances-created-for-singl
 * http://2014.javapoint.ru/presentations/Borisov_spring.pdf
 http://www.sql.ru/forum/901344/kakie-priemushhestva-ispolzovaniya-ioc-konteynera
 
+http://www.sql.ru/forum/1181606-2/spring-inzhektit-biny-s-raznym-skoupom-drug-v-druga
+http://javabegin.ru/spring/ >> https://www.youtube.com/watch?v=l7gBzoiX6Eo
 http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
 http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
 http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-cookievalue-i-requestheader.html
@@ -62,6 +64,8 @@ http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-coo
 https://github.com/JobTest/MSL/tree/develop3/src/main/java/example/testtask/java8/meeting2 >> https://github.com/JobTest/MSL/blob/develop3/src/main/java/example/testtask/java8/meeting2/links.txt
 http://www.concretepage.com/spring/spring-bean-scope-example-using-scope-annotation-and-xml-for-singleton-prototype-request-session-global-session-and-application-scope-with-scoped-proxy#download
 
+http://www.tutorialspoint.com/spring/spring_bean_life_cycle.htm
+http://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch02s02.html
 
 
 MyCommand command = context.getBean(MyCommand .class);
@@ -85,6 +89,12 @@ MyCommand command = context.getBean(MyCommand .class);
 @Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
 public class MyUserData {
     //...
+}
+
+@Bean(scope = DefaultScopes.SESSION)
+@ScopedProxy
+public UserPreferences userPreferences() {
+   return new UserPreferences();
 }
 
 При использовании Constructor Injection, может возникнуть еще одна проблема, известная как Кольцевая Зависимость (Circular dependencies). 
@@ -264,10 +274,12 @@ ________________________________________________________________________________
   - Разработчик может только управлять / устанавливать конфигурацию для компонентов (Spring-бинов). Причем разработчик это может в горячем режиме, без перекомпилирования кода (потому-что за все это отвечает Spring)
   - Итак, Spring сам создает и проектирует Java-объекты веб-приложения.
     Дальше, в момент по требованию клиента, Spring достает из своего IO-контейрера копию уже готового объекта и отдает его клиенту (кастомеру...) в месте объявления поля этого типа.
-    Именно такая обратная процедура создания Java-объектов и является - Ioc / DI (иньекция зависимостей...)
+    Именно такая обратная процедура создания Java-объектов и является - IoC / DI (иньекция зависимостей...)
   - С помощью скоупов Spring может управлять жизненным цыклом Java-объектов.
     А также позволяет эфективно проектировать приложения чтобы количество создания новых Java-объектов имело максимально-быстрое время затрачиваемое на обработку данных И по минимуму использование ресурсов памяти (аналогично технологии EJB...)
 
+> Жизненный цыкл Spring-а:
+  - Сначала загружаются Java-файлы
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (Thoughts...!!!!!! ** Injecting a prototype/Session bean into a singleton bean) http://ankursinghal86.blogspot.com/2014/07/injecting-prototypesession-bean-into.html
 (Re: Объясните пожалуйста подробно, как это работает) http://rsdn.ru/forum/java/4490324.hot
@@ -280,14 +292,20 @@ ________________________________________________________________________________
 (meeting3/README.md) https://github.com/JobTest/MSL/tree/develop4.2/src/main/java/example/testtask/java8/meeting3
 (jpaexample/EJB.md) https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/EJB.md
 
-http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
-http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
-http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-cookievalue-i-requestheader.html
+(Евгений Борисов ** Spring-потрошитель, часть 2) http://www.sql.ru/forum/1181606-2/spring-inzhektit-biny-s-raznym-skoupom-drug-v-druga
+(тимур батыршинов ** Что такое Spring Framework) http://javabegin.ru/spring/
+(тимур батыршинов ** 45 - Spring. Создание проекта Spring MVC) https://www.youtube.com/watch?v=l7gBzoiX6Eo
+(Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
+(Spring 3 и @Controller. Часть 2) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html
+(Spring 3 и @Controller. Часть 3) http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-cookievalue-i-requestheader.html
 http://www.sql.ru/forum/901344/kakie-priemushhestva-ispolzovaniya-ioc-konteynera
 http://2014.javapoint.ru/presentations/Borisov_spring.pdf
 http://stackoverflow.com/questions/25000406/how-many-instances-created-for-singleton-bean-referring-to-a-session-bean-protot
 
-
+(Есть ли будущее у MVC-шаблона?) https://dev.by/lenta/main/est-li-buduschee-u-mvc-shablona
+(написал web-приложение «Каталог автомобилей») https://sohabr.net/habr/post/240033/
+https://javatalks.ru/topics/44268
+http://www.javatpoint.com/spring-3-mvc-tutorial
 
 
 

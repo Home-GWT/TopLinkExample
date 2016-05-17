@@ -1172,6 +1172,9 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *   @Autowired
  * 
  * **************************************[ Spring MVC: DAO-cлой,Сервис-слой,Доменный-слой,Веб-слой,Слой-представления ]**************************************
+ * 1. Каждый запрос перехватывается глобальным Front-контроллером, который по специфическим параметрам (URI, метод и/или заголовки запроса) определяет, какому из контроллеров передать полученный запрос.
+ * 2. Контроллер обрабатывает запрос и создает модель.
+ * 3. Front-контроллер заполняет представление данными модели и возвращает полученный результат браузеру.
  * 
  * **************************[ dao Слой доступа к данным - в нём будем размещать Data Access Objects – объекты доступа к данным ]****************************
  * ***********[ Сервис-слой приложения(Содержит интерфейсы, в которых описано ЧТО ДЕЛАТЬ С ДАННЫМИ или, другими словами, бизнес логика приложения ]**********
@@ -1244,11 +1247,24 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * >>> @RestController - появился в 4-ой версии Spring-а использует автоматическое преобразование данных из JAVA-формата в JSON
  * >>> @RequestMapping - слушает/ловит клиентские HTTP-запросы и привязывает адресс к методу-обработчику (@RequestMapping соответствует всем HTTP операциям по умолчанию)
  *                       @RequestMapping(value="/page/{id}") public ModelAndView main() {...}
- * >>> method=RequestMethod.GET - определяет/уточняет тип метода для HTTP-запроса (GET,PUT,POST..)
+ * >>> value - Описывает URL, который будет обработан в данном контроллере или методе контроллера.
+ * >>> method                   - Связывает метод контроллера с обработкой запросов отправленных определенным HTTP методом или методами (GET, POST, PUT, DELETE, HEAD, OPTIONS, TRACE). Набор констант для http-методов находится в классе RequestMethod (org.springframework.web.bind.annotation.RequestMethod). По умолчанию, запросы отправленные методом OPTIONS и TRACE обрабатываются в DispatcherServlet ( org.springframework.web.servlet.DispatcherServlet). Если метод контроллера должен обрабатывать запросы отправленные одним из нескольких http-методов, то записываем это таким образом, например,
+method={RequestMethod.PUT, RequestMethod.POST}.
+ *     method=RequestMethod.GET - определяет/уточняет тип метода для HTTP-запроса (GET,PUT,POST..)
  *                                @RequestMapping(value="/page/{id}", method=RequestMethod.GET) public ModelAndView main() {...}
+ * >>> params                  - запрос фильтруется по наличию или отсутствию параметров в запросе.
+ *     param-name=param-value  - в запросе должен быть параметр param-name со значением param-value
+ *     param-name!=param-value - в запросе параметр param-name не должен содержать значение param-value
+ *     !param-name             - запрос не должен содержать параметра с названием param-name
+ * >>> headers                 - запрос фильтруется по наличию или отсутствию параметров в заголовке (В значениях параметров можно указывать символ * для описания подмножества, например, для параметра Content-Type можно задать content-type="text/*" ???).
+ *     param-name=param-value  - в заголовке запроса должен быть параметр param-name со значением param-value
+ *     param-name!=param-value - в заголовке запроса параметр param-name не должен содержать значение param-value
+ *     !param-name             - в заголовке запроса не должено быть параметра с названием param-name
+ * >>> consumes - позволяет фильтровать запросы по типу содержимого. Сравнивается с параметром заголовка Content-Type. Если данный параметр отсутствует, то Spring попытается определить тип самостоятельно. Также можно использовать символ * для указания подмножества типов, например "application/*".
  * >>> produces="application/json" - определяет/уточняет формат данных веб-страницы
  *                                   @RequestMapping(value="/page/{id}", method=RequestMethod.GET, produces="application/json") public ModelAndView main() {...}
  *                                   По умолчанию это является гипер-текст
+ *                                   позволяет фильтровать запросы по ожидаемому типу содержимого ответа. Сравнивается со значением параметра Accept. Если данный параметр отсутствует, то Spring попытается определить тип самостоятельно. Также можно использовать символ * для указания подмножества типов, например "application/*".
  * >>> @RequestParam - связывает значение строкового параметра HTTP-запроса с параметром передаваемый в метотод
  *                     public ModelAndView main(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {...}
  *                     Значение параметра name добавлено в объект Model и делает его доступным в шаблоне представления
@@ -1269,8 +1285,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                         @ResponseStatus(value = HttpStatus.OK) public @ResponseBody ProductActive getUserUpdateId(@PathVariable("name") String name, @RequestBody @Valid TomcatUsers user) {...}
  *                         @ExceptionHandler(value = MethodArgumentNotValidException.class) @ResponseStatus(value = HttpStatus.BAD_REQUEST) public @ResponseBody String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpServletResponse response) {...}
  * 
- * Про аннотации Spring IoC:
- * ------------------------
+ * Про аннотации Spring DI (IoC): позволяет отделить объявление зависимости от разрешения зависимости (и в пространстве - внутри рабочего окружения, и во времени - области видимости)
+ * -----------------------------
  * >>>> @SuppressWarnings — аннотация позволяет скрывать/игнорировать какие-либо ошибки...предупреждения (если уверены что никакой ошибки небудет тогда можно без аннотации)
  *                          @SuppressWarnings("static-access") некорректно используется статическое поле класса
  * >>>> @Autowired — аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
@@ -1281,6 +1297,11 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                   2. Autowire по типу;
  *                   3. Autowire в конструкторе (по имени, по типу, по индексу);
  *                   4. Autowiring by @Autowired and @Qualifier annotations (модифицированный);
+ *                   Cвязь между компонентами (DI - иньекция зависимостей):
+ *                   - выполнена через поле класса – 'Setter Injection' (SI);
+ *                   - или с использованием конструктора – 'Constructor Injection' (CI)
+ *                     При использовании Constructor Injection, может возникнуть проблема - Кольцевая Зависимость (когда конструктор класса 'А' требует в качестве параметра экземпляр класса B', а тот в свою очередь требует в констуркторе наличие класса 'A')
+ *                     В этом случае Spring не сможет выполнить иньекцию экземпляров упомянутых компонент И выбросит ексепсиш 'BeanCurrentlyInCreationException'
  * >>>> @Inject — аннотация позволяет иньектировать реализацию объекта по интерфейсу... 
  * >>>> @Qualifier — аннотация позволяет несколько специфицировать бин, который необходим для @Autowired. Qualifier принимает один входной параметр имя бина.
  * >>>> @Resource —  по действию аналогична @Autowired. В качестве параметра 'name' может принимать имя бина.
@@ -1292,9 +1313,16 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                         @Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES)
  *                            или
  *                         @Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
- *                            или
+ *                            или (по умолчанию Spring использует CGLib...)
  *                         <bean id="userData" class="ru.javacore.UserData" scope="session">
  *                             <aop:scoped-proxy/>
+ *                         </bean>
+ *                         <bean id="dataService" class="ru.javacore.DataService">
+ *                             <property name="userData" ref="userData"/>
+ *                         </bean>
+ *                            или (если по каким либо причинам необходимо завязаться на стандартный Java инструментарий...)
+ *                         <bean id="userData" class="ru.javacore.UserData" scope="session">
+ *                             <aop:scoped-proxy proxy-target-class=”false”/>
  *                         </bean>
  *                         <bean id="dataService" class="ru.javacore.DataService">
  *                             <property name="userData" ref="userData"/>
@@ -1541,6 +1569,8 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * (Spring IoC Annotation-based configuration, часть 2) https://habrahabr.ru/post/48606/
  *                             (Spring Autowired + JSF) http://javatalks.ru/topics/36508
  *                                                      http://javatalks.ru/topics/36508?page=2
+ * (Spring 3 и @Controller. Часть 1) http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html
+ * (Часть 3. Java. Spring MVC: Контроллер) http://stasyak.ru/?p=892
  * 
  * ******************************[ Слой представления - описывает ЧТО пользователь увидит при взаимодействии с приложением ]**********************************
  *
@@ -2242,6 +2272,7 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * (coreer ** Category Archives: JSP) https://coreer.wordpress.com/category/jsp/
  * (coreer ** Category Archives: EL(jsp Expression Language)) https://coreer.wordpress.com/category/eljsp-expression-language/
  * (передача параметров в jsp) http://forum.vingrad.ru/forum/topic-126745.html
+ * (JavaCore.ru ** Области видимости JSP переменных) http://www.javacore.ru/item/79-jsp.htm
  * 
  *
  * **********************************************************************[ Spring ]**********************************************************************
