@@ -1276,11 +1276,37 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  * >>>> @Autowired — аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
  *                   Аннотация @Autowired может применяться к: полям бина, сеттерам, конструкторам и другим методам - чтобы заинъектить в них зависимости
  *                   Еще у @Autowired есть необязательное свойство 'required', при «required=false» Spring не будет кидать исключение если не найдет в контексте необходимого бина.
+ *                   Существует четыре вида связывания в Spring-е (кторые поддерживает автовайред при иньекции бина):
+ *                   1. Autowire по имени;
+ *                   2. Autowire по типу;
+ *                   3. Autowire в конструкторе (по имени, по типу, по индексу);
+ *                   4. Autowiring by @Autowired and @Qualifier annotations (модифицированный);
+ * >>>> @Inject — аннотация позволяет иньектировать реализацию объекта по интерфейсу... 
  * >>>> @Qualifier — аннотация позволяет несколько специфицировать бин, который необходим для @Autowired. Qualifier принимает один входной параметр имя бина.
  * >>>> @Resource —  по действию аналогична @Autowired. В качестве параметра 'name' может принимать имя бина.
- * >>>> @Scope("singleton") — 
- * >>>> @PostConstruct — 
- * >>>> @PreDestroy — 
+ * >>>> @Scope("singleton") — ( @Singleton(true) или @Singleton(false) или @Scope("prototype") или @Scope("request") или @Scope("session") или @Scope("global-session") )
+ *                            Всего в Spring-е есть пять скоупов для определения области видимости Spring-бинов: два в Spring-Core (singleton, prototype); три в Spring-MVC (request, session, global-session)
+ *                              Для того, чтобы можно было связывать бин обладающий меньшей областью видимости с бином обладающим большей областью видимости 
+ *                            (например, требуется связать бины область видимости у которых HTTP request или HTTP session с бином областью видимости singleton)
+ *                            необходимо вставлять не сами бины а их прокси-объекты:
+ *                         @Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES)
+ *                            или
+ *                         @Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+ *                            или
+ *                         <bean id="userData" class="ru.javacore.UserData" scope="session">
+ *                             <aop:scoped-proxy/>
+ *                         </bean>
+ *                         <bean id="dataService" class="ru.javacore.DataService">
+ *                             <property name="userData" ref="userData"/>
+ *                         </bean>
+ *                            или
+ *                         <bean id="userData" class="ru.javacore.UserData" scope="session">
+ *                         </bean>
+ *                         <bean id="dataService" class="ru.javacore.DataService">
+ *                             <lookup-method name="userData" ref="userData"/>
+ *                         </bean>
+ * >>>> @PostConstruct — (жизненный цыкл Spring-бина) вмешиваеться в процесс создания Java-объекта в момент после вызовом конструктора для создания двух-фазного конструктора
+ * >>>> @PreDestroy — (жизненный цыкл Spring-бина) вмешиваеться в процесс уничтожения Java-объекта в момент перед вызовом метода 'finalize()' как гербач-коллектор будет чистить область-Heap
  * >>>> @Configuration — собственно эта аннотация и говорит о том, что данный класс является Java Configuration;
  * >>>> @EnableWebMvc — эта аннотация разрешает нашему проекту использовать MVC;
  * >>>> @ComponentScan(«com.devcolibri.common») — аналогично тому component-scan который был в mvc-dispatcher-servlet.xml, говорит, где искать компоненты проекта.
