@@ -1307,6 +1307,12 @@ SELECT DISTINCT tu.user_name,tu.user_fio,tu.group_name FROM tomcat_users tu LEFT
  *                         </bean>
  * >>>> @PostConstruct — (жизненный цыкл Spring-бина) вмешиваеться в процесс создания Java-объекта в момент после вызовом конструктора для создания двух-фазного конструктора
  * >>>> @PreDestroy — (жизненный цыкл Spring-бина) вмешиваеться в процесс уничтожения Java-объекта в момент перед вызовом метода 'finalize()' как гербач-коллектор будет чистить область-Heap
+ *                            или
+ *                         <bean id="helloWorld" 
+ *                               class="com.tutorialspoint.HelloWorld"
+ *                               init-method="init" destroy-method="destroy">
+ *                             <property name="message" value="Hello World!"/>
+ *                         </bean>
  * >>>> @Configuration — собственно эта аннотация и говорит о том, что данный класс является Java Configuration;
  * >>>> @EnableWebMvc — эта аннотация разрешает нашему проекту использовать MVC;
  * >>>> @ComponentScan(«com.devcolibri.common») — аналогично тому component-scan который был в mvc-dispatcher-servlet.xml, говорит, где искать компоненты проекта.
