@@ -1,0 +1,84 @@
+
+>> (Spring 4 + SOAP Web Service Producer and Consumer Example with Tomcat) http://www.concretepage.com/spring-4/spring-4-soap-web-service-producer-consumer-example-with-tomcat
+                                    (SOAP Web-сервис средствами Spring-WS) https://habrahabr.ru/post/148403/
+>> http://spring-projects.ru/guides/producing-web-service/
+>> http://javastudy.ru/web-services/soap-java-hello-world-example/
+>> https://habrahabr.ru/post/248507/
+>> http://deadlock.org.ua/kit/habr/post/282
+>> http://sarjsheff.ru/blog/2013/01/13/razrabotka-web-siervisov-nastroika-spring-web-services/
+>> http://nikcode.blogspot.com/2012/07/soap-fault-spring-ws.html
+
+
+1. Собираем билд в варник для СОАП-сервиса и запускаем СОАП-сервис на томкате
+(Spring) SOAP-Сервис ... 'soapws'
+----------------------------------------[ Spring4SoapProducer ]
+:  maven-2.2.1
+:  jdk-1.8
+:  tomcat-8
+:  spring4soap-1.war | 'spring4soap-1'
+>> http://localhost:8080/spring4soap-1/
+
+
+2. Запускаем СОАП-клиент
+(Spring) SOAP-Клиент ... 'soapws'
+----------------------------------------[ Spring4SoapConsumer ]
+:  maven-2.2.1
+:  jdk-1.8
+>  com.concretepage.RunSoapClient
+
+----------------------------------------
+У 'SOAP' веб-сервиса есть:
+- внутрений-URL (куда генерится WSDL-документ)
+- внешний-URL (который открывает доступ из-вне к WSDL-документу)
+
+Серверная сторона
+-----------------
+1. Нужно зарегистрировать внутрений-URL где будет лежать WSDL-документ (через аннотированный класс '@Endpoint'...в 'namespace'): <перевернутый.адресс.пути> / <папка куда генерится WSDL-документ>
+   Тотже самый URL прописываем и в XSD-ресурсе
+2. Дальше регистрируем внешний-URL для доступу к WSDL-документу по HTTP-протоколу (через класс 'WsConfigurerAdapter'...в 'setLocationUri()' и через класс 'WebApplicationInitializer'...в 'addMapping()')
+   Полный адресс внешнего-URLа будет состоять из: <хост> : <порт> / <домен куда задеплоин> / <зарегистрированый внешний-URL>
+3. Нужно собрать мавеном серверный-проект и закинуть копию сгенерированного пакета WSDL-документа в клиентский проект
+
+Клиентская сторона
+------------------
+4. В объекте типа 'Jaxb2Marshaller' зарегистрировать путь внутренего-URL: <прямой.адресс.пути> . <папка куда генерится WSDL-документ>
+5. В объекте типа 'WSWebService' зарегистрировать полный адресс внешнего-URLа (по которому WSDL-документ будет доступен через HTTP-протоколу): "http://localhost:9000/ws/bank/invitecodes.wsdl"
+6. В объекте типа 'WebServiceGatewaySupport' зарегистрировать сам WS-сервис: SoapActionCallback("http://localhost:9000/ws/bank/getInviteCodeResponse")
+
+Запуск
+------
+- деплоим варник (ws.war) на tomkat-8: "9000/ws"
+- полный адресс внешнего-URLа: "http://localhost:9000/ws/bank"
+- а сам же СОАП-сервис зарегистрирован по внешнему-URL адрессу: "http://localhost:9000/ws/bank/invitecodes.wsdl"
+- Сначала запускаем-слушаем серверную часть СОАП-сервиса
+- Потом запускаем-шлем запросы из клиентской части СОАП-сервиса
+========================================
+
+
+>> (рассмотрим процесс тестирования с помощью SOAP UI) http://samolisov.blogspot.com/2013/03/oracle-service-bus.html
+
+
+
+
+
+
+
+
+>> (Generate an XSD schema and JAXB classes) https://blog.espenberntsen.net/2010/02/28/contract-first-web-service-with-spring-ws/
+
+1. скомпилируем java-класс сущности
+2. >> WebServices >> Generate Xml Schema from Java using JAXB...
+
+
+
+
+
+
+
+
+
+
+
+
+
+

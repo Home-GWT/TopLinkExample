@@ -1,0 +1,1229 @@
+
+https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured
+https://javadevelopersperspective.wordpress.com/2016/01/03/testing-rest-services-using-gatling-and-maven/
+http://nigel-eke.com/unit-integration-testing-rest-services/
+http://stackoverflow.com/questions/35275108/scala-java-project-not-finding-dependencies-during-maven-compile
+https://github.com/oermolaev/simple-scala-rest-example
+https://sysgears.com/articles/building-rest-service-with-scala/
+http://spr.com/building-a-simple-rest-api-with-scala-play-part-1/
+https://ci.apache.org/projects/flink/flink-docs-master/quickstart/scala_api_quickstart.html
+https://www.packtpub.com/books/content/integrating-scala-groovy-and-flex-development-apache-maven
+> http://fruzenshtein.com/junit-and-mockito/
+> http://fruzenshtein.com/10-amazing-scala-collection-functions/
+> http://fruzenshtein.com/scala-in-java-maven-project/
+> http://fruzenshtein.com/scala-oop-9-things-you-didnt-know/
+> http://fruzenshtein.com/scala-pattern-matching/
+> http://fruzenshtein.com/page/2/
+> https://www.udemy.com/rest-services-testing-in-60-minutes/?couponCode=realPrice
+> http://fruzenshtein.com/rest-services-testing-discount-cupon/
+> http://fruzenshtein.com/page/4/
+http://www.onegeek.com.au/scala/setting-up-travis-ci-for-scala
+https://github.com/eugenp/tutorials/tree/master/gatling
+http://www.baeldung.com/introduction-to-gatling
+http://blog.timmybankers.nl/2014/06/05/ScalaCheck-in-ScalaTest
+https://github.com/TimSoethout/scala-java-maven-code
+http://blog.timmybankers.nl/scala-java-maven-slides/#/10/2
+https://github.com/GrahamLea/scala-spring-hibernate-maven-webapp/blob/master/pom.xml
+https://github.com/zoheb/scala-springmvc-thymeleaf-bootstrap-template/tree/master/src/main/scala/com/bluecompute/security
+https://coderwall.com/p/o2_dza/scala-with-spring-mvc
+https://github.com/upeter/Scala-Spring-Integration/tree/master/src/main/scala/org/jsi/domain
+https://www.infoq.com/articles/scala_and_spring
+https://github.com/dargiri/spring-mvc-scala-web-app-template
+> https://habrahabr.ru/post/222077/
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=maven+spring+scala&start=40
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=Caused+by:+java.lang.ClassNotFoundException:+scala.Either+org.specs2.runner.JUnitRunner
+> https://habrahabr.ru/post/146984/
+> http://stackoverflow.com/questions/1399240/how-do-i-get-my-maven-integration-tests-to-run
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=maven%20java%20test%20and%20integration%20test
+https://github.com/nirth/simple-csv/blob/develop/pom.xml
+https://coderwall.com/p/g5lhaw/specs-with-maven-and-scala
+https://github.com/davidB/scala-archetype-simple/issues/9
+https://github.com/phatak-dev/akka-http-examples
+http://blog.madhukaraphatak.com/akka-http-testing/
+https://github.com/DanielaSfregola/quiz-management-service/tree/master/spray-crud
+https://danielasfregola.com/2015/11/23/how-to-build-a-scala-rest-crud-application-with-spray/
+http://devblog.orgsync.com/2013/05/03/rest-api-integration-testing-with-gatling/
+https://books.google.com.ua/books?id=4_aoCwAAQBAJ&pg=PA16&lpg=PA16&dq=scala+rest+testing&source=bl&ots=NwXW-UzjAI&sig=r9k5xNvQS2KIFYU8zywHR3ie26o&hl=ru&sa=X&ved=0ahUKEwio8p7cvJDRAhWDBywKHUfLAtQ4FBDoAQgoMAI#v=onepage&q=scala%20rest%20testing&f=false
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=scala+rest+testing&start=20
+https://mvnrepository.com/artifact/org.scala-tools/maven-scala-plugin
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=maven-scala-plugin
+https://mvnrepository.com/artifact/org.specs2/specs2_2.10
+https://mvnrepository.com/artifact/org.specs2/specs2_2.11/2.3.11
+https://mvnrepository.com/artifact/org.specs2/specs2_2.9.2
+https://mvnrepository.com/artifact/org.specs2
+https://mvnrepository.com/artifact/org.scala-lang/scala-library
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=org.scala-lang
+http://scala-lang.org/news/2.11.1
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=java+8+scala+specs+version
+> http://stackoverflow.com/questions/25926111/how-to-force-sbt-to-use-java-8
+http://www.scalatest.org/user_guide/using_the_scalatest_maven_plugin
+http://stackoverflow.com/questions/13166707/how-do-i-run-test-groups-with-scala-junit-runner-maven
+http://www.scalatest.org/user_guide/using_the_runner
+doc.scalatest.org/1.3/org/scalatest/Suite.html
+doc.scalatest.org/1.7/org/scalatest/testng/TestNGWrapperSuite.html
+https://dou.ua/forums/topic/10616/
+https://samebug.io/exceptions/348423/java.io.IOException/no-such-file-or-directory?soft=false
+https://www.jetbrains.com/help/idea/2016.3/run-debug-configuration-testng.html
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=specs2+%5BTestNG%5D+%5BERROR%5D+No+test+suite+found.+Nothing+to+run
+http://www.scala-sbt.org/release/docs/Artifacts.html
+http://www.scala-sbt.org/0.13/docs/Testing.html#testQuick
+https://habrahabr.ru/company/cit/blog/281354/
+https://habrahabr.ru/company/cit/blog/269293/
+http://savepearlharbor.com/?p=266794
+https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=scala%20rest%20testing
+http://spr.com/building-a-simple-rest-api-with-scala-play-part-3/
+https://sysgears.com/articles/scala-rest-api-integration-testing-with-spray-testkit/
+ https://github.com/Home-SCALA/scala-spring-mvc-2.5/blob/master/pom.xml
+https://bitbucket.org/otgband/gup/commits/all
+stackoverflow.com/questions/19353037/scala-home-directory-for-creating-scala-project-in-intellij-idea
+https://twitter.github.io/scala_school/ru/basics2.html
+https://twitter.github.io/scala_school/ru/
+fprog.ru/2010/issue6/vlad-patryshev-why-scala/
+> https://dou.ua/lenta/columns/java8-vs-scala/
+https://ru.wikibooks.org/wiki/Scala_в_примерах
+https://github.com/anton-k/ru-neophyte-guide-to-scala
+> www.w3ii.com/ru/scala/scala_environment_setup.html
+> http://www.w3ii.com/ru/scala/scala_basic_syntax.html
+> http://www.w3ii.com/ru/scala/scala_data_types.html
+> www.w3ii.com/ru/scala/scala_variables.html
+> www.w3ii.com/ru/scala/scala_access_modifiers.html
+> www.w3ii.com/ru/scala/scala_if_else.html
+> http://www.w3ii.com/ru/scala/scala_operators.html
+> www.w3ii.com/ru/scala/scala_arrays.html
+> www.w3ii.com/ru/scala/scala_strings.html
+> https://www.google.com.ua/?gfe_rd=cr&ei=B4VrV8mTHsPR8gfIg4i4BQ&gws_rd=ssl#q=scala+Переменные+и+значения
+https://jqueryajaxphp.com/preview/fullcalendar/
+https://www.jqueryajaxphp.com/fullcalendar-crud-with-jquery-and-php/
+
+
+
+
+
+
+> http://www.spring-source.ru/articles.php?type=manual&theme=articles&docs=article_22
+https://github.com/nscala-time/nscala-time
+http://tomaszdziurko.pl/2013/01/running-unit-tests-integration-tests-separately-maven-testng/
+https://dzone.com/articles/java-8-%CE%BBe-vs-scalapart-i?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone%2Fjava
+ https://habrahabr.ru/company/acronis/blog/209226/
+> http://stackoverflow.com/questions/30548414/require-java-8-to-build-scala-project-using-maven
+> http://stackoverflow.com/questions/24448582/my-mixed-scala-java-maven-project-doesnt-compile
+https://medium.com/zappos-engineering/java-8-vs-scala-part-iii-trust-no-one-bench-everything-ef0bbd6e9cdb#.rw3rukmd0
+> http://blogerator.org/page/java-8-vs-scala-sravnenie
+http://stackoverflow.com/questions/35617146/scala-and-sbt-install-on-debian-with-java-8
+
+
+
+
+
+
+>> (Создаем совместное приложение Scala - Spring) http://www.spring-source.ru/articles.php?type=manual&theme=articles&docs=article_22
+> (Использование IntelliJ IDEA в качестве IDE для Scala, а также других функциональных языков программирования) http://eax.me/intellij-idea-scala/
+                                                                                                                http://scala-ide.org/download/sdk.html
+																												http://scala-ide.org/docs/videos.html
+https://docs.microsoft.com/ru-ru/azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin
+> (Scala 2.12 Will Only Support Java 8) https://www.infoq.com/articles/Scala-2-12-Only-Java8
+> https://github.com/ruippeixotog/scala-scraper/issues/15
+  -------------------------------------------------------
+  Scala 2.11 officially targets Java 6. I honestly don't see what more support could a Scala compiler need - in particular, it doesn't need to be compiled with JDK8 to be able to support Java 8 runtimes.
+> http://stackoverflow.com/questions/32126768/can-i-use-java-8-in-an-mixed-scala-2-10-java-project-built-by-sbt
+  -------------------------------------------------------------------------------------------------------------
+  The Scala 2.11.x series targets Java 6 (experimental support for Java 8).
+  In 2.11.1, Java 8 support is mostly limited to reading Java 8 bytecode and parsing Java 8 source.
+  The next major release, 2.12, will most likely target Java 8 by default.
+  Planned future Java 8-centric additions for Scala 2.12 include Java 8.
+  Again, in Java 8 fashion, this lets you instantiate any type with one single abstract method by passing a lambda, improving the user experiences for libraries written for Java 8 in Scala.
+https://www.scala-lang.org/news/2.12.0-M1
+http://ru.stackoverflow.com/questions/505246/Как-правильно-сконфигурировать-pom-для-maven
+> https://www.versioneye.com/java/org.scala-lang:scala-library/2.12.1
+  -------------------------------------------------------------------
+	<dependency>
+		<groupId>org.scala-lang</groupId>
+		<artifactId>scala-library</artifactId>
+		<version>2.12.1</version>
+	</dependency>
+https://blog.knoldus.com/2016/05/18/maven-plugins-for-scala-code-quality/
+(Scala School - Testing with specs2 examples) https://gist.github.com/seratch/1414177
+https://mvnrepository.com/artifact/org.specs2 >> https://mvnrepository.com/artifact/org.specs2/specs2-core_2.12
+https://github.com/scala/scala-java8-compat
+> (Using Spring With Scala (Spring I/O 2016)) http://bernhardwenzel.com/blog/2016/04/22/using-spring-with-scala/
+https://jaxenter.de/scala-2-12-java-8-¦-49071
+http://126kr.com/article/6c5mtuu5mbq
+https://www.linkedin.com/pulse/scala-way-out-owen-rubel
+https://github.com/scala/make-release-notes
+(Set targets for Java 8) https://jaxenter.com/scala-2-12-0-m1-now-available-117105.html
+https://mvnrepository.com/artifact/org.scala-lang.modules/scala-java8-compat_2.10/0.2.0
+> https://www.jetbrains.com/idea/whatsnew/
+http://docs.scala-lang.org/tutorials/scala-with-maven.html
+> http://www.hascode.com/2012/03/snippet-mixing-scala-java-in-a-maven-project/
+https://app.assembla.com/wiki/show/scala-ide/Using_Maven_with_the_Scala_IDE_for_Eclipse/7
+https://mvnrepository.com/artifact/org.scala-lang/scala-library/2.12.0-M1 >> https://mvnrepository.com/artifact/org.scala-tools.testing/specs_2.8.1/1.6.8 >> https://mvnrepository.com/artifact/org.scala-tools.testing/specs_2.8.1 >> https://mvnrepository.com/artifact/org.scala-tools.testing
+> http://grepcode.com/snapshot/repo1.maven.org/maven2/org.scala-tools.testing/specs/1.4.1 >> http://grepcode.com/search/?start=10&query=org.scala-tools.testing+specs+1.4.1&entity=project
+http://www.scala-lang.org/api/2.12.0/scala/util/Either.html
+> http://stackoverflow.com/questions/24415698/why-do-i-get-java-lang-noclassdeffounderror-scala-function1-when-i-run-my-cod
+https://github.com/SandroGrzicic/ScalaBuff/issues/59
+http://snacktrace.com/artifacts/com.weiglewilczek.scala-lang-osgi/scala-library/2.8.0.RC1/scala.Either
+> http://www.minecraftforge.net/forum/index.php?topic=18408.0
+https://github.com/etorreborre/specs2/issues/281
+https://github.com/ensime/ensime-server/issues/88
+http://typelevel.org/blog/2015/08/06/machinist.html
+> http://typelevel.org/blog/2015/08/06/machinist.html
+https://github.com/parthatalukdar/junto/issues/4
+https://forums.manning.com/posts/list/37147.page
+(bump up default scala version to 2.10.4 to compile with java 8) https://issues.apache.org/jira/browse/KAFKA-1624
+http://stackoverflow.com/questions/24517761/scala-repl-throws-error
+> http://stackoverflow.com/questions/24197836/compilation-failed-error-while-loading-annotatedelement-concurrentmap-charseq
+  -------------------------------------------------------------------------------------------------------------------------
+  I have a similar problem on Java 1.8.0 working with Scala 2.10.4 and sbt 0.12.4. But when upgrading to sbt 0.13.7, the problem is solved
+  I had the same problem. However by switching to Java 7 my problem is resolved. So now this configuration works for me:
+  - sbt 0.13.8
+  - scala 2.11.7
+  - java 7
+  Upgrading the SBT version in build.properties to 0.13.8 worked (using scala 2.11 and java 8) - (edit) for me when I encountered this error.
+  I solved this by using:
+  My environment is:
+  - JDK 8
+  - Maven
+  - Scala
+http://askubuntu.com/questions/630732/cant-run-scala
+https://mvnrepository.com/artifact/org.specs/specs/1.3.1 >> https://mvnrepository.com/artifact/org.specs/specs/1.2.5
+http://www.scala-lang.org/old/node/11466.html
+
+
+> http://ru.stackoverflow.com/questions/tagged/scala?sort=active&pageSize=50
+  --------------------------------------------------------------------------
+  (Проблема с scala+maven+tomcat) http://ru.stackoverflow.com/questions/503325/Проблема-с-scalamaventomcat >> https://yadi.sk/d/mcBt5mQCqDWDj
+                                  https://github.com/Home-SCALA/finagle-example/blob/master/src/test/scala/me/eax/finagle_example/tests/RestSpec.scala
+								  http://devcolibri.com/864
+  http://ru.stackoverflow.com/questions/535612/Как-собрать-scala-проект-с-зависимостями
+  http://ru.stackoverflow.com/questions/554017/Шаблон-проекта-scala-sbt-tomcat-intellij-ideaservlet-jsp >> https://www.playframework.com/
+  http://ru.stackoverflow.com/questions/450766/Сборка-scala-проекта-gradle-или-sbt
+https://github.com/ReactiveX/RxScala
+http://www.scala-lang.org/old/node/3817.html
+> http://javarticles.com/category/scala
+https://github.com/twitter/util/blob/master/util-eval/src/test/scala/com/twitter/util/EvalTest.scala
+
+
+
+
+
+
+
+
+
+
+
+(scala типы данных пример)
+http://frolov-lib.ru/programming/javasamples/vol1/vol1_1/index.html
+http://www.luxoft-training.ru/kurs/yazyk_scala_dlya_java-razrabotchikov.html
+
+> http://bourabai.kz/alg/scala.htm
+  https://twitter.github.io/scala_school/ru/collections.html >> https://twitter.github.io/scala_school/ru/type-basics.html
+  https://docs.microsoft.com/ru-ru/azure/machine-learning/machine-learning-data-science-process-scala-walkthrough
+  http://www.k-press.ru/cs/2005/1/Scala/Scala.asp
+> http://www.w3big.com/ru/scala/scala-basic-syntax.html >> https://www.tutorialspoint.com/scala/scala_basic_syntax.htm
+> http://www.w3big.com/ru/scala/scala-data-types.html >> https://www.tutorialspoint.com/scala/scala_data_types.htm
+> http://www.ibm.com/developerworks/ru/library/j-scala06278/
+https://habrahabr.ru/post/222553/
+
+
+
+
+
+
+
+
+
+
+>> (Разработка > Разработка микросервисов с использованием Scala, Spray, MongoDB, Docker и Ansible) https://habrahabr.ru/post/250043/ >> https://github.com/vfarcic/books-service
+https://github.com/tirthalpatel/Learning-Java/blob/master/Java8/src/com/tirthal/learning/langfeatures/Ex_DefaultStaticMethodsInInterface.java
+> http://codegists.com/search/scala-jackson-deserialize/3
+> http://www.scala-lang.org/old/node/7574
+  ---------------------------------------
+  I created a new project with just these 2 files and it don't works!
+  I have included a screenshot. You can see the netbean project and the files.
+  The problem is with netbeans, I've to clean & build the project. Then, It works. I think it's some plugin's bug.
+> https://blog.caseylucas.com/2011/08/17/jerkson-spring-scala/
+  ------------------------------------------------------------
+  The default implementation that is enabled with Spring 3.1 uses Jackson which didn’t work very well with Scala case classes and Option. I wanted None to be rendered as a non-existent JSON values (vs. null). I wanted to stick with Jackson because of its performance and in-house track-record. After finding and playing around with Jerkson, I decided it would be a better fit for our Spring / Scala scenario. Spring 3.1 makes it pretty easy to configure custom MessageConverters. I used Rossen Stoyanchev’s post and the
+>> (Язык программирования Scala) http://bourabai.kz/alg/scala.htm
+>> (Руководство по Scala для Java программистов) http://www.scala-lang.org/docu/files/ScalaTutorial-ru_RU.pdf >> 5.1 методы без аргументов >> 5.2 Наследование и переопределение >> 6 Case -классы и поиск по шаблону
+> (Implicit class) https://habrahabr.ru/post/209850/
+> (Inheritance and abstract classes) http://scalaforfunandprofit.com/posts/inheritance/
+> http://alvinalexander.com/scala/scala-class-examples-constructors-case-classes-parameters
+  -----------------------------------------------------------------------------------------
+  Declaration    Getter?    Setter?
+  -----------    -------    -------
+  var            yes        yes
+  val            yes        no
+  default        no         no
+> https://habrahabr.ru/post/269695/
+  ---------------------------------
+  String mama = "Jane";
+  final String papa = "John";
+  var mama = "Jane"
+  val papa = "John"
+>> (Путеводитель по Scala для Java-разработчиков: Коллекции) http://www.ibm.com/developerworks/ru/library/j-scala06278/
+>> (Основные структуры данных) https://twitter.github.io/scala_school/ru/collections.html >> https://twitter.github.io/scala_school/ru/type-basics.html
+
+> (How to pass scala Array into scala vararg method?) http://stackoverflow.com/questions/31064753/how-to-pass-scala-array-into-scala-vararg-method
+> (How to extend mutable Map in Scala) http://stackoverflow.com/questions/34721211/how-to-extend-mutable-map-in-scala
+  (Разработка > Scala. Введение) https://habrahabr.ru/post/77750/
+  (Преобразование ссылочных типов, или спящий волк на клавиатуре) http://info.javarush.ru/Sant9Iga/2014/01/16/Преобразование-ссылочных-типов-или-спящий-волк-на-клавиатуре.html
+http://stackoverflow.com/questions/171489/explicit-type-conversion-in-scala#171489
+http://alvinalexander.com/scala/using-scala-option-some-none-idiom-function-java-null >> https://www.safaribooksonline.com/blog/2013/06/03/avoiding-nulls-with-scalas-option-class-tip/
+http://www.scala-lang.org/old/node/11722.html
+http://www.scala-lang.org/api/current/scala/AnyRef.html
+http://alvinalexander.com/scala/scala-compare-strings-with-equal-operator-method-not-equals
+(&& and || in Scala) http://stackoverflow.com/questions/3916207/and-in-scala
+http://www.scala-lang.org/old/node/1907.html
+https://gist.github.com/aphexmunky/6007756
+https://www.cs.helsinki.fi/u/wikla/OTS/Sisalto/examples/html/ch20.html#sec8
+>> (Scala and Spring) http://www.slideshare.net/ewolff/scala-and-spring
+http://brunneng.blogspot.com/
+(Fuzzy scala inference engine) https://sourceforge.net/p/scalainferencee/code/ci/master/tree/src/net/sf/brunneng/fusie/ui/
+http://lex-kravetski.livejournal.com/424713.html
+>> https://www.tutorialspoint.com/scala/scala_data_types.htm >> http://www.w3big.com/ru/scala/scala-data-types.html
+>> https://www.tutorialspoint.com/scala/scala_basic_syntax.htm >> http://www.w3big.com/ru/scala/scala-basic-syntax.html
+> (Разработка > Конструирование типов в Scala) https://habrahabr.ru/post/222553/
+> http://www.w3ii.com/ru/scala/scala_data_types.html
+> (Spring MVC и JDBC (Spring JDBC example). Подключение и настройка JDBC datasource, пример работы с JDBC в Spring) http://javastudy.ru/spring-mvc/spring-mvc-jdbc/
+> http://www.cyberforum.ru/java-ide/thread1410877.html
+  ----------------------------------------------------
+  Собственно, вот ошибка:
+-Dmaven.multiModuleProjectDirectory system propery is not set. Check $M2_HOME environment variable and mvn script match.
+Причём maven установлен, M2_HOME нацелен точно на его папку, вот что выдает консоль до ошибки
+"C:\Program Files\Java\jdk1.8.0_31\bin\java" "
+-Dmaven.home=C:\Program Files (x86)\Apache\apache-maven-3.3.1" "
+-Dclassworlds.conf=C:\Program Files (x86)\Apache\apache-maven-3.3.1\bin\m2.conf"
+-Didea.launcher.port=7534 "
+-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.0.3\bin"
+-Dfile.encoding=UTF-8
+-classpath "C:\Program Files (x86)\Apache\apache-maven-3.3.1\boot\plexus-classworlds-2.5.2.jar;
+C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.0.3\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.0.3 compile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(37 поздравлений с Днем Рождения на английском языке с переводом.) http://www.yanglish.ru/days/birthday.htm#.WHMvy1wpp1Q
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>> http://www.guru99.com/mongodb-create-user.html
+http://stackoverflow.com/questions/35506546/mongodb-roles-user-access-multiple-databases
+http://stackoverflow.com/questions/18823112/mongo-user-privilege-to-read-and-write-to-any-database
+https://docs.mongodb.com/manual/reference/method/db.createUser/
+https://gist.github.com/tamoyal/10441108
+http://tgrall.github.io/blog/2015/02/04/introduction-to-mongodb-security/
+https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
+https://habrahabr.ru/post/148364/
+http://devcolibri.com/2091
+https://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html  |  MongoClient  |  3000  |  mongodb://localhost:27017
+
+http://newspop.online/az/vedma_comua/
+
+http://www.guru99.com/mongodb-create-user.html
+http://stackoverflow.com/questions/35506546/mongodb-roles-user-access-multiple-databases
+http://tgrall.github.io/blog/2015/02/04/introduction-to-mongodb-security/
+http://stackoverflow.com/questions/18823112/mongo-user-privilege-to-read-and-write-to-any-database  |  db.addUser({user: "foo" , pwd: "bar", roles: [  "userAdminAnyDatabase","readWriteAnyDatabase" ]})
+>>> (Администрирование > Настройка MongoDB ShardedCluster с X.509 аутентификацией) https://habrahabr.ru/post/308740/
+>> (MongoDB: настройка, управление и использование сервиса, бекап данных) http://funix.ru/bazy-dannyx/mongodb-nastrojka-upravlenie-i-ispolzovanie-servisa-bekap-dannyx.html
+(Удаленный доступ к mongo) https://eurohoster.org/blog/administration/full/107
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
+http://petrkout.com/linux/installing-mongodb-2-6-and-setting-up-root-user-login/
+(Run-time Database Configuration) https://docs.mongodb.com/v3.0/administration/configuration/
+(Шпаргалка по mongodb: e-commerce, миграция, часто применяемые операции и немного о транзакциях) https://habrahabr.ru/post/259219/
+http://dba.stackexchange.com/questions/121076/start-mongodb-with-authentication-enabled
+https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8#.43f9i5awk
+http://www.speedtest.net/ru/
+> (Softheme) http://rabota.ua/company526451/vacancy6292275
+(MongoDB Download Center) https://www.mongodb.com/download-center?jmp=nav#community
+http://stackoverflow.com/questions/30691665/cant-remove-purge-unistall-mongodb-from-debian
+http://askubuntu.com/questions/591220/can-not-uninstall-mongodb
+(Не получается запустить MongoDB shell в Ubuntu) http://mvblog.ru/archives/849
+(Установка и настройка MongoDB в Ubuntu 14.04) http://cyber01.ru/manuals/ustanovka-i-nastrojka-mongodb-v-ubuntu-14-04/
+https://www.8host.com/blog/ustanovka-mongodb-na-server-ubuntu-14-04/
+https://www.liquidweb.com/kb/how-to-install-mongodb-on-ubuntu-14-04/
+(How to reinstall mongodb in ubuntu linux) https://abhilashak.com/2015/03/06/reinstall-mongodb-in-ubuntu-linux/
+https://habrahabr.ru/post/148364/
+(Удаление данных) http://metanit.com/nosql/mongodb/2.10.php
+(Ubuntu Sources List Generator) https://repogen.simplylinux.ch/
+http://packages.ubuntu.com/ru/
+http://stackoverflow.com/questions/29554521/uninstall-mongodb-from-ubuntu
+
+(scala вопросы на собеседовании)
+> http://joelabrahamsson.com/learning-scala-part-five-methods/
+> http://joelabrahamsson.com/learning-scala-part-four-classes-and-constructors/
+> http://joelabrahamsson.com/learning-scala-part-four-classes-and-constructors/
+> http://stackoverflow.com/questions/9772631/small-and-good-scala-projects-to-learn-scala-especially-functional-programmin
+> https://www.scala-exercises.org/scalacheck/properties
+> https://www.scala-exercises.org/
+> https://github.com/scala-exercises/scala-exercises
+>> http://blog.tmorris.net/posts/scala-exercises-for-beginners/
+>>> (S-99: Ninety-Nine Scala Problems) http://aperiodic.net/phil/scala/s-99/
+> http://ru.stackoverflow.com/questions/33829/Практика-в-scala
+>
+> https://www.youtube.com/watch?v=0GZg_E5ZQJY
+> http://docs.scala-lang.org/tutorials/scala-with-maven.html?_ga=1.93747805.1192454440.1482972522
+> http://ru.selenide.org/2013/04/23/what-is-selenide/
+> http://eax.me/scalatest/
+>> (Классы типов в Scala (с небольшим обзором библиотеки cats)) http://www.liveinternet.ru/tags/scala/
+>>> (Вопросы для интервью Scala-разработчиков) http://scala.by/news/2014/12/10/interview-questions.html
+
+
+
+
+>> https://habrahabr.ru/post/250043/ >> https://technologyconversations.com/2014/09/30/test-driven-development-tdd/
+>> https://github.com/Home-SCALA/ScalaQuickStart-1.3.2
+>> (Вопросы для интервью Scala-разработчиков) http://scala.by/news/2014/12/10/interview-questions.html >> https://docs.google.com/spreadsheets/d/1UCRYpNL6a-t3ZtMlkHUBOV5CQbfUAWwW78t7K2ZOJXw/edit#gid=0 >> http://scala.by//news/2012/11/07/meetup-10.html >> http://www.scala-lang.org/old/node/13096 >> http://scala.by//meetups/2012/11/24/10.html
+>> (S-99: Ninety-Nine Scala Problems) http://aperiodic.net/phil/scala/s-99/
+>> (Разработка микросервисов с использованием Scala, Spray, MongoDB, Docker и Ansible) https://habrahabr.ru/post/250043/
+>> (Из Java в Scala: 7 причин для изучения нового языка) https://habrahabr.ru/post/269695/
+
+  -----------------------------------------------------------------------------------------
+  Declaration    Getter?    Setter?
+  -----------    -------    -------
+  var            yes        yes
+  val            yes        no
+  default        no         no
+
+  ---------------------------------
+  String mama = "Jane";
+  final String papa = "John";
+  var mama = "Jane"
+  val papa = "John"
+
+........................................................................
+Scala, Java, Akka, Spring, Hibernate, RabbitMQ, Kafka, PostgreSQL, Multithreading, Algorithms, Machine Learning, Design Patterns, Linux
+Also have some experience with: OpenStack, Cassandra, Spark, Hadoop, Docker, Play
+
+Core Java(3 years), Concurrency;
+J2EE: Servlets, JPA, JMS
+Spring: MVC, Security, Data, IOC
+Scala: Collections, Akka;
+Testing: JUnit, Mockito, Specs2, Spock;
+maven, sbt, git, svn;
+Linux: Bash scripting, using as server system;
+SQL(MySQL, Oracle)
+
+Agile
+
++ Core java
++ Scala
++ Machine learning или Artificial intelligence
++ Low latency\Heavy loaded project
+
+3+ years of employment history as Software Engineer role with Scala experience
+Strong knowledge of Scala and RDBMS
+Understanding of SQL and NoSQL concepts
+Practical Spark experience or Spark MooC certificates is a big plus
+Experience in optimising application performance and database queries
+Basic understanding of algorithms theory
+Understanding of major design patterns and SOLID principles
+Be experienced user of Linux CLI
+AWS experience is a big plus
+Strong spoken and written English skills. You should be able to understand technical requests and respond with resolutions over email
+
+Core Java(3 years), Concurrency;
+Scala: Collections, Akka;
+Spring: MVC, Security, Data, IOC
+J2EE: Servlets, JPA, JMS
+........................................................................
+
+>>                                           (Spark)
+   (Spark, альтернатива для быстрого анализа данных) https://www.ibm.com/developerworks/ru/library/os-spark/
+            (Разработка > Знакомство с Apache Spark) https://habrahabr.ru/company/piter/blog/276675/
+                           (Введение в Apache Spark) https://habrahabr.ru/company/mlclass/blog/250811/
+>>                                                                     (Specs2)
+                                                            (Chapter 4. Specs2) https://www.safaribooksonline.com/library/view/testing-in-scala/9781449360313/ch04.html
+                                         (Testing your application with specs2) https://www.playframework.com/documentation/2.5.x/ScalaTestingWithSpecs2
+                                                                    (ScalaTest) http://www.scalatest.org/user_guide/tests_as_specifications
+   (Закончен предварительный перевод статей по языку Scala от компании Twitter) http://savepearlharbor.com/?p=158209
+                                      (Разработка > Тестирование в Java. JUnit) https://habrahabr.ru/post/120101/
+								 (QA / Статическое и динамическое тестирование) http://www.quizful.net/interview/qa/static-vs-dynamic-testing
+								                          (ScalaTest vs Specs2) http://blog.appfusions.com/scalatest-vs-specs2/ >> http://www.scalatest.org/ >> http://etorreborre.github.io/specs2/
+												 (Тестирование с помощью specs) https://twitter.github.io/scala_school/ru/specs.html
+											   (Небольшое введение в Scalatest) https://habrahabr.ru/post/209578/
+									(Простейший REST-cервис на Scala и Finagle) http://eax.me/scala-finagle/
+>>                                                                   (Spock Framework)
+                                   (Разработка > Тестирование в Java. Spock Framework) https://habrahabr.ru/post/137561/
+                  (Spock - фреймворк для Javer-ов, которые не любят писать Unit тесты) http://gpaslari.blogspot.com/2014/11/spock-framework.html
+(Тестирование в Scala с помощью ScalaTest и определение степени покрытия кода тестами) http://eax.me/scalatest/
+                                                              (Модульное тестирование) https://ru.wikipedia.org/wiki/Модульное_тестирование
+    (Экстремальное программирование, знакомство с Behavior Driven Development и RSpec) https://habrahabr.ru/post/52929/
+	         (В поисках качества кода: Знакомство с Behavior Driven Development (BDD)) http://www.ibm.com/developerworks/ru/library/j-cq09187/index.html
+>>                 (Data Driven Testing (Тесты, управляемые данными)) http://tctutorial.ru/datadriven/
+   (Объясните пожалуйста что такое test-case data-driven с примерами) http://software-testing.ru/forum/index.php?/topic/32161-obiasnite-pozhalujsta-chto-takoe-test-case-data-driven-s-primerami/
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Akka - заботится о потоках и синхронизации... (фреймворк для построения message-driven JVM-приложений)
+       --------------------------------------
+	   Акторы (легковестные сущности, асинхронно обмениваются сообщениями | устойтивость к ошибкам)
+
+Spray - это простой но мощный инструмент для построения REST/HTTP сервисов (он асинхронный, благодаря использованию Akka-акторов)
+        ------------------------------------------------------------------
+		...c другой стороны делает всего лишь одну вещь — предоставляет асинхронную маршрутизацию для RESTFul API
+		отличный выбор для микросервиса. Docker-контейнеры содержат всё, что нужно для работы приложения, и ничего лишнего...
+
+Play! - это фреймворк для построения RESTFul API, однако он содержит много вещей которые мы не используем...
+        -------------------------------------------------------------------------------------------------
+		(по умолчанию, Play, поддерживает тестовую интегрированную среду)
+		Использование больших веб-серверов, таких как JBoss и WebSphere может быть неоправданно для небольшого сервиса.
+		Даже в таких небольших серверах как Tomcat обычно нет необходимости.
+
+Slick - работа с базой данных
+
+Scalaz - упрощает программирование в функциональном стиле (классы типов: монады, функторы, линзы); Shapeless - еще более строгая типизация
+
+Spark - (Несмотря на сходство с Hadoop, Spark представляет собой новую кластерную вычислительную среду, обладающую полезными особенностями)
+         ---------------------------------------------------------------------------------------------------------------------------------
+		 (нативно Spark поддерживают Scala, Python и Java)
+		 предназначен для решения в вычислительном кластере задач определенного типа: в которых рабочий набор данных многократно используется в параллельных операциях (например, в алгоритмах машинного обучения).
+		 Для оптимизации задач этого типа в Spark вводится понятие кластерных вычислений в памяти, когда наборы данных могут временно храниться в оперативной памяти для уменьшения времени доступа.
+		 Resilient Distributed Datasets (RDD) - устойчивый распространенный набор данных - это коллекция неизменяемых объектов, распределенных по множеству узлов.
+		                                        ------------------------------------------------------------------------------------------------------------------
+		                                        Эти коллекции устойчивы, потому что в случае потери части набора данных они могут восстанавливаться.
+         ---------------------------------------------------------------------------------------------------------------------------------
+		 Ядро Spark – это базовый движок для крупномасштабной параллельной и распределенной обработки данных.
+		              ---------------------------------------------------------------------------------------
+					  Ядро отвечает за:
+                      - управление памятью и восстановление после отказов
+                      - планирование, распределение и отслеживание заданий кластере
+                      - взаимодействие с системами хранения данных
+		 Компоненты Spark:
+		                  - SparkSQL - поддерживающий запрашивание данных либо при помощи SQL, либо посредством Hive Query Language.
+		                  - Spark Streaming - поддерживает обработку потоковых данных в реальном времени; такими данными могут быть файлы логов рабочего веб-сервера (напр. Apache Flume и HDFS/S3), информация из соцсетей, например, Twitter, а также различные очереди сообщений вроде Kafka.
+		                  - MLlib (Machine Learning) - это библиотека для машинного обучения, предоставляющая различные алгоритмы, разработанные для горизонтального масштабирования на кластере в целях классификации, регрессии, кластеризации, совместной фильтрации и т.д.
+		                  - GraphX - это библиотека для манипуляций над графами и выполнения с ними параллельных операций.
+
+ScalaTest - удобное тестирование (наиболее близко напоминает тесты в стиле JUnit)
+
+Specs2 - (в отличие от ScalaTest, применяется спецификация в стиле модульного тестирования) это фреймвок для тестирования, который приследует другие цели и направления
+         --------------------------------------------------------------------------------------------------------------------------------------------------------------
+		 (Работает из SBT-сборщиком, и имеет уникальные отличия, которые разработчик может выбрать на основе необходимых функциональных возможностей)
+		 Specs2 имеет другие модули для вычислителей, и использует другую структуру для написания тестов:
+		 -- DataTable спецификацию
+		 -- AutoExamples
+		 -- FitNesse спецификацию стилей (используется для совместной работы разными командами проекта)
+		 Specs2-тесты уникальны тем что они одновременно выполняются в отдельно-каждом потоке.
+		 Behaviour-Driven Development (BDD) - фреймфорк для тестирования, разработка основанная на функционировании
+Spock - это Groovy-фреймворк для написания тестов в BDD-стиле (Behaviour-Driven Development) для Java и Groovy приложений
+        -----------------------------------------------------------------------------------------------------------------
+		(тестирование стало: простым, логичным, интуитивно понятным и быстрым)
+		(Spock-фреймворк для Javer-ов, которые не любят писать Unit тесты)
+
+FlatSpec - хороший шаг вперёд для команд, которые хотят перейти от использования JUnit и других подобных фреймворков к использванию BDD
+           ----------------------------------------------------------------------------------------------------------------------------
+           (это DSL, позволяющий писать тесты в виде как можно более приближённом к написанию спецификации поведения тестируемого класса)
+
+- Статическое тестирование - производится без запуска программного кода продукта, путем анализа программного кода (code review - производится самими разработчиками)
+                             ---------------------------------------------------------------------------------------------------------------------------------------
+                             Ошибки, которые потенциально можно выявить с помощью автоматического статического тестирования:
+                             - утечки ресурсов (утечки памяти, неосвобождаемые файловые...)
+                             - возможность переполнения буфера (buffer overflows)
+                             - ситуации частичной (неполной) обработки ошибок
+							 результатом автоматического анализа кода является список рекомендаций для ручного review некоторых участков кода
+- Динамическое тестирование - производится путем запуска продукта и проверки его функционала.
+                              ---------------------------------------------------------------
+							  Проверка осуществляется с помощью ручного или автоматического выполнения заранее подготовленного набора тестов.
+							  Примеры динамического тестирования:
+                              - модульное тестирование (unit testing)
+                              - интеграционное тестирование (integrated testing)
+                              - приемочное тестирование (acceptance testing)
+
+"test-case" (тест кейс) - выполняет одноно типовое действие над исследуемой системой (аргумент1 = действие)
+"data-driven" (тест, управляемый данными) - один алгоритм проверки и много вариантов входных данных (один тест, который проходится несколько раз с разными входными данными и соответствующими им ожидаемыми результатами)
+
+     Test-Driven Development (TDD) - техника программирования, при которой модульные тесты для программы или её фрагмента пишутся до самой программы
+	                                 ---------------------------------------------------------------------------------------------------------------
+									 Test-Driven Development (TDD) - тесты перед реализацией (Разработка через тестирование - техника разработки программного обеспечения, которая основывается на повторении очень коротких циклов разработки: сначала пишется тест, покрывающий желаемое изменение, затем пишется код, который позволит пройти тест, и под конец проводится рефакторинг)
+         Data-Driven Testing (DDT) - (тесты управляемые данными) это такой подход к тестированию, при котором тестовые данные хранятся отдельно от скриптов, обычно в документе Excel, файле CSV или в базе данных
+Behaviour-Driven Development (BDD) - разработка основанная на функционировании (если фокусироваться на том, как программа работает, а не на том, что она производит в конечном итоге)
+
+Simple Build Tool (SBT) - Стандартное средство сборки приложений для Scala
+
+Docker - система виртуализации
+
+RSpec - это BDD framework для Ruby
+
+Agile - это ускоряющая методология создания проектов. Она минимизирует риски посредством коротких (2–3 недели)циклов, или итераций, разработки.
+
+Реактивное программирование - это программирование с асинхронными потоками(streams) данных.
+
+----------------------------------
+Стек - это структура данных, хранящая объекты в порядке "первым вошел, последним вышел" или "последним вошел, первым вышел".
+       Обычно у этой структуры есть API с такими методами, как push() и pop(). Иногда присутствует метод peek().
+
+Метод push() - принимает входной объект (например: foo и помещает его во внутренний контейнер; например: массив).
+               Метод push() обычно ничего не возвращает.
+
+Если передать методу push() два объекта, например, сначала foo, а потом bar - второй объект bar должен оказаться наверху концептуального стека, содержащего по крайней мере два объекта, так что при вызове метода pop() объект bar должен быть извлечен первым, до первого объекта foo. Если метод pop() вызвать еще раз, должен быть возвращен объект foo и стек должен стать пустым.
+
+Метод pop() удаляет самый последний элемент, добавленный в стек - да, метод pop() должен удалить верхний элемент, при этом предполагается, что в стеке есть элементы, чтобы их удалять.
+
+Метод peek() - работает точно также (метод pop()), но при этом объект не удаляется.
+               Метод peek() должен оставить верхний элемент в стеке.
+
+Если вызвать метод pop(), когда в стек еще ничего не было добавлено -  метод pop() должен выдать исключение, показывающее, что в стек еще ничего не добавлялось.
+
+Если выполнить команду push() null - стек должен выдать исключение, так как null не является допустимым значением для метода push().
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>> (Golovach Courses ** Scala for Java Developers (in Russian)) https://www.udemy.com/scala-for-java-developers-ru/?couponCode=YOUTUBE-SITE  |  https://www.youtube.com/channel/UCuIctN7x71qam9K_ZxS1W2A
+>> (Небольшое введение в Scalatest) https://habrahabr.ru/post/209578/
+>>  (mirage22 ** miko-spring-scala) https://github.com/mirage22/miko-spring-scala/tree/master/src/main/scala/miko/scala/helloexample/config
+
+                  (specs2 of scala)
+>> (Learn Scala with Specs2 Spring) http://www.javaworld.com/article/2078502/java-concurrency/learn-scala-with-specs2-spring.html  |  http://www.javaworld.com/article/2078502/java-concurrency/learn-scala-with-specs2-spring.html?page=2  >>  https://github.com/janm399/specs2-spring
+>>          (Cake pattern in depth) http://www.cakesolutions.net/teamblogs/2011/12/19/cake-pattern-in-depth  >>  https://github.com/markglh/Cake-Pattern-In-Depth/blob/master/project/pom.xml
+>>     (Specs with Maven and Scala) https://coderwall.com/p/g5lhaw/specs-with-maven-and-scala  >>  https://github.com/nirth/simple-csv/blob/65e2966ff0eaac364431e146fc0f0a41e5bf07ce/src/test/scala/SimpleCSVSpec.scala
+>>               (Testing in Scala) https://www.safaribooksonline.com/library/view/testing-in-scala/9781449360313/ch04.html
+>>   (Тестирование с помощью specs) https://twitter.github.io/scala_school/ru/specs.html
+
+                                                                         (scala spray)
+>>                                       (How to build a REST api with Spray and Akka) https://danielasfregola.com/2015/02/23/how-to-build-a-rest-api-with-spray/  >>  https://github.com/DanielaSfregola/quiz-management-service/tree/master/spray-akka
+>> (Разработка микросервисов с использованием Scala, Spray, MongoDB, Docker и Ansible) https://habrahabr.ru/post/250043/
+>>                                                                    (What is spray?) http://spray.io/introduction/what-is-spray/
+
+~~ (3 things you didn't know Scala pattern matching can(not) do) http://speaking-my-language.blogspot.com/2009/09/3-things-you-didnt-know-scala-pattern.html
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Scala, Akka, Multithreading, Algorithms, Machine Learning, Design Patterns
+Also have some experience with: Spark, Hadoop, Docker, Play
+Методология Agile
+
+Core Java, Concurrency;
+J2EE: Servlets, JPA, JMS
+Spring: MVC, Security, Data, IOC
+Scala: Collections, Akka;
+Testing: JUnit, Mockito, Specs2, Spock;
+maven, sbt, git, svn;
+Linux: Bash scripting, using as server system;
+
+ScalaTest
+FlatSpec
+
+Understanding of SQL and NoSQL concepts
+Practical Spark experience or Spark MooC certificates is a big plus
+Experience in optimising application performance and database queries
+
++ Low latency\Heavy loaded project
++ Реактивное программирование (курсы КПИ)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(scala spray restful error action)
+https://github.com/spray/spray
+http://blog.michaelhamrah.com/2013/06/scala-web-apis-up-and-running-with-spray-and-akka/
+http://www.slideshare.net/sirthias/spray-rest-on-akka/25-Basic_Architecture_REST_API_layer
+http://www.lightbend.com/activator/template/blogimistic
+http://stackoverflow.com/questions/38335100/how-to-add-custom-listener-to-spray-scala-restful-service
+http://metaclass.livejournal.com/786486.html
+http://eax.me/akka-basics/
+https://habrahabr.ru/post/221723/
+https://habrahabr.ru/post/262971/
+
+(scala spray или spring mvc)
+http://www.decodified.com/spray/2011/03/31/introducing-the-spray-framework.html
+http://www.cakesolutions.net/teamblogs/2012/04/28/akka-spray-and-spring-framework
+https://habrahabr.ru/post/263749/
+https://habrahabr.ru/post/250043/
+https://toster.ru/q/206822
+http://eax.me/avoid-frameworks/
+
+
+>> (Spring Security Configuration with Scala) http://spring.io/blog/2011/08/01/spring-security-configuration-with-scala/
+    ========================================
+Spring - это большой фреймворк, который поддерживает много разных библиотек:
+- MVC/REST (контроллеры которые возвращают модель Model/ViewModel для представления веб-страницы, а также данные в JSON/XML-формате..., и работает только с HTTP-протоклом)
+- SOAP (для поддержки разных виды протоколов: TCP, JMS, FTP, HTTP, ...)
+- Security (базовая, через клиентскую форму, SSL-подпись, OpenID, OAuth1/OAuth2)
+- Data (построение транзакции к базе данных...)
+- ...
+Дело в том, что Spring-ые библиотеки и модули совместимые только внутри самого Spring-а (и как они поведут себя в работе с другими фреймворками неизвестно...)
+
+>> (Security Frameworks for Scala) http://www.47deg.com/blog/security-frameworks-for-scala/
+    =============================
+> Аутентификации (Authentication) ...................... в компьютерной системе состоит во вводе пользовательского идентификатора (логина и пароля)
+  -------------------------------
+
+> Авторизация (Authorization) .......................... предоставление определённому лицу или группе лиц прав на выполнение определённых действий
+  ---------------------------
+
+> CSRF (Cross-Site Request Forgery, также XSRF) ........ опаснейшая атака которая приводит к тому что хакер может выполнить на неподготовленном сайте массу различных действий от имени других посетителей
+  ---------------------------------------------
+
+> XSS (Cross-Site Scripting - межсайтовый скриптинг) ... тип атаки на веб-системы заключающийся во внедрении злоумышленником в выдаваемую веб-системой страницу вредоносного кода который будет выполнен на компьютере пользователя при открытии им этой страницы
+  --------------------------------------------------
+
+> SQL-инъекция (SQL Injection) ......................... это атака направленная на веб-приложение в ходе которой конструируется SQL-выражение из пользовательского ввода путем простой конкантенации (в случае успеха атакующий может изменить логику выполнения SQL-запроса)
+  ----------------------------
+
+Некоторые из модулей можно использовать для повышения безопасности наших приложений:
+
+1. Структура "Play"
+              ----
+    Является одним из наиболее часто используемых веб-структур в Scala.
+    С точки зрения безопасности Play2 обеспечивает такую безопасность которая может быть использована для создания безопасных действий.
+    Если вам нужна более продвинутая безопасность тогда рекомендуется использовать:
+    - "Authentication and Authorization module"
+    - "Deadbolt 2"
+    - "SecureSocial"
+    - "Silhouette"
+    - "Stateless client authentication"
+.. Структура "Scala-oauth2-provider"
+              ---------------------
+	Предоставляет на стороне сервера механизм 'OAuth-2.0'.
+	Необходимо реализовать тред 'DataHandler' ('DataHandler' вернет 'AuthInfo') и использовать его вместе с классом 'User'.
+	(для работы с Play необходимо определить контроллер с 'OAuth2Provider' - который выдает маркер доступа и назначить маршрут к контроллеру а также доступ к ресурсу)
+
+2. Модуль "Authentication and Authorization module"
+           ---------------------------------------
+    Обеспечивает более безопасные аутентификацию и авторизацию функций (чем изначально доступны в Play2)
+    Создает уникальный ID-сессии используя безопасный генератор случайных чисел (который делает сессию недействительной даже если SESSIONID-куки были перехвачены)
+.. Модуль "Authenticity Token module"
+           -------------------------
+	Полезен для защиты вашего Play2-приложения против CSRF-атак (Cross-Site Request Forgery).
+	Добавляет скрытый параметр с подписанным UUID в каждой форме. Подпись хранится в куки сессии когда форма была отправлена вместе с остальной частью полями формы...
+4. Модуль "SecureSocial"
+           ------------
+	Используется для добавления в приложение: OAuth1, OAuth2, OpenID, Username/Password и пользовательской-формы аутентификации.
+	С помощью 'SecuredAction' можно делать проверку (прошедшим проверку подлинности пользователя) при каждом запросе. Можно добавить логику авторизации на контроллеры...
+	(если это так то код вызывается; инначе - будет перенаправлять на страницу входа в систему или отправить несанкционированную ошибку)
+6. Модуль "Stateless client authentication"
+           -------------------------------
+	Добавляет проверку подлинности в приложение без сохранения состояния на стороне сервера.
+	(информации о сессии хранится в куках на стороне клиента с криптографической подписью чтобы предотвратить несанкционированный доступ)
+	Нужно унаследоваться от 'StatelessSecurityBase' и определить модель-пользователя - после этого можно использовать 'StatelessSecurity' в контроллерах...и переменную CurrentUser
+
+.. Библиотека "Play-pac4j"
+               ----------
+	Обеспечивает 6-различных механизмов аутентификации на стороне клиента.
+	Нужно наследовать ваше приложение от 'ScalaController' и определить клиентские признаки необходимые для поддержки.
+	Также можно получить профиль пользователя с 'getUserProfile' и защищать методы используя функцию 'RequiresAuthentication'
+5. Библиотека "Silhouette"
+               ----------
+	Является ответвлением от 'SecureSocial' которая поддерживает несколько методов аутентификации: OAuth1, OAuth2, OpenID, Username/Password и пользовательской-формы аутентификации.
+	(контроль надежности пароля через SSL-аутентификации клиента или использование других протоколов аутентификации которые не требуют пароля)
+	Она нуждается в настроенной среде:
+	- IdentityService (необходимо реализовать тред расширяющий IdentityService)
+	- AuthenticatorService (управляет аутентификацией для проверки сеанса пользователя)
+	- RequestProvider (одна из реализаций службы для идентификации пользователя)
+	- EventBus (шина событий AKKA - обрабатывает события в приложении)
+
+.. Инструмент "Akka (Akka-HTTP)"
+               ----------------
+	Набор инструментов для построения высоко-параллельных, распределенных и устойчивых приложений, управляемые сообщениями на JVM.
+	Akka предназначен для работы в распределенной установке и использует модель актера.
+	Актеры являются объектами с состоянием и поведением, которые обмениваются данными передачи сообщений асинхронно.
+    Akka HTTP представляет собой экспериментальный модуль для взаимодействия с веб-службами и клиентами.
+    (Akka-HTTP реализует HTTP-схему Basic-аутентификации и обеспечивает некоторые предопределенные 'SecurityDirectives' для аутентификации и авторизации)
+.. "Akka-HTTP-Sessions"
+    ------------------
+	Используется для управления Akka-HTTP сессиями:
+    - Клиентские сессии с данными об сессии сохраняются в виде кукков, которые подписанные сервером и хранятся на клиентской стороне.
+	- Можно шифровать сессию и устанавливать тайм-аут сессии.
+    - Защита от внедренния Cross Site Request Forgery (CSRF)...
+    - Запоминание моих кукков (применяется для постоянных сессий, также можно создать условно-постоянные сессии в зависимости от выбора пользователя...).
+    - Пользовательская криптографии чтобы изменить алгоритм подписи (код шифрования/дешифрования данных сессии).
+.. "Akka-http-extensions"
+    --------------------
+	Позволяет добавлять полезные утилиты для Akka-клиентов:
+    - Регистрация с помощью "bcrypt" для создания хэшированных паролей.
+    - Аутентификация хранит токены в куках.
+    - Авторизация использование директиву для ограничения доступа пользователей.
+    - P-JAX добавляет P-JAX-заголовок в AJAX-запросы (это позволяет на бэкэнде показывать всю HTML-страницу)
+    - UI контроль связывает-элементы управления подпроектом, независимо от Akka-HTTP-расширения
+.. Инструмент "Spray"
+               -----
+	Это набор инструментов для построения REST/HTTP слоев интеграции, которые основанные на Scala и Akka (асинхронный actor - быстрый, легковестный модуль и поддающийся проверке).
+    Spray включает 'SecurityDirectives' которые можно использовать чтобы добавить аутентификацию и авторизацию для приложения.
+
+    - Аутентификация с использованием 'Future' или 'ContextAuthenticator'.
+	  ('BasicHttpAuthenticator' реализует базовую HTTP-аутентификацию через BasicAuth() - она должна использоваться только через SSL, поскольку учетные данные передаются в незашифрованном виде).
+    - Авторизация определенная по юзеру, возвращает булевское значение или RequestContext...
+
+.. Платформа "Lift"
+              ----
+	Это веб-платформа для создания приложений с особым акцентом на безопасность.
+    7-мь вещей которые делают 'Lift' одну из самых важных веб-структур:
+      1. Ленивая загрузка
+      2. Параллельный рендеринг страницы
+      3. 'Comet' & 'Ajax'
+      4. 'Wiring' - объявляет взаимозависимостей между элементами страницы
+      5. Дружественные дизайн-паттерны
+      6. 'Wizard' - многостраничный экраны ввода с поддержкой кнопки - 'Back'
+      7. 'Security'
+    Включает в себя:
+    - предотвращения OWASP, 10-топовых уязвимостей (Injection)
+	- Cross Site Scripting (XSS)
+	- ...управление сессиями...
+	- прямые безопасные ссылки на объект...
+	- Cross Site Request Forgery (CSRF)
+	- отказ от ограничения через URL-доступ...
+
+3. "Deadbolt 2"
+    ----------
+	Дает возможность добавить механизм авторизации для Play-приложения чтобы ограничить доступ к методам контроллера, которые пользователи могут/НЕмогут просматривать.
+	(позволяет определить требования для доступа к каждому ресурсу и какие группы пользователей могут просматривать и редактировать их)
+
+
+   (Какие вопросы задают на собеседовании на позицию scala-программист?) https://toster.ru/q/177957
+>> (Две задачки для собеседования разработчиков) https://habrahabr.ru/post/179937/
+>> (Вопросы для интервью Scala-разработчиков) http://scala.by/news/2014/12/10/interview-questions.html
+                                              http://scala.by/news/2014/12/10/interview-questions >> https://docs.google.com/spreadsheets/d/1UCRYpNL6a-t3ZtMlkHUBOV5CQbfUAWwW78t7K2ZOJXw/edit#gid=0
+											( http://www.scala-lang.org/api/current/index.html#scala.Enumeration )
+											( http://underscore.io/blog/posts/2014/09/03/enumerations.html )
+    ========================================
+За последние несколько лет мы провели достаточно много интервью кандидатов на позицию Scala-разработчика.
+Несмотря на то, что Scala уже набрала нешуточные обороты на беларуском рынке, и количество компаний, которые ее используют в mission-critical проектах, перевалило за дюжину, когда мы приглашаем человека в нашу команду, это, в первую очередь, специалист с отличными soft-skills, хорошим знанием JVM, пониманием принципов дизайна распределенных, высоконагруженных систем, и только базовыми знаниями Scala.
+
+По первым трем областям, я предполагаю, вы знаете не хуже нас, в каком ключе общаться с кандидатами.
+Что касается интервью по Scala - короткий список вопросов, на который мы полагаемся, может оказаться вам полезным.
+Мы совершенно не боимся сделать его публичным, т.к., хорошая подготовка по этому списку повлечет за собой серьезный рост уровня владения языком.
+
+ 1. Объясните простыми словами следующие концепции: actor, sueprvisor, location transparency. Опишите, как реализованы actor’ы в Scala (Akka)
+ 2. В каких случаях вы предпочтете trait абстрактному классу?
+ 3. Какие есть альтернативы enum в Scala?
+ 4. Какие преимущества получит Scala, если будет использовать фичи Java 8?
+ 5. В чем преимущества и органичения case-классов?
+ 6. В какой код трансформируются for-comprehensions?
+ 7. Что такое "макрос"? Для каких задач вы (бы) их использовали?
+ 8. Что такое "монада"? Приведите пример монад, которые вы используете
+ 9. Что такое "хвостовая рекурсия"? Что представляет из себя ее оптимизация?
+10. Объясните, как реализован "lazy val"?
+11. Как работает stream?
+12. Объясните паттерн "type class"
+13. Объясните паттерн "pimp-my-library"
+14. Объясните паттерн "cake". Что такое self-type annotation?
+15. В чем вы видите преимущества системы типов Scala над системой типов Java?
+16. В чем разница между "context bound" и “view bound”?
+17. Используете ли вы "scalaz"? Если да, какие компоненты?
+18. Что такое "тип высшего порядка" (higher-kinded type)? Приведите пример их применения
+19. Что такое "union type"? Поддерживаются ли они в Scala?
+20. Что такое "гетерогенный список"? Поддерживаются ли они в Scala?
+
+Коллеги из других компаний! Призываю вас безжалостно критиковать этот список, и дополнить его вопросами, которые кажутся вам интересными. Будет здорово, если вы расскажете, как вы проводите собеседования Scala-разработчиков в ваших компаниях.
+
+>>                   (Основы Scala. 5 часов поедания мозгов) https://habrahabr.ru/post/209532/
+                (Scala School ** Scala Школа ** Уроки: 1-13) https://twitter.github.io/scala_school/ru/index.html
+                    (Scala School ** Подробнее о коллекциях) https://twitter.github.io/scala_school/ru/coll2.html
+                            (Scala WAT: Коллекции/Хабрахабр) https://m.habrahabr.ru/company/tcsbank/blog/184310/
+      (Scala WAT: Обработка опциональных значений/Хабрахабр) https://m.habrahabr.ru/company/tcsbank/blog/166145/
+   (Путеводитель по Scala для Java-разработчиков: Коллекции) http://www.ibm.com/developerworks/ru/library/j-scala06278/
+>>                                                           http://ccfit.nsu.ru/~den/Scala/scala_slides1.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides2.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides3.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides4.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides5.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides6.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides7.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides8.pdf
+                                                             http://ccfit.nsu.ru/~den/Scala/scala_slides10.pdf
+    =====================================
+class MyZombie (index: Int, val name: String){
+    println("zzzzzzz")
+}
+
+class MyZombie {
+    private val index: Int = 0
+    val name: String = "Zombie0"
+}
+
+val doubled = (x: Int) => x * 2
+def getRandom() = {
+    Math.random
+}
+
+val result = for(I <- 1 to 10) yield i
+паттерн Companion Object - фабрика
+паттерн Matching
+"case class" это:
+1. пропертя
+2. паттерн Matching
+3. Companion Object
+4. метод copy
+Train - как абстрактный класс, определяет поведение (используется для того чтобы добавлять поведение)
+( scala - статический типизированный язык )
+( квадратные скобки - это дженерики )
+типы в Scala: Byte ( 8 ), Short (16), Int (32), Long (64), Char (16), String (обвертка), Float (32), Double (64), Boolean (true/false)
+val sum = 1 + 2 // Scala invokes (1).+(2)
+-0- Any - наследуется вообще все
+-1- AnyVal - все базовые объекты (возвращают value)
+-2- AnyRef - все ссылочные объекты
+-2.1- ScalaObject - коллекции (Seq, List, Option)
+-3- Nothing - для всех базовых объектов AnyVal
+-3.1- Null - для всех ссылочных типов AnyRef
+var zombie: Zompie = null
+zombie = new Zombie("aaaa")
+---------------------------------
+def throwLocalizedException(key: String): Nothing = {
+    throw LocalizedException( resolveMessage( key ) )
+}
+https://www.olx.ua/obyavlenie/iphone-4-8gb-IDph8QK.html#2be1149492;promoted
+Функция - на вход может принимать параметры и что-то возвращает (при этом НЕ изменяет состояние объекта...это один объект..)
+-------------------------------------------------------------
+object KillerModule {
+    def kill = (z: Zombie) => println("Killing " + z.name)
+}
+-------------------------------------------------------------Functions are "first-class citizen"
+такие функции играются объектами и имеют 3-свойства
+1. присвоить эту функцию переменной
+2. возможность передавать эту функцию как параметр в метод
+val doubled = (x: Int) => x * 2
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+def traverseTree (callback: (Element) => Unit){
+    val element = ??? //Getting tree element
+    callback (element) //в Джаве это обычный абстрактный класс - анонимный класс
+}
+Методы - ...они изменяют состояние объекта, они оперируют со внешним скоупом и у них есть поля
+-------------------------------
+class ZombieTortureMachine(z: Zombie){
+    def kill() = println("Killing " + z.name)
+    def starve() = println("Starving " + z.name)
+}
+(Образы и контейнеры Docker в картинках) https://habrahabr.ru/post/272145/
+https://habrahabr.ru/post/310460/
+-------------------------------------------------------------Functions are "first-class citizen"
+такие функции играются объектами и имеют 3-свойства
+1. присвоить эту функцию переменной
+2. возможность передавать эту функцию как параметр в метод
+val doubled = (x: Int) => x * 2
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+def traverseTree (callback: (Element) => Unit){
+    val element = ??? //Getting tree element
+    callback (element) //в Джаве это обычный абстрактный класс - анонимный класс
+}здесь 'callback' будет развернут неявно в "new function-1"...
+3. возможность возвращать функцию как результат работы другой функции (плохая практика - подготовка ленивого калькулятора)
+def prepareCalculator (x: Int, y: Int): () => Int = {
+    println("calculating...")
+    () => x + y
+}
+//это может быть использовано на практике например - функция которая (однажды предварительно) иннициализируется многострочными данными из базы и потом она уже будем выполнена много раз...- если такое делать обычными функциями тогда это будет неоправданно долго...еще можно воспользоваться например двумя филдами..
+(в Scale, в отличие от Java, параметры переданные в функцию по умолчанию всегда 'val' + по дефолту прийнят модификатор-public + в функцию параметр передается по значению...а в Java-е есть такая гадость как можно переопределить инстанц параметра)
+Отличие применения в коде 'val' от 'def' в том что: для 'val' - создание анонимной "first-class" функции будет произведено только один раз; а если это 'def' тогда функция будет создаваться каждый раз при новом ее вызове;
+---------------------------------------------------------------------------
+val doubled = (x: Int) => x * 2
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+def factorial (x: BigInt): BigInt = if (x==0) 1 else x * factorial (x-1)
+................................................................................................"Function are first class sitizens"
+Функция - (в отличие от метода) принимает параметры, обрабатывает их и возвращает какое-то значение, при этом она не изменяет внешнее состояние объекта.
+Function - это интерфейс который определяет функцию, это объект только с одним явным-внктренним методом (как-будто объект компаньен с единственной объявленной внутри функцией). = это аналог абстрактного класса 'Object' в JAVAе.
+Function - в Scala-е являются объектами и имеют 3-свойства
+1. присвоить эту функцию переменной
+val doubled = (x: Int) => x * 2
+2. возможность передавать эту функцию как параметр в метод
+def traverseTree (callback: (Element) => Unit) {
+    val element = ??? //Getting tree element
+    callback (element)
+}
+3. возможность возвращать функцию как результат работы другой функции
+def prepareCalculator (x: Int, y: Int): () => Int = {
+    println("calculating...")
+    () => x + y
+}
+В Scale существует таких 27-Traid-ов (интерфейсов) которые реализуют сам язык, который будет использоваться как абстрактный класс...
+В Scalе можно более широко использовать модификаторы доступа - дополнительно в квадратных скобках возле модификатора можно указать имя пакета (но только для одного пакета)
+"Воркшит" - это интерпретатор в Scala
+Type Inference - это умение компилятора определять типы
+
+
+
+
+
+
+
+(Вопросы и ответы на собеседовании по теме Java Collection Framework. Часть 3)
+http://www.parshinpn.pro/content/voprosy-i-otvety-na-sobesedovanii-po-teme-java-collection-framework-chast-3
+http://javastudy.ru/interview/collections/
+http://pages.cs.wisc.edu/~vernon/cs367/notes/5.STACKS-AND-QUEUES.html
+
+(Администрирование > Настройка MongoDB ShardedCluster с X.509 аутентификацией)
+https://habrahabr.ru/post/308740/
+https://habrahabr.ru/post/217393/
+https://habrahabr.ru/post/259219/
+
+(Scala Школа!)
+http://bourabai.kz/alg/scala.htm
+https://habrahabr.ru/post/77750/
+http://www.spring-source.ru/articles.php?type=manual&theme=articles&docs=article_22
+
+http://aperiodic.net/phil/scala/s-99/
+http://www.w3big.com/ru/scala/scala-data-types.html ( https://www.tutorialspoint.com/scala/scala_data_types.htm )
+http://www.w3big.com/ru/scala/scala-collections.html ( https://www.tutorialspoint.com/scala/scala_collections.htm )
+https://twitter.github.io/scala_school/ru/index.html
+https://twitter.github.io/scala_school/ru/type-basics.html
+https://twitter.github.io/scala_school/ru/basics2.html
+https://twitter.github.io/scala_school/ru/collections.html
+
+http://ccfit.nsu.ru/~den/Scala/scala_slides1.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides2.pdf
+alvinalexander.com/scala/scala-string-array-examples-how-create-arrays
+http://www.scala-lang.org/docu/files/ScalaTutorial-ru_RU.pdf
+https://www.tutorialspoint.com/scala/scala_arrays.htm
+http://stackoverflow.com/questions/4981689/get-item-in-the-list-in-scala
+http://life-prog.ru/view_zam.php?id=227&cat=2&page=4
+http://life-prog.ru/2_6289_ob-yavlenie-opredelenie-i-vizov-funktsii.html
+http://ccfit.nsu.ru/~den/Scala/scala_slides3.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides4.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides5.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides6.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides7.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides8.pdf
+http://ccfit.nsu.ru/~den/Scala/scala_slides10.pdf
+http://scala.by/news/2014/12/10/interview-questions
+https://docs.google.com/spreadsheets/d/1UCRYpNL6a-t3ZtMlkHUBOV5CQbfUAWwW78t7K2ZOJXw/edit#gid=0
+https://github.com/Home-SCALA/ScalaQuickStart-1.3.3/blob/master/src/main/scala/com/learning/scala_slides2/Task1_2.scala
+>> (Scala в примерах) https://ru.wikibooks.org/wiki/Scala_в_примерах
+>> (Путеводитель по Scala для Java-разработчиков: Коллекции) http://www.ibm.com/developerworks/ru/library/j-scala06278/
+                                                             http://alvinalexander.com/photos/scala-sequences-head-tail-init-last
+														   ( http://stackoverflow.com/questions/18647874/safely-get-tail-of-array )
+>> (Квантификация) https://twitter.github.io/scala_school/ru/type-basics.html#quantification
+
+>> (Re: Подправленный 'Java Developer' за 16.09.2015) https://mail.yandex.ua/?ncrnd=5929&uid=40270829&login=sashakmets#message/156500087051130385
+
+
+
+Specs2
+------
+CalendarPricesRestControllerSpecTest
+ua.com.itproekt.gup.server.api.rest.calendar.CalendarPricesRestControllerSpecTest
+D:\IdeaProjects\GUP\gup
+ui
+
+Tomcat Server
+-------------
+oauth
+Tomcat 8.0.15
+http://localhost:8183/
+8183
+1099
+/
+
+ui
+Tomcat 8.0.15
+http://localhost:8184/
+8184
+1097
+/
+
+admin
+Tomcat 8.0.15
+http://localhost:8185/
+8185
+1099
+/
+
+
+
+
+(063) 923-75-02
+( alien8791 | 4149-6258-1126-1856 | 8791 )
+
+https://www.liqpay.com/
+https://www.liqpay.com/ru/personal  |  Подключить
+https://www.liqpay.com/ru/wallet/login/1484236527067177_128201315_FDmjhTwfdCMjMRIYxlCM
+https://www.liqpay.com/ru/wallet/cards/list/1484236527067177_128201315_FDmjhTwfdCMjMRIYxlCM
+
+
+>> (Конвертер PDF в Word Конвертируйте PDF в редактируемые файлы Word) https://smallpdf.com/ru/pdf-to-word
+>> (Конвертировать PDF в Word) https://www.freepdfconvert.com/ru/pdf-word
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>> *** (Администрирование > Сравнительный анализ Docker Engine на платформах Windows Server и Linux) https://habrahabr.ru/company/ruvds/blog/315220/
+>> ([Перевод] Полное практическое руководство по Docker: с нуля до кластера на AWS) http://habrahabr.net/?habr/310460/
+                                                                                    https://habrahabr.ru/company/infobox/blog/265231/
+																					https://habrahabr.ru/post/253877/
+																					https://github.com/docker/dcus-hol-2016/tree/master/docker-datacenter
+>> (Виртуализация процесса разработки, часть 1: Docker) https://dou.ua/lenta/articles/docker/
+														http://mindmelt.nl/mindmelt.nl/2016/03/16/docker-datacenter-installation/
+>> https://www.docker.com/products/docker-datacenter#/demo
+   http://linoxide.com/linux-how-to/setup-dockerui-web-interface-docker/
+
+					(windows server 2016 install docker)
+>> (Step-by-Step: Setup Docker on your Windows 2016 Server) https://blogs.technet.microsoft.com/canitpro/2016/10/26/step-by-step-setup-docker-on-your-windows-2016-server/
+
+ (windows server 2016 настройка сети)
+>> (Windows Server 2016 – стирая границы между облачной и локальной ИТ-инфраструктурой) http://ko.com.ua/windows_server_2016_-_stiraz_granicy_mezhdu_oblachnoj_i_lokalnoj_it-infrastrukturoj_113710
+>> (Настройка беспроводной сети (Wi-Fi) в Windows Server 2012 (R2)) http://blog.umicorp.ru/nastroyka-besprovodnoy-seti-wi-fi-v-windows-server-2012-r2/
+>> (Windows Server 2016/Windows 10 ** PowerShell 5.0: модуль Network Switch) https://wpconfig.ru/?cat=102
+                                     (PowerShell 5.0: модуль Network Switch) https://wpconfig.ru/?p=1261
+   (Windows 10: установка ПО при помощи модуля PowerShell PackageManagement) https://wpconfig.ru/?p=1231
+>>                                    (Настройка сети в Windows Server 2016) https://www.inventa.ru/learn/courses/7760/181194/
+
+
+
+
+
+>> http://qrcoder.ru/
+IP:62.80.167.162
+authToken=8add689b-daed-4e11-a770-156fd9af7174; Expires=Wed, 25-Jan-2017 09:18:07 GMT; Path=/ refreshToken=851ffe40-eeae-4999-a011-e32f3ec5eb20; Expires=Fri, 24-Feb-2017 09:08:07 GMT; Path=/
+>> http://qrcoder.ru/code/?IP%3A62.80.167.162%0D%0AauthToken%3D8add689b-daed-4e11-a770-156fd9af7174%3B+Expires%3DWed%2C+25-Jan-2017+09%3A18%3A07+GMT%3B+Path%3D%2F+refreshToken%3D851ffe40-eeae-4999-a011-e32f3ec5eb20%3B+Expires%3DFri%2C+24-Feb-2017+09%3A08%3A07+GMT%3B+Path%3D%2F&2&0
+
+>> http://ru.stackoverflow.com/questions/437230/Узнать-ip-сервера-из-javascript >> http://ip-api.com/json/zero.eu.org?callback=z
+
+(сканер qr кодов jar)
+>> https://www.imgonline.com.ua/scan-qr-bar-code.php
+>> https://habrahabr.ru/post/213291/ >> https://github.com/iBog/QRCodeTest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** (Разработка > MongoDB от теории к практике. Руководство по установке кластера mongoDB) https://habrahabr.ru/post/217393/
+(Pro Hibernate and MongoDB) http://dl.finebook.ir/book/76/14596.pdf
+* (Разработка > Легкий старт: Spring + MongoDB) https://habrahabr.ru/post/217391/ >> https://github.com/ruslanys/fish-spring-mongodb >> http://localhost:8080/
+** (Coach Shane - Q&A ** Learn Easy English Expressions: Whatchamacallit) https://www.youtube.com/watch?v=VDHfcO_vbQE&index=7&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D
+* (Spring Security Configuration with Scala) http://spring.io/blog/2011/08/01/spring-security-configuration-with-scala/ >> https://github.com/tekul/scalasec/
+https://mail.yandex.ua/?uid=40270829&login=sashakmets#message/161285161655221845
+http://gup.com.ua:55555/seller/588b6f964c8e9af4b7e2081a
+http://gup.com.ua:55555/
+https://bitbucket.org/otgband/gup/commits/all
+(Разработка > Hibernate. Основные принципы работы с сессиями и транзакциями) https://habrahabr.ru/post/271115/
+(10. Unit Testing) http://docs.spring.io/spring-batch/reference/html/testing.html
+
+(java.util.Deque пример)
+** (Deque в Java) http://crypto.pp.ua/2010/06/deque-v-java/
+** (Вопросы и ответы на собеседовании по теме Java Collection Framework. Часть 3.) http://www.parshinpn.pro/content/voprosy-i-otvety-na-sobesedovanii-po-teme-java-collection-framework-chast-3
+** (Собеседование по Java — коллекции (Collections) (вопросы и ответы)) http://javastudy.ru/interview/collections/
+** (Коллекции (Collections) в Java. List) http://www.seostella.com/ru/article/2012/08/08/kollekcii-collections-v-java-list.html
+** (Коллекции (Collections) в Java. Queue) http://www.seostella.com/ru/article/2012/08/09/kollekcii-collections-v-java-queue.html
+(Array Implementation of Queue) http://codereview.stackexchange.com/questions/64258/array-implementation-of-queue
+(Queue Using Array And Class Java Example Program) http://www.ds-java.thiyagaraaj.com/programs/queue-example-programs-in-java/simple-example-program-for-queue-in-java-using-array-and-class
+(Implementing a Queue in Java using Arrays and Linked Lists) http://eddmann.com/posts/implementing-a-queue-in-java-using-arrays-and-linked-lists/
+(Stacks and Queues) http://pages.cs.wisc.edu/~vernon/cs367/notes/5.STACKS-AND-QUEUES.html
+
+
+
+
+
+
+
+
+(html send cookie post form)
+https://github.com/github/fetch
+http://www.willmaster.com/library/cookies/setting-a-cookie-using-only-html.php
+http://stackoverflow.com/questions/30419929/setting-cookies-with-form-input
+http://stackoverflow.com/questions/7141631/how-can-i-post-cookies-to-a-different-link
+http://www.the-art-of-web.com/javascript/setcookie/
+
+>> http://www.the-art-of-web.com/javascript/setcookie/
+   file:///D:/IdeaProjects/GUP/gup/oauth/src/test/java/ua/com/itproekt/gup/server/api/javascript3.htm
+
+
+
+(Where do I set character encoding in SOAPUI Preferences) http://stackoverflow.com/questions/35747109/where-do-i-set-character-encoding-in-soapui-preferences
+(Invalid UTF-8 middle byte 0x22) https://groups.google.com/forum/#!topic/pact-support/blq9Nz_b0y0
+                                 http://camel.465427.n5.nabble.com/Trying-to-consume-SOAP-WS-with-UTF-8-content-getting-quot-Invalid-UTF-8-middle-byte-0x3c-quot-td5745394.html
+(Content-Type: text/html; charset=ISO-8859-1)
+(Content-Type: text/html; charset=UTF-8)
+(add "charset=utf-8" to content-type "application/json") https://github.com/request/request/issues/383
+                                                         https://www.w3.org/International/articles/http-charset/index
+(Инструменты разработчика и тестировщика для работы со СМЭВ) https://www.ibm.com/developerworks/ru/library/cmeb_02/
+
+
+
+
+
+
+
+
+
+(java kassa)
+(Java EE демо «Супермаркет») http://yyakovlev.ru/?cat=5 >> https://moikrug.ru/y-yakovlev
+           (Database scheme) https://www.codeproject.com/Articles/586703/Easily-implementing-your-own-online-shop
+(Быстрый и Умный Интернет-Магазин) https://github.com/evgeniyosipov/facshop >> http://localhost:8080/facshop-store >> http://localhost:8080/facshop-store/admin
+                                   https://glassfish.java.net/download.html >> http://localhost:4848/common/index.jsf
+(matka ** Kassa) https://github.com/ttalvila/matka >> http://localhost:8083/matkaan/#contact >> http://localhost:8083/matkaan/account/current
+
+
+(дипломный проэкт) http://mail.aipet.kz/student/diplom//2015/fait/suat/suat_en/muhin_ls.pdf
+https://github.com/camlow325/supermarket
+https://github.com/sillydeveloper/java-supermarket/tree/master/src/main/java/com/myCo/supermarket
+https://gist.github.com/shawntan/7184507
+(Как реализовать симуляцию JAVA используя многопоточность?) https://toster.ru/q/257057
+(Тестовое задание на java по написанию юнит тестов. Нужно ревью) http://automated-testing.info/t/testovoe-zadanie-na-java-po-napisaniyu-yunit-testov-nuzhno-revyu/4238
+(Задача для программиста Java.) https://www.weblancer.net/projects/referaty-kursovye-i-diplomy-47/zheleznodorozh-kassa-zadacha-dlya-programmista-java-91165/
+
+>> (Класс магазинной кассы:) http://javatalks.ru/topics/44740 >> http://forum.f-trade.ru/index.php?topic=89.0 >> http://dnc-soft.ru/?p=2931
+                             http://dnc-soft.ru/wp-content/uploads/2014/02/redactirovanie-documenta.jpg
+							 http://dnc-soft.ru/wp-content/uploads/2014/02/sdelky.jpg
+							 http://dnc-soft.ru/wp-content/uploads/2014/02/dogovor.jpg
+							 http://dnc-soft.ru/wp-content/uploads/2014/02/glavnaya_str.jpg
+
+
+
+
+
+
