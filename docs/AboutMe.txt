@@ -1048,6 +1048,35 @@ Machine learning as a plus
 
 
 
+(стартап) IT-Project
+--------------------
+Akka framework (Akka HTTP, Akka-HTTP-Sessions)
+SecureSocial (Silhouette)
+Spray
+Finagle
+Play Framework
+Apache Spark
+Docker
+++++++++++++++++++++
+Akka (Akka Cluster)
+SecureSocial (Silhouette) - OAuth2
+Spray
+Spark & Spark Notebook
+Hibernate, Slick
+SBT
+
+NodeJS
+Angular
+
+
+
+
+
+
+
+
+
+
 
 P. 142 | Practice 2
 -------------------
