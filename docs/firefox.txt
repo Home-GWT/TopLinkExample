@@ -1227,3 +1227,25 @@ https://gist.github.com/shawntan/7184507
 
 
 
+*** https://habrahabr.ru/post/224593/
+https://github.com/Home-GWT/TopLinkExample/blob/master/docs/что нового в java-8.md
+http://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
+https://urvanov.ru/2016/03/23/учебник-java-8/
+https://urvanov.ru/2016/04/05/java-8-вложенные-классы-и-лямбда-выражения/
+http://info.javarush.ru/translation/2014/10/09/Особенности-Java-8-максимальное-руководство-часть-1-.html
+http://info.javarush.ru/translation/2014/10/09/Особенности-Java-8-максимальное-руководство-часть-2-.html
+Особенности-Java-8-максимальное-руководство-часть-2-.html
+https://github.com/Home-Java8/Java8.2
+https://habrahabr.ru/post/224593/
+(java 8 лямбда выражения что)
+https://habrahabr.ru/post/213805/
+http://info.javarush.ru/translation/2014/06/14/Lambda-выражения-на-примерах.html
+(java 8 bifunction example)
+*** http://www.concretepage.com/java/jdk-8/java-8-biconsumer-bifunction-bipredicate-example
+(java 8 стримы)
+https://habrahabr.ru/company/luxoft/blog/270383/
+(java 8 optional  пример)
+https://habrahabr.ru/post/216431/
+*** https://jsehelper.blogspot.com/2016/05/java-8-1.html
+*** https://jsehelper.blogspot.com/2016/05/java-8-2.html
+https://habrahabr.ru/post/225641/
