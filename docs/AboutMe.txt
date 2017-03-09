@@ -766,6 +766,10 @@ Spring поддерживает 5 режимов автопривязки:
 В Spring вы можете привязать бин автоматически, используя функцию auto-wiring. Чтобы использовать эту функцию достаточно просто определить атрибут autowire в <bean>
 ------------------------------------------------------------------
 <bean id="customer" class="com.test.Customer" autowire="byName" />
+    - - - - - - - - - - - - - - - - - - - - - -
+.. Важно:
+	чтобы в Spring-е @Autowire мог автоматически искать подставлять реализацию для типа интерфейса - нужно обязательно объявлять интерфейс для каждого типа бина!!!
+	(инначе, если отсутствует интерфейс бина - тогда @Autowire НЕработает...)
 
 Существует несколько способов создания бинов в Spring-е...
 -------------------------------------------------------
@@ -781,7 +785,7 @@ Spring поддерживает 5 режимов автопривязки:
 		<property name="name" value="mkyongA" />
 	</bean>
 2. Если стиле Java, тогда внутри <context.xml> нужно указать путь какие рабочие директории Spring должен сканировать:
-   И над каждым классом-бина поставить аннотацию (@Component, @Repository, @Service, @Controller, ...)
+   И над каждым классом-бина поставить аннотацию (@Configure, @Component, @Repository, @Service, @Controller, ...)
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	<context:component-scan base-package="com.devblogs.component"/>
 3. Загрузить бины с помощю "AnnotationContext":
@@ -789,7 +793,7 @@ Spring поддерживает 5 режимов автопривязки:
 	ApplicationContext ctx = new ClassPathXmlApplicationContext("SpringBeans.xml");
 	ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
 	ApplicationContext ctx = new new AnnotationConfigApplicationContext(SpringMongoConfig.class);
-  
+
 + SPRING
 * >>>> @Autowired — аннотация создает фабрику (объект-одиночку 'Singleton') для операций обработки...позволяет автоматически установить значение поля SessionFactory.
 *                   Аннотация @Autowired может применяться к: полям бина, сеттерам, конструкторам и другим методам - чтобы заинъектить в них зависимости
