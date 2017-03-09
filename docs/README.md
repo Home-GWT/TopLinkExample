@@ -5,4 +5,4 @@
 * [что нового в java-8](что%20нового%20в%20java-8.md)  **(** [Java8.2](https://github.com/Home-Java8/Java8.2) **)**
 * [Design Patterns](Design%20Patterns.md)
 * **(** [Home-Spring/docs](https://github.com/Home-Spring/docs) **)**
-* [Базы данных](Базы%20данных.md)
+* [Базы данных](Базы%20данных.md) **(** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **)**
