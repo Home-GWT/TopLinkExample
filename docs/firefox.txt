@@ -1195,7 +1195,154 @@ http://www.the-art-of-web.com/javascript/setcookie/
 
 
 
+(hql join)
+http://stackoverflow.com/questions/18379766/hql-hibernate-inner-join
 
+(hibernate @transactional с параметрами)
+(spring transaction propagation)
+http://www.ibm.com/developerworks/ru/library/j-ts1/
+https://toster.ru/q/293938
+http://www.sql.ru/forum/1183679/transactionmanager-spring-boot
+
+
+
+
+
+
+
+
+
+
+*** (Реактивные приложения на Java с Akka) http://iamx.pro/reaktivnye-prilozheniya-na-java-s-akka
+(Going reactive) https://opencredo.com/introduction-to-akka-streams-getting-started/
+** (Sending Email with Java and Akka actors) https://www.javacodegeeks.com/2013/10/sending-email-with-java-and-akka-actors.html
+                        (email-service-akka) https://github.com/rajithd/email-service-akka
+https://vk.com/scalaakka
+(Одновременное исполнение на платформе JVM: Асинхронное исполнение с помощью Akka) http://www.ibm.com/developerworks/ru/library/j-jvmc5/
+(Actor model. Futures & Promises. Reactive Streams) https://www.slidesearch.net/slide/actor-model-futures-promises-reactive-streams
+*** (WebSocket Akka HTTP на практике) https://habrahabr.ru/post/319978/
+                                      http://www.liveinternet.ru/tags/websocket/
+*** (Теория и принципы ** Future) http://security-corp.org/programming/21776-reaktivnye-aktory-na-java.html
+** (Слово на букву «М», или Монады уже здесь) https://adm-it.com.ua/tag/scala/page/7/
+(Writing a SMTP server with Akka) https://choffmeister.de/posts/2014/09/26/writing-a-smtp-server-with-akka.html
+                (akka-smtpserver) https://github.com/choffmeister/akka-smtpserver
+https://incubos.org/2014/jpoint/akka-at-yandex.pdf
+*** (Scala и Akka * Что такое актор?) http://eliseealex.me/dynamica-1/1-akka/
+									  http://eliseealex.me/dynamica-1/2-requirements/
+                                      http://eliseealex.me/dynamica-1/3-configuration/
+									  http://eliseealex.me/dynamica-1/
+						(my.dynamica) https://github.com/eliseealex/my.dynamica
+** (Игровой сервер на Scala + Akka: Разбор примера) https://habrahabr.ru/post/259185/
+                                                    https://github.com/solverit/akka-server/blob/master/server/src/main/scala/akka/io/TcpPipelineHandler.scala
+(Akka: как я перестал бояться и полюбил асинхронный код) https://www.slideshare.net/Shutty/grebennikov-akka-expanded
+
+*** (activator-akka-spray) https://github.com/eigengo/activator-akka-spray/tree/master/tutorial
+
+
+>> (обмена сообщениями через RabbitMQ на Scala) http://eax.me/scala-rabbitmq/
+    ------------------------------------------
+	RabbitMQ + Actor + Future
+
+
+
+
+(КИЕВ-ПАССАЖИРСКИЙ
+НИКОЛАЕВ ПАСС) https://proizd.ua/?gclid=CMjt4-yqz9ICFQfPsgod6IsP0Q
+
+(НИКОЛАЕВ ПАСС
+КИЕВ-ПАССАЖИРСКИЙ) https://proizd.ua/?gclid=CMjt4-yqz9ICFQfPsgod6IsP0Q
+
+https://onlinetickets.world/ru/railroad-search
+
+https://www.concert.ua/events/cirk-na-vodi-2017
+https://www.concert.ua/booking/cirk-na-vodi-19-03-16-00
+
+
+
+
+
+
+(Lambda-выражения на примерах) http://info.javarush.ru/translation/2014/06/14/Lambda-выражения-на-примерах.html
+(Java 8 BiConsumer, BiFunction and BiPredicate) http://www.concretepage.com/java/jdk-8/java-8-biconsumer-bifunction-bipredicate-example
+>>                                 (Java exchange rates API) https://github.com/Ritaja/java-exchange-rates
+                                                             http://www.panticz.de/Simple-Java-currency-converter
+							                                 http://www.javatips.net/blog/java-currency-conversion-example
+   (Функция для получения курса валют от Центрального Банка) http://vk-book.ru/funkciya-dlya-polucheniya-kursa-valyut-ot-centralnogo-banka/
+                                                             http://www.cbr.ru/scripts/XML_daily.asp?date_req=27.09.2013
+															 http://www.cbr.ru/scripts/Root.asp?PrtId=DWS
+(SOAP-сервер на Java при участии Apache CXF и Spring) https://habrahabr.ru/post/137543/
+>> (Простой пример выполнения HTTP-запроса к web-сервису и разбор XML-ответа) https://habrahabr.ru/post/115054/
+(scala akka пример обмена сообщениями)
+(Модель акторов) https://ru.wikipedia.org/wiki/Модель_акторов
+(spray/akka) https://github.com/spray/akka
+(Записки программиста) http://eax.me/tag/fp/page/10/
+(Записки программиста ** Самые основы работы с Akka Cluster) http://eax.me/akka-cluster-basics/
+(Записки программиста ** Перестаем бояться футур (futures) в Scala) http://eax.me/scala-futures/
+(Записки программиста ** Основы работы с акторами в Akka) http://eax.me/akka-basics/
+(Akka для Java разработчика (часть 1)) https://habrahabr.ru/post/125717/
+(actorapp/actor-platform) https://github.com/actorapp/actor-platform
+                        (Пример обмена сообщениями через RabbitMQ на Scala) https://disqus.com/home/discussion/eaxme/rabbitmq_scala/
+(Записки программиста ** Пример обмена сообщениями через RabbitMQ на Scala) http://eax.me/scala-rabbitmq/
+                                           (afiskon/scala-rabbitmq-example) https://github.com/afiskon/scala-rabbitmq-example
+(Реактивный мессенджер, или CQRS и ES вместе с Akka и Scala) https://habrahabr.ru/company/naumen/blog/257477/
+(mattanja/messenger) https://github.com/mattanja/messenger/blob/master/app/MessengerMessageHandlerFactory.scala
+(eigengo/activator-akka-spray ** Basic Akka / Spray template showing REST API built around Akka actors) https://github.com/eigengo/activator-akka-spray
+                                                                                                        file:///D:/IdeaProjects/SCALA/aaa/activator/tutorial/index.html
+>> (Реактивные приложения на Java с Akka) http://iamx.pro/reaktivnye-prilozheniya-na-java-s-akka
+>> (Sending Email with Java and Akka actors) https://www.javacodegeeks.com/2013/10/sending-email-with-java-and-akka-actors.html
+                                             https://github.com/rajithd/email-service-akka
+>> (Алёна Малиновская ** Киевский офис компании #SoftServe примет в свои ряды middle #scala разработчика) https://vk.com/scalaakka
+                                                                                                          https://www.eduonix.com/blog/software-development/learn-use-functions-methods-scala/
+(Одновременное исполнение на платформе JVM: Асинхронное исполнение с помощью Akka) https://www.ibm.com/developerworks/ru/library/j-jvmc5/
+(SlideSearch ** Actor model. Futures & Promises. Reactive Streams) https://www.slidesearch.net/slide/actor-model-futures-promises-reactive-streams
+(WebSocket Akka HTTP на практике) https://habrahabr.ru/post/319978/ >> http://www.liveinternet.ru/tags/websocket/
+>> (Реактивные акторы на java) http://security-corp.org/programming/21776-reaktivnye-aktory-na-java.html
+                               Актор — это изолированный объект занимающийся асинхронной обработкой входящих сообщений
+							   ActorRef — ссылка на конкретный гарантированно существующий актор
+							   ActorSelection — слабая ссылка, существенным отличием которой является возможность создать ActorSelection зная лишь имя и путь к актору, но обратной стороной медали является отсутствие гарантий того, что по указанному пути хоть что-то существует
+>> (ADM - IT ** Слово на букву «М», или Монады уже здесь) https://adm-it.com.ua/tag/scala/page/7/ >> https://habrahabr.ru/company/cit/blog/262055/
+>> (Writing a SMTP server with Akka) https://choffmeister.de/posts/2014/09/26/writing-a-smtp-server-with-akka.html
+      (choffmeister/akka-smtpserver) https://github.com/choffmeister/akka-smtpserver
+(Akka в Яндекс) https://incubos.org/2014/jpoint/akka-at-yandex.pdf
+(EliseeAlex.me) http://eliseealex.me/dynamica-1/ >> http://eliseealex.me/dynamica-1/1-akka/ >> http://eliseealex.me/dynamica-1/2-requirements/ >> http://eliseealex.me/dynamica-1/3-configuration/
+                https://github.com/eliseealex/my.dynamica
+(Игровой сервер на Scala + Akka: Разбор примера) https://habrahabr.ru/post/259185/
+                          (solverit/akka-server) https://github.com/solverit/akka-server/blob/master/server/src/main/scala/akka/io/TcpPipelineHandler.scala
+(SlideSearch ** Akka: как я перестал бояться и полюбил асинхронный код) https://www.slideshare.net/Shutty/grebennikov-akka-expanded
+(SlideSearch ** Scala performance под капотом) https://www.slideshare.net/Shutty/scala-performance
+https://ru.wikipedia.org/wiki/SCTP >> https://www.osp.ru/os/2002/02/181115
+http://alvinalexander.com/scala/simple-scala-akka-actor-examples-hello-world-actors
+http://doc.akka.io/docs/akka/2.2.5/intro/getting-started.html
+
+*** (Future) https://habrahabr.ru/post/233555/
+https://support.google.com/mail/answer/7126229?p=BadCredentials&visit_id=0-636250414350086900-477370429&rd=2#cantsignin
+https://support.google.com/mail/answer/7126229?visit_id=0-636250414350086900-477370429&rd=2#cantsignin
+https://www.google.com/settings/security/lesssecureapps?rfn=27&rfnc=1&et=0&asae=2
+https://mail.google.com/mail/u/0/#inbox
+https://mail.yandex.ua/?ncrnd=9807&uid=40270829&login=sashakmets#inbox
+***
+https://habrahabr.ru/post/125717/
+http://itech-notes.blogspot.com/2013/01/java.html
+(scala akka actor example github)
+** () https://www.javacodegeeks.com/2013/10/sending-email-with-java-and-akka-actors.html
+      https://github.com/rajithd/email-service-akka
+** () http://sdanzig.blogspot.com/2013/06/buddychat-simple-example-of-akka-actors.html
+      https://github.com/sdanzig/buddychat
+** () http://blog.madhukaraphatak.com/simple-akka-remote-example/
+      https://github.com/phatak-dev/akka-remote-simple-scala
+http://doc.akka.io/docs/akka/1.3.1/additional/external-sample-projects.html
+https://github.com/ticofab/play-scala-akka-example
+** () http://alvinalexander.com/scala/simple-akka-actors-remote-example
+      https://github.com/alvinj/AkkaRemoteActorsHelloWorld
+http://alvinalexander.com/scala/how-to-use-parallel-collections-in-scala-performance
+https://github.com/royrusso/akka-java-examples
+** () https://github.com/gangstead/akka-actor-demo
+(Akka HTTP microservice example) https://github.com/theiterators/akka-http-microservice
+(AkkaWebSampleExercise) https://github.com/deanwampler/AkkaWebSampleExercise
+(ActorMessagingExample) https://github.com/write2munish/Akka-Essentials/tree/master/ActorMessagingExample
+https://habrahabr.ru/post/125717/
+(akka-io-sctp) https://github.com/arturopala/akka-io-sctp
+(Пример обмена сообщениями через RabbitMQ на Scala) https://disqus.com/home/discussion/eaxme/rabbitmq_scala/ >> http://eax.me/scala-rabbitmq/ >> https://github.com/afiskon/scala-rabbitmq-example
 
 
 
