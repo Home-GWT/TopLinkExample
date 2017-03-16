@@ -3,6 +3,7 @@ package com.java8;
 import java.util.Arrays;
 import java.util.Collection;
 
+
 public class SampleStream {
 
     public static void main(String[] args) {
