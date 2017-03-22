@@ -1,0 +1,273 @@
+
+1.
+
+class A {
+    private String str;
+
+    public A(){
+        str = "a";
+        func();
+    }
+
+    protected void func(){
+        System.out.println("A: " + str);
+    }
+}
+
+class B extends A {
+    private String str;
+
+    public void func(){
+        System.out.println("B: " + str);
+    }
+}
+
+new B();
+
+
+
+
+
+2.
+
+class C {
+    public Object o;
+    public String str;
+    public int num;
+}
+
+public void func(C c){
+	c = null;
+}
+
+C c = new C();
+c.num = 10;
+func(c);
+System.out.println(c.num);
+
+
+
+
+
+3.
+
+class D {
+    public static void func(){
+        System.out.println("Hello!");
+    }
+}
+
+D d = null;
+d.func();
+
+
+
+
+
+
+
+
+
+4.
+
+int A, B=99, C=99;
+
+A = B-- - --B;
+System.out.println( A );
+
+B=99;
+A = --B - B--;
+System.out.println( A );
+
+B=99;
+A = B-- - --C;
+System.out.println( A );
+
+B=99; C=99;
+A = --B - C--;
+System.out.println( A );
+
+
+
+
+
+5.
+
+int I, N=20;
+
+for (I=0; I<N; --I){
+	System.out.print("*");
+}
+
+
+
+
+
+6.
+
+int func(int step, int val);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.
+
+class Clazz {
+    private String name;
+
+    public Clazz(String name){
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Clazz{" +
+                "name=" + name +
+                '}';
+    }
+}
+
+class Clazzes1 extends HashSet<Clazz> {
+}
+
+class Clazzes2 extends HashSet<Clazz> {
+    public Clazz[] toArray() {
+        return toArray();
+    }
+}
+
+class Clazzes3<Clazz> extends HashSet {
+    public Clazz[] toArray() {
+        return toArray();
+    }
+}
+
+
+Clazzes1 clazzes1 = new Clazzes1();
+clazzes1.add(new Clazz("A"));
+clazzes1.add(new Clazz("B"));
+clazzes1.add(new Clazz("C"));
+
+for (Object o : clazzes1.toArray()){
+	Clazz clazz = (Clazz)o;
+	System.out.println(clazz);
+}
+
+Clazzes2 clazzes2 = new Clazzes2();
+clazzes2.add(new Clazz("A"));
+clazzes2.add(new Clazz("B"));
+clazzes2.add(new Clazz("C"));
+
+for (Object o : clazzes2.toArray()){
+	Clazz clazz = (Clazz)o;
+	System.out.println(clazz);
+}
+
+Clazzes3 clazzes3 = new Clazzes3();
+clazzes3.add(new Clazz("A"));
+clazzes3.add(new Clazz("B"));
+clazzes3.add(new Clazz("C"));
+
+for (Object o : clazzes3.toArray()){
+	Clazz clazz = (Clazz)o;
+	System.out.println(clazz);
+}
+
+
+
+
+
+
+
+8.
+
+Collection<String> collection = Arrays.asList("q","w","e","r","t","y","u","uu","i","o","p",null,"uuu","uuuu","ii","oo","pp","ooo","ppp");
+collection.stream()
+		.map((item) -> item + " ")
+		.sorted()
+		.filter((item) -> item.toString().length() <= 2)
+		.forEach(System.out::print);
+
+
+9.
+
+class Sports {
+    private String name;
+    private Integer day;
+
+    public Sports(String name, int day) {
+        this.name = name;
+        this.day = day;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
+    }
+}
+
+Collection<Sports> sports = Arrays.asList(
+		new Sports("Ivan", 5),
+		new Sports(null, 15),
+		new Sports("Petr", 7),
+		new Sports("Ira", 10)
+);
+
+List<Sports> l1 = sports
+		.parallelStream()
+		.filter(sport -> sport.getName() != null
+				&& sport.getName().startsWith("I"))
+		.collect(Collectors.toList());
+System.out.println( l1.size() );
+
+String str = sports
+		.stream()
+		.filter(sport -> sport.getName() != null)
+		.map(Sports::getName)
+		.collect(Collectors.joining(" and ", "In camp ", " rest all days."));
+System.out.println( str );
+
+int integer = sports
+		.stream()
+		.reduce(0,
+				(i, sport) -> i += sport.getDay(),
+				(sum1, sum2) -> sum1 + sum2);
+System.out.println(integer);
