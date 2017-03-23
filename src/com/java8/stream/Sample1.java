@@ -4,11 +4,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
 
+
 /**
  * @see https://github.com/Home-Java8/Java8.2/tree/master/src/com/news/stream_api
  *      http://javahero.ru/java-8-пример-фильтрации-с-помощью-потоков/
  *      https://habrahabr.ru/post/302628/
+ * @see http://microfork.com/whats-new-in-java-8/
  */
+
 public class Sample1 {
 
     public static void main(String[] args) {
