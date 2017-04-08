@@ -1077,6 +1077,13 @@ http://mnogoblog.ru/platezhnaya-sistema-liqpay-registraciya-i-knopka-dlya-oplaty
 
 
 
+/**
+ * https://habrahabr.ru/post/68318/
+ * http://stackoverflow.com/questions/24386771/javax-validation-validationexception-hv000183-unable-to-load-javax-el-express
+ * 
+ * http://www.programcreek.com/java-api-examples/javax.validation.Validator
+ */
+
 
 
 
