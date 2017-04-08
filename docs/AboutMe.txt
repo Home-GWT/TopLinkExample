@@ -38,26 +38,31 @@
 
 +++++++++++++++++++
 +++++++++++++++++++
-I am an IT developer with 4 years of experience.
-I have spent the last four years developing my skills as a banking applications and been promoted once.
-My first job was as an developer for mobile soft at HostingMax company.
-I am expert in managing teams and solving customer problems.
-Although I love my current role, I feel I am now ready for a more challenging assignment.
+I'm an IT-developer with five years of experience.
+Have spent last four years I development my skills to a banking systems and I was promoted to the strong middle level.
+My first job was development of mobile applications for at HostingMax company.
+I'm a team player and I can control a small team.
+Although I love my current role, but I feel that now I'm ready for a more challenging assignment.
 
-I can summarize who I am in so:
-- Hardworking;
-- I am quiet working under pressure;
+I can summarize my professional qualities:
+- I'm hardworking;
+- I'm quiet working when stress cases;
 - I have an open mind about what will work best;
-- Attention to all the details;
-- Able to keep deadlines successfully;
-- Fast-learner, self-motivated and determined;
+- I be attention to all the details;
+- I can successfully able to keep deadlines;
+- I can fast-learner, I'm self-motivated and I'm determined;
 
-I have a stable work history.
-I think one of my greatest strengths is as a problem solver.
+I have a stable my history of work.
+I'm think that one of my greatest strengths is solve challenge of technical problems.
 I have the ability to see a situation from different perspectives and I can get my work done even in the face of difficult obstacles.
 
 Nobody is perfect.
-I get impatient with team members who are making mistakes or delivering substandard work.
+I'm impatient to team members who are make mistakes or do wrong work.
+
+
+
+
+
 
 *   >>> http://lelang.ru/english/series/garri-potter-i-filosofskij-kamen-na-anglijskom-s-subtitrami/
 *** >>> http://vasabi.tv/video/341-harry-potter-and-the-philosophers-stone/
@@ -88,28 +93,28 @@ There is a great difference between her wishes and his possibilities.
 >> (EnglishLessons4U - Learn English with Ronnie) https://www.youtube.com/channel/UC4cmBAit8i_NJZE8qK8sfpA
 
 
-I am a software developer with five-years of experience.
-I specialize in the area of Java/JavaScript and Scala.
-I had to develop different kinds of applications:
+I be a software developer with five-years of experience.
+My specialize is into area of Java/JavaScript and Scala.
+I have skills to development different kinds of applications:
 - The desktop Java applications;
 - The mobile Java applications;
 - And the web applications;
-I developed the software using following programming languages: Java, JavaScript, C/C++, C#, SQL, PL/SQL, CSS ...(for example)
+I use following programming languages: Java, JavaScript, C/C++, C#, SQL, PL/SQL, CSS for soft development
 
 My first job was the "HostingMax" company.
-It was in the 2007-2008 year. (start twenty and seven last twenty and eight)
-My responsibility is develop mobile games for mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry ..).
-There acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
+It was in the start twenty and seven, last twenty and eight year. (2007-2008)
+My responsibility was development mobile games for mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry ..).
+There am I acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
 And I developed a SyncML mobile service for synchronization and restoration of a personal data in mobile devices.
 
-My last place of work is a at "PrivatBank" company.
-It was in the 2012-2016 year. (start twenty and twelf last twenty and sixteen)
+My last place of work цфы a "PrivatBank" company.
+It was in the start twenty and twelf, last twenty and sixteen year. (2012-2016)
 My responsibility was development of web-services for banking ..services.
 There used technologyies: Cuncurrent Collection, J2EE, Spring, AJAX, JQuery, AngularJS, Vaadin.
-We used a database: MySQL, IQ/ASE, Redis, MongoDB.
+We used few database: MySQL, IQ/ASE, Redis, MongoDB.
 I was an alone development of one project (this corporate project).
-And I was a member of the group for developed various web services (it servlets, ActiveMQ, REST, SOAP - JAX-WS/JAX-RS).
-There is code covered by JUnit, JMock and DBUnit tests.
+And I was a member of the team for developed various web services (It servlets, ActiveMQ, REST, SOAP - JAX-WS/JAX-RS).
+There is code has test cover JUnit, JMock and DBUnit tests.
 Also used tools for global testing: SonarQube, SoapUI, JMeter.
 Apps had logging (it Log4j).
 
@@ -118,6 +123,7 @@ All developments were on a Linux system.
 As a tools builder was used ANT, Maven.
 Version control systems SVN, GIT.
 
+
 Most of all I remember the service project for payment system.
 There used technologyies: Java-7, Spring-3 (Data/Security/MVC/REST), ORM-framework (JPA/Hibernate-3)
 Database: IQ, PostgreSQL, Redis.
@@ -125,21 +131,55 @@ This service was use LiqPay.
 Was necessary develop library classes for use into this application.
 Data communication with the service performed within the application throus SOAP-protocol.
 
-I am expert in managing teams and solving customer problems.
-Although I love my current role, I feel I am now ready for a more challenging assignment.
-I have a stable work history.
-I think one of my greatest strengths is as a problem solver.
-I have the ability to see a situation from different perspectives and I can get my work done even in the face of difficult obstacles.
-I can summarize who I am in so:
-- Hardworking;
-- I am quiet working under pressure;
+
+I can summarize my professional qualities:
+- I'm hardworking;
+- I'm quiet working when stress cases;
 - I have an open mind about what will work best;
-- Attention to all the details;
-- I able to keep deadlines successfully;
-- Fast-learner, self-motivated and determined;
+- I be attention to all the details;
+- I can successfully able to keep deadlines;
+- I can fast-learner, I'm self-motivated and I'm determined;
+
+I have a stable my history of work.
+I'm think that one of my greatest strengths is solve challenge of technical problems.
+I have the ability to see a situation from different perspectives and I can get my work done even in the face of difficult obstacles.
 
 Nobody is perfect.
-I get impatient with team members who are making mistakes or delivering substandard work.
+I'm impatient to team members who are make mistakes or do wrong work.
+
+
+  It is hard to speak about myself as only people surrounding me can see me objectively.
+  - - - - - - - - - - - - - - - - - - - - - - - -
+> I'm go for motor sports.
+  I participate on sports events for karting in a short and long distances.
+  Sometimes we're going with friends to the team and to hold competitions among themselves.
+  Often competitions we choose different routes. And in this way the results of each new sorrevnovaniya become unpredictable.
+  Once we collect the team for leisure tourism.
+  There we arrange check-ATV on the road, on a hilly terrain.
+  It is very interesting and very beautiful.
+  Also we can observe different views on the nature.
+  We get pleasure from these trips and share with each other svomi vpechetlenie.
+> My hobby - collecting various car radio models.
+  and one month and one year can be spent on the assembly of each model.
+  It is often difficult to find a specific item for a specific car model.
+  Sometimes you do this part yourself.
+  It often happens that bad sdlelannaya car radio model breaks down on the road while driving.
+  So I stock up on spare parts for each model of car.
+  I like to collect traditional and classic car models with petrol engines.
+  It is very delicate work and requires a lot of attention and precision execution. And patience for the long time spent on the creation of each model.
+  But I like it a lot.
+> I often watch TV programs on the organization of sports-car championships rolleynyh sorrevnovany between passenger and freight categories for short and long distances.
+  And as I watch television and other auto shows, for example: Top Gear.
+  I subscribe and read sports magazines Motorsport.
+  
+  
+> Tell me about polymorphism, encapsulation and inheritance in Java?
+  Paradigm of object oriented programming is based on three fundamental concepts: encapsulation, inheritance and polymorphism.
+  1. Abstraction - this is the allocation of the main features, without going into details and details.
+  2. Polymorphism - это возможность одного интерфейса иметь различные реализация.     it is posybylyty for any one interface has various implementations.     Одна спецификация - много реализация. Для Java полиморфизм - это исключительно позднее связывание (runtime binding).
+  3. Encapsulation - сокрытие реализации. Это значит что для объекта, который хочет сотрудничать(работать) с классом видны только поля, доступные в соответствии модификаторов доступа, и спецификации методов , доступные в соответствии модификаторов доступа. Реализация методов недоступна.
+  4. Inheritance - возможность создавать обобьет на основании другого объекта. Это означает что новый обобьет создается не "с нуля", а с шаблона родителя - набор свойств  и поведение (набор методов) будет унаследован от родителя.
+> Какие существуют области памяти в Java ?
 
 
 
@@ -544,9 +584,8 @@ I get impatient with team members who are making mistakes or delivering substand
 
 Они ищут тебя .............. They looking for you
 Они поймают тебя ........... They will catch you
-   
-   
-   
+
+
 
 
 
