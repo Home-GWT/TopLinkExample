@@ -88,10 +88,10 @@ There is code has test cover JUnit, JMock and DBUnit tests.
 Also used tools for global testing: SonarQube, SoapUI, JMeter.
 Apps have got a logging system (it Log4j).
 
-Addition I developed library classes (which are then used by these web services).
-All developments were on a Linux system.
-As a tools builder was used ANT, Maven.
-Version control systems SVN, GIT.
+Addition I developed some library classes (which are then used by these web services).
+All developments were on Linux system.
+ANT and Maven was a builder-tools.
+SVN and GIT was a version control systems.
 
 It is hard to speak about myself as only people surrounding me can see me objectively.
 I can summarize my professional qualities:
