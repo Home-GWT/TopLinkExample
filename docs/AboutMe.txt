@@ -82,7 +82,7 @@ It was start in the twenty and twelf, and finish twenty and sixteen year. (2012-
 My responsibility was development of web-services for bank systems.
 There used technologyies: Cuncurrent Collection, J2EE, Spring, AJAX, JQuery, AngularJS, Vaadin.
 We used few database: MySQL, IQ/ASE, Redis, MongoDB.
-I was an alone development of one project (this corporate project).
+I was alone of independent developer of one project (this corporate project).
 And I was a member of the team for developed various web services (It servlets, ActiveMQ, REST, SOAP - JAX-WS/JAX-RS).
 There is code has test cover JUnit, JMock and DBUnit tests.
 Also used tools for global testing: SonarQube, SoapUI, JMeter.
