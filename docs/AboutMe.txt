@@ -78,7 +78,7 @@ There I acquainted and learned J2ME technology, (Java Media Framework, Mobile In
 And I developed a SyncML mobile service for synchronization and restoration of a personal data into some mobile devices.
 
 My last place of work was the "PrivatBank" company.
-It was in the start twenty and twelf, last twenty and sixteen year. (2012-2016)
+It was start in the twenty and twelf, and finish twenty and sixteen year. (2012-2016)
 My responsibility was development of web-services for banking ..services.
 There used technologyies: Cuncurrent Collection, J2EE, Spring, AJAX, JQuery, AngularJS, Vaadin.
 We used few database: MySQL, IQ/ASE, Redis, MongoDB.
