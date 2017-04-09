@@ -65,7 +65,7 @@ I'm impatient to team members who are make mistakes or do wrong work.
 +++++++++++++++++++
 I'm a software developer with five-years of experience.
 My specialize is into area of Java/JavaScript and Scala.
-I have skills to development different kinds of applications:
+I have development skills to different kinds of applications:
 - The desktop Java applications;
 - The mobile Java applications;
 - And the web applications;
@@ -93,6 +93,22 @@ All developments were on a Linux system.
 As a tools builder was used ANT, Maven.
 Version control systems SVN, GIT.
 
+It is hard to speak about myself as only people surrounding me can see me objectively.
+I can summarize my professional qualities:
+- I'm hardworking;
+- I'm quiet working when stress cases;
+- I have an open mind about what will work best;
+- I be attention to all the details;
+- I can successfully able to keep deadlines;
+- I can fast-learner, I'm self-motivated and I'm determined;
+
+I have a stable my history of work.
+I'm think that one of my greatest strengths is solve challenge of technical problems.
+I have the ability to see a situation from different perspectives and I can get my work done even in the face of difficult obstacles.
+
+Nobody is perfect.
+I'm impatient to team members who are make mistakes or do wrong work.
+
 > Рассказать об одном из проектов который больше всех остальных мне запомнился ?
   Я принимал участвие в коммерческом проекте по публицированию объявлений.
   В частности я занимался разработкой системы авторизации + сыстемы оплаты + системы для резервирования заказов.
@@ -110,7 +126,7 @@ Version control systems SVN, GIT.
   My hobby is auto sport.
   Some times I take part to mini auto racing
   Some times I take part to compete auto racing together vs my frends.
-  Frequency we to choose various tracks for the compete.
+  Often we choose different tracks for the competition.
   Some times we are organize to competes on impassability of roads. For example on a mountains place.
   I think it is very intetesting and beautiful. The environment nature.
   We get a lot of impressions.
@@ -150,22 +166,6 @@ Version control systems SVN, GIT.
 		   ---- "Survivor Space" (сюда попадают выжившие объекты после первого прохода сброщика муссора - Garbage Collector "GC" )
 	   --- Старая куча
 	       ---- "Tenured" (сюда попадают долго-живущие объекты которые выжили после нескольких проходов сброщика муссора - "GC" )
-
-It is hard to speak about myself as only people surrounding me can see me objectively.
-I can summarize my professional qualities:
-- I'm hardworking;
-- I'm quiet working when stress cases;
-- I have an open mind about what will work best;
-- I be attention to all the details;
-- I can successfully able to keep deadlines;
-- I can fast-learner, I'm self-motivated and I'm determined;
-
-I have a stable my history of work.
-I'm think that one of my greatest strengths is solve challenge of technical problems.
-I have the ability to see a situation from different perspectives and I can get my work done even in the face of difficult obstacles.
-
-Nobody is perfect.
-I'm impatient to team members who are make mistakes or do wrong work.
 
 
 +++++++++++++++++++
