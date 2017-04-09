@@ -36,7 +36,7 @@
 Требовалось разработать библиотечные классы для применнеия этим приложением.
 Общение с сервисом внутри приложения выполнялось через SOAP-протокол.
 
-+++++++++++++++++++
+
 +++++++++++++++++++
 I'm a software developer with five-years of experience.
 Have spent last four years I development my skills to a banking systems and I was promoted to the strong middle level.
@@ -168,7 +168,7 @@ Nobody is perfect.
 I'm impatient to team members who are make mistakes or do wrong work.
 
 
-
++++++++++++++++++++
 +++++++++++++++++++
 +++++++++++++++++++
 > I'm go for motor sports.
