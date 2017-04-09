@@ -38,7 +38,7 @@
 
 +++++++++++++++++++
 +++++++++++++++++++
-I'm an IT-developer with five years of experience.
+I'm a software developer with five-years of experience.
 Have spent last four years I development my skills to a banking systems and I was promoted to the strong middle level.
 My first job was development of mobile applications for at HostingMax company.
 I'm a team player and I can control a small team.
@@ -55,46 +55,15 @@ I can summarize my professional qualities:
 
 I have my history stable of work.
 I'm think that one of my greatest strengths is solve challenge for technical problems.
-I have the ability to see amy situation for different perspectives and I can get my work done even in the face of difficult obstacles.
+I have the ability to see some situation for different perspectives and I can get my work done even in the face of difficult obstacles.
 
 Nobody is perfect.
 I'm impatient to team members who are make mistakes or do wrong work.
 
 
-
-
-
-
-*   >>> http://lelang.ru/english/series/garri-potter-i-filosofskij-kamen-na-anglijskom-s-subtitrami/
-*** >>> http://vasabi.tv/video/341-harry-potter-and-the-philosophers-stone/
-        http://vasabi.tv/user/profile/admin/
-		http://vasabi.tv/video/91-breaking-bad-sezon-1-epizod-1/
-*   >>> (harry-potter-and-the-philosopher's-stone books) http://www2.sdfi.edu.cn/netclass/jiaoan/englit/download/Harry%20Potter%20and%20the%20Sorcerer's%20Stone.pdf
-+ + + + + + + + + +
-+ + + + + + + + + +
->> (5 простых правил порядка слов в английском) http://skyeng.ru/articles/5-prostyh-pravil-poryadka-slov-v-anglijskom
-                                                https://www.native-english.ru/grammar/word-order
-											  ( http://online-teacher.ru/study/english-predlogi-mesta )
-
-|ОБСТОЯТЕЛЬСТВО МЕСТА-ВРЕМЕНИ| + [ПОДЛЕЖАЩЕЕ-СУЩЕСТВИТЕЛЬНОЕ] + [СКАЗУЕМОЕ-ГЛАГОЛ] + |ДОПОЛНЕНИЕ-ПРИЛАГАТЕЛЬНОЕ СУЩЕСТВИТЕЛЬНОЕ| + |ОБСТОЯТЕЛЬСТВО МЕСТА/ВРЕМЕНИ-ПРИЛАГАТЕЛЬНОЕ|
-
-We (подлежащее) do (сказуемое) our work (дополнение) with pleasure (обстоятельство места и времени).
-Мы [существительное] делаем [глагол] нашу работу [дополнение-существительное] с удовольствием [прилагательное].
-
-At the moment I cannot talk.
-В настоящий момент я не могу говорить.
-В настоящий момент (дополнение-места/времени) ... я (кто?) не могу (дополнение) говорить (что делать?)
-
-There is a great difference between her wishes and his possibilities.
-ЧТО-ТО-НЕЧТО ГДЕ-ТО-ТАМ существует огромная разница между ее желаниями и его возможностями.
-= = = = =
-(что?) ... существует (что делает?) огромная (какая?) разница (дополнение-что?) ...
-
-
->> (EnglishLessons4U - Learn English with Ronnie) https://www.youtube.com/channel/UC4cmBAit8i_NJZE8qK8sfpA
-
-
-I be a software developer with five-years of experience.
++++++++++++++++++++
++++++++++++++++++++
+I'm a software developer with five-years of experience.
 My specialize is into area of Java/JavaScript and Scala.
 I have skills to development different kinds of applications:
 - The desktop Java applications;
@@ -104,11 +73,11 @@ I use following programming languages: Java, JavaScript, C/C++, C#, SQL, PL/SQL,
 
 My first job was the "HostingMax" company.
 It was in the start twenty and seven, last twenty and eight year. (2007-2008)
-My responsibility was development mobile games for mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry ..).
-There am I acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
+My responsibility was development some mobile games for many mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry).
+There I acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
 And I developed a SyncML mobile service for synchronization and restoration of a personal data in mobile devices.
 
-My last place of work цфы a "PrivatBank" company.
+My last place of work was the "PrivatBank" company.
 It was in the start twenty and twelf, last twenty and sixteen year. (2012-2016)
 My responsibility was development of web-services for banking ..services.
 There used technologyies: Cuncurrent Collection, J2EE, Spring, AJAX, JQuery, AngularJS, Vaadin.
@@ -124,15 +93,65 @@ All developments were on a Linux system.
 As a tools builder was used ANT, Maven.
 Version control systems SVN, GIT.
 
+> Рассказать об одном из проектов который больше всех остальных мне запомнился ?
+  Я принимал участвие в коммерческом проекте по публицированию объявлений.
+  В частности я занимался разработкой системы авторизации + сыстемы оплаты + системы для резервирования заказов.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Most of all I remember the service project for payment system.
+  There used technologyies: Java-7, Spring-3 (Data/Security/MVC/REST), ORM-framework (JPA/Hibernate-3)
+  Database: IQ, PostgreSQL, Redis.
+  This service was use LiqPay.
+  Was necessary develop library classes for use into this application.
+  Data communication with the service performed within the application throus SOAP-protocol.
+> Я занимаюсь автомобильным спортом.
+  Участвую в соревнованиях на картингах на коротких и длинных дистанциях.
+  Иногда мы собираемся с друзьями в команду и проводим соревнование между собой.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  My hobby is auto sport.
+  Some times I take part to mini auto racing
+  Some times I take part to compete auto racing together vs my frends.
+  Frequency we to choose various tracks for the compete.
+  Some times we are organize to competes on impassability of roads. For example on a mountains place.
+  I think it is very intetesting and beautiful. The environment nature.
+  We get a lot of impressions.
+  And yet I am a subscriber to the magazine sports.
+  I read and on find news in the world of auto sport.
+> Tell me about polymorphism, encapsulation and inheritance in Java?
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  The paradigm of object oriented programming is based on three fundamental concepts: encapsulation, inheritance and polymorphism.
+     ( Abstraction - this is the allocation of the main features, without going into details and details )
+  1. Polymorphism - it is posybylyty for any one interface has various implementations.
+     ( это возможность одного интерфейса иметь различные реализация )
+	 ( Одна спецификация - много реализация. Для Java полиморфизм - это исключительно позднее связывание (runtime binding) )
+  2. Encapsulation - 
+     ( сокрытие реализации )
+     ( Это значит что для объекта, который хочет сотрудничать(работать) с классом видны только поля, доступные в соответствии модификаторов доступа, и спецификации методов, доступные в соответствии модификаторов доступа )
+	 ( Реализация методов недоступна )
+  3. Inheritance - 
+     ( возможность создавать обобьет на основании другого объекта )
+	 ( Это означает что новый обобьет создается не "с нуля", а с шаблона родителя - набор свойств  и поведение (набор методов) будет унаследован от родителя )
+> Какие существуют области памяти в Java ?
+  - "Stack" (стэк - хранит только локальные переменные примитивных типов и ссылки на объекты в куче)
+    управления памятью осуществляется по схеме LIFO (первый вошел - последний вышел)
+	стэковая память существует лиш на короткое время для работы отдельной под-программы
+	стэк может использоваться только одним потоком исполняемой программой (стэковая память НЕможет быть доступна для других потоков)
+	"java.lang.StackOverflowError" (если память стэка заполнена)
+	"-Xss" (опции JVM определить размер памяти стэка)
+  - Куча:
+	всякий раз когда создается объект - он хранится в куче
+	объекты в куче доступна для других потоков, с любой точки программы (объекты в куче используется всеми частями приложения)
+	память в куче живет с самого начала до самого конца работы программы
+	"java.lang.OutOfMemoryError" (если память кучи заполнена)
+	"-Xms" и "-Xmx" (опции JVM определить размер памяти кучи)
+    -- "Perm-anent Gen-eration" (статический контент - сюда загружаются статические классы, методы, хранится метаинформация..)
+	-- "Heap" (сама куча)
+	   --- Новая куча
+	       ---- "Eden Space" (молодое поколение - сюда попадают все новосозданные объекты)
+		   ---- "Survivor Space" (сюда попадают выжившие объекты после первого прохода сброщика муссора - Garbage Collector "GC" )
+	   --- Старая куча
+	       ---- "Tenured" (сюда попадают долго-живущие объекты которые выжили после нескольких проходов сброщика муссора - "GC" )
 
-Most of all I remember the service project for payment system.
-There used technologyies: Java-7, Spring-3 (Data/Security/MVC/REST), ORM-framework (JPA/Hibernate-3)
-Database: IQ, PostgreSQL, Redis.
-This service was use LiqPay.
-Was necessary develop library classes for use into this application.
-Data communication with the service performed within the application throus SOAP-protocol.
-
-
+It is hard to speak about myself as only people surrounding me can see me objectively.
 I can summarize my professional qualities:
 - I'm hardworking;
 - I'm quiet working when stress cases;
@@ -149,8 +168,9 @@ Nobody is perfect.
 I'm impatient to team members who are make mistakes or do wrong work.
 
 
-  It is hard to speak about myself as only people surrounding me can see me objectively.
-  - - - - - - - - - - - - - - - - - - - - - - - -
+
++++++++++++++++++++
++++++++++++++++++++
 > I'm go for motor sports.
   I participate on sports events for karting in a short and long distances.
   Sometimes we're going with friends to the team and to hold competitions among themselves.
@@ -172,19 +192,6 @@ I'm impatient to team members who are make mistakes or do wrong work.
 > I often watch TV programs on the organization of sports-car championships rolleynyh sorrevnovany between passenger and freight categories for short and long distances.
   And as I watch television and other auto shows, for example: Top Gear.
   I subscribe and read sports magazines Motorsport.
-  
-  
-> Tell me about polymorphism, encapsulation and inheritance in Java?
-  Paradigm of object oriented programming is based on three fundamental concepts: encapsulation, inheritance and polymorphism.
-  1. Abstraction - this is the allocation of the main features, without going into details and details.
-  2. Polymorphism - это возможность одного интерфейса иметь различные реализация.     it is posybylyty for any one interface has various implementations.     Одна спецификация - много реализация. Для Java полиморфизм - это исключительно позднее связывание (runtime binding).
-  3. Encapsulation - сокрытие реализации. Это значит что для объекта, который хочет сотрудничать(работать) с классом видны только поля, доступные в соответствии модификаторов доступа, и спецификации методов , доступные в соответствии модификаторов доступа. Реализация методов недоступна.
-  4. Inheritance - возможность создавать обобьет на основании другого объекта. Это означает что новый обобьет создается не "с нуля", а с шаблона родителя - набор свойств  и поведение (набор методов) будет унаследован от родителя.
-> Какие существуют области памяти в Java ?
-
-
-
-
 
 
 В последнее время я участвовал в разрабатке проекта электронного магазина.
@@ -295,7 +302,41 @@ I'm impatient to team members who are make mistakes or do wrong work.
   Я беру участие в автомобильных соревнованиях вместе с моими друзъями.
   I take part to compete auto racing together vs my frends.
   - - - - - - - - - - - - - - - - - - - - - - - -
->> http://iloveenglish.ru/stories/view/pishem_interesnij_rasskaz_o_sebe_na_anglijskom
+
+
+
+
+
+*   >>> http://lelang.ru/english/series/garri-potter-i-filosofskij-kamen-na-anglijskom-s-subtitrami/
+>>      http://iloveenglish.ru/stories/view/pishem_interesnij_rasskaz_o_sebe_na_anglijskom
+>> (EnglishLessons4U - Learn English with Ronnie) https://www.youtube.com/channel/UC4cmBAit8i_NJZE8qK8sfpA
+*** >>> http://vasabi.tv/video/341-harry-potter-and-the-philosophers-stone/
+        http://vasabi.tv/user/profile/admin/
+		http://vasabi.tv/video/91-breaking-bad-sezon-1-epizod-1/
+*   >>> (harry-potter-and-the-philosopher's-stone books) http://www2.sdfi.edu.cn/netclass/jiaoan/englit/download/Harry%20Potter%20and%20the%20Sorcerer's%20Stone.pdf
++ + + + + + + + + +
++ + + + + + + + + +
+>> (5 простых правил порядка слов в английском) http://skyeng.ru/articles/5-prostyh-pravil-poryadka-slov-v-anglijskom
+                                                https://www.native-english.ru/grammar/word-order
+											  ( http://online-teacher.ru/study/english-predlogi-mesta )
+
+|ОБСТОЯТЕЛЬСТВО МЕСТА-ВРЕМЕНИ| + [ПОДЛЕЖАЩЕЕ-СУЩЕСТВИТЕЛЬНОЕ] + [СКАЗУЕМОЕ-ГЛАГОЛ] + |ДОПОЛНЕНИЕ-ПРИЛАГАТЕЛЬНОЕ СУЩЕСТВИТЕЛЬНОЕ| + |ОБСТОЯТЕЛЬСТВО МЕСТА/ВРЕМЕНИ-ПРИЛАГАТЕЛЬНОЕ|
+
+We (подлежащее) do (сказуемое) our work (дополнение) with pleasure (обстоятельство места и времени).
+Мы [существительное] делаем [глагол] нашу работу [дополнение-существительное] с удовольствием [прилагательное].
+
+At the moment I cannot talk.
+В настоящий момент я не могу говорить.
+В настоящий момент (дополнение-места/времени) ... я (кто?) не могу (дополнение) говорить (что делать?)
+
+There is a great difference between her wishes and his possibilities.
+ЧТО-ТО-НЕЧТО ГДЕ-ТО-ТАМ существует огромная разница между ее желаниями и его возможностями.
+= = = = =
+(что?) ... существует (что делает?) огромная (какая?) разница (дополнение-что?) ...
+
+
+
+
 
    Сами по себе слова, в английском языке, вообще ничего не обозначают:
    0. (Физический, неодушевленный) предмет
