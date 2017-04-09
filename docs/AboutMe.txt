@@ -75,7 +75,7 @@ My first job was the "HostingMax" company.
 It was in the start twenty and seven, last twenty and eight year. (2007-2008)
 My responsibility was development some mobile games for many mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry).
 There I acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
-And I developed a SyncML mobile service for synchronization and restoration of a personal data in mobile devices.
+And I developed a SyncML mobile service for synchronization and restoration of a personal data into some mobile devices.
 
 My last place of work was the "PrivatBank" company.
 It was in the start twenty and twelf, last twenty and sixteen year. (2012-2016)
@@ -86,7 +86,7 @@ I was an alone development of one project (this corporate project).
 And I was a member of the team for developed various web services (It servlets, ActiveMQ, REST, SOAP - JAX-WS/JAX-RS).
 There is code has test cover JUnit, JMock and DBUnit tests.
 Also used tools for global testing: SonarQube, SoapUI, JMeter.
-Apps had logging (it Log4j).
+Apps have got a logging system (it Log4j).
 
 Addition I developed library classes (which are then used by these web services).
 All developments were on a Linux system.
