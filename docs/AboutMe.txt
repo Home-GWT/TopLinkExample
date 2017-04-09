@@ -72,7 +72,7 @@ I have development skills to different kinds of applications:
 I use that programming languages: Java, JavaScript, C/C++, C#, SQL, PL/SQL, CSS for some soft development.
 
 My first job was the "HostingMax" company.
-It was in the start twenty and seven, last twenty and eight year. (2007-2008)
+It was start in the twenty and seven, and finish twenty and eight year. (2007-2008)
 My responsibility was development some mobile games for many mobile platforms (Nokia, Samsung, Simens, Alkatel, BlackBarry).
 There I acquainted and learned J2ME technology, (Java Media Framework, Mobile Information Device Profile).
 And I developed a SyncML mobile service for synchronization and restoration of a personal data into some mobile devices.
