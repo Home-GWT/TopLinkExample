@@ -1089,9 +1089,105 @@ http://mnogoblog.ru/platezhnaya-sistema-liqpay-registraciya-i-knopka-dlya-oplaty
 
 
 
++++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++
+[email-service-akka] D:\IdeaProjects\SCALA\aaa\email-service .......... не работает
+[email-service-akka] D:\IdeaProjects\SCALA\aaa\email-service-akka_2 ... работает
+ ------------------
+ Отправка имейл на почту (UntypedActor)
+
+[helloremote-build] D:\IdeaProjects\SCALA\aaa\AkkaRemoteActorsHelloWorld\HelloRemote ................. работает
+ [hellolocal-build] D:\IdeaProjects\SCALA\aaa\AkkaRemoteActorsHelloWorld\HelloLocal .................. работает
+( [akka-remote-simple-scala] D:\IdeaProjects\SCALA\aaa\akka-remote-simple-scala )
+  ----------------
+  Akka клиент-сервер, общение через tcp..
+
+[buddychat-build] D:\IdeaProjects\SCALA\aaa\buddychat ................. работает
+ ---------------
+ Это чат..
+ 
+[dynamica-build] D:\IdeaProjects\SCALA\aaa\dynamica ............... не работает
+ --------------
+ http://eliseealex.me/dynamica-1/3-configuration >> https://github.com/eliseealex/my.dynamica
+	 
+[scala-rabbitmq] D:\IdeaProjects\SCALA\aaa\scala-rabbitmq ............. не работает
+ -------------------
+(java mq уведомления) https://github.com/afiskon/scala-rabbitmq-example >> http://eax.me/scala-rabbitmq >> http://eax.me/rabbitmq >> http://blog.blzr.me/2013/11/api-over-activemq.html
+
+[activator-build] D:\IdeaProjects\SCALA\aaa\activator ................. не работает
+ ---------------
+ Akka клиент-сервер, общение через sctp..
+ Требуется дополнительная установка sctp-протокола
+
+[akka-io-sctp] D:\IdeaProjects\SCALA\aaa\akka-io-sctp .................
+ ------------
 
 
++++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++
+                                                   (хвостовая рекурсия scala)
+>> (Лекция 10: Хвостовая рекурсия. Порядковое представление списков и матриц) https://www.youtube.com/watch?v=k1dGDAqac48
+    ------------------------------------------------------------------------
+Хвостовая рекурсия эффективней чем цыклы
+Рекурсия не может быть сведена к итерации потому-что там никакая память выделяться НЕбудет (в явном виде всегда можно свести рекурсию к итерации в иде стэка).
 
+В функциональном программировании рекурсия является заменной итерации. (То есть, там где в ООП мы бы писали цыкл, то в функциональном программировании используем рекурсию)
+Рекурсия это плохо потому-что каждый раз при рекурсивном вызове выделяется память на адресс возврата.
+(Факториал можно описать с помощью цыкла там где аккумулятор умнажает на 'N' - это лучше чем рекурсивное описание факториала)
+(Числа Фиббоначи - где мы вызываем функцию дважды - дерево...)
+Хвостовая рекурсия - существуют такие виды рекурсии которые автоматически могут быть сведены компилятором в цыклы. В чем ее особенность:
+1. Такая рекурсия должна быть линейной (каждый раз один рекурсивный вызов - обозначает что мы в теле функции один раз вызываем саму-себя)
+2. В хвостовой рекурсии рекурсивный вызов должен быть последним в теле функции (чтобы запоминать адресс возврата - куда потом вернуться чтобы продолжить что-то делать)
+3. В хвостовой рекурсии НЕдолжна выделяться промежуточная память (при рекурсивном вызове, при каждом вызове функции у нас может выделяться память на параметры и локальные переменные в стэке)
+
+Пример, функция определения длины списка:
+https://habrahabr.ru/post/319282/
+>> (Scala в примерах) https://ru.wikibooks.org/wiki/Scala_в_примерах
+>> (Знакомство со Scala ** Второе занятие) http://ccfit.nsu.ru/~den/Scala/scala_slides2.pdf
+
+>>> (Ценность рекурсии в том что она может заменять циклы) https://github.com/vlastachu/java_lessons/tree/master/Day-3-functions
+>> (Рекурсия и рекурсивные алгоритмы) http://www.tvd-home.ru/recursion
+                                      https://ru.wikibooks.org/wiki/Реализации_алгоритмов/Факториал
+									  http://www.cyberforum.ru/java-j2se/thread1212108.html
+>>									  http://javatalks.ru/topics/38348
+                (Рекурсивные функции) https://metanit.com/java/tutorial/2.8.php
+				    (Числа Фибоначчи) http://younglinux.info/algorithm/fibonacci
+					                  https://ru.stackoverflow.com/questions/39229/Последовательности-чисел-Фибоначчи
+
++++++++++++++++++++++++++++++++++++++++++++
+    http://activemq.apache.org/objectmessage.html
+>>> (Spring 4 MVC + JMS + ActiveMQ annotation based Example) http://websystique.com/springmvc/spring-4-mvc-jms-activemq-annotation-based-example/
+>>> (Spring MVC — JavaConfig либо конфигурация проекта без XML файлов) https://habrahabr.ru/post/226663/
+>>  (Spring Framework без XML… совсем!) https://habrahabr.ru/post/112488/
+    https://gist.github.com/aziz781/1336506
+>>> (Spring JMS Tutorial with ActiveMQ) http://briansjavablog.blogspot.com/2012/09/spring-jms-tutorial-with-activemq.html
+                                        http://3.bp.blogspot.com/-vEUtTi0eHDI/UFZNmzNpmAI/AAAAAAAAAFo/nhrX-FIFOC8/s1600/MessageQueue-Consumed-Messages.png
+										http://1.bp.blogspot.com/-yV6eB95FxOk/UFZJhIN7KFI/AAAAAAAAAFY/lC-aHInGfqM/s1600/Put-Message-TestQueueOne.png
+										https://drive.google.com/file/d/0B_SZOyniHfc1OGY2SjNMQzhqV1U/view
+>>  (Creating Applications with ActiveMQ: Writing JMS clients Using Spring) https://cdn.infoq.com/statics_s1_20161214-0550/resource/articles/snyder-activemq-in-action/en/resources/ActiveMQinActionCH07.pdf
+>>  (Spring Collections (List, Set, Map, and Properties) example) https://www.mkyong.com/spring/spring-collections-list-set-map-and-properties-example/
+
+    (akka actor scala принципы модель акторов)
+>>  (Реактивный мессенджер, или CQRS и ES вместе с Akka и Scala) http://savepearlharbor.com/?p=256770
+>>  (Модель Акторов и C++: что, зачем и как?) http://habrahabr.net/habr/322250/
+                                              https://ru.wikipedia.org/wiki/Модель_акторов
+    (Реактивные акторы на java) https://habrahabr.ru/post/232897/
+>>	(Поговорим об акторах) http://sysdev.me/lets-talk-about-actors/
+    (Akka, акторы и реактивное программирование) https://habrahabr.ru/company/piter/blog/266103/
+	
+	(DefaultJmsListenerContainerFactory @JmsListener xml)
+	http://stackoverflow.com/questions/26984101/spring-jms-jmslistener-annotation-doesnt-work
+	https://spring.io/blog/2014/04/30/spring-4-1-s-upcoming-jms-improvements
+	http://websystique.com/spring/spring-4-jms-activemq-example-with-jmslistener-enablejms/
+	(Forbidden class  This class is not trusted to be serialized as ObjectMessage payload.)
+	http://codeomitted.com/failed-to-build-body-from-content-serializable-class-not-available-to-broker/
+	http://www.sachinhandiekar.com/2013/01/setting-system-properties-using-spring.html
+	https://github.com/apache/activemq/blob/master/activemq-client/src/main/java/org/apache/activemq/util/ClassLoadingAwareObjectInputStream.java
+	http://stackoverflow.com/questions/34283966/activemq-send-objectmessage
+
+                                                        (иерархия классов scala)
+>>                                                 (Основы типов и полиморфизма) https://twitter.github.io/scala_school/ru/type-basics.html
+>>													          (Scala в примерах) https://ru.m.wikibooks.org/wiki/Scala_в_примерах
+   (Путеводитель по Scala для Java-разработчиков: Наследование функциональности) https://www.ibm.com/developerworks/ru/library/j-scala05298
+												         (Новые вопросы 'scala') https://ru.stackoverflow.com/questions/tagged/scala
 
 
 
@@ -1115,6 +1211,33 @@ http://mnogoblog.ru/platezhnaya-sistema-liqpay-registraciya-i-knopka-dlya-oplaty
                                      (PowerShell 5.0: модуль Network Switch) https://wpconfig.ru/?p=1261
    (Windows 10: установка ПО при помощи модуля PowerShell PackageManagement) https://wpconfig.ru/?p=1231
 >>                                    (Настройка сети в Windows Server 2016) https://www.inventa.ru/learn/courses/7760/181194/
+
+>>> (Spring MVC — JavaConfig либо конфигурация проекта без XML файлов) https://habrahabr.ru/post/226663/
+                                                                       http://stackoverflow.com/questions/19896870/why-is-my-spring-autowired-field-null
+																	   http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html
+>>> (Провайдеры-КЕШа: 'EHCache', 'OSCache', 'SwarmCache', 'JBoss TreeCach') https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/EJB.md
+                                            (hibernate КЭШ-кластеров redis)
+											http://akorsa.ru/2016/12/kak-rabotaet-kesh-vtorogo-urovnya-hibernate-chast-2/
+											http://docs.jboss.org/jbossclustering/cluster_guide/5.1/html/clustering-entity.html
+											http://javac-dmx.blogspot.com/2015/01/13-hibernate.html
+											https://habrahabr.ru/post/136375/
+											https://habrahabr.ru/post/320902/
+											http://in.relation.to/2016/03/30/hibernate-ogm-5-CR1-released/
+											http://stackoverflow.com/questions/7650129/redis-as-hibernate-second-level-cache
+(Горизонтальное масштабирование небольших Web-приложений на Java (вопросы собеседований)) https://habrahabr.ru/post/220327/
+(grid system mongodb) http://mongodb.github.io/node-mongodb-native/2.1/reference/gridfs/streaming/
+(cassandra)
+(jasperreports)
+          (Spring без XML. Часть 1) https://habrahabr.ru/post/262323/
+          (Spring без XML. Часть 2) https://habrahabr.ru/post/262361/
+(Spring Framework без XML… совсем!) https://habrahabr.ru/post/112488/
+                                    https://github.com/nurkiewicz/spring-no-xml/blob/db-property-source/web/src/main/resources/db.sql
+>> http://www.h2database.com/html/download.html >> http://192.168.0.102:8082/login.do?jsessionid=de59557b5c1c2d165bf889df51616e03
+>>> (Spring H2 embedded-database file?) http://stackoverflow.com/questions/13180781/spring-h2-embedded-database-file >> http://www.mkyong.com/spring/spring-embedded-database-examples/
+                                        https://github.com/mkyong/spring-embedded-database >> http://localhost:8089/embedded-db/
+
+
+
 
 
 

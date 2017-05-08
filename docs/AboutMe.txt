@@ -166,7 +166,111 @@ I'm impatient to team members who are make mistakes or do wrong work.
 		   ---- "Survivor Space" (сюда попадают выжившие объекты после первого прохода сброщика муссора - Garbage Collector "GC" )
 	   --- Старая куча
 	       ---- "Tenured" (сюда попадают долго-живущие объекты которые выжили после нескольких проходов сброщика муссора - "GC" )
++ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+> В русском языке можно оперировать окончаниями:
 
+> В английском языке можно оперировать только (состоянием + порядок слов):
+  + Есть | Является (внутренее состояние)
+  + Имеет (владеть)
+  + Быть (место - there is|are...; это не может быть - it can't be; это не еально - it's not really; но что есть реальность - but what is a really;) 
+  + Делаю (Выполняется - в процессе) | Занимаюсь (мое хобби есть..., я есть IT-разработчик, ...) | Брать (принимать участие | брать уроки, ...)
+  + Сделано (уже выполнено) | Получить
+> Плюс такие себе союзы, чтобы связывать части сложного предложения:
+  + and | of | for | from | in | that | what | to (into | out to) | even | ...
+  
+  
+  age ............... возраст
+  young ............. молодой
+  old ............... старый
+  edge .............. край
+  space ............. пространство
+  area .............. область (площадь)
+  a young space - молодое поколение
+  a old space - старое поколение
+  
+  yet | still ....... еще (все еще)
+  already ........... уже
+  live .............. живой
+  still alive ....... еще живой
+  survive ........... выживать
+  
+  state ............. состояние
+  static ............ неподвижный
+  stop (stoping) .... остонавливаться (прекращать)
+  stand ............. стоять (на ногах)
+  freeze ............ замерзать
+  constant .......... постоянный
+  ( static state - неподвижное состояние )
+  
+  middle ............ средний
+  middleware ........ промежуточное ПО
+  broker ............ посредник
+  transit (transition) - переход (переходный период)
+  
+  current ........... текущий
+  duration .......... продолжительность
+  ( Персистентность — продолжительность сохранения, активности в окружающей среде )
+  persistent - непрерывно возобновляющийся (persistent object - постоянный объект)
+  
+  fall .............. падать
+  broke ............. ломать
+  thought ........... через (сквозь)
+  something that broke thought insite me (some broke throught for me) - что-то прорвалось во мне
+  
+  Быть
+  ----
+  > I can be... ..... находиться (пребывать) в каком-нибудь внутреннем состоянии
+  > There is|are... . находиться (пребывать) в каком-нибудь физическом месте
+  I can be a strong - Я могу быть сильным
+  I will a strong (I'll a strong) - Я буду сильным
+  I will become a strong (I'll become a strong) - Я стану сильным
+  Now I in London (Now I'm in London) - сейчас я в Лондоне.
+  But tomorrow I'll in Egypt - но завтра я буду в Египте
+
+  
+
+предмент / вещь ................ thing
+какой-нибудь предмент / вещь ... something
+кто-нибудь ..................... anybody
+там ............................ there
+себя ........................... myself
+тебя ........................... yourself
+его ............................ himself
+иногда ......................... sometime
+однажды ........................ one time
+следующий раз .................. next time
++++++
+anywhere ....................... нигде
+somebody .......................  кто нибудь (много)
+anyone, anybody ................ никто, любой (ниодин)
+There is a great difference between her wishes and his possibilities   ( ЧТО-ТО-НЕЧТО ГДЕ-ТО-ТАМ существует огромная разница между ее желаниями и его возможностями )
+  
+
+> Например:
+  + Я могу выполнять задачи вовремя даже в случае возникновения сложностей...
+       I can give my work done even in the face difficult obstacles... (я могу получить свою работу успешно даже перед лицом сложных препятствий)
+  + стэк - хранит только локальные переменные примитивных типов и ссылки на объекты в куче
+       стэк есть (является) областью памяти для локальных примитивных типов и ссылочных типов из области кучи
+	   The stack is some memmory area for a locale of type primitive and a link type into at heap.
+  + управления памятью осуществляется по схеме LIFO (первый вошел - последний вышел)
+       управление памятью использует схему LIFO (если первый является вошедшим - тогда он будет последним на выход)
+	   The memmory control used a LIFO shema (if some first item is entered then his will last item for output)
+  + стэковая память существует лиш на короткое время для работы отдельной под-программы
+       стэковая память имеет (владеет) коротким временнем для отдельного процесса под-программы
+	   The memmory area has the short time for separate of a programm process.
+  + стэк может использоваться только одним потоком исполняемой программой (стэковая память НЕможет быть доступна для других потоков)
+       стэк имеет только один поток для запущенной программы (стэковая память не имеет доступ для других потоков)
+	   The stack has only one thred for a runner programm (some area of stack memmory ish't available for another threads).
+
+>> (Q&A: color VS caller VS collar (American Pronunciation)) https://www.youtube.com/watch?v=TgGvXPHGs1I
+   (Bus or Boss? Luck or Lock? American English Pronunciation) https://www.youtube.com/watch?v=MqcCCFptaJk
+   
+>>> (Q&A: Sounds Animals make (in America!)) https://www.youtube.com/watch?v=tk9XVUyHDns&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D&index=115
+>>> (Q&A: V and W sounds: They're VERY different!!) https://www.youtube.com/watch?v=0PkfYnDpdfA&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D&index=116
+>>> (Q&A: isn't-idn't, wasn't-wadn't, hasn't-hadn't, doesn't-doedn't, business-bidness, tisn't-tidn't) https://www.youtube.com/watch?v=Ezi2D8Apjh4&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D&index=124
+>>> (Q&A: R and L tongue exercise! Red lorry, Yellow lorry (a tongue twister)) https://www.youtube.com/watch?v=lmVLUxCO0DU&index=130&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D
+>>> (Q&A: ing + ing: Pronunciation--brING+ING, sING+ING, etc.!!) https://www.youtube.com/watch?v=EDUVllYKmIc&index=136&list=PLKYJHW3dXOM7pXJOZVMb2rr15qg7-cL5D
++ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
 
 +++++++++++++++++++
 +++++++++++++++++++
@@ -630,6 +734,60 @@ There is a great difference between her wishes and his possibilities.
 
 
 
+----------------------------------
+less | more ......... меньше, больше
+about ............... около
+since ............... поскольку
+is unlock account ... разблокировать аккаунт
+lock ................ замок
+then ................ тогда
+where ............... где
+memory leak ......... утечка памяти
+timeout (time-out) .. короткий перерыв в работе
+then account was after lock ...................... тогда учет был после блокировки
+set timeout use the last try enter of password ... установить перерыв в работе использовать последнюю попытку ввода пароля
+
+----------------------------------
+имя существительное | глагол:
+-------------------
+Pick .............. ковырять, нарвать, (подковыривать, расщипывать, сковыривать)
+Pick up ........... нахвататься, подцепить, забрать
+Show .............. показывать
+Ever (любой) ...... когда-либо
+Own ............... свой собственный
+Need .............. необходимость, надобность, потребность
+
+глагол:
+------
+Own ............... владеть
+Need .............. нуждаться, иметь потребность
+
+имя прилагательное:
+- - - - - - - - - -
+каждый ....... each, every, either, several
+все .......... all, every
+всякий ....... any, all, every, each
+полный ....... full, complete, utter, total, absolute, every
+абсолютный ... absolute, stark, perfect, complete, total, every
+всемерный .... every, every kind
+
+местоимение:
+- - - - - -
+каждый ....... each, every, everyone, everybody
+любой ........ any, every, anyone, each, anybody
+
+https://bsnyderblog.blogspot.com/2010/02/using-spring-to-receive-jms-messages.html
+Have you ever had a need to create your own JMS consumer?
+Вам когда-нибудь приходилось создавать своего собственного JMS-потребителя?
++++++++
+your own JMS consumer == своего собственного JMS-потребителя
+to create == создавать для
+ever had a need == когда-нибудь приходилось
+Have you == (указывает на вопрос, типа - Вы имели <с чем-нибудь>)
+
+
+
+
 
   .......................................................................................
 + Cockie | Session | OAuth | Контекст
@@ -705,6 +863,9 @@ There is a great difference between her wishes and his possibilities.
   1. в Spring-е существует интерфейс ApplicationContext - через который можно загрузить спринговые бин-ы, при условии что будут созданы с них объекты...
   2. если это веб-приложение - тогда в web.xml нужно определить ContextListner - с помощью которого...будет иннициироваться/создаваться объекты спринговых бинов
   3. а в интеграционных тестах есть аннотация @RunWith(SpringJUnit4ClassRunner... - с помощью которого...будет иннициироваться/создаваться объекты спринговых бинов и незабываем о том что для всех случаев по нужно еще предварительно сконфигурировать эти бин
+  .......................................................................................
+  .......................................................................................
++ SPRING, объявления через аннотации и в xml-конфигурации:
   .......................................................................................
 
 
