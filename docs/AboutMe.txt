@@ -1250,6 +1250,8 @@ Spring поддерживает 5 режимов автопривязки:
 	ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
 	ApplicationContext ctx = new new AnnotationConfigApplicationContext(SpringMongoConfig.class);
 ======================================================= [ http://www.sql.ru/forum/901344/kakie-priemushhestva-ispolzovaniya-ioc-konteynera ]
+>>> (Spring изнутри. Этапы инициализации контекста) https://habrahabr.ru/post/222579
+>>  (Маленькие секреты Spring) http://www.dataart.ru/blog/2014/04/malen-kie-sekrety-spring
 В чем преемущество черех IoC:
 - вроде как на лету можно переопределять зависимости исправляя xml-файлы
 - Основное преимущество это управление зависимостями вне самих классов (в противном случае у вас в каждом классе будет куча бесполезного кода по созданию экземпляров синглтонов их переиспользованию).
