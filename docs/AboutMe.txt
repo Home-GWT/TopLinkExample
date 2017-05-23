@@ -806,6 +806,14 @@ than ............ чем (сравнительно, менее или более
 independent ..... независимо
 standalone ...... автономный
 section ......... раздел (секция)
+gonna ........... собирается (буду)
+find out ........ выяснять
+suppose ......... предполагать
+spot ............ определять
+supplies ........ предметы снабжения
+probably ........ вероятно
+curve ........... кривая
+trade ........... сделка
 often (frequency) часто, зачастую
 produce (producer) ........................ производить (производитель)
 consume (consumer) ........................ потреблять (потребитель)
@@ -820,7 +828,8 @@ trip (trips) .............................. поездка (поездки)
 cruise (voyage) ........................... рейс
 field of plants ...................... Поле растений
 what have you offer to concrete me ... Что вы предлагаете мне конкретно
-Hey everybody else? .................. Ей кто нибудь (любой|каждый) другой?
+hey everybody else? .................. ей кто нибудь (любой|каждый) другой?
+we are gonna find out ................ мы собираемся выяснить
 
 https://bsnyderblog.blogspot.com/2010/02/using-spring-to-receive-jms-messages.html
 Have you ever had a need to create your own JMS consumer?
