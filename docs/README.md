@@ -1,5 +1,6 @@
 [Markdown: Help](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
+* **(** [Java.Test](Java.Test.txt) **)**
 * [Коллекции](Коллекции.md)
 * [Базы данных](Базы%20данных.md) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **)**
 * [Design Patterns](Design%20Patterns.md)
