@@ -992,6 +992,8 @@ so .............. тогда (связка между предложениями
     (spring mongodb or query)
 >>  (A Guide to Queries in Spring Data MongoDB) http://www.baeldung.com/queries-in-spring-data-mongodb
 >>  (Легкий старт: Spring + MongoDB) https://habrahabr.ru/post/217391
+>>  (How to query MongoDB with "like") https://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like
+                                       http://www.baeldung.com/queries-in-spring-data-mongodb
     --------------------
 	db.getCollection('users').find()
 	db.getCollection('users').find({socWendor:"vk.ru"}) ........................................................................... селектор запроса для выборки (аналог 'where')
