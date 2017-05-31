@@ -989,6 +989,37 @@ so .............. тогда (связка между предложениями
     2. "Solr" - это не просто поисковый индекс, а еще и хранилище документов (в отличие от Sphinx'a, документы сохраняются целиком и их не нужно дублировать в базу данных).
 	3. "Elastic" (ElasticSearch) - эта инфраструктура для работы с данными, в том числе полнотекстовым поиском. Построен на основе 'Apache Lucene' (имеет мега продвинутую систему хранения данных и протокол запросов).
 
+    (spring mongodb or query)
+>>  (A Guide to Queries in Spring Data MongoDB) http://www.baeldung.com/queries-in-spring-data-mongodb
+>>  (Легкий старт: Spring + MongoDB) https://habrahabr.ru/post/217391
+    --------------------
+	db.getCollection('users').find()
+	db.getCollection('users').find({socWendor:"vk.ru"}) ........................................................................... селектор запроса для выборки (аналог 'where')
+	db.getCollection('users').find(null, {socWendor:1, userRoles:1, username:1, _id:0}) ........................................... 'Projection' - чтобы получить список полей (аналог 'select')
+	db.getCollection('users').find({socWendor:"gup.com.ua"}, {socWendor:1, userRoles:1, username:1, _id:0})
+	db.getCollection('users').find({createdDate:{$lt:1492601303397}}, {socWendor:1, userRoles:1, username:1, createdDate:1}) ...... все что меньше заданого числа
+	db.getCollection('users').find({createdDate:{$gt:1492601303397}}, {socWendor:1, userRoles:1, username:1, createdDate:1}) ...... все что больше заданого числа
+	db.getCollection('users').find(null, {socWendor:1, username:1}).sort({socWendor:-1}) .......................................... сортировка (аналог 'order by socWendor ASC или DESC')
+    db.getCollection('users').find({socWendor:"gup.com.ua"}, {socWendor:1, userRoles:1, username:1, _id:0}).sort({username:-1})
+	db.getCollection('users').find({createdDate:{$lt:1492601303397}}).count() ..................................................... получить количество найденных записей
+	db.getCollection('users').find({createdDate:{$gt:1492601303397}}).count()
+	db.getCollection('users').find().limit(10).skip(10) ........................................................................... (пагинация)
+	db.getCollection('users').find({active:true, socWendor:'gup.com.ua'}) ......................................................... (аналог 'WHERE...AND')
+	db.getCollection('users').find({$or: [{active:true}, {socWendor:'gup.com.ua'}]}) .............................................. (аналог 'WHERE...OR')
+	db.getCollection('users').find({username:/a/}) ................................................................................ (аналог like '%a%') все слова где встречается буква 'а'
+	db.getCollection('users').find({username: /^A/}) .............................................................................. (аналог like '%A') все слова которые начинаются с буквы 'а'
+	db.getCollection('users').find({username: /о$/}) .............................................................................. (аналог like 'o%') все слова которые заканчиваются буквой 'о'
+	db.getCollection('users').find({username:'Anna'}, {username:1})
+	db.getCollection('users').find({publicId: {$regex:'22'}}) ..................................................................... полнотекстовый поиск
+	db.getCollection('users').find({publicId: {$regex:'22'}}, {username:1, publicId:1})
+	--------------------
+	db.getCollection('users').find().pretty() ..................................................................................... для структурированного вывода данных коллекции
+	Модификаторы обновления/вставка
+	db.getCollection.update({name: 'Aurora'}, {$push: {loves: 'sugar'}})
+	db.getCollection.update({page: 'unicorns'}, {$inc: {hits: 1}})
+	db.getCollection.update({name: 'Roooooodles'}, {$set: {weight: 590}})
+	db.getCollection.update({}, {$set: {vaccinated: true }})
+  
   
   
   .......................................................................................
