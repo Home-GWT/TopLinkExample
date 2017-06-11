@@ -186,3 +186,40 @@
  */
 ```
 
+
+---
+* join в HQL
+
+HQL-запрос — это такой запрос который строиться с помощью "Criteria" на уровне самого приложения.
+
+```javascript
+    Criteria criteria = session.createCriteria(My.class);
+    criteria.get()
+            .list()
+            .load()
+```
+
+**(** [https://forum.hibernate.org/viewtopic.php?f=1&t=1009553](https://forum.hibernate.org/viewtopic.php?f=1&t=1009553) **)** [https://developer.jboss.org/wiki/AShortPrimerOnFetchingStrategies](https://developer.jboss.org/wiki/AShortPrimerOnFetchingStrategies)
+[https://stackoverflow.com/questions/8399379/hibernate-named-query-join-3-tables](https://stackoverflow.com/questions/8399379/hibernate-named-query-join-3-tables)
+
+```
+   Вот важная вещь которую нужно знать о "join fetching":
+   - fetch="join" используется только при получении данных через функции "get()" или "load()": с помощью настройки "criteria.setFetchMode('name', FetchMode.LAZY)"
+   - fetch="join" использует "OUTHER JOIN" для ПУСТЫХ (nullable) "MANY-TO-ONE" FOREIGN KEY (внешних ключей) и коллекций
+   - fetch="join" использует "INNER JOIN" для НЕПУСТЫХ (not-null) "MANY-TO-ONE" FOREIGN KEY (внешних ключей)
+
+   HQL-запросы не учитывают стратегию выборки JOIN-ов определенных в mapping-документе
+   Чтобы HQL-запрос мог использовать "LEFT OUTHER JOIN" - нужно явно написать его в своем запросе...
+```
+
+```javascript
+    @NamedQuery(name = "query1", query = "SELECT DISTINCT o " +
+        "FROM Organization o, User u " +
+        "JOIN o.roles oRole " +
+        "JOIN u.roles uRole " +
+        "WHERE oRole.id = uRole.id AND u.id = :uId")
+    public class Organization { ...
+```
+
+
+
