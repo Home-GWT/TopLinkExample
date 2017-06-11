@@ -1119,7 +1119,57 @@ http://mnogoblog.ru/platezhnaya-sistema-liqpay-registraciya-i-knopka-dlya-oplaty
  Требуется дополнительная установка sctp-протокола
 
 [akka-io-sctp] D:\IdeaProjects\SCALA\aaa\akka-io-sctp .................
- ------------
+
++++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++
+ >> (Scala * список технологий) http://scalahispano.com/bibliotecas.html
+ >> (Building RESTful APIs with Scala using Spray) https://gagnechris.wordpress.com/2013/09/15/building-restful-apis-with-scala-using-spray
+ >> (Использование клиентов OAuth 2.0 в Java-программировании: Часть 2. Передача реквизитов клиента) https://www.ibm.com/developerworks/ru/library/se-oauthjavapt2
+ >> (How to build fast and robust REST API with Scala) https://medium.com/software-engineering-for-the-real-world/how-to-build-fast-and-robust-rest-api-with-scala-24e50621fe61
+ >> (scala-oauth2-provider ** OAuth 2.0 server-side implementation written in Scala) https://github.com/nulab/scala-oauth2-provider
+ >> (akka-http-oauth2-provider) https://index.scala-lang.org/nulab/akka-http-oauth2-provider/akka-http-oauth2-provider/1.3.0 >> https://github.com/nulab/akka-http-oauth2-provider/blob/master/src/test/scala/scalaoauth2/provider/OAuth2ProviderSpec.scala
+
+ >> (SSO for Your Single Page Application (Part 1/2 - AngularJS)) http://bandrzejczak.com/blog/2015/11/22/single-sign-on-with-keycloak-in-a-sigle-page-application-part-1-slash-2-angular-dot-js
+ >> (SSO for Your Single Page Application (Part 2/2 - Akka HTTP)) http://bandrzejczak.com/blog/2015/12/06/sso-for-your-single-page-application-part-2-slash-2-akka-http
+ >> https://github.com/bandrzejczak/keycloak-angular-akka-http
+                      D:\IdeaProjects\SCALA\ccccccccc\keycloak-angular-akka-http
+ [keycloak-akka-http] D:\IdeaProjects\SCALA\ccccccccc\keycloak-angular-akka-http\server ................. работает
+             [client] D:\IdeaProjects\SCALA\ccccccccc\keycloak-angular-akka-http\client ................. не работает
+ --------------------
+ Spray | Akka + OAuth2 Authorization + Keycloak + sbt + Scala | Java-8
+ 
+ >> (Developing Modern Applications with Scala: Web APIs with Akka HTTP) https://www.javacodegeeks.com/2016/11/developing-modern-applications-scala-web-apis-akka-http.html
+                    D:\IdeaProjects\SCALA\ccccccccc\akka-http-projects
+ [akka-http-webapi] D:\IdeaProjects\SCALA\ccccccccc\akka-http-projects\akka-http-webapi ................. работает
+ [akka-http-client] D:\IdeaProjects\SCALA\ccccccccc\akka-http-projects\akka-http-client ................. работает
+               (db) test1 / jdbc:h2:mem:test1
+ ------------------
+ Akka | Spec + Security (basic) / certificate.crt + sbt + Scala | Java-8
+ 
+ >> (Меняем Java на Scala. Базовое приложение) https://habrahabr.ru/post/230451/ >> https://bitbucket.org/andy-inc/scala-habr-template/overview
+ [template] D:\IdeaProjects\SCALA\ccccccccc\andy-inc-scala-habr-template ................. работает
+       (db) habr / jdbc:postgresql://localhost/habr | postgres / postgres  +  test-habr / jdbc:postgresql://localhost/test-habr | postgres / postgres
+ ----------
+ Web-App + Spring Security (basic) + MockMvc + maven + Scala | Java-7
+ 
+ >> (Scala implementation for OAuth 2) https://community.fitbit.com/t5/Web-API-Development/Scala-implementation-for-OAuth-2/td-p/791262
+ >> https://github.com/richardE353/fitbit_rest
+ [fitbit_rest * root] D:\IdeaProjects\SCALA\ccccccccc\fitbit_rest ................. работает
+ (json)
+ --------------------
+ REST Service / Security (basic) + sbt + Scala | Java-8
+ 
+ [spray-auth-example] D:\IdeaProjects\SCALA\ccccccccc\spray-auth-example
+ --------------------
+ Spray Specs2 + Authentication + sbt + Scala | Java-6
+ 
+ [spray-moviedb] D:\IdeaProjects\SCALA\ccccccccc\spray-moviedb
+ ---------------
+ Spray / Specs2 / Spring + Web-App / REST Service / OAuth2 Authorization + sbt + Scala | Java-7
+ 
+ [spray-oauth * root] D:\IdeaProjects\SCALA\ccccccccc\spray-oauth
+ --------------------
+ Spray + REST Service / OAuth2 + sbt + Scala | Java-6
+
 
 
 +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++ +++

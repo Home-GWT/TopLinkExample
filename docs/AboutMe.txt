@@ -869,6 +869,16 @@ so .............. тогда (связка между предложениями
 
 
   .......................................................................................
+   >> () https://forum.hibernate.org/viewtopic.php?f=1&t=1009553 >> https://developer.jboss.org/wiki/AShortPrimerOnFetchingStrategies
+   Вот важная вещь которую нужно знать о "join fetching":
+   - fetch="join" использует "outer join" для пустых (nullable) "many-to-one" внешних ключей и коллекций
+   - fetch="join" использует "inner join" для непустых (not-null) "many-to-one" внешних ключей
+   fetch="join" используется только при получении данных через функции "get()" или "load()"
+   
+   А HQL-запросы не учитывают fetch="join" определенных в mapping-документе
+   Если хотите чтобы HQL-запрос использовал "left outher join" тогда нужно явно написать его в своем запросе
+  
+  .......................................................................................
 + Аспектно-Ориентированного Программирования (АОП)
   ------------------------------------------------
   >> (Spring Framework) http://proselyte.net/tutorials/spring-tutorial-full-version/aop-with-spring
@@ -1006,6 +1016,7 @@ so .............. тогда (связка между предложениями
 	db.getCollection('users').find({createdDate:{$lt:1492601303397}}).count() ..................................................... получить количество найденных записей
 	db.getCollection('users').find({createdDate:{$gt:1492601303397}}).count()
 	db.getCollection('users').find().limit(10).skip(10) ........................................................................... (пагинация)
+	Регулярные выражения
 	db.getCollection('users').find({active:true, socWendor:'gup.com.ua'}) ......................................................... (аналог 'WHERE...AND')
 	db.getCollection('users').find({$or: [{active:true}, {socWendor:'gup.com.ua'}]}) .............................................. (аналог 'WHERE...OR')
 	db.getCollection('users').find({username:/a/}) ................................................................................ (аналог like '%a%') все слова где встречается буква 'а'
@@ -1014,6 +1025,8 @@ so .............. тогда (связка между предложениями
 	db.getCollection('users').find({username:'Anna'}, {username:1})
 	db.getCollection('users').find({publicId: {$regex:'22'}}) ..................................................................... полнотекстовый поиск
 	db.getCollection('users').find({publicId: {$regex:'22'}}, {username:1, publicId:1})
+	db.getCollection('users').find({email:/1q1q1q/i}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
+	db.getCollection('users').find({email:{$regex:'1q1q1q', $options:'-i'}}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
 	--------------------
 	db.getCollection('users').find().pretty() ..................................................................................... для структурированного вывода данных коллекции
 	Модификаторы обновления/вставка
@@ -1021,6 +1034,9 @@ so .............. тогда (связка между предложениями
 	db.getCollection.update({page: 'unicorns'}, {$inc: {hits: 1}})
 	db.getCollection.update({name: 'Roooooodles'}, {$set: {weight: 590}})
 	db.getCollection.update({}, {$set: {vaccinated: true }})
+	
+	db.getCollection('users').find({email:'1q1q1q@1q.com'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
+	db.getCollection('users').find({email:'1Q1Q1Q1Q@1Q.COM'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
   
   
   
