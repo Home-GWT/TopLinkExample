@@ -271,3 +271,4 @@ int integer = sports
 				(i, sport) -> i += sport.getDay(),
 				(sum1, sum2) -> sum1 + sum2);
 System.out.println(integer);
+

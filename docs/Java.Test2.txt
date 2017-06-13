@@ -1,0 +1,57 @@
+
+int A, B=99, C=99;
+A = B-- - --B; // 2
+System.out.println(A);
+
+B=99;
+A = --B - B--; // 0
+System.out.println(A);
+
+B=99;
+A = B-- - --C; // 1
+System.out.println(A);
+
+B=99; C=99;
+A = --B - C--; // -1
+System.out.println(A);
+
+
+
+
+
+
+
+
+public class Algorithm {
+
+    public Algorithm(TreeNode tn){
+	
+	
+	
+	
+	
+	}
+
+}
+
+public next(){}
+
+
+
+
+
+
+
+
+public class TreeNode {
+	public int value;
+	public TreeNode left;
+	public TreeNode right;
+
+	public TreeNode(int value, TreeNode left, TreeNode right)
+	{
+		this.value = value;
+		this.left = left;
+		this.right = right;
+	}
+}
