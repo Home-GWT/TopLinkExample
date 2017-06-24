@@ -1,4 +1,4 @@
-package com.java;
+package com.java.luxoft;
 
 /**
  * A static{}
