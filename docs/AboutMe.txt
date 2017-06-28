@@ -869,10 +869,56 @@ so .............. тогда (связка между предложениями
 
 
   .......................................................................................
+  >> (Рекомендации по написанию неизменяемых классов) https://www.ibm.com/developerworks/ru/library/j-jtp02183/index.html
+
+	 Класс будет неизменяемым, если верно следующее
+     ----------------------------------------------
+	 1. Класс объявляется как 'final'
+	 2. Все его поля являются 'final'
+	 3. Ссылка 'this' не должна пропасть во время конструирования
+	 4. Любые поля, содержащие ссылки на изменяемые объекты, например массивы, совокупности или изменяемые классы, например Date:
+        4.1 Являются приватными
+        4.2 Никогда не возвращаются и никаким другим образом не становятся доступными вызывающим операторам
+        4.3 Являются единственными ссылками на те объекты, на которые они ссылаются
+        4.4 Не изменяют после конструирования состояние объектов, на которые они ссылаются
+		
+     Правильный и неправильный способы кодирования неизменяемых объектов
+     -------------------------------------------------------------------
+	class ImmutableArrayHolder {
+
+	  private final int[] theArray;
+
+	  // Right way to write a constructor -- copy the array
+	  public ImmutableArrayHolder(int[] anArray) {
+		this.theArray = (int[]) anArray.clone();
+	  }
+
+	  // Wrong way to write a constructor -- copy the reference
+	  // The caller could change the array after the call to the constructor
+	  public ImmutableArrayHolder(int[] anArray) {
+		this.theArray = anArray;
+	  }
+
+	  // Right way to write an accessor -- don't expose the array reference
+	  public int getArrayLength() { return theArray.length }
+	  public int getArray(int n)  { return theArray[n]; }
+
+	  // Right way to write an accessor -- use clone()
+	  public int[] getArray()       { return (int[]) theArray.clone(); }
+
+	  // Wrong way to write an accessor -- expose the array reference
+	  // A caller could get the array reference and then change the contents
+	  public int[] getArray()       { return theArray }
+	}
+  
+Выполнив некоторые дополнительные действия, можно создать неизменяемые классы, которые используют некоторые неокончательные (non-final) поля (например, стандартная реализация String предполагает использование отложенного вычисления (lazy computation) значения hashCode), которое может работать лучше, чем строго окончательные классы. 
+Если ваш класс представляет значение абстрактного типа, как, например, числовой тип или цвет, вам также понадобится реализовать методы hashcode() и equals(), для того, чтобы ваш объект работал хорошо в качестве ключа в HashMap или HashSet. 
+Для поддержания безопасности потоков важно, чтобы ссылка this не выходила из конструктора.
+  
+  .......................................................................................
   >> (HQL и join-ы) http://javatalks.ru/topics/28747
   
   from User u join u.child1 where...
-  
   
   .......................................................................................
    >> () https://forum.hibernate.org/viewtopic.php?f=1&t=1009553 >> https://developer.jboss.org/wiki/AShortPrimerOnFetchingStrategies
