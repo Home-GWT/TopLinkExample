@@ -950,7 +950,7 @@ Set
 ---------------------+-----------+------------+----------+---------------------
                      |    Add    |  Contains  |   Next   |  Структура данных
 ---------------------+-----------+------------+----------+---------------------
-HashSet              | O(1)      | O(1)       | O(h/n)   | Hash Table
+HashSet              | O(1)      | O(1)       | O(h / n) | Hash Table
 LinkedHashSet        | O(1)      | O(1)       | O(1)     | Hash Table + Linked List
 EnumSet              | O(1)      | O(1)       | O(1)     | Bit Vector
 TreeSet              | O(log n)  | O(log n)   | O(log n) | Red-black tree
