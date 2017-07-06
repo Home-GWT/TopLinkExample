@@ -817,6 +817,7 @@ trade ........... сделка
 goal ............ цель
 therefore ....... следовательно
 often (frequency) часто, зачастую
+instead ......... вместо
 produce (producer) ........................ производить (производитель)
 consume (consumer) ........................ потреблять (потребитель)
 reproduction (reproducing) ................ воспроизведение (воспроизводящий)
@@ -866,6 +867,111 @@ so .............. тогда (связка между предложениями
 
 
 
+
+public class TreeTest {
+
+    class MyNode {
+        int data;
+        MyNode left;
+        MyNode right;
+        MyNode parent;
+    }
+
+    MyNode root;
+
+
+    public static void main(String[] args) {
+        TreeTest test = new TreeTest();
+
+        test.root = test.insert(test.root, 2, null);
+        test.root = test.insert(test.root, 1, null);
+        test.root = test.insert(test.root, 3, null);
+
+        test.traverse(test.root);
+    }
+
+
+    MyNode insert(MyNode current, int data, MyNode parent){
+        if(current == null){
+            current = new MyNode();
+            current.left = null;
+            current.right = null;
+            current.parent = parent;
+            current.data = data;
+        } else if(data < current.data) {
+            current.left = insert(current.left, data, current);
+        } else {
+            current.right = insert(current.right, data, current);
+        }
+
+        return current;
+    }
+
+    void traverse (MyNode current){
+        if(current == null)
+            return;
+
+        traverse(current.left);
+        traverse(current.right);
+    }
+}
+
+  .......................................................................................
+  >> (Java Collections – Performance (Time Complexity)) http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
+      ------------------------------------------------
+	 Аннотация (большое) 'O' ... описывает как время выполнения заданной задачи растет с размером данных.
+	 На одном конце 'O(1)' ..... это "постоянная времени"; а на противоположном конце 'O(x^n)' ... это экспонента времени.
+	 'h' ....................... означает емкость Хэш-таблицы.
+	
+List
+---------------------+-------+----------+-------+------------+---------------------
+                     |  Add  |  Remove  |  Get  |  Contains  |  Структура данных
+---------------------+-------+----------+-------+------------+---------------------
+ArrayList            | O(1)  | O(n)     | O(1)  | O(n)       | Array
+LinkedList           | O(1)  | O(1)     | O(n)  | O(n)       | Linked List
+CopyonWriteArrayList | O(n)  | O(n)     | O(1)  | O(n)       | Array
+---------------------+-------+----------+-------+------------+---------------------
+
+Map
+------------------------+----------+---------------+----------+---------------------
+                        |   Get    |  ContainsKey  |   Next   |  Структура данных
+------------------------+----------+---------------+----------+---------------------
+EnumMap                 | O(1)     | O(1)          | O(1)     | Array
+HashMap                 | O(1)     | O(1)          | O(h / n) | Hash Table
+ConcurrentHashMap       | O(1)     | O(1)          | O(h / n) | Hash Tables
+TreeMap                 | O(log n) | O(log n)      | O(log n) | Red-black tree
+ConcurrentSkipListMap   | O(log n) | O(log n)      | O(1)     | Skip List
+LinkedHashMap           | O(1)     | O(1)          | O(1)     | Hash Table + Linked List
+IdentityHashMap         | O(1)     | O(1)          | O(h / n) | Array
+WeakHashMap             | O(1)     | O(1)          | O(h / n) | Hash Table
+------------------------+----------+---------------+----------+---------------------
+
+Set
+---------------------+-----------+------------+----------+---------------------
+                     |    Add    |  Contains  |   Next   |  Структура данных
+---------------------+-----------+------------+----------+---------------------
+HashSet              | O(1)      | O(1)       | O(h/n)   | Hash Table
+LinkedHashSet        | O(1)      | O(1)       | O(1)     | Hash Table + Linked List
+EnumSet              | O(1)      | O(1)       | O(1)     | Bit Vector
+TreeSet              | O(log n)  | O(log n)   | O(log n) | Red-black tree
+CopyonWriteArraySet  | O(n)      | O(n)       | O(1)     | Array
+ConcurrentSkipList   | O(log n)  | O(log n)   | O(1)     | Skip List
+---------------------+-----------+------------+----------+---------------------
+
+Queue
+------------------------+----------+--------+----------+--------+---------------------
+                        |  Offer   |  Peak  |   Poll   |  Size  |  Структура данных
+------------------------+----------+--------+----------+--------+---------------------
+PriorityQueue           | O(log n) | O(1)   | O(log n) | O(1)   | Priority Heap
+LinkedList              | O(1)     | O(1)   | O(1)     | O(1)   | Array
+ArrayDequeue            | O(1)     | O(1)   | O(1)     | O(1)   | Linked List
+ConcurrentLinkedQueue   | O(1)     | O(1)   | O(1)     | O(n)   | Linked List
+ArrayBlockingQueue      | O(1)     | O(1)   | O(1)     | O(1)   | Array
+PriorirityBlockingQueue | O(log n) | O(1)   | O(log n) | O(1)   | Priority Heap
+SynchronousQueue        | O(1)     | O(1)   | O(1)     | O(1)   | None!
+DelayQueue              | O(log n) | O(1)   | O(log n) | O(1)   | Priority Heap
+LinkedBlockingQueue     | O(1)     | O(1)   | O(1)     | O(1)   | Linked List
+------------------------+----------+--------+----------+--------+---------------------
 
 
   .......................................................................................
@@ -1219,6 +1325,15 @@ public class Account {
 	db.getCollection('users').find({email:'1q1q1q@1q.com'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
 	db.getCollection('users').find({email:'1Q1Q1Q1Q@1Q.COM'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
   
+  
+*** >> (HQL JOIN example) https://javatalks.ru/topics/28747
+        ----------------
+	   from User u join u.child1 where...
+	   Плюс у хиба опять же не один тип join'ов.
+	   Не ну hql запрос то я сделал в итоге, но меня напрягает то что в итоговом sql запросе присутствуют cross join.
+В общем как получается, если мы имеем несколько сущностей которые ссылаются на одну и ту же сущность и отношение у них ManyToOne, и нам нужно получить все эти сущности, то hql запрос получается извратный и sql тоже вырисовывается более сложный чем должен быть по идее.
+Думал как можно использовать left-ы и прочие join-ы, картина получается та же.
+А вот если у нас будет отношение OneToMany (то есть наоборот главная сущность будет иметь список потомков), то запросы выглядят намного красивее.
   
   
   .......................................................................................
