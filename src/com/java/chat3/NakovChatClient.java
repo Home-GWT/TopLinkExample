@@ -21,7 +21,7 @@ public class NakovChatClient {
         BufferedReader in = null;
         PrintWriter out = null;
         try {
-            // Connect to Nakov Chat Server
+            // Connect to NakovChatServer
             Socket socket = new Socket(SERVER_HOSTNAME, SERVER_PORT);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
