@@ -918,6 +918,7 @@ public class TreeTest {
 
   .......................................................................................
   >> (Java Collections – Performance (Time Complexity)) http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
+                                                        https://habrahabr.ru/company/inforion/blog/332460
       ------------------------------------------------
 	 Аннотация (большое) 'O' ... описывает как время выполнения заданной задачи растет с размером данных.
 	 На одном конце 'O(1)' ..... это "постоянная времени"; а на противоположном конце 'O(x^n)' ... это экспонента времени.
@@ -1324,7 +1325,10 @@ public class Account {
 	
 	db.getCollection('users').find({email:'1q1q1q@1q.com'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
 	db.getCollection('users').find({email:'1Q1Q1Q1Q@1Q.COM'}, {publicId:1, socWendor:1, username:1, email:1, userRoles:1, active:1})
-  
+	--------------------
+	db.getCollection('oauth2_access_token').find({userName:'sashakmets@yandex.ru'})
+	db.getCollection('oauth2_refresh_token').find({'authentication.userAuthentication.principal.username': 'sashakmets@yandex.ru'})
+	
   
 *** >> (HQL JOIN example) https://javatalks.ru/topics/28747
         ----------------
