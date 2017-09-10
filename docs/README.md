@@ -1,6 +1,10 @@
-[Markdown: Help](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Markdown: Help](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) **|** [Markdown support](https://daringfireball.net/projects/markdown/syntax)
+
+[Хоткеи в IntelliJ-IDEA](https://juja.com.ua/java/ide/intellij-idea-hotkeys) ([+](http://eax.me/intellij-idea-hotkeys))
+
 
 * **(** [Java.Test](Java.Test.txt) **)**
+* Java Perfomance Test **(** [использование памяти процессом Java](https://www.ibm.com/developerworks/ru/library/j-codetoheap) **|** [SystemTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/SystemTest.java) **|** [ServicePerfomanceTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/cities_roads/ServicePerfomanceTest.java) **|** [CollectionsPerformance](https://github.com/JobTest/axiom/tree/develop4.1/src/test/java/example/testtask/townsandroads) **|** [String, StringBuffer and StringBuilder Memory and Runtime Analysis](http://java.globinch.com/java-quick-tips/performance-string-stringbuffer-stringbuilder-memory-runtime-analysis) **|** [Performance factors](http://www.vogella.com/tutorials/JavaPerformance/article.html) **|** [MockitoTest](https://github.com/JobTest/axiom/tree/develop/cities_roads/src/test/java/example/testtask) **)**
 * [Коллекции](Коллекции.md) **(** [Java Коллекции](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/prepare)  **|** [пример реализации кэша через LinkedHashMap](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/LRUCacheTest.java) **|** [вставка и обход бинарного дерева в глубину и в ширину](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/TreeTest.java) **)**
 * [Базы данных](Базы%20данных.md) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **)**
 * [Design Patterns](Design%20Patterns.md)
