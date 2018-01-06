@@ -12,7 +12,7 @@
 * [Базы данных](Базы%20данных.md) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **|** [HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/sql/README.md) **)**
 * [PL/SQL](PL-SQL.md)
 * [Design Patterns](Design%20Patterns.md)
-* [Исключения в Java](Исключения%20в%20Java.md) **(** [TryCatchFinaly](https://github.com/Home-Spring/SpringFileUpload2/blob/master/src/test/java/com/journaldev/spring/TryCatchFinaly.java) **)**
+* [Исключения в Java](Исключения%20в%20Java.md) **(** [TryCatchFinaly](https://github.com/Home-Spring/SpringFileUpload2/blob/master/src/test/java/com/journaldev/spring/TryCatchFinaly.java) **|** [pdf](Исключения%20и%20ошибки.pdf) **)**
 * [что нового в java-8](что%20нового%20в%20java-8.md)  **|** [Java8.2](https://github.com/Home-Java8/Java8.2)  **(** [Краткий список нововведений в Java 8](http://microfork.com/whats-new-in-java-8/) **)**
 * [различие между oauth-1 и oauth-2](различие%20между%20oauth-1%20и%20oauth-2.md)
 * [Аспектно-Ориентированном Программирование](АОП.md) **(** [Знакомство с АОП](https://habrahabr.ru/post/114649) **|** [Spring АОП](http://www.finecosoft.ru/spring-aop) **)**
