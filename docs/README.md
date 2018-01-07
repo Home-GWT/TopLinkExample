@@ -7,13 +7,14 @@
 * [EJB делится на 3-типа компонентов](Java%20(авторизация-сервисы).txt#L424) **|** [полезные ответы на вопросы #1](AboutMe.txt#L871) **|** [полезные ответы на вопросы #2](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L153)  **(** [EJB](../src/com/voituk/jpaexample/EJB.md) **|** [Java.Test.1](Java.Test.txt) **|** [Java.Test.2](Java.Test2.txt) **|** [tree_node](../src/com/java/tree_algorithm/tree_node.pdf) **)**
 * [Java Perfomance Test](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L2145) **(** [использование памяти процессом Java](https://www.ibm.com/developerworks/ru/library/j-codetoheap) **|** [SystemTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/SystemTest.java) **|** [ServicePerfomanceTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/cities_roads/ServicePerfomanceTest.java) **|** [CollectionsPerformance](https://github.com/JobTest/axiom/tree/develop4.1/src/test/java/example/testtask/townsandroads) **|** [String, StringBuffer and StringBuilder Memory and Runtime Analysis](http://java.globinch.com/java-quick-tips/performance-string-stringbuffer-stringbuilder-memory-runtime-analysis) **|** [Performance factors](http://www.vogella.com/tutorials/JavaPerformance/article.html) **|** [SearchPhrase_PerformanceTest](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/task/SearchPhrase_PerformanceTest.java) **|** [MSL2 (zip)](https://mail.google.com/mail/u/0/?tab=wm#inbox/15e6d13cebc81504) **|** [MockitoTest](https://github.com/JobTest/axiom/tree/develop/cities_roads/src/test/java/example/testtask) **+** [Get size of object in memory](http://www.javapractices.com/topic/TopicAction.do?Id=83) **+** [Memory consumption of popular Java data types – part 2](http://java-performance.info/memory-consumption-of-java-data-types-2) **)**
 * [Scala Perfomance Test](http://scalameter.github.io/home/gettingstarted/0.5/configuration/index.html)
-* [Коллекции](Коллекции.md) **(** [Java Коллекции](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/prepare)  **|** [пример реализации кэша через LinkedHashMap](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/LRUCacheTest.java) **|** [вставка и обход бинарного дерева в глубину и в ширину](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/TreeTest.java) **|** [Tree Algorithm](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/tree_algorithm/TreeTest.java) **)**
+* [Коллекции](Коллекции.md) **|** [Stack](firefox.txt#L593) **(** [Stack: push/pop/peek](../src/com/voituk/jpaexample/JMS.md#L386) **|** [Java Коллекции](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/prepare)  **|** [пример реализации кэша через LinkedHashMap](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/LRUCacheTest.java) **|** [вставка и обход бинарного дерева в глубину и в ширину](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/TreeTest.java) **|** [Tree Algorithm](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/tree_algorithm/TreeTest.java) **)**
 * [Дженерики](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/generic/README.md) **|** [Optional](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/README.md) **|** [Executor](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/concurrent/README.md) **|** [SQL HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/sql/README.md) **|** [SOAP](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/SOAP/README.md)
 * [Базы данных](Базы%20данных.md) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **|** [HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/sql/README.md) **)**
 * [PL/SQL](PL-SQL.md)
 * [Design Patterns](Design%20Patterns.md)
 * [Исключения в Java](Исключения%20в%20Java.md) **(** [TryCatchFinaly](https://github.com/Home-Spring/SpringFileUpload2/blob/master/src/test/java/com/journaldev/spring/TryCatchFinaly.java) **|** [pdf](Исключения%20и%20ошибки.pdf) **)**
 * [что нового в java-8](что%20нового%20в%20java-8.md)  **|** [Java8.2](https://github.com/Home-Java8/Java8.2)  **(** [Краткий список нововведений в Java 8](http://microfork.com/whats-new-in-java-8/) **)**
+* **(** [10-советов по многопоточному программированию на Java](https://tproger.ru/translations/10-java-multithread-practices) **)**
 * [различие между oauth-1 и oauth-2](различие%20между%20oauth-1%20и%20oauth-2.md)
 * [Аспектно-Ориентированном Программирование](АОП.md) **(** [Знакомство с АОП](https://habrahabr.ru/post/114649) **|** [Spring АОП](http://www.finecosoft.ru/spring-aop) **)**
 * **(** [Home-Spring/docs](https://github.com/Home-Spring/docs) **|** spring управлять бинами на лету через xml: [1](https://habrahabr.ru/company/haulmont/blog/248981) **|** [2](https://habrahabr.ru/post/106744) **|** [3](http://java-course.ru/student/book2/spring) **|** [4](http://spring-projects.ru/guides/lessons/lesson-2) **|** [5](https://habrahabr.ru/post/228953) **|** [MVC](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/spring_mvc) **)**
@@ -230,5 +231,69 @@ HQL-запрос — это такой запрос который строит�
     public class Organization { ...
 ```
 
+```
+  Какие методы есть у класса Object
+  ---------------------------------
+   1. public final native Class getClass()
+   2.             public String toString()
+   3.         public native int hashCode()
+   4.            public boolean equals(Object obj)
+   5.   protected native Object clone() throws CloneNotSupportedException
+   6.            protected void finalize() throws Throwable
+   7.  public final native void wait(long timeout) throws InterruptedException
+   8.         public final void wait(long timeout, int nanos) throws InterruptedException
+   9.         public final void wait() throws InterruptedException
+  10.  public final native void notify()
+  11.  public final native void notifyAll()
+```
 
+![HotSpot JVM](untitled3.png)
+
+![HotSpot JVM](untitled.png)
+
+![HotSpot JVM](untitled2.png)
+
+```
+  Какие существуют области памяти в Java (HotSpot JVM)
+  --------------------------------------
+  Есть 3-сегмента:
+  1. Stack (Стек)
+  2. Heap (Куча)
+  3. PermGen (Permanent Generation)
+  --------------------------------------
+  - "Stack" (стэк - хранит только локальные переменные примитивных типов и ссылки на объекты в куче)
+            управления памятью осуществляется по схеме LIFO (первый вошел - последний вышел)
+	        стэковая память существует лиш на короткое время для работы отдельной под-программы
+	        стэк может использоваться только одним потоком исполняемой программой (стэковая память НЕможет быть доступна для других потоков)
+	        "java.lang.StackOverflowError" (если память стэка заполнена)
+	        "-Xss" (опции JVM определить размер памяти стэка)
+  - Куча:
+	      всякий раз когда создается объект - он хранится в куче
+	      объекты в куче доступна для других потоков, с любой точки программы (объекты в куче используется всеми частями приложения)
+	      память в куче живет с самого начала до самого конца работы программы
+	      "java.lang.OutOfMemoryError" (если память кучи заполнена)
+    -- "Permanent Generation" (статический контент - сюда загружаются статические классы, методы, хранится метаинформация..)
+                              изменение размера в PermGen – это дорогостоящая и трудоёмкая операция
+                              Размер в PermGen можно задать 2-мя параметрами JVM:
+                              -XX:PermSize (задаёт минимальный или изначальный размер)
+                              -XX:MaxPermSize (задаёт максимальный размер)
+	-- "Heap" (основной сегмент памяти где хранятся все ваши объекты) делится на два подсегмента:
+	          опции JVM определить размер памяти кучи:
+	          "-Xms" (минимум)
+	          "-Xmx" (максимум)
+	          И делится на 2-а подсегмента:
+               1. Young Generation (Новая куча)
+                  ---- "Eden" (молодое поколение - сюда попадают все новосозданные объекты)
+                  ---- "Survivor" (сюда копируются выжившие объекты после первого прохода сброщика муссора - Garbage Collector "GC" )
+               2. Old Generation (Старая куча)
+                  ---- "Tenured" (сюда попадают долго-живущие объекты которые выжили после нескольких проходов сброщика муссора - "GC" )
+                       Сборка муссора (Garbage Collection - `GC`)
+                       --------------
+                       - `stop-the-world` (этот алгоритм создаёт то что называется моментом `когда мир остановился`. Во время выполнения GC JVM переводится в состояние паузы...)
+                                          суть `GC Stop` заключается в дефрагментации памяти.
+                       Существует множество алгоритмов которыми может воспользоваться JVM для проведения GC:
+                       - `Mark-Sweep` (Первое – обход графа и установка особого флажка на каждом из достижимых объектов; Второе – сканирование всей памяти и помещение объектов без флажка в список свободного пространства;)
+                       - `Copy Collector` (позволяет осуществить все вышеперечисленное только за один проход: когда находим в графе новый объект мы сразу копируем его в другое пространство памяти...)
+                       - `Mark-Sweep-Compact` (выполняет `Mark-Sweep`, затем после выполнения действия-sweep, он перемещает объект в памяти чтобы выполнить дефрагментацию и обеспечить непрерывность свободного места...)
+```
 
