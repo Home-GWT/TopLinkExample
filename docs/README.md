@@ -198,9 +198,18 @@
 
 
 ---
+JPQL-запрос — используется на уровне DAO слоя...например в Spring-Data @Repository / CrudRepository / JpaRepository
+               в случае если метод должен формировать специфический sql-запрос...
+
+```javascript
+    @Query("select b from Bank b where b.name = :name")
+	Bank findByName(@Param("name") String name);
+```
+
+---
 * join в HQL
 
-HQL-запрос — это такой запрос который строиться с помощью "Criteria" на уровне самого приложения.
+HQL-запрос — это такой запрос который строиться с помощью "Criteria" на уровне Service слоя.
 
 ```javascript
     Criteria criteria = session.createCriteria(My.class);
