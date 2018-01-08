@@ -146,6 +146,70 @@
      */
 ```
 
+```javascript
+    /**
+     * В интерфейсе можно объявлять поля НО они должны быть обизательно проинициализированны И НЕдолжны быть приватными!
+     * (по умолчанию все поля в интерфейсе являются статическими и публичными и финальными)
+     */
+    public interface MyC {
+//        public static final int a; // ошибка - нет иннициализации
+//        private int b = 100; // ошибка - нельзя приватное поле
+        int a = 100; // нормально!
+        String str = "abc"; // нормально!
+        Aaa aaa = new Aaa(); // нормально!
+
+        class Aaa {
+            private int ego;
+            private String name;
+            public int getEgo() {
+                return ego;
+            }
+            public void setEgo(int ego) {
+                this.ego = ego;
+            }
+            public String getName() {
+                return name;
+            }
+            public void setName(String name) {
+                this.name = name;
+            }
+        }
+    }
+```
+
+```javascript
+    /**
+     * Статические классы вместе со статическими методами МОЖНО НАСЛЕДОВАТЬ!
+     * При этом использование операторов 'new' и 'null' НЕбудет играть никакой роли...потому-что оператор 'static' уже создаст единственный экземпляр для этого приложения И все зависит только от объявленного типа переменной-класса
+     */
+    public static class MyA {
+        public static void func() {
+            System.out.println("MyA");
+        }
+    }
+
+    public static class MyB extends MyA {
+        public static void func() {
+            System.out.println("MyB");
+        }
+    }
+    
+    ///////////////
+    MyA.func();
+    MyB.func();
+
+    MyA myA = new MyA();
+    MyB myB = new MyB();
+    MyA myX = new MyB();
+    myA.func();
+    myB.func();
+    myX.func();
+
+    myA = null;
+    myB = null;
+    myA.func();
+    myB.func();
+```
 
 ---
 * Способы сравнения объектов
