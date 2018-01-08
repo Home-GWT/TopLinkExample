@@ -75,13 +75,55 @@
      * **********
      * функция может принимать значение либо строка либо null
      * В случае если значение null тогда Optionak должен вернуть альтернативное значение (НЕ null...)
-     * 
      */
     public Optional<String> func(String value) {
 
         Optional<String> res = Optional.ofNullable( value );
 
         return res.orElse("альтернативное НЕпустое значение");
+    }
+```
+
+```javascript
+    /**
+     * 'Stream'
+     * **********
+     * в первом случае:
+     * * 'map' преобразует поток stream-ов в (поток) список String-ов
+     * * находит первый попашийся элемент с этого списка String-ов
+     * * и возвращает элемент типа String
+     */
+    public String findId() {
+        
+        List<Client> clients = ...
+
+        return clients.stream()
+                .map(client -> client.getTaxId()) // Client -> String
+                .findFirst()
+                .get(); // String
+    }
+
+    /**
+     * 'Stream' + 'Optional'
+     * *********************
+     * во втором случае:
+     * * 'map' преобразует поток stream-ов в (поток) список String-ов
+     * * находит первый попашийся элемент с этого списка String-ов
+     * * и возвращает элемент типа Optional
+     * дальше Optional проверяет:
+     * * если результат НЕ null тогда возвращаем найденный результат (это для того чтобы предотвратить 'NullPointerException')...
+     */
+    public String findId() {
+        
+        List<Client> clients = ...
+
+        Optional<String> taxId = clients.stream()
+                .map(client -> client.getTaxId()) // Client -> String
+                .findFirst(); // Optional<String>
+
+        return taxId.isPresent() // true / false
+                ? taxId.get() // String
+                : "НЕнайдено";
     }
 ```
 
