@@ -553,18 +553,18 @@ empty() - проверяет, не пуст ли стек;
                 .forEach(System.out::println);
     }
 
+    List<Person> persons = Arrays.asList(
+            new Person("Andrew", 20),
+            new Person("Igor", 23),
+            new Person("Ira", 23),
+            new Person("Vitia", 12));
+
     /**
      *      Терминальные (продвинутые) операции:
      *      COLLECT, reduce, flatMap
      */
     @Test
     public void testCollect() {
-        List<Person> persons = Arrays.asList(
-                new Person("Andrew", 20),
-                new Person("Igor", 23),
-                new Person("Ira", 23),
-                new Person("Vitia", 12));
-
         /**
          * Превращает элементы Stream-а в List, Set, Map
          * collect // принимает 'Collector' (который состоит из 4-ех операций: поставщик, аккумулятор, объединитель, финишер)
@@ -603,13 +603,6 @@ empty() - проверяет, не пуст ли стек;
      */
     @Test
     public void testReduce() {
-        List<Person> persons = Arrays.asList(
-                new Person("Andrew", 20),
-                new Person("Xxx", 30),
-                new Person("Igor", 23),
-                new Person("Ira", 23),
-                new Person("Vitia", 12));
-
         /**
          * работа 'Reduce' очень схожа на 'Comparator' (он проходит по списку, берет 2-а рядом стоящих элемента и сравнивает их...)
          * Только 'Reduce' позволяет еще дополнительно выполнять другие операции и формировать ответ..
