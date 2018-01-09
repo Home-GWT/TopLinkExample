@@ -444,6 +444,7 @@ empty() - проверяет, не пуст ли стек;
      * @see https://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
      * @see https://habrahabr.ru/company/luxoft/blog/270383
      */
+
     @Test
     public void testStreamTerminal(){
         ////////////////////////////////////////////////////////////////////////////////////
@@ -525,10 +526,7 @@ empty() - проверяет, не пуст ли стек;
                 .count();
     }
 
-    /**
-     * @see https://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
-     * @see https://habrahabr.ru/company/luxoft/blog/270383
-     */
+
     @Test
     public void testStreamInterim() {
         // filter, map, mapToInt, sorted, limit
@@ -556,10 +554,8 @@ empty() - проверяет, не пуст ли стек;
     }
 
     /**
-     * @see https://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
-     *      ****************************************************************
      *      Терминальные (продвинутые) операции:
-     *      collect, reduce, flatMap
+     *      COLLECT, reduce, flatMap
      */
     @Test
     public void testCollect() {
@@ -602,10 +598,8 @@ empty() - проверяет, не пуст ли стек;
     }
 
     /**
-     * @see https://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
-     *      ****************************************************************
      *      Терминальные (продвинутые) операции:
-     *      collect, reduce, flatMap
+     *      collect, REDUCE, flatMap
      */
     @Test
     public void testReduce() {
@@ -649,6 +643,10 @@ empty() - проверяет, не пуст ли стек;
         System.out.println(ages); // 108
     }
 
+    /**
+     *      Терминальные (продвинутые) операции:
+     *      collect, reduce, FLATMAP
+     */
     @Test
     public void testFlatMap() {
         /**
