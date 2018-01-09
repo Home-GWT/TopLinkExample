@@ -439,13 +439,12 @@ empty() - проверяет, не пуст ли стек;
 
 
 ```javascript
-
     /**
      * @see https://javadevblog.com/polnoe-rukovodstvo-po-java-8-stream.html
      * @see https://habrahabr.ru/company/luxoft/blog/270383
      */
 
-    @Test
+
     public void testStreamTerminal(){
         ////////////////////////////////////////////////////////////////////////////////////
         /**
@@ -527,7 +526,6 @@ empty() - проверяет, не пуст ли стек;
     }
 
 
-    @Test
     public void testStreamInterim() {
         // filter, map, mapToInt, sorted, limit
 
@@ -553,11 +551,11 @@ empty() - проверяет, не пуст ли стек;
                 .forEach(System.out::println);
     }
 
+
     /**
      *      Терминальные (продвинутые) операции:
      *      COLLECT, reduce, flatMap
      */
-    @Test
     public void testCollect() {
         /**
          * Превращает элементы Stream-а в List, Set, Map
@@ -591,11 +589,11 @@ empty() - проверяет, не пуст ли стек;
         System.out.println(phrase);
     }
 
+
     /**
      *      Терминальные (продвинутые) операции:
      *      collect, REDUCE, flatMap
      */
-    @Test
     public void testReduce() {
         /**
          * работа 'Reduce' очень схожа на 'Comparator' (он проходит по списку, берет 2-а рядом стоящих элемента и сравнивает их...)
@@ -630,11 +628,11 @@ empty() - проверяет, не пуст ли стек;
         System.out.println(ages); // 108
     }
 
+
     /**
      *      Терминальные (продвинутые) операции:
      *      collect, reduce, FLATMAP
      */
-    @Test
     public void testFlatMap() {
         /**
          * ('map' - преобразовывает объекты одного потока в другие объекты для другого потока...)
