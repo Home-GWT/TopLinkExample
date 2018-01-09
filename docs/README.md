@@ -553,12 +553,6 @@ empty() - проверяет, не пуст ли стек;
                 .forEach(System.out::println);
     }
 
-    List<Person> persons = Arrays.asList(
-            new Person("Andrew", 20),
-            new Person("Igor", 23),
-            new Person("Ira", 23),
-            new Person("Vitia", 12));
-
     /**
      *      Терминальные (продвинутые) операции:
      *      COLLECT, reduce, flatMap
