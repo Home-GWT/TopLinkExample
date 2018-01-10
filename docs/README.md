@@ -526,35 +526,9 @@ empty() - проверяет, не пуст ли стек;
     }
 
 
-    public void testStreamInterim() {
-        // filter, map, mapToInt, sorted, limit
-
-        /**
-         * Все промежуточные методы возвращают только <Stream>
-         * - filter, map, mapToInt, sorted, limit // Stream
-         *
-         * Некоторые промежуточные методы принимают <FunctionalInterface>
-         * - filter, map, mapToInt // <FunctionalInterface>
-         */
-        Stream.of("dd2", "aa2", "bb1", "bb3", "bb5", "bb2", "cc")
-                .filter(s -> s.startsWith("b"))                    // принимает <FunctionalInterface>, возвращает <Stream>
-                .sorted((s1,s2) -> s2.compareTo(s1))               // принимает <FunctionalInterface>, возвращает <Stream>
-                .limit(3)                                          // принимает 'Long', возвращает <Stream>
-                .map(s -> s.replaceAll("b", "")) // принимает <FunctionalInterface>, возвращает <Stream>
-                .forEach(System.out::println);
-
-        System.out.println();
-
-        Stream.of(22, 2, 1, 33, 0)
-                .sorted()                   // ничего НЕпринимает, возвращает <Stream>
-                .mapToInt(Integer::valueOf) // принимает <FunctionalInterface>, возвращает <Stream>
-                .forEach(System.out::println);
-    }
-
-
     /**
      *      Терминальные (продвинутые) операции:
-     *      COLLECT, reduce, flatMap
+     *      COLLECT, reduce
      */
     public void testCollect() {
         /**
@@ -592,7 +566,7 @@ empty() - проверяет, не пуст ли стек;
 
     /**
      *      Терминальные (продвинутые) операции:
-     *      collect, REDUCE, flatMap
+     *      collect, REDUCE
      */
     public void testReduce() {
         /**
@@ -629,9 +603,35 @@ empty() - проверяет, не пуст ли стек;
     }
 
 
+    public void testStreamInterim() {
+        // filter, map, mapToInt, sorted, limit
+
+        /**
+         * Все промежуточные методы возвращают только <Stream>
+         * - filter, map, mapToInt, flatMap, sorted, limit // Stream
+         *
+         * Некоторые промежуточные методы принимают <FunctionalInterface>
+         * - filter, map, mapToInt, flatMap // <FunctionalInterface>
+         */
+        Stream.of("dd2", "aa2", "bb1", "bb3", "bb5", "bb2", "cc")
+                .filter(s -> s.startsWith("b"))                    // принимает <FunctionalInterface>, возвращает <Stream>
+                .sorted((s1,s2) -> s2.compareTo(s1))               // принимает <FunctionalInterface>, возвращает <Stream>
+                .limit(3)                                          // принимает 'Long', возвращает <Stream>
+                .map(s -> s.replaceAll("b", "")) // принимает <FunctionalInterface>, возвращает <Stream>
+                .forEach(System.out::println);
+
+        System.out.println();
+
+        Stream.of(22, 2, 1, 33, 0)
+                .sorted()                   // ничего НЕпринимает, возвращает <Stream>
+                .mapToInt(Integer::valueOf) // принимает <FunctionalInterface>, возвращает <Stream>
+                .forEach(System.out::println);
+    }
+
+
     /**
-     *      Терминальные (продвинутые) операции:
-     *      collect, reduce, FLATMAP
+     *      Промежуточные (продвинутые) операции:
+     *      FLATMAP
      */
     public void testFlatMap() {
         /**
