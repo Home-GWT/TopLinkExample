@@ -464,6 +464,7 @@ empty() - проверяет, не пуст ли стек;
          * - min, max, average, findFirst, findAny  // Optional
          * - sum, count                             // примитивные типы Java
          * - collect                                // List
+         * - reduce                                 // Object
          */
         OptionalInt min = Stream.of(22, 2, 1, 33, 0).mapToInt(Integer::valueOf)
                 .min(); // Optional
@@ -604,7 +605,7 @@ empty() - проверяет, не пуст ли стек;
 
 
     public void testStreamInterim() {
-        // filter, map, mapToInt, sorted, limit
+        // filter, map, mapToInt, flatMap, sorted, limit
 
         /**
          * Все промежуточные методы возвращают только <Stream>
