@@ -562,7 +562,7 @@ empty() - проверяет, не пуст ли стек;
          * collect // принимает 'Collector' (который состоит из 4-ех операций: поставщик, аккумулятор, объединитель, финишер)
          */
         Collector<Person, StringJoiner, String> PERSON_COOLECTOR = Collector.of(
-                () -> new StringJoiner(" | "), // (1) поставщик
+                () -> new StringJoiner(" | "),          // (1) поставщик
                 (j,p) -> j.add(p.name.toUpperCase()),   // (2) аккумулятор
                 (j1,j2) -> j1.merge(j2),                // (3) объединитель
                 StringJoiner::toString);                // (4) финишер
