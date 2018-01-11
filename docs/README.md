@@ -270,6 +270,57 @@
     myB.func();
 ```
 
+    Java работает только на ПОВЫШЕНИЯ ТИПОВ (явное-приведение типов!
+    Для коллекций приведение типов работает на ПОВЫШЕНИЯ и ПОНИЖЕНИЕ ТИПОВ! (Но для этого НУЖНО указывать ТИП КОЛЛЕКЦИИ, можно указывать общий интерфейс)
+    [здесь](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L597)
+
+```javascript
+        /*
+         * Java работает только на ПОВЫШЕНИЯ ТИПОВ (явное-приведение типов)!
+         * (инначе выбрасывает checked-проверяемое исключение java.lang.ClassCastException)
+         */
+         A a1 = new B("B1",1);
+         aa = bb;
+//        B b2 = (B) new A("A2"); // java.lang.ClassCastException
+//        bb = (B) aa;            // java.lang.ClassCastException
+         
+        /*
+         * Для коллекций приведение типов работает на ПОВЫШЕНИЯ и ПОНИЖЕНИЕ ТИПОВ!
+         * (Но для этого НУЖНО указывать ТИП КОЛЛЕКЦИИ, можно указывать общий интерфейс)
+         * (инначе выбрасывает checked-проверяемое исключение java.lang.ClassCastException)
+         */
+        List<A> aList1 = (List) bList;
+        List<B> bList1 = (List) aList;
+        List<A> aaList1 = (LinkedList) bbList;
+        List<B> bbList1 = (ArrayList) aaList;
+//        List<A> aaList1 = (ArrayList) bbList; // java.lang.ClassCastException
+//        List<B> bbList1 = (LinkedList) aaList; // java.lang.ClassCastException
+```
+
+    Рефлексивность: сравнение объекта самого-себя - гарантированно возвращает равенство (при условии что объекты неNULL)
+    Симметричность: если два объкекты 'A' и 'B' равны - тогда при обратном условии сравнения (либо 'A==B' либо 'B==A') гарантируется их равенство
+    Транзитивность: три объекта 'A','B','C'; при двух условиях равенства объектов если 'A==B' и 'B==C' - тогда гарантируется равенство между 'A==C'
+    [здесь](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L597)
+
+```javascript
+    class C {
+        int ego;
+
+        public int hashCode() { return ego; }
+
+        public boolean equals(Object o) {
+            if (this == o) return true; // Рефлексивность: сравнение объекта самого-себя
+            // Симметричность: если два объкекты 'A' и 'B' равны - тогда при обратном условии сравнения (либо 'A==B' либо 'B==A') гарантируется их равенство
+            // Транзитивность: три объекта 'A','B','C'; при двух условиях равенства объектов если 'A==B' и 'B==C' - тогда гарантируется равенство между 'A==C'
+            if (o == null || getClass() != o.getClass()) return false;
+
+            C c = (C) o;
+
+            return ego == c.ego;
+        }
+    }
+```
+
 ---
 * Способы сравнения объектов
 
