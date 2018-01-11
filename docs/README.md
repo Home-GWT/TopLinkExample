@@ -272,7 +272,7 @@
 
     Java работает только на ПОВЫШЕНИЯ ТИПОВ (явное-приведение типов!
     Для коллекций приведение типов работает на ПОВЫШЕНИЯ и ПОНИЖЕНИЕ ТИПОВ! (Но для этого НУЖНО указывать ТИП КОЛЛЕКЦИИ, можно указывать общий интерфейс)
-    [здесь](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L597)
+    [здесь](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java/ExtendTest.java)
 
 ```javascript
         /*
