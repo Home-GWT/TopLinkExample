@@ -10,7 +10,7 @@
 * [Коллекции](Коллекции.md) **|** [Сложности алгоритмов](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/README.md) **|** [Stack](firefox.txt#L593) **(** [Stack: push/pop/peek](../src/com/voituk/jpaexample/JMS.md#L386) **|** [Java Коллекции](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/prepare)  **|** [пример реализации кэша через LinkedHashMap](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/LRUCacheTest.java) **|** [вставка и обход бинарного дерева в глубину и в ширину](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/TreeTest.java) **|** [Tree Algorithm](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/tree_algorithm/TreeTest.java) **)**
 * [Arrays / Collections .sort](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/sort/FruitTest.java) **|** [Comparable / Comparator](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/sort/Fruit.java) 
 * [Дженерики](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/generic/README.md) **|** [Optional](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/README.md) **|** [Executor](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/concurrent/README.md) **|** [SQL HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/sql/README.md) **|** [SOAP](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/SOAP/README.md)
-* [Базы данных](Базы%20данных.md) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **|** [HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/sql/README.md) **)** [MongoDB](https://github.com/Home-GWT/TopLinkExample/blob/master/docs/AboutMe.txt#L1411)
+* [Базы данных](Базы%20данных.md) **|** Индексы [1](http://www.quizful.net/interview/sql/clustered-index) **/** [2](https://habrahabr.ru/post/141767) **(** [JPA и Hibernate в вопросах и ответах](https://habrahabr.ru/post/265061) **|** [PowerDesigner](novye_vozmozhnosti_pd_16_5.pdf) **|** [HAVING](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/sql/README.md) **)** [MongoDB](https://github.com/Home-GWT/TopLinkExample/blob/master/docs/AboutMe.txt#L1411)
 * [PL/SQL](PL-SQL.md) **(** [Test1](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/sql/Test1.sql#L46) **)**
 * [Design Patterns](Design%20Patterns.md)
 * [Исключения в Java](Исключения%20в%20Java.md) **(** [TryCatchFinaly](https://github.com/Home-Spring/SpringFileUpload2/blob/master/src/test/java/com/journaldev/spring/TryCatchFinaly.java) **|** [pdf](Исключения%20и%20ошибки.pdf) **)**
@@ -928,3 +928,37 @@ III. Атомарные операции
 `Например: для создания пула соединения паттерн 'Синглтон' использует отдельную утилиту в сервисном слое - такое поведение поможет ограничить от создания избыточных пулов соединений внутри этого приложения`
 `Для описания объекта чтобы создать соединение с сервером в момент иннициализации можно применить паттерн 'Билдер' - чтобы выделить объязательные и НЕобъязательные параметры соединения`
 `(Для построения POJO-классов в DTO-слое можно применить конвертеры которые не влияют на работу POJO-классов в других слоях)`
+
+
+
+
+[SQL / Кластерные и некластерные индексы](http://www.quizful.net/interview/sql/clustered-index)
+---
+
+* `Некластерные индексы` (создаются СУБД по умолчанию):
+   Физически данные расположены в произвольном порядке НО логически эти данные упорядочены согласно индексу (такой тип индексов подходит для таблиц где часто изменяются значения).
+   Для ОДНОЙ таблицы может быть создано МНОГО некластерных индексов.
+
+* `Кластерные индексы`:
+   физически данные упорядочены - что очень повышает скорость выборок данных (но только в случае последовательного доступа к данным).
+   Для ОДНОЙ таблицы может быть создан только ОДИН кластерных индекс.
+
+###Каждая таблица InnoDB имеет кластерный ключ
+
+1. Если в таблице задан PRIMARY KEY — это он
+2. Если в таблице есть UNIQUE (уникальные) индексы — это первый из них
+3. InnoDB самостоятельно создаёт скрытое поле с суррогатным ID размером в 6 байт
+
+![Некластерные индексы](07a06aa6953afd68b5c3e292eb6525b2.png)
+
+![Некластерные индексы](480c30ff21e698f4e5a1fbb39b93919b.png)
+
+![Кластерный индекс](dc32d382d9ea7b7bad94deffdf191bcb.png)
+
+![Кластерный индекс](e09122b8f6974ea66dd675b1286baec7.png)
+
+![Кластерный индекс](fbfa24eb14d65fc3a4b815e4e0e63018.png)
+
+
+
+
