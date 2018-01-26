@@ -84,6 +84,7 @@
 
 [Основы одновременного исполнения в Java 8](https://www.ibm.com/developerworks/ru/library/j-jvmc2/index.html) **(** [Часть 1](https://www.ibm.com/developerworks/library/j-jvmc1/index.html) **)**
 
+[Spliterator](http://spec-zone.ru/RU/Java/Docs/8/api/java/util/Spliterator.html)
 
 ###Stream
 
@@ -257,11 +258,55 @@
 ```
 
 
+---
+
+[spring-2017](spring-diving-jpoint-2017.pdf)
+
+[Ответы на вопросы на собеседование Spring Framework (часть 1)](https://jsehelper.blogspot.com/2016/02/spring-framework-1.html)
 
 
+###DispatcherServlet
+
+* `DispatcherServlet`: `Handler Mapping` > `Controller` > `Message Converter` (`View Resolver`)
+
+![DispatcherServlet](14d47a84866c420fb769d0c2a1b4b656.jpg)
 
 
+###Spring @PostConstruct and @PreDestroy
 
+Есть `Spring Core` и `Spring MVC`.
+
+По умолчанию Spring создает бин со `скоупом-Singleton`.
+
+Все скоупы, кроме `скоуп-Prototype` могут использовать call-back-методы жизненного цикла Sprina `@PostConstruct` и `@PreDestroy`
+`Скоуп-Prototype` реализован на базе паттерна **Prototype Pattern** (который НЕсоздает классы-бинов, а просто копирует их состояние полей...) — и в `скоуп-Prototype` НЕпредусмотрена поддержка метода `@PreDestroy`
+
+Чтобы использовать все скоупы из `Spring MVC` в `Spring Core` — для этого нужно указать `proxyMethod`, чтобы делегировать права вызова на уровень другого скоупа... 
+
+
+<div>
+    <span>Spring Framework использует множество шаблонов проектирования, например:</span><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">&nbsp;</span><br>
+    <ul>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Singleton Pattern: Creating beans with default scope.</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Factory Pattern: Bean Factory classes</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Prototype Pattern: Bean scopes</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Adapter Pattern: Spring Web and Spring MVC</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Proxy Pattern: Spring Aspect Oriented Programming support</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Template Method Pattern: JdbcTemplate, HibernateTemplate etc</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Front Controller: Spring MVC DispatcherServlet</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Data Access Object: Spring DAO support</span></li>
+        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Dependency Injection and Aspect Oriented Programming</span></li>
+    </ul>
+</div>
+
+
+###Spring @Transaction
+
+    Дело в том что все бины которые помечены Spring-овыми аннотациями БУДУТ РАБОТАТЬ ТОЛЬКО ПРИ ВЫЗОВЕ В КЛАССАХ ВЕРХНЕГО УРОВНЯ этих бинов
+
+Это происходит потому-что Spring внутри себя использует `механизм-Proxy` который позволяет инжектить и делегировать вызовы бинов (НЕ в самом классе где компонент описывается, a) в классах верхнего уровня где эти бины объявляются в качестве полей...
+(то есть, на момент когда Spring-овый `BeanFactory` создает бин, он сначала создает компоненты и только потом эти компоненты будут включены в другие классы...)
+Поэтому, в случае когда над методом поставить аннотацию `@Transaction` и попытаться вызвать этот метод внутри этого-же класса через другой его метод — тогда вызова здесь НЕбудет, потому-что НЕотработает Proxy...
 
 
 
