@@ -80,8 +80,10 @@
 [Stream API](https://metanit.com/java/tutorial/10.1.php)
 [Что же такое сплитератор](https://habrahabr.ru/post/256905)
 **(** [Что же такое сплитератор](http://info.javarush.ru/translation/2014/05/30/Параллельные-операции-над-массивами-в-Java-8-перевод.html) **)**
+[Обратный порядок потока Java 8](http://qaru.site/questions/63455/java-8-stream-reverse-order)
 
 [Основы одновременного исполнения в Java 8](https://www.ibm.com/developerworks/ru/library/j-jvmc2/index.html) **(** [Часть 1](https://www.ibm.com/developerworks/library/j-jvmc1/index.html) **)**
+
 
 ###Stream
 
@@ -171,7 +173,7 @@
     StreamSupport.stream()...;
 ```
 
-
+Из `Spliterator` используются методы: `tryAdvance()` и `forEachRemaining()` для применения действий к элементам
 
 
 
