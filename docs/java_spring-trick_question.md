@@ -7,9 +7,12 @@
 [HashMap и ConcurrentHashMap популярные вопросы на собеседованиях](http://info.javarush.ru/translation/2013/09/23/HashMap-и-ConcurrentHashMap-популярные-вопросы-на-собеседованиях.html)
 [Как работает ConcurrentHashMap](https://habrahabr.ru/post/132884)
 [Уровень 26. Ответы на вопросы к собеседованию по теме уровня (Часть 2)](http://info.javarush.ru/zor07/2016/07/24/Уровень-26-Ответы-на-вопросы-к-собеседованию-по-теме-уровня-Часть-2-Вопросы-6-9-11-12.html)
+[Пишем асинхронный код с CompletableFuture](https://kurspc.com.ua/node/424)
+[Проблема использования CompletableFuture в нескольких потоках](https://habrahabr.ru/post/325730)
 
 [HashTables](HashTables.pdf) **(** [HashTables](https://acm.bsu.by/w/images/c/c0/HashTables.pdf) **)**
 
+[CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
 
 ###Хэширование
 
