@@ -354,6 +354,12 @@
         
         // для массивов
         String[] arr = map.values().toArray(new String[0]);
+        
+        // из примитивного типа в список-обвертку и обратно (Java 8):
+        List<Integer> intList = null;
+
+        intList.stream().mapToInt(i->i).toArray();            // конвертировать:  List<Integer> -> int[]
+        IntStream.of(A).boxed().collect(Collectors.toList()); // конвертировать:  int[] -> List<Integer>
 ```
 
     Рефлексивность: сравнение объекта самого-себя - гарантированно возвращает равенство (при условии что объекты неNULL)
