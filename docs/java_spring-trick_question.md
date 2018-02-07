@@ -16,10 +16,6 @@
 
 [HashTables](HashTables.pdf) **(** [HashTables](https://acm.bsu.by/w/images/c/c0/HashTables.pdf) **)**
 
-[CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
-
-* [zt_java8_streams_cheat_sheet](zt_java8_streams_cheat_sheet.pdf)
-* [CallableFuturesTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CallableFuturesTest.java) **|** [CompletableFutureTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CompletableFutureTest.java)
 
 ###Хэширование
 
@@ -119,6 +115,12 @@
 
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+* [CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
+
+* [zt_java8_streams_cheat_sheet](zt_java8_streams_cheat_sheet.pdf)
+* [CallableFuturesTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CallableFuturesTest.java) **|** [CompletableFutureTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CompletableFutureTest.java)
+
 
 ```javascript
     /**
