@@ -18,6 +18,9 @@
 
 [CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
 
+* [zt_java8_streams_cheat_sheet](zt_java8_streams_cheat_sheet.pdf)
+* [CallableFuturesTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CallableFuturesTest.java) **|** [CompletableFutureTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CompletableFutureTest.java)
+
 ###Хэширование
 
 Во всех `хэш-функциях` присутствует **метод остатков** — (модульная арифметика) берёт элемент делит его на размер таблицы и возвращая остаток в качестве хэш-значения:
