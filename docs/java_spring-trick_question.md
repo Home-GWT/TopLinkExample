@@ -116,8 +116,12 @@
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-* [CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
+[Callable and Futures](https://www.youtube.com/watch?v=SWKvCA8eClg)
+[Executors](https://www.youtube.com/watch?v=vVyjcJLFNWQ)
+[CompletableFuture](https://www.youtube.com/watch?v=8EoINS1Kacs)
+[Асинхронное программирование в Java 8](https://www.youtube.com/watch?v=yBF9VRiGkik)
 
+* [CompletableFuture](JPoint2015_Chuyko.pdf) **(** [CompletableFuture](http://2015.jpoint.ru/presentations/JPoint2015_Chuyko.pdf) **)**
 * [zt_java8_streams_cheat_sheet](zt_java8_streams_cheat_sheet.pdf)
 * [CallableFuturesTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CallableFuturesTest.java) **|** [CompletableFutureTest](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/thread/CompletableFutureTest.java)
 
