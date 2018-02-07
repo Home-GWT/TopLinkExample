@@ -6,6 +6,7 @@
 * **(** [Java.Test](Java.Test.txt) **)**
 * **(** [Новая Java & Spring - вопросы с подвохом](java_spring-trick_question.md) **)**
 * [EJB делится на 3-типа компонентов](Java%20(авторизация-сервисы).txt#L424) **|** [полезные ответы на вопросы #1](AboutMe.txt#L871) **|** [полезные ответы на вопросы #2](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L153)  **(** [EJB](../src/com/voituk/jpaexample/EJB.md) **|** [Java.Test.1](Java.Test.txt) **|** [Java.Test.2](Java.Test2.txt) **|** [tree_node](../src/com/java/tree_algorithm/tree_node.pdf) **)**
+* [Security](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/EJB.md#L301) **|** [различие между oauth-1 и oauth-2](различие%20между%20oauth-1%20и%20oauth-2.md) **|** [MY-SECURITY](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/MY-SECURITY.md) **(** [Жизненный цыкл Spring-а](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/Spring.md#L412) **)**
 * [Java Perfomance Test](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L2145) **(** [использование памяти процессом Java](https://www.ibm.com/developerworks/ru/library/j-codetoheap) **|** [SystemTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/SystemTest.java) **|** [ServicePerfomanceTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/cities_roads/ServicePerfomanceTest.java) **|** [CollectionsPerformance](https://github.com/JobTest/axiom/tree/develop4.1/src/test/java/example/testtask/townsandroads) **|** [String, StringBuffer and StringBuilder Memory and Runtime Analysis](http://java.globinch.com/java-quick-tips/performance-string-stringbuffer-stringbuilder-memory-runtime-analysis) **|** [Performance factors](http://www.vogella.com/tutorials/JavaPerformance/article.html) **|** [SearchPhrase_PerformanceTest](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/task/SearchPhrase_PerformanceTest.java) **|** [MSL2 (zip)](https://mail.google.com/mail/u/0/?tab=wm#inbox/15e6d13cebc81504) **|** [MockitoTest](https://github.com/JobTest/axiom/tree/develop/cities_roads/src/test/java/example/testtask) **+** [Get size of object in memory](http://www.javapractices.com/topic/TopicAction.do?Id=83) **+** [Memory consumption of popular Java data types – part 2](http://java-performance.info/memory-consumption-of-java-data-types-2) **)**
 * [Scala Perfomance Test](http://scalameter.github.io/home/gettingstarted/0.5/configuration/index.html)
 * [Коллекции](Коллекции.md) **|** [Сложности алгоритмов](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/README.md) **|** [Stack](firefox.txt#L593) **(** [Stack: push/pop/peek](../src/com/voituk/jpaexample/JMS.md#L386) **|** [Java Коллекции](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/prepare)  **|** [пример реализации кэша через LinkedHashMap](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/LRUCacheTest.java) **|** [вставка и обход бинарного дерева в глубину и в ширину](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/prepare/TreeTest.java) **|** [Tree Algorithm](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/tree_algorithm/TreeTest.java) **)**
@@ -17,7 +18,6 @@
 * [Исключения в Java](Исключения%20в%20Java.md) **(** [TryCatchFinaly](https://github.com/Home-Spring/SpringFileUpload2/blob/master/src/test/java/com/journaldev/spring/TryCatchFinaly.java) **|** [pdf](Исключения%20и%20ошибки.pdf) **)**
 * [что нового в java-8](что%20нового%20в%20java-8.md)  **|** [Java8.2](https://github.com/Home-Java8/Java8.2)  **(** [Stream](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/java8/Java8Test2.java) **|** [Краткий список нововведений в Java 8](http://microfork.com/whats-new-in-java-8/) **)**
 * **(** [10-советов по многопоточному программированию на Java](https://tproger.ru/translations/10-java-multithread-practices) **)**
-* [различие между oauth-1 и oauth-2](различие%20между%20oauth-1%20и%20oauth-2.md)
 * [Аспектно-Ориентированном Программирование](АОП.md) **(** [Знакомство с АОП](https://habrahabr.ru/post/114649) **|** [Spring АОП](http://www.finecosoft.ru/spring-aop) **)**
 * [introduction](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/spring_mvc/introduction.md) **(** [Home-Spring/docs](https://github.com/Home-Spring/docs) **|** spring управлять бинами на лету через xml: [1](https://habrahabr.ru/company/haulmont/blog/248981) **|** [2](https://habrahabr.ru/post/106744) **|** [3](http://java-course.ru/student/book2/spring) **|** [4](http://spring-projects.ru/guides/lessons/lesson-2) **|** [5](https://habrahabr.ru/post/228953) **|** [MVC](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/spring_mvc) **)**
 * **(** [сессия](https://github.com/JobTest/axiom/blob/develop4.1/src/main/java/example/testtask/java8/meeting2/java%20developer%20kiev.txt) **)**
@@ -938,7 +938,6 @@ III. Атомарные операции
 
 
 
-
 [SQL / Кластерные и некластерные индексы](http://www.quizful.net/interview/sql/clustered-index)
 ---
 
@@ -968,4 +967,336 @@ III. Атомарные операции
 
 
 
+(`Security`) защита управление безопасностью доступа к компонентам
+---
 
+[OpenSSL — универсальный криптографический инструмент, построенный вокруг протоколов SSL/TLS и сертификатов X.509](ttp://xgu.ru/wiki/OpenSSL)
+[Электронная подпись](https://ru.wikipedia.org/wiki/Электронная_подпись)
+[Как работает проверка подписи сертификатов (CA)](http://www.linux.org.ru/forum/security/11544406)
+[Подписи в аплетах - как это делается](http://forum.vingrad.ru/faq/topic-157929.html)
+[Подпись кода Java: Создание CSR](https://ru.godaddy.com/help/podpis-koda-java-sozdanie-csr-4780)
+[Самоподписанные сертификаты для EXE файлов и Java апплетов](http://www.selectcms.ru/news/samopodpisannye-sertifikaty-dlya-exe-fajlov-i-java-appletov)
+[Включение SSL на вашем веб-сервере](http://server.arcgis.com/ru/web-adaptor/latest/install/java-linux/enable-https-on-your-web-server-portal-.htm)
+[Настройка SSL для TomCat](https://habrahabr.ru/post/134453)
+[Установка SSL сертификата: Tomcat](https://www.emaro-ssl.ru/instructions/ssl-installation-tomcat.php)
+[Безопасность в J2EE](http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81114&SecID=GURU_SECTION_80693)
+[Код написан и подписан - значит, будет жить...](http://www.infocity.kiev.ua/prog/java/content/java014.phtml)
+[Учимся готовить: Spring 3 MVC + Spring Security + Hibernate](https://habrahabr.ru/post/111102)
+[Решение проблем функциональной совместимости спецификации WS-Security: Часть 4. Добавление конечной точки поставщика J2EE 1.3 в Web-сервис J2EE 1.4](http://www.ibm.com/developerworks/ru/library/ws-securityspec4)
+[Symantec Code Signing Certificates](http://www.symantec.com/ru/ru/code-signing)
+
+* Таким образом общая картина безопасности для J2EE-приложения имеет несколько этапов:
+  - на уровне протокола-HTTPS (SSL: протокол обвертывает сервер приложения, такой себе промежуточный слой, для передачи данных... например: в момент аудитенфикации, или проверка через цифровую подпись)
+    - (SSL): HTTPS-протокол который является надстройкой HTTP-протокола с цифровой пописью...AuthorizationBase64)
+  - на стороне сервера приложения (настройка глобальной и локальной безопасности, правила доступа которой строится на сервере приложения: на уровне всего сервера приложений... например: ролевая политика распространяющая на группу пользователей для ограничения доступа к ресурсу)
+    1. Использование фильтров, чтобы покрыть клиентские URL-запросы для гарантированной защиты
+    2. Установка защищиты на метод в классе (@PreAuthorize, @Security...)
+  - XML-анализ DOM-структуры документа JAXB/XStream-парсером (для предварительной проверки целостности документа перед тем как вызывать удаленную процедуру... например: проверка целостности и подлинности локумента)
+    - (SOAP...)
+
+
+* Есть "клиент", желающий общаться с "сервером" в зашифрованном виде (клиент просит у сервера его публичный ключ, после чего его каким-то образом проверяет с имеющимся у него сертификатом (открытый ключ) доверительного центра сертификации (ЦС)):
+  - **Закрытый/приватный ключ** является наиболее уязвимым компонентом всей криптосистемы цифровой подписи (злоумышленник, укравший закрытый ключ пользователя, может создать действительную цифровую подпись любого электронного документа от лица этого пользователя. Поэтому особое внимание нужно уделять способу хранения закрытого ключа).
+  - При помощи приватного ключа подписывается сертификат, который содержит "публичный/открытый ключ" (открытый ключ, подписанный закрытым ключом СЦ).
+  - Сервер в ответ на запрос возвращает ВСЮ ЦЕПОЧКУ сертификатов:
+    - цепочка выглядет так <Сертификат Васи> --> <Сертификат конечного CA> --> <Сертификат промежуточного CA> и будем считать, что <Сертификат промежуточного CA> подписан корневым CA.
+    - при помощи публичного ключа из сертификата конечного CA проверяет, что сертификат Васи подписан приватным ключем этого конечного CA.
+    - если проверка прошла успешно то вся цепочка считается валидной и ей доверяют.
+  - **Хранилище ключей** — это место, в котором хранятся сертификаты.
+
+* В области безопасности `логин/пароль` и `сертификаты` это абсолютно разные и независимые вещи:
+  - Каждый `логин/пароль` является приватной информацией польователя, которая служит для аудитенфикации этого пользователя на стороне сервера (каждый пользователь имеет персональный "логин/пароль" - **Principial**)
+    - Каждый пользователь принадлежит конкретной группе на стороне сервера. *`Группа` — управляет правилами доступа к данным на уровне всего сервера/домена* (не пользователь...)
+    - А *`ролли` — управляет правилами доступа к данным уже на уровне для отдельного приложения/функции/рессурса*...
+  - Тогда как *`сертификат` — является доручителем прав доступа к данным, позволяет обращаться между клиентом и сервером в зашифрованом виде* (то есть, существует только один оригинал обладающими правами И существуют много его проучителей которые обладают полномочиями... - это и заложено в идеологию электронной подписи)
+
+Каждый сервер может генерить "закрытый/приватный ключ" и запрос на получение "сертификата" (.csr/.cer/.crt: публичный/открытый ключ). Любой клиент обладающий "сертификатом" (публичным/открытым ключом) получает полномочия права доступа к серверным ресурсам
+Сертификат (публичный/открытый ключ) который генерит сервер-доверитель - является самописным и не имеет к себе никакого доверия (но если избранный сервер своей подписью подпишет сертификат сервера-доверителя - тогда уже такой сертификат будет являться доверенным...)
+Если нужно чтобы другой сервер являлся доверителем для избранного сервера тогда нужно чтобы избранный сервер подписал своим приватным ключем открытый ключ другого сервера (то есть, в итоге получиться такая цепочка с подписью сертификатов оригинального и довереных серверов)
+
+    Создайте запрос на подпись сертификата (CSR). Закрытый ключ будет создан и сохранен в хранилище ключей.
+    В текущем рабочем каталоге будет создан файл CSR "mycsr.pem".
+    Приобретение сертификата подписи кода в разделе (купить сертификат подписи кода)
+
+После подписи кода содержимое JAR-файла: в директории META-INF находится файл `vingrad.sf` — это и есть подпись.
+
+* Существуют корневые сертификаты:
+  - Каждый сертифицированный центр является веб-сайтом которые многие доверяют (при том, что сам-же сертифицированный центр тоже может являться доверителем...)
+  - такие сертифицированные центры попадают в белый список каждый раз при обновлении веб-браузера или JVM... - это и есть корневые сертификаты
+  - после подписи кода в доверенный сетификат попадает запись и корневого сертификата... поэтому если при проверке вся цепочка сертификатов будет валидна - считается что приложению с такой подписью пожно доверять
+    - электронная подпись храниться в JAR-файле (.sf), META-INF - это дескриптор в котором описываются требования к запуску java-приложения...
+
+
+###Подпись кода
+
+Когда разработчик запрашивает цифровой сертификат - центр сертификации идентифицирует его и выпускает сертификат, связанный с корневым сертификатом центра сертификации.
+Платформы и устройства содержат в себе корневой сертификат соответствующего центра сертификации (файл "ca-bundle.crt" - корневой сертификат центра выдавшего сертификат) если платформа или устройство доверяет какому-либо центру сертификации, то оно доверят и вашему сертификату, подписанному этим центром сертификации
+
+0. Есть корневые сертифакионные центры (СЦ/CA) - это компании которым большинство решило доверять (каждый сертификацонный центр имеет приватный и публичный ключ - при помощи приватного ключа подписывается сертификат который содержит публичный ключ).
+1. Закрытый/приватный ключ нужно создавать на сервере на котором планируется установить сертификат, при этом его нужно создать перед тем как генерировать CSR-запрос (некоторые программы автоматизируют эти задачи).
+   Пример:
+```bash
+   > ssh-keygen -t rsa -C "aleksandr.lazarchuk@privatbank.ua"
+   > ~/.ssh/id_rsa
+     -----BEGIN RSA PRIVATE KEY-----
+     {данные в Base 64}
+     -----END RSA PRIVATE KEY-----
+   (обычно вместе с закрытым/приватным ключем генериться и публичный ключ для этого-же сервера > ~/.ssh/id_rsa.pub)
+```
+2. Создаем свое локальное хранилище (.keystore).
+   Пример:
+```bash
+   > keytool -genkey -keyalg rsa -keysize 2048 -alias "Vingrad" -keystore .keystore
+```
+3. Формируем запрос на получение-выпуск CSR-сертификата Certificate Signing Request (.CRT).
+   Пример (для генерации запроса на сертификат нужен приватный ключ, это свойство сертификатов):
+```bash
+   > keytool -certreq -file mykey.crt -alias "Vingrad" -keystore .keystore
+   > mykey.crt
+     -----BEGIN NEW CERTIFICATE REQUEST-----
+     {данные в Base 64}
+     -----END NEW CERTIFICATE REQUEST-----
+```
+4. Отправляет CSR-запрос (.CRT) сертифакионному центру (СЦ/CA). После этого центр сертификации (СЦ/CA) присылает сертификат (.CER/.CRT/.PEM) - это открытый ключ подписанный закрытым ключом центра сертификации (СЦ/CA)
+```bash
+     -----BEGIN CERTIFICATE-----
+     {данные в Base 64}
+     -----END CERTIFICATE-----
+```
+5. Подписанный сертификат (.CER/.CRT/.PEM) полученный из центра сертификации (СЦ/CA) импортируем в свое локальное хранилище (.keystore)
+```bash
+   > keytool -import -trustcacerts -keystore .keystore -alias "Vingrad" -file mykey.cer
+```
+6. Теперь подписываем jar-архив
+```bash
+   > jarsigner -keystore .keystore myapp.jar "Vingrad"
+   В JAR-файле, в директории "META-INF" находится файл с подписью > "vingrad.sf"
+```
+7. И подписанный сертификат (.CER/.CRT/.PEM) полученный из центра сертификации (СЦ/CA) отправляем всем кто будет проверять... (проверяется он так):
+```bash
+   > jarsigner -verify -verbose -certs -keystore .keystore myapp.jar
+```
+8.1 Теперь когда пользователь на своем клиентском ПК попытается запустить такой JAR-файл в этом случае JVM задаст вопрос: "доверяете ли вы данной подписи" (есть выбор Yes/No/Always | Да/Нет/Всегда)
+```bash
+    > если ответить "ДА" то JAVA-приложение получит все разрешения...
+```
+8.2 Если в файле "$JAVA_HOME\jre\lib\security\java.policy" прописать строки производителя ПО:
+```bash
+    > keystore "file:E:/TEMP/TEST/JAR/.keystore";
+    > grant {
+    >     permission java.io.FilePermission "C:/AUTOEXEC.BAT", "read", signedBy "Vingrad";
+    > };
+    то пользователю не будет выдаваться запросов и предупреждений JAVA-приложение сразу получит права на все разрешения...
+```
+9.1 Если запустить JAR-файл как аплет в веб-броузере и ответить "ДА"
+```bash
+    > в этом случае при загрузке апплета веб-броузер задаст вопрос: "доверяете ли вы данной подписи"
+```
+9.2 И потом этот подписанный сертификат "vingrad.sf" сохраниться в веб-браузере
+```bash
+    > "Панель управления" > "Java Plug-In" > "Sertificates" > и там появился наш сертификат (vingrad.sf)
+```
+
+* Сертификат является способом распространения публичного ключа шифрования
+* Сертификат регламентируется стандартом `X.509`
+* Сертификат состоит:
+  - из Public-ключа
+  - вместе с некоторой идентифицирующей владельца информацией
+  - и даты прекращения срока действия ключа
+  - также содержит цифровую подпись организации выдавшей сертификат (certificate authority CA)
+
+На практике формат сертификатов таков что в сертификат может входить множество подписей.
+Последний сертификат (root-сертификат) в цепочке (удостоверяющий подлинность публичного ключа CA) сам является самоподписанным.
+Каждый сертификат в цепочке подтверждает подлинность публичного ключа предыдущего сертификата в цепочке.
+  
+Если клиент шифрует сообщение публичным ключом сервера (из сертификата сервера) огда клиент может быть уверен что только легальный сервер сможет расшифровать сообщение.
+В процессе установления SSL/TLS сессии клиент создает часть сессионного ключа, шифрует сообщение с помощью публичного ключа сервера и передает на сервер.
+Если сервер тот за кого себя выдает он сможет расшифровать сообщение с помощью приватного ключа и достать из сообщения сессионный ключ.
+
+
+1. Конфигурируем SSL-коннектор (server.xml), добавляем:
+```xml
+   <Connector port="8443" SSLEnabled="true" maxHttpHeaderSize="8192" 
+        maxThreads="150" minSpareThreads="25" maxSpareThreads="200"
+        enableLookups="false" disableUploadTimeout="true"         
+        acceptCount="100" scheme="https" secure="true"
+        clientAuth="false" sslProtocol="TLS"
+        keystoreFile=".keystore" keystorePass="mystorepassword" keystoreType="JKS"
+        keyAlias="tomcat"/>
+```
+2. Закомментируем строки:
+```xml
+   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+   <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+```
+   шифрование уже работает!
+3. **Двухфазный SSL** — авторизация на сайте по сертификату. Механизм проверки очень прост:
+   - необходимо чтобы у сервера нашелся ключ "subject distinguished name" у который будет совпадать с "issuer distinguished name" проверяемым ключем (при этом клиент не обязательно должен обладать таким ключом потому-что можно в диалоговом режиме подтвердить доверие)
+     - Когда используются ключи, выданные центром сертификации, у нас уже есть публичный ключ центра и свой, подписанный этим центром.
+     - В случае с самоподписанным ключом (именно такие ключи по создаёт keytool) необходимо, чтобы публичный ключ используемый клиентом, был в truststore сервера.
+   Чтобы настроить двухсторонюю аутентификацию нужно иметь два сертификата: от сервера и от клиента. Оба сертификата нужно импортировать в хранилище сертификатов на стороне сервера И при этом сертификат сервера сделать доверенным для    сертификата клиента.
+   - Итак пускай и сервер и клиент уже имеют собственные приватные ключи.
+   - создаем хранилище сертификатов/ключей и формируем CSR-запрос (публичный ключ) для сервера
+```bash
+     > keytool -genkey -alias tomcat -keyalg RSA -keystore mystore -validity 999 -keysize 512
+```
+   - теперь (аналогично) создаем хранилище сертификатов/ключей и формируем CSR-запрос (публичный ключ) для клиента
+```bash
+     > keytool -genkey -alias client -keyalg RSA -keystore myclientstore -storetype PKCS12 -validity 999 -keysize 512
+```
+   - помещаем публичный ключ в доверенное хранилище (truststore) сервера
+```bash
+     > keytool -export -alias client -keyalg RSA -keystore myclientstore -storetype PKCS12 -file clientcert
+```
+   - оба хранилища ключей/сертификатов ("mytruststore" и "mystore") ложим-копируем где лежит сервер приложений
+   - Конфигурируем SSL-коннектор (server.xml):
+```xml
+   <Connector port="8443" SSLEnabled="true" maxHttpHeaderSize="8192" 
+        maxThreads="150" minSpareThreads="25" maxSpareThreads="200"
+        enableLookups="false" disableUploadTimeout="true"
+        acceptCount="100" scheme="https" secure="true"
+        clientAuth="true" sslProtocol="TLS"
+        keystoreFile="mystore" keystorePass="123456" keystoreType="JKS"
+        keyAlias="tomcat"
+        truststoreFile="mytruststore" truststorePass="123456" truststoreType="JKS"/>
+```
+
+###Шифрование канала
+
+HTTP-протокол предназначен для работы по открытому каналу для передачи данных (без защиты) по принцыпу запрос/ответ (для незащищенного HTTP использует 80 TCP-порт).
+HTTPS-протокол (изначально защита канала передачи данных для HTTP-протокола непредусмотрена) для этого была разработана дополнительная надстройка шифрования канала для безопасного способа передачи данных (для защищенного HTTPS использует 443 TCP-порт).
+
+* `SSL` ....... семейство протоколов для установки шифрованного соединения между двумя сторонами желающими обмениваться данными (альтернативой ему является, например, TLS);
+                это обмен в процессе которого соединяющиеся стороны договариваются какие механизмы шифрования каждый из них поддерживает
+* `RSA` ....... обмен ключами/аутентификация ключей (альтернатива – PSK);
+* `RC4_128` ... алгоритм шифрования сообщений и длина ключа (альтернатива –  CBC);
+* `MD5` ....... аутентификация/проверка целостности сообщения (альтернатива – SHA);
+
+
+Полезные утилиты:
+- OpenSSL (самая распространенная утилита для генерации открытого ключа (запроса на сертификат) и закрытого ключа)
+- CSR Decoder (утилита для проверки CSR и данных, которые в нем содержаться, рекомендую использовать перед заказом сертификата)
+- DigiCert Certificate Tester (утилита для проверки корректно самого сертификата)
+
+
+###Java Authentication and Authorization Service (JAAS)
+
+( *`Аутентификация` ... проверка на существование человека(зарегистрированного) в нашем приложении (является ли он тем, за кого себя выдает)* )
+( *`Авторизация` ...... проверка прав аутентифицированного пользователя выполнять конкретные действия* )
+* **User** ............. пользователь, информация о человеке, которая храниться у нас в базе или файле
+* **Group** ............ группа пользователей,  которая имеет одинаковые характеристики и права доступа
+* **Security Realm** ... специальная область отвечающая за аутентификацию пользователя и хранит ее настройки
+* **Role** ............. определяет уровень доступа. Определяет какие действия может выполнять пользователь или группа
+
+1. Добавить пользователя у которого будет право на просмотр скрытой информации (это в настройках сервера приложений либо файл либо база данных, например: для сервера приложений 'Tomcat' это можно сделать в 'conf/tomcat-users.xml')
+```xml
+     <role rolename="admin"/>
+     <role rolename="manager"/>
+     <user username="user" password="123456" roles="manager"/>
+     <user username="admin" password="12345678" roles="admin,manager"/>
+```
+2. Аутентификация (это в настройках веб-приложения делаем в WEB-INF/web.xml. 'login-config' - конфигурация аутентификации; 'auth-method' - каким методом проводить аутентификацию;)
+   Существует 4-е метода аутентификации:
+   1. BASIC ......... используется стандартная форма ввода данных
+```xml
+       <login-config>
+           <auth-method>BASIC</auth-method>
+       </login-config>
+```
+   2. FORM .......... используем свою html форму
+```xml
+       <login-config>
+           <auth-method>FORM</auth-method>
+           <form-login-config>
+               <form-login-page>/login.html</form-login-page>
+               <form-error-page>/error.html</form-error-page>
+           </form-login-config>
+       </login-config>
+       Создаем форму (в HTML-страничке. 'j_security_check' - action при нажатии на submit; 'j_username' - поле имя пользователя; 'j_password' - поле пароля):
+       <form action="j_security_check" method="post">
+           Input for username <input name="j_username" type="text"> <br>
+           Input for password <input name="j_password" type="password"> <br>
+           <input type="submit" value="Авторизироваться">
+       </form>
+```
+   3. DIGEST ........ цифровая аутентификация
+   4. CLIENT-CERT ... с помощью клиентского сертификата
+3.1 Настройка безопасности для веб-приложения (это в настройках веб-приложения делаем в WEB-INF/web.xml. 'security-constraint' - блок ограничений безопасности; 'web-resource-collection' - ресурсы, к которым стоит закрыть доступ; 'url-pattern' - запрос к которому будет применен фильтр безопасности; 'http-method' - метод к которому применим фильтр безопасности; 'security-role' - прописываем роль; 'role-name' - указываем роль; 'auth-constraint' - выставляем роли доступа;)
+```xml
+       <web-app ...>
+           <security-constraint>
+               <web-resource-collection>
+                   <web-resource-name>secured</web-resource-name>
+                   <url-pattern>/secured/*</url-pattern>
+                   <http-method>GET</http-method>
+                   <http-method>POST</http-method>
+               </web-resource-collection>
+               <auth-constraint>
+                   <role-name>MANAGER</role-name>
+               </auth-constraint>
+           </security-constraint>
+           <security-role>
+               <role-name>MANAGER</role-name>
+           </security-role>
+       </web-app>
+```
+3.2 Дополнительно использование безопасности в сервлетах (это в настройках класса-сервлета. '@ServletSecurity' - определяет настройки безопасности; '@HttpMethodConstraint' - ограничения для каждого метода доступа; 'value' - http method (GET,POST..); 'rolesAllowed' - роль которая может получить доступ;)
+```javascript
+       @WebServlet(urlPatterns = "/servlet2")
+       @ServletSecurity(httpMethodConstraints = {
+           @HttpMethodConstraint(value = "GET", rolesAllowed = "MANAGER"),
+           @HttpMethodConstraint(value = "POST", rolesAllowed = "MANAGER")
+       })
+       public class SecuredServlet2 extends HttpServlet{
+           @Override
+           protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+               resp.getWriter().write("<h1>Secured Servlet2</h1>");
+           }
+       }
+```
+
+Для связки в зависимости от сервера в приложении используется специальный файл в директории `WEB-INF` который имеет название '*-web.xml'
+Например:
+- для JBoss, WildFly ... jboss-web.xml (WEB-INF/jboss-web.xml)
+- для GlassFish ........ sun-web.xml   (WEB-INF/sun-web.xml)
+```xml
+    <jboss-web>
+        <security-domain>java:/jaas/other</security-domain>
+    </jboss-web>
+```
+
+
+
+
+
+
+
+
+
+
+
+* Существует много цифровых сертификатов которые служат для своих целей:
+  - SSL сертификаты (защищенное https соединение для веб-сайта)
+  - Code Signing сертификаты
+  - Website Anti Malware Scanner сертификаты
+  - Unified Communications сертификаты
+* Самый простой и бесплатный способ получить SSL сертификат:
+  - это использовать самоподписный сертификат (можно сгенерировать на веб-сервере, в самых популярных панелях управления хостингом "Cpanel", "ISPmanager", "Directadmin" эта возможность доступна по умолчанию).
+
+* Центров сертификации существует достаточно много, вот перечень самых популярных:
+  - "Comodo" (работает с 1998 штабквартира в Jersey City, New Jersey, США)
+  - "Geotrust" (основан в 2001, в 2006 продан Verisign, штабквартира Mountain View, California, США)
+  - "Symantec" (бывший Verisign в состав которого входит и Geotrust. Купил всех в 2010 году)
+  - "Thawte" (основан в 1995, продан Verisign в 1999)
+  - "Trustwave" (работает с 1995, штабквартира Chicago, Illinois, США)
+Основное отличие между разными центрами сертификации — в цене и в каком количестве браузеров установлен их корневой сертификат (если в браузере нет корневного сертификата этого центра сертификации то посетитель с таким браузером все равно получит ошибку при входе на сайт с сертификатом от такого центра).
+
+* ПОДПИСАНИЕ КОДА ДЛЯ НАСТОЛЬНЫХ КОМПЬЮТЕРОВ:
+  - Сертификаты подписания кода для Microsoft Authenticode (файлы .exe, .cab, .dll, .ocx, .msi, .xpi, .xap и ПО в режиме ядра)
+  - Сертификаты подписания кода для Java (к файлам .jar и подписание объектов Netscape)
+  - Сертификаты подписания кода для Microsoft Office и VBA (для объектов VBA и макросов. Для ПО Microsoft Office)
+  - Сертификаты подписания кода для Adobe AIR (к файлам .air или .airi)
+* ПОДПИСАНИЕ КОДА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ:
+  - Сертификаты подписания кода для Windows Phone (для приложений Windows Phone и Xbox 360)
+  - Подписание кода для Android (файлов .apk)
+  - Authentic Document IDs for Brew (к приложениям Brew)

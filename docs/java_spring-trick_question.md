@@ -409,6 +409,22 @@
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+[Евгений Борисов ** Spring-потрошитель. Часть 2](http://www.sql.ru/forum/1181606-2/spring-inzhektit-biny-s-raznym-skoupom-drug-v-druga)
+[Тимур батыршинов ** Что такое Spring Framework](http://javabegin.ru/spring)
+[Тимур батыршинов ** Создание проекта Spring MVC](https://www.youtube.com/watch?v=l7gBzoiX6Eo)
+[Spring 3 и @Controller. Часть 1](http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-1.html)
+[Spring 3 и @Controller. Часть 2](http://www.seostella.com/ru/article/2012/04/23/spring-3-i-controller-chast-2.html)
+[Spring 3 и @Controller. Часть 3](http://www.seostella.com/ru/article/2012/04/27/spring-3-i-controller-chast-3-cookievalue-i-requestheader.html)
+http://www.sql.ru/forum/901344/kakie-priemushhestva-ispolzovaniya-ioc-konteynera
+[Borisov_spring](Borisov_spring.pdf) **(** [Borisov_spring](http://2014.javapoint.ru/presentations/Borisov_spring.pdf) **)**
+
+* Жизненный цыкл Spring-а:
+  1. Загружает Java-файлы из указаной области-пакета в свой контекст (бин-дефинишинс);
+  2. Читает файл-конфигурационных настроек для каждого задекларированные класса;
+  3. Создает Java-объекты: сперва пустые, потом уже согласно конфигурационным настройкам (для формирования двухфазного конструктора...) И загружает их в свой IO-Контейнер;
+  4. По востребованию берет из своего IO-Контейнера Java-объект и уже отдает его копию кастомеру...;
+  5. Именно 'скоупы' определяют область видимости (жизни) для Java-объектов И таким Spring наблюдает и управляет за жизнью (выданного им) Java-объекта И уничтожает его в нужный момент...
+
 ![spring](DSC06903.JPG)
 
 [spring-2017](spring-diving-jpoint-2017.pdf)
@@ -438,15 +454,15 @@
 <div>
     <span>Spring Framework использует множество шаблонов проектирования, например:</span><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">&nbsp;</span><br>
     <ul>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Singleton Pattern: Creating beans with default scope.</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Factory Pattern: Bean Factory classes</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Prototype Pattern: Bean scopes</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Adapter Pattern: Spring Web and Spring MVC</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Proxy Pattern: Spring Aspect Oriented Programming support</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Template Method Pattern: JdbcTemplate, HibernateTemplate etc</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Front Controller: Spring MVC DispatcherServlet</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Data Access Object: Spring DAO support</span></li>
-        <li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Dependency Injection and Aspect Oriented Programming</span></li>
+        <li>Singleton Pattern: Creating beans with default scope.</span></li>
+        <li>Factory Pattern: Bean Factory classes</li>
+        <li>Prototype Pattern: Bean scopes</li>
+        <li>Adapter Pattern: Spring Web and Spring MVC</li>
+        <li>Proxy Pattern: Spring Aspect Oriented Programming support</li>
+        <li>Template Method Pattern: JdbcTemplate, HibernateTemplate etc</li>
+        <li>Front Controller: Spring MVC DispatcherServlet</li>
+        <li>Data Access Object: Spring DAO support</li>
+        <li>Dependency Injection and Aspect Oriented Programming</li>
     </ul>
 </div>
 
