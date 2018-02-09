@@ -23,7 +23,8 @@
 * [introduction](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/java/com/spring_mvc/introduction.md) **(** [Home-Spring/docs](https://github.com/Home-Spring/docs) **|** spring управлять бинами на лету через xml: [1](https://habrahabr.ru/company/haulmont/blog/248981) **|** [2](https://habrahabr.ru/post/106744) **|** [3](http://java-course.ru/student/book2/spring) **|** [4](http://spring-projects.ru/guides/lessons/lesson-2) **|** [5](https://habrahabr.ru/post/228953) **|** [MVC](https://github.com/Home-SignUp/utilSlotsActualDB/tree/master/src/test/java/com/spring_mvc) **)**
 * **(** [сессия](https://github.com/JobTest/axiom/blob/develop4.1/src/main/java/example/testtask/java8/meeting2/java%20developer%20kiev.txt) **)**
 * [Аббревиатура SOLID](https://web-creator.ru/articles/solid) **(** `эти принципы позволяют строить на базе ООП масштабируемые ПО с понятной бизнеслогикой` **)**
-* [Установка JHipster](https://jhipster.ru/installation)
+* [Установка JHipster](https://jhipster.ru/installation) **|** [heroku_tutorial_final](heroku_tutorial_final.pdf) **(** [InstallationOfJhipsterInUbuntu16](https://gist.github.com/SpiralOutDotEu/370cd1ea588827bad9254d95139f167e) **|** [heroku_tutorial_final](https://espai.stucom.com/tecnologia/wp-content/uploads/sites/2/heroku_tutorial_final.pdf) **)**
+
 
     1. Принцип единственной обязанности (Single responsibility) `обозначает что каждый объект должен иметь одну обязанность и эта обязанность должна быть полностью инкапсулирована в класс. Все его сервисы должны быть направлены исключительно на обеспечение этой обязанности.`
     2. Принцип открытости / закрытости (Open-closed) `декларирует что классы, модули, функции должны быть открыты для расширения, но закрыты для изменения (это означает что эти сущности могут менять свое поведение без изменения их исходного кода).`
