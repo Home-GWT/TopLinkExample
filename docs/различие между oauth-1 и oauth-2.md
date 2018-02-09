@@ -1,4 +1,6 @@
 
+![OAuth2](oauth2-1_full.png)
+
 #[Аутентификация и авторизация в микросервисных приложениях](http://www.habrahabr.net/thread/2156)
 * [habrahabr.net/thread/2156](http://www.habrahabr.net/thread/2156)
 * `Регистрация`
