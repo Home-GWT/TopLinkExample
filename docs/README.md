@@ -973,6 +973,22 @@ III. Атомарные операции
 (`Security`) защита управление безопасностью доступа к компонентам
 ---
 
+* [GrantType — Грант авторизации](https://www.ibm.com/developerworks/ru/library/se-oauthjavapt2/index.html) **|** [+](https://github.com/hhru/api/issues/50) **|** [+](https://tutel.me/c/programming/questions/42054384/how+to+configure+oauth2+with+swagger+ui+in+spring+boot+rest+application)
+* [Securing Spring Boot with JWTs & JSON Web Token](https://auth0.com/blog/securing-spring-boot-with-jwts) **|** [+](https://jwt.io) **|** [+](https://habrahabr.ru/post/337600) **|** [+](https://habrahabr.ru/post/278411)
+
+
+* В OAuth 2.0 определены гранты 4-ех типов:
+  1. Код авторизации
+  2. Неявный
+  3. Реквизиты доступа владельца ресурса
+  4. Реквизиты клиента
+
+(`grant_type`: должен иметь значение *client_credentials* соответствующее гранту реквизитов доступа клиента)
+
+* `JSON веб-токены` (JWT) - являются открытым RFC-7519 стандартом для представления требований надежности между двумя сторонами.
+JWT.IO позволяет декодировать и проверять сгенерированные JSON веб-токены
+
+
 [OpenSSL — универсальный криптографический инструмент, построенный вокруг протоколов SSL/TLS и сертификатов X.509](ttp://xgu.ru/wiki/OpenSSL)
 [Электронная подпись](https://ru.wikipedia.org/wiki/Электронная_подпись)
 [Как работает проверка подписи сертификатов (CA)](http://www.linux.org.ru/forum/security/11544406)
