@@ -102,27 +102,6 @@ public class JavaTest {
  */
     @Test
     public void test5() {
-//        int I, N=20;
-//
-//        System.out.print("for (I=0; I<N; --I) бесконечный цыкл");
-////        for (I=0; I<N; --I){ // бесконечный-неограниченный цыкл (I=0; 0<20; --0)
-////            System.out.print("*");
-////        }
-//
-//        System.out.print("\nfor (I=0; I<N; --N) ");
-//        for (I=0; I<N; --N){ // только 20 прохождений (I=0; 0<20; --20)
-//            System.out.print("*"); // ********************
-//        }
-//
-//        System.out.println("\nfor (I=0; -I<N; --I) ");
-//        for (I=0; -I<N; --I){ // только 20 прохождений (I=0; -0<20; --0)
-//            System.out.print("*"); // ********************
-//        }
-//
-////        for (I=0; I+N; --I){ // только 20 прохождений (C++)
-////            System.out.print("*");
-////        }
-
         int I, N=20;
 
         System.out.print("for (I=0; I<N; --I) бесконечный цыкл");
