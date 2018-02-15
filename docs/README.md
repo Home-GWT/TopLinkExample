@@ -5,7 +5,7 @@
 
 * **(** [Java.Test](Java.Test.txt) **)**
 * **(** **[Новая Java & Spring - вопросы с подвохом](java_spring-trick_question.md)** **)**
-* [EJB делится на 3-типа компонентов](Java%20(авторизация-сервисы).txt#L424) **|** [полезные ответы на вопросы #1](AboutMe.txt#L871) **|** [полезные ответы на вопросы #2](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L153)  **(** [EJB](../src/com/voituk/jpaexample/EJB.md) **|** [Java.Test.1](Java.Test.txt) **|** [Java.Test.2](Java.Test2.txt) **|** [tree_node](../src/com/java/tree_algorithm/tree_node.pdf) **)**
+* [EJB делится на 3-типа компонентов](Java%20(авторизация-сервисы).txt#L424) **|** [полезные ответы на вопросы #1](AboutMe.txt#L871) **|** [полезные ответы на вопросы #2](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L153)  **(** [EJB](../src/com/voituk/jpaexample/EJB.md) **|** [Java.Test.1](Java.Test.txt) + **[Java.Test.1](JavaTest.txt)** **|** [Java.Test.2](Java.Test2.txt) **|** [tree_node](../src/com/java/tree_algorithm/tree_node.pdf) **)**
 * [Security](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/EJB.md#L301) **|** [различие между oauth-1 и oauth-2](различие%20между%20oauth-1%20и%20oauth-2.md) **|** [MY-SECURITY](https://github.com/Home-SignUp/utilSlotsActualDB/blob/master/src/test/MY-SECURITY.md) **(** [Жизненный цыкл Spring-а](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/Spring.md#L412) **)**
 * [Java Perfomance Test](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/voituk/jpaexample/JPAExample.java#L2145) **(** [использование памяти процессом Java](https://www.ibm.com/developerworks/ru/library/j-codetoheap) **|** [SystemTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/SystemTest.java) **|** [ServicePerfomanceTest](https://github.com/JobTest/axiom/blob/release/src/test/java/example/testtask/cities_roads/ServicePerfomanceTest.java) **|** [CollectionsPerformance](https://github.com/JobTest/axiom/tree/develop4.1/src/test/java/example/testtask/townsandroads) **|** [String, StringBuffer and StringBuilder Memory and Runtime Analysis](http://java.globinch.com/java-quick-tips/performance-string-stringbuffer-stringbuilder-memory-runtime-analysis) **|** [Performance factors](http://www.vogella.com/tutorials/JavaPerformance/article.html) **|** [SearchPhrase_PerformanceTest](https://github.com/Home-GWT/TopLinkExample/blob/master/src/com/java/task/SearchPhrase_PerformanceTest.java) **|** [MSL2 (zip)](https://mail.google.com/mail/u/0/?tab=wm#inbox/15e6d13cebc81504) **|** [MockitoTest](https://github.com/JobTest/axiom/tree/develop/cities_roads/src/test/java/example/testtask) **+** [Get size of object in memory](http://www.javapractices.com/topic/TopicAction.do?Id=83) **+** [Memory consumption of popular Java data types – part 2](http://java-performance.info/memory-consumption-of-java-data-types-2) **)**
 * [Scala Perfomance Test](http://scalameter.github.io/home/gettingstarted/0.5/configuration/index.html)
@@ -977,9 +977,9 @@ III. Атомарные операции
 * [Securing Spring Boot with JWTs & JSON Web Token](https://auth0.com/blog/securing-spring-boot-with-jwts) **|** [+](https://jwt.io) **|** [+](https://habrahabr.ru/post/337600) **|** [+](https://habrahabr.ru/post/278411)
 
 
-* В OAuth-2.0 определены гранты 4-ех типов:
+* В OAuth-2.0 определены гранты (GrantType) 4-х типов:
   1. Реквизиты клиента
-  2. Реквизиты доступа владельца ресурса
+  2. Реквизиты доступа для владельца ресурса
   3. Код авторизации
   4. Неявный
   
