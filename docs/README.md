@@ -39,9 +39,10 @@
      И таких клонов может быть безконечное количество - именно это услоие (наличие безконечного количества клонов) и приводит к переполнение стэка.
 
 ```javascript
-    static int func(int n){
-        if(n==0) return 0;
-        return n + func(n-1); //return n+func(--n); //return n+func(n--);
+    int func(int step){
+        if(step==0) return 0;
+        int val = 5;
+        return val + func(step-1); //return val+func(--val); //return val+func(val--);
     }
 ```
 
@@ -52,9 +53,9 @@
      То есть, каждый раз когда функция вызывает саму-себя старое тело функции уничтожается! И поэтому клон функции будет всегда один (это значит что переполнения стэка никогда не наступит)
 
 ```javascript
-    static int add(int nun, int step){
-        if(step==0) return nun; //return 1;
-        return add((nun+(step-1)), step-1);
+    int func(int val, int step){
+        if(step==0) return val; //return 1;
+        return func((val+val), step-1);
     }
 ```
 
